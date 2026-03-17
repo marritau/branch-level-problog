@@ -176,6 +176,8 @@ class BranchNetModel(BranchNet):
     def predict(
         self, x_test: Union[pd.DataFrame, np.ndarray, torch.Tensor]
     ) -> torch.Tensor:
+        was_training = self.training
+        self.eval()
         x_test_copy = convert_to_tensor(x_test).float()
         dataset = TabularDataset(x_test_copy)
         dataloader = DataLoader(dataset, batch_size=min(200,dataset.__len__()), shuffle=False)
@@ -186,10 +188,31 @@ class BranchNetModel(BranchNet):
                 res.append(res1.to('cpu'))
             res = torch.vstack(res)
             res= torch.argmax(res,dim=1)
+        if was_training:
+            self.train()
+        return res
+
+    def predict_branch_proba(self, x_test: Union[pd.DataFrame, np.ndarray, torch.Tensor]) -> torch.Tensor:
+        """Predict per-branch latent probabilities p(z(b,X)=true) across examples."""
+        was_training = self.training
+        self.eval()
+        x_test_copy = convert_to_tensor(x_test).float().to(self.device)
+        dataset = TabularDataset(x_test_copy)
+        dataloader = DataLoader(dataset, batch_size=min(200,dataset.__len__()), shuffle=False)
+        res = []
+        with torch.no_grad():
+            for x in dataloader:
+                res1 = self.branch_probs(x.to(self.device))
+                res.append(res1.to('cpu'))
+            res = torch.vstack(res)
+        if was_training:
+            self.train()
         return res
 
     def predict_proba(self, x_test: Union[pd.DataFrame, np.ndarray, torch.Tensor]
     ) -> torch.Tensor:
+        was_training = self.training
+        self.eval()
         x_test_copy = convert_to_tensor(x_test).float().to(self.device)
         dataset = TabularDataset(x_test_copy)
         dataloader = DataLoader(dataset, batch_size=min(200,dataset.__len__()), shuffle=False)
@@ -199,4 +222,6 @@ class BranchNetModel(BranchNet):
                 res1 = torch.softmax(self.forward(x.to(self.device)),dim=1)
                 res.append(res1.to('cpu'))
             res = torch.vstack(res)
+        if was_training:
+            self.train()
         return res

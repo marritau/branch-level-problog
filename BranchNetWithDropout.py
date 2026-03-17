@@ -67,28 +67,41 @@ class BranchNetWithDropout(nn.Module):
         """
         gets all the necessary info from the tree ensemble
         """
+        def add_branch(path, leaf_node_id, parent_node_id):
+            n_samples = tree.n_node_samples[0]
+            leaf_samples = tree.n_node_samples[leaf_node_id]
+            parents.append(parent_node_id)
+            path_to_parent.append(path)
+            factor = leaf_samples / n_samples
+            dist = factor * tree.value[leaf_node_id][0]
+            class_proportion.append(dist)
+
         def bf_search(index,path,is_leaf):
-            
+            if is_leaf[index]:
+                add_branch(path[:], index, index)
+                return
+
             left_i = tree.children_left[index]
             right_i = tree.children_right[index]
-            has_left_leaf = left_i != -1 and is_leaf[left_i]
-            has_right_leaf = right_i != -1 and is_leaf[right_i]
-            
-            new_path=path[:]
-            if tree.feature[index]>=0:
-                new_path.append(tree.feature[index])
-                
-            if has_left_leaf or has_right_leaf:
-                n_samples=tree.n_node_samples[0]
-                node_samples=tree.n_node_samples[index]
-                parents.append(index)  
-                path_to_parent.append(new_path)
-                factor = node_samples/n_samples #portion of samples in branch
-                dist = factor*tree.value[index][0]
-                class_proportion.append(dist)
-                
-            if not has_left_leaf: bf_search(left_i, new_path, is_leaf)
-            if not has_right_leaf: bf_search(right_i, new_path, is_leaf)
+
+            if tree.feature[index] < 0:
+                return
+
+            if left_i != -1:
+                left_path = path[:]
+                left_path.append(tree.feature[index])
+                if is_leaf[left_i]:
+                    add_branch(left_path, left_i, index)
+                else:
+                    bf_search(left_i, left_path, is_leaf)
+
+            if right_i != -1:
+                right_path = path[:]
+                right_path.append(tree.feature[index])
+                if is_leaf[right_i]:
+                    add_branch(right_path, right_i, index)
+                else:
+                    bf_search(right_i, right_path, is_leaf)
                 
                 
         def get_w1(size,device,dtype):

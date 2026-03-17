@@ -13,9 +13,27 @@ from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.metrics import (accuracy_score, f1_score,roc_curve,
                              mean_absolute_percentage_error,
                              mean_squared_error, r2_score, roc_auc_score)
-from beexai.utils.convert import convert_to_numpy
-from beexai.utils.path import get_path
+try:
+    from beexai.utils.convert import convert_to_numpy
+    from beexai.utils.path import get_path
+except ImportError:
+    def convert_to_numpy(x):
+        if isinstance(x, torch.Tensor):
+            return x.detach().cpu().numpy()
+        return np.asarray(x)
+
+    def get_path(path: str, check_dir: bool = False):
+        from pathlib import Path
+        p = Path(path)
+        if check_dir:
+            p.parent.mkdir(parents=True, exist_ok=True)
+        return str(p)
 from BranchNetFramwork import BranchNetModel
+from problog_export import (
+    export_branches_to_json,
+    export_branches_to_problog,
+    export_branches_to_problog_latent,
+)
 
 
 class Trainer:
@@ -53,7 +71,9 @@ class Trainer:
         x_val: np.ndarray,
         y_val: np.ndarray,
         seed: int,
-        loss_file: Optional[str] = None,   
+        loss_file: Optional[str] = None,
+        branch_json_path: Optional[str] = None,
+        branch_problog_path: Optional[str] = None,
     ) -> Callable:
         """Perform training on the whole training set.
         Returns:
@@ -66,8 +86,12 @@ class Trainer:
             n_estimators = n_labels+round(np.log2( n_features ))
             print(n_estimators,"trees, with ",2**the_number,"leaves (maximum)",the_number)
             tree_ensemble = ExtraTreesClassifier(n_estimators=n_estimators,max_leaf_nodes=2**the_number,random_state=seed)
-            tree_ensemble.fit(x_train, y_train.ravel())   
+            tree_ensemble.fit(x_train, y_train.ravel())
             self.model.build_model_from_ensemble(tree_ensemble)
+            if branch_json_path is not None:
+                export_branches_to_json(self.model.branches, branch_json_path)
+            if branch_problog_path is not None:
+                export_branches_to_problog(self.model.branches, branch_problog_path)
             self.model = self.model.fit(
                 x_train,
                 y_train,
@@ -75,6 +99,23 @@ class Trainer:
                 y_val,
                 loss_file=loss_file,
             )
+            self.branch_probs_data = None
+            if x_train is not None and self.model is not None:
+                try:
+                    # Cкоро по умолчанию все training + val: включаем x_train
+                    probs = self.model.predict_branch_proba(x_train)
+                    self.branch_probs_data = {i: probs[i].numpy() for i in range(probs.shape[0])}
+                except Exception:
+                    self.branch_probs_data = None
+
+            if branch_problog_path is not None and hasattr(self, 'branch_probs_data') and self.branch_probs_data is not None:
+                latent_path = branch_problog_path.replace('.pl', '_latent.pl')
+                export_branches_to_problog_latent(
+                    self.model.branches,
+                    self.branch_probs_data,
+                    observed_data=x_train,
+                    output_path=latent_path,
+                )
         else:
             self.model.fit(x_train, y_train)
         return self.model
