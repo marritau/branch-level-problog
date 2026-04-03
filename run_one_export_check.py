@@ -65,6 +65,62 @@ def extract_expected_leaf_paths(tree):
     return results
 
 
+def extract_expected_parent_of_leaf_paths(tree):
+    """Independent reference extraction of parent-of-leaf paths (original BranchNet).
+
+    In the original BranchNet one hidden neuron is created for each internal
+    node that has at least one leaf child.  The conditions describe the path
+    from the root to that parent node (NOT all the way to a specific leaf).
+    """
+    is_leaf = (tree.children_left == -1) & (tree.children_right == -1)
+    results = []
+
+    def walk(node_id, path_conditions):
+        left_id = tree.children_left[node_id]
+        right_id = tree.children_right[node_id]
+
+        if is_leaf[node_id]:
+            return
+
+        has_left_leaf = left_id != -1 and is_leaf[left_id]
+        has_right_leaf = right_id != -1 and is_leaf[right_id]
+
+        feature_idx = int(tree.feature[node_id])
+        threshold = float(tree.threshold[node_id])
+
+        if has_left_leaf or has_right_leaf:
+            results.append(
+                {
+                    "parent_node_id": int(node_id),
+                    "conditions": list(path_conditions),
+                    "split_feature_idx": feature_idx,
+                    "split_threshold": threshold,
+                }
+            )
+
+        # Recurse into non-leaf children
+        if not has_left_leaf and left_id != -1:
+            walk(
+                left_id,
+                path_conditions
+                + [
+                    (feature_idx, threshold, "le", int(node_id)),
+                ],
+            )
+
+        if not has_right_leaf and right_id != -1:
+            walk(
+                right_id,
+                path_conditions
+                + [
+                    (feature_idx, threshold, "gt", int(node_id)),
+                ],
+            )
+
+    walk(0, [])
+    return results
+
+
 def branch_signature(branch):
     return tuple(
         (
@@ -136,9 +192,10 @@ def main():
     print("\n=== First tree (text view, truncated depth) ===")
     print(first_tree_text)
 
+    # --- Parent-of-leaf extraction (matches original BranchNet) ---
     expected_per_tree = {}
     for tree_id, estimator in enumerate(forest.estimators_):
-        expected_per_tree[tree_id] = extract_expected_leaf_paths(estimator.tree_)
+        expected_per_tree[tree_id] = extract_expected_parent_of_leaf_paths(estimator.tree_)
 
     first_tree_expected = expected_per_tree[0]
     first_tree_leaf_count = sum(
@@ -147,8 +204,8 @@ def main():
         if first_tree.children_left[node_id] == -1 and first_tree.children_right[node_id] == -1
     )
     print("\n=== First tree path counts ===")
-    print("Leaf nodes expected:", first_tree_leaf_count)
-    print("Expected decision paths:", len(first_tree_expected))
+    print("Leaf nodes in tree:", first_tree_leaf_count)
+    print("Expected parent-of-leaf branches:", len(first_tree_expected))
 
     model = BranchNetModel(device="cpu")
     model.build_model_from_ensemble(forest)
@@ -161,13 +218,16 @@ def main():
         actual_per_tree[tree_id] = [branch for branch in model.branches if branch.tree_id == tree_id]
 
     first_tree_actual = actual_per_tree[0]
-    print("Built BranchNet paths:", len(first_tree_actual))
+    print("Built BranchNet branches:", len(first_tree_actual))
 
-    expected_signatures = {expected_signature(path) for path in first_tree_expected}
+    # Condition-level comparison (path from root to parent, excluding parent split)
+    expected_signatures = {
+        tuple(path["conditions"]) for path in first_tree_expected
+    }
     actual_signatures = {branch_signature(branch) for branch in first_tree_actual}
 
     print_paths(
-        "Expected first-tree decision paths",
+        "Expected first-tree parent-of-leaf paths",
         [list(sig) for sig in sorted(expected_signatures)],
     )
     print_paths(
@@ -190,8 +250,8 @@ def main():
         print(f"tree {tree_id}: expected {expected_count}, actual {actual_count} -> {status}")
 
     print("\n=== Global verification ===")
-    print("Total expected decision paths:", total_expected)
-    print("Total built BranchNet paths:", total_actual)
+    print("Total expected parent-of-leaf branches:", total_expected)
+    print("Total built BranchNet branches:", total_actual)
     print("Missing first-tree paths:", len(missing))
     print("Extra first-tree paths:", len(extra))
 
@@ -210,15 +270,18 @@ def main():
     print("branches.json entries:", len(exported_json))
     print("knowledge_base.pl branch_struct rules:", len(exported_rules))
 
-    assert len(first_tree_expected) == first_tree_leaf_count
-    assert len(first_tree_actual) == len(first_tree_expected)
-    assert not missing
-    assert not extra
+    # With original parent-of-leaf strategy, #branches <= #leaves
+    assert len(first_tree_actual) == len(first_tree_expected), (
+        f"Branch count mismatch: {len(first_tree_actual)} actual vs "
+        f"{len(first_tree_expected)} expected parent-of-leaf branches"
+    )
+    assert not missing, f"Missing {len(missing)} paths"
+    assert not extra, f"Extra {len(extra)} paths"
     assert total_actual == total_expected
     assert len(exported_json) == total_expected
     assert len(exported_rules) == total_expected
 
-    print("\nDecision-path extraction verified successfully.")
+    print("\nParent-of-leaf branch extraction verified successfully.")
     print("Saved to:")
     print(" ", OUT_DIR / "branches.json")
     print(" ", OUT_DIR / "knowledge_base.pl")
