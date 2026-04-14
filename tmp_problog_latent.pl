@@ -5,18 +5,13 @@ threshold(t0_1,0.6492969138).
 threshold(t0_2,7.408786808).
 threshold(t0_4,4.393862796).
 threshold(t0_5,3.708582335).
-threshold(t0_7,0.7613449645).
 threshold(t0_8,4.630233898).
 threshold(t0_10,5.549898764).
 threshold(t0_11,2.159740183).
 threshold(t0_15,2.761699992).
 threshold(t0_17,6.09553307).
-threshold(t0_18,5.076117453).
-threshold(t0_22,5.110414337).
 threshold(t0_25,1.948632731).
-threshold(t0_26,1.823291934).
 threshold(t0_29,5.023846039).
-threshold(t0_32,1.77176573).
 threshold(t1_0,1.968039274).
 threshold(t1_1,6.030408457).
 threshold(t1_3,1.212115282).
@@ -25,13 +20,9 @@ threshold(t1_5,3.042389973).
 threshold(t1_6,5.074765021).
 threshold(t1_7,3.981413016).
 threshold(t1_9,4.512651819).
-threshold(t1_12,0.985974344).
 threshold(t1_15,4.554281774).
-threshold(t1_18,1.730802495).
 threshold(t1_21,2.718945495).
-threshold(t1_22,5.822048677).
 threshold(t1_25,4.174416611).
-threshold(t1_28,1.412243024).
 threshold(t2_0,6.13681925).
 threshold(t2_1,4.599292598).
 threshold(t2_2,1.564809484).
@@ -45,12 +36,8 @@ threshold(t2_14,4.704729852).
 threshold(t2_15,5.639545098).
 threshold(t2_16,2.549513593).
 threshold(t2_18,1.717889325).
-threshold(t2_20,5.800258127).
-threshold(t2_23,2.900107153).
-threshold(t2_27,1.614119514).
 threshold(t2_31,1.836384565).
 threshold(t2_33,2.962185078).
-threshold(t2_36,1.767427861).
 threshold(t3_0,4.872928289).
 threshold(t3_1,0.5934598824).
 threshold(t3_2,6.975249466).
@@ -59,14 +46,10 @@ threshold(t3_5,6.625229426).
 threshold(t3_7,3.196607648).
 threshold(t3_8,1.535886185).
 threshold(t3_10,1.968534121).
-threshold(t3_11,5.614591271).
 threshold(t3_15,2.200151902).
 threshold(t3_18,5.183180611).
 threshold(t3_19,4.987307369).
-threshold(t3_22,5.892258284).
-threshold(t3_25,1.612053442).
 threshold(t3_26,6.116269615).
-threshold(t3_29,2.101430101).
 threshold(t4_0,0.4036575052).
 threshold(t4_2,6.44573226).
 threshold(t4_3,4.273657641).
@@ -80,816 +63,602 @@ threshold(t4_10,7.630854566).
 threshold(t4_11,5.764233539).
 threshold(t4_13,3.063528275).
 threshold(t4_15,2.496616911).
-threshold(t4_18,2.01884499).
 threshold(t4_21,3.056669902).
-threshold(t4_24,3.437894493).
 threshold(t4_27,5.845095607).
-threshold(t4_30,1.52049784).
 threshold(t4_33,4.852697238).
-threshold(t4_36,5.129811036).
 threshold(t4_40,4.635853415).
-threshold(t4_41,1.613824486).
 threshold(t5_0,1.321920761).
-threshold(t5_1,0.6874098076).
 threshold(t5_2,6.124378775).
 threshold(t5_5,2.445116173).
 threshold(t5_7,4.893669708).
 threshold(t5_9,1.610879694).
 threshold(t5_10,1.79824636).
 threshold(t5_11,2.531335017).
-threshold(t5_14,4.648670243).
-threshold(t5_17,2.381801263).
 threshold(t6_0,5.296354102).
 threshold(t6_1,4.298592518).
-threshold(t6_3,2.352810359).
 threshold(t6_4,4.966805732).
 threshold(t6_7,1.460356714).
 threshold(t6_8,1.686961224).
-threshold(t6_9,5.085103185).
-threshold(t6_10,1.875990977).
-threshold(t6_16,5.013149585).
 threshold(t7_0,1.055024205).
-threshold(t7_1,0.9007414445).
 threshold(t7_2,4.844717674).
 threshold(t7_3,1.151904029).
 threshold(t7_4,4.968072713).
 threshold(t7_8,2.158642628).
 threshold(t7_9,2.234638057).
 threshold(t7_12,6.14728874).
-threshold(t7_13,1.6806342).
 threshold(t7_14,2.524810166).
-threshold(t7_18,1.740370494).
-threshold(t7_22,4.990644515).
 
-branch_struct(b0, X) :- le(b0,f0,t0_0,X), le(b0,f3,t0_1,X).
-branch_struct(b1, X) :- le(b1,f0,t0_0,X), gt(b1,f3,t0_1,X), le(b1,f2,t0_4,X).
-branch_struct(b2, X) :- le(b2,f0,t0_0,X), gt(b2,f3,t0_1,X), gt(b2,f2,t0_4,X), le(b2,f0,t0_22,X).
-branch_struct(b3, X) :- le(b3,f0,t0_0,X), gt(b3,f3,t0_1,X), gt(b3,f2,t0_4,X), gt(b3,f0,t0_22,X).
-branch_struct(b4, X) :- gt(b4,f0,t0_0,X), le(b4,f0,t0_2,X), le(b4,f2,t0_5,X), le(b4,f3,t0_7,X).
-branch_struct(b5, X) :- gt(b5,f0,t0_0,X), le(b5,f0,t0_2,X), le(b5,f2,t0_5,X), gt(b5,f3,t0_7,X).
-branch_struct(b6, X) :- gt(b6,f0,t0_0,X), le(b6,f0,t0_2,X), gt(b6,f2,t0_5,X), le(b6,f2,t0_8,X).
-branch_struct(b7, X) :- gt(b7,f0,t0_0,X), le(b7,f0,t0_2,X), gt(b7,f2,t0_5,X), gt(b7,f2,t0_8,X), le(b7,f2,t0_10,X), le(b7,f3,t0_11,X), le(b7,f1,t0_15,X), le(b7,f0,t0_17,X), le(b7,f3,t0_25,X), le(b7,f2,t0_29,X).
-branch_struct(b8, X) :- gt(b8,f0,t0_0,X), le(b8,f0,t0_2,X), gt(b8,f2,t0_5,X), gt(b8,f2,t0_8,X), le(b8,f2,t0_10,X), le(b8,f3,t0_11,X), le(b8,f1,t0_15,X), le(b8,f0,t0_17,X), le(b8,f3,t0_25,X), gt(b8,f2,t0_29,X), le(b8,f3,t0_32,X).
-branch_struct(b9, X) :- gt(b9,f0,t0_0,X), le(b9,f0,t0_2,X), gt(b9,f2,t0_5,X), gt(b9,f2,t0_8,X), le(b9,f2,t0_10,X), le(b9,f3,t0_11,X), le(b9,f1,t0_15,X), le(b9,f0,t0_17,X), le(b9,f3,t0_25,X), gt(b9,f2,t0_29,X), gt(b9,f3,t0_32,X).
-branch_struct(b10, X) :- gt(b10,f0,t0_0,X), le(b10,f0,t0_2,X), gt(b10,f2,t0_5,X), gt(b10,f2,t0_8,X), le(b10,f2,t0_10,X), le(b10,f3,t0_11,X), le(b10,f1,t0_15,X), le(b10,f0,t0_17,X), gt(b10,f3,t0_25,X).
-branch_struct(b11, X) :- gt(b11,f0,t0_0,X), le(b11,f0,t0_2,X), gt(b11,f2,t0_5,X), gt(b11,f2,t0_8,X), le(b11,f2,t0_10,X), le(b11,f3,t0_11,X), le(b11,f1,t0_15,X), gt(b11,f0,t0_17,X), le(b11,f3,t0_26,X).
-branch_struct(b12, X) :- gt(b12,f0,t0_0,X), le(b12,f0,t0_2,X), gt(b12,f2,t0_5,X), gt(b12,f2,t0_8,X), le(b12,f2,t0_10,X), le(b12,f3,t0_11,X), le(b12,f1,t0_15,X), gt(b12,f0,t0_17,X), gt(b12,f3,t0_26,X).
-branch_struct(b13, X) :- gt(b13,f0,t0_0,X), le(b13,f0,t0_2,X), gt(b13,f2,t0_5,X), gt(b13,f2,t0_8,X), le(b13,f2,t0_10,X), le(b13,f3,t0_11,X), gt(b13,f1,t0_15,X), le(b13,f2,t0_18,X).
-branch_struct(b14, X) :- gt(b14,f0,t0_0,X), le(b14,f0,t0_2,X), gt(b14,f2,t0_5,X), gt(b14,f2,t0_8,X), le(b14,f2,t0_10,X), le(b14,f3,t0_11,X), gt(b14,f1,t0_15,X), gt(b14,f2,t0_18,X).
-branch_struct(b15, X) :- gt(b15,f0,t0_0,X), le(b15,f0,t0_2,X), gt(b15,f2,t0_5,X), gt(b15,f2,t0_8,X), le(b15,f2,t0_10,X), gt(b15,f3,t0_11,X).
-branch_struct(b16, X) :- gt(b16,f0,t0_0,X), le(b16,f0,t0_2,X), gt(b16,f2,t0_5,X), gt(b16,f2,t0_8,X), gt(b16,f2,t0_10,X).
-branch_struct(b17, X) :- gt(b17,f0,t0_0,X), gt(b17,f0,t0_2,X).
-branch_struct(b18, X) :- le(b18,f3,t1_0,X), le(b18,f0,t1_1,X), le(b18,f3,t1_3,X), le(b18,f1,t1_5,X), le(b18,f2,t1_7,X), le(b18,f0,t1_9,X).
-branch_struct(b19, X) :- le(b19,f3,t1_0,X), le(b19,f0,t1_1,X), le(b19,f3,t1_3,X), le(b19,f1,t1_5,X), le(b19,f2,t1_7,X), gt(b19,f0,t1_9,X), le(b19,f3,t1_12,X).
-branch_struct(b20, X) :- le(b20,f3,t1_0,X), le(b20,f0,t1_1,X), le(b20,f3,t1_3,X), le(b20,f1,t1_5,X), le(b20,f2,t1_7,X), gt(b20,f0,t1_9,X), gt(b20,f3,t1_12,X).
-branch_struct(b21, X) :- le(b21,f3,t1_0,X), le(b21,f0,t1_1,X), le(b21,f3,t1_3,X), le(b21,f1,t1_5,X), gt(b21,f2,t1_7,X).
-branch_struct(b22, X) :- le(b22,f3,t1_0,X), le(b22,f0,t1_1,X), le(b22,f3,t1_3,X), gt(b22,f1,t1_5,X).
-branch_struct(b23, X) :- le(b23,f3,t1_0,X), le(b23,f0,t1_1,X), gt(b23,f3,t1_3,X), le(b23,f2,t1_6,X), le(b23,f1,t1_21,X), le(b23,f2,t1_25,X).
-branch_struct(b24, X) :- le(b24,f3,t1_0,X), le(b24,f0,t1_1,X), gt(b24,f3,t1_3,X), le(b24,f2,t1_6,X), le(b24,f1,t1_21,X), gt(b24,f2,t1_25,X), le(b24,f3,t1_28,X).
-branch_struct(b25, X) :- le(b25,f3,t1_0,X), le(b25,f0,t1_1,X), gt(b25,f3,t1_3,X), le(b25,f2,t1_6,X), le(b25,f1,t1_21,X), gt(b25,f2,t1_25,X), gt(b25,f3,t1_28,X).
-branch_struct(b26, X) :- le(b26,f3,t1_0,X), le(b26,f0,t1_1,X), gt(b26,f3,t1_3,X), le(b26,f2,t1_6,X), gt(b26,f1,t1_21,X).
-branch_struct(b27, X) :- le(b27,f3,t1_0,X), le(b27,f0,t1_1,X), gt(b27,f3,t1_3,X), gt(b27,f2,t1_6,X), le(b27,f0,t1_22,X).
-branch_struct(b28, X) :- le(b28,f3,t1_0,X), le(b28,f0,t1_1,X), gt(b28,f3,t1_3,X), gt(b28,f2,t1_6,X), gt(b28,f0,t1_22,X).
-branch_struct(b29, X) :- le(b29,f3,t1_0,X), gt(b29,f0,t1_1,X), le(b29,f0,t1_4,X), le(b29,f2,t1_15,X).
-branch_struct(b30, X) :- le(b30,f3,t1_0,X), gt(b30,f0,t1_1,X), le(b30,f0,t1_4,X), gt(b30,f2,t1_15,X), le(b30,f3,t1_18,X).
-branch_struct(b31, X) :- le(b31,f3,t1_0,X), gt(b31,f0,t1_1,X), le(b31,f0,t1_4,X), gt(b31,f2,t1_15,X), gt(b31,f3,t1_18,X).
-branch_struct(b32, X) :- le(b32,f3,t1_0,X), gt(b32,f0,t1_1,X), gt(b32,f0,t1_4,X).
-branch_struct(b33, X) :- gt(b33,f3,t1_0,X).
-branch_struct(b34, X) :- le(b34,f0,t2_0,X), le(b34,f0,t2_1,X).
-branch_struct(b35, X) :- le(b35,f0,t2_0,X), gt(b35,f0,t2_1,X), le(b35,f1,t2_6,X), le(b35,f3,t2_7,X).
-branch_struct(b36, X) :- le(b36,f0,t2_0,X), gt(b36,f0,t2_1,X), le(b36,f1,t2_6,X), gt(b36,f3,t2_7,X), le(b36,f2,t2_10,X), le(b36,f3,t2_13,X), le(b36,f2,t2_23,X).
-branch_struct(b37, X) :- le(b37,f0,t2_0,X), gt(b37,f0,t2_1,X), le(b37,f1,t2_6,X), gt(b37,f3,t2_7,X), le(b37,f2,t2_10,X), le(b37,f3,t2_13,X), gt(b37,f2,t2_23,X).
-branch_struct(b38, X) :- le(b38,f0,t2_0,X), gt(b38,f0,t2_1,X), le(b38,f1,t2_6,X), gt(b38,f3,t2_7,X), le(b38,f2,t2_10,X), gt(b38,f3,t2_13,X).
-branch_struct(b39, X) :- le(b39,f0,t2_0,X), gt(b39,f0,t2_1,X), le(b39,f1,t2_6,X), gt(b39,f3,t2_7,X), gt(b39,f2,t2_10,X), le(b39,f2,t2_14,X), le(b39,f0,t2_15,X), le(b39,f3,t2_27,X).
-branch_struct(b40, X) :- le(b40,f0,t2_0,X), gt(b40,f0,t2_1,X), le(b40,f1,t2_6,X), gt(b40,f3,t2_7,X), gt(b40,f2,t2_10,X), le(b40,f2,t2_14,X), le(b40,f0,t2_15,X), gt(b40,f3,t2_27,X).
-branch_struct(b41, X) :- le(b41,f0,t2_0,X), gt(b41,f0,t2_1,X), le(b41,f1,t2_6,X), gt(b41,f3,t2_7,X), gt(b41,f2,t2_10,X), le(b41,f2,t2_14,X), gt(b41,f0,t2_15,X).
-branch_struct(b42, X) :- le(b42,f0,t2_0,X), gt(b42,f0,t2_1,X), le(b42,f1,t2_6,X), gt(b42,f3,t2_7,X), gt(b42,f2,t2_10,X), gt(b42,f2,t2_14,X), le(b42,f1,t2_16,X).
-branch_struct(b43, X) :- le(b43,f0,t2_0,X), gt(b43,f0,t2_1,X), le(b43,f1,t2_6,X), gt(b43,f3,t2_7,X), gt(b43,f2,t2_10,X), gt(b43,f2,t2_14,X), gt(b43,f1,t2_16,X), le(b43,f3,t2_18,X).
-branch_struct(b44, X) :- le(b44,f0,t2_0,X), gt(b44,f0,t2_1,X), le(b44,f1,t2_6,X), gt(b44,f3,t2_7,X), gt(b44,f2,t2_10,X), gt(b44,f2,t2_14,X), gt(b44,f1,t2_16,X), gt(b44,f3,t2_18,X), le(b44,f0,t2_20,X).
-branch_struct(b45, X) :- le(b45,f0,t2_0,X), gt(b45,f0,t2_1,X), le(b45,f1,t2_6,X), gt(b45,f3,t2_7,X), gt(b45,f2,t2_10,X), gt(b45,f2,t2_14,X), gt(b45,f1,t2_16,X), gt(b45,f3,t2_18,X), gt(b45,f0,t2_20,X).
-branch_struct(b46, X) :- le(b46,f0,t2_0,X), gt(b46,f0,t2_1,X), gt(b46,f1,t2_6,X).
-branch_struct(b47, X) :- gt(b47,f0,t2_0,X), le(b47,f3,t2_2,X).
-branch_struct(b48, X) :- gt(b48,f0,t2_0,X), gt(b48,f3,t2_2,X), le(b48,f2,t2_4,X).
-branch_struct(b49, X) :- gt(b49,f0,t2_0,X), gt(b49,f3,t2_2,X), gt(b49,f2,t2_4,X), le(b49,f3,t2_12,X), le(b49,f3,t2_31,X), le(b49,f1,t2_33,X).
-branch_struct(b50, X) :- gt(b50,f0,t2_0,X), gt(b50,f3,t2_2,X), gt(b50,f2,t2_4,X), le(b50,f3,t2_12,X), le(b50,f3,t2_31,X), gt(b50,f1,t2_33,X), le(b50,f3,t2_36,X).
-branch_struct(b51, X) :- gt(b51,f0,t2_0,X), gt(b51,f3,t2_2,X), gt(b51,f2,t2_4,X), le(b51,f3,t2_12,X), le(b51,f3,t2_31,X), gt(b51,f1,t2_33,X), gt(b51,f3,t2_36,X).
-branch_struct(b52, X) :- gt(b52,f0,t2_0,X), gt(b52,f3,t2_2,X), gt(b52,f2,t2_4,X), le(b52,f3,t2_12,X), gt(b52,f3,t2_31,X).
-branch_struct(b53, X) :- gt(b53,f0,t2_0,X), gt(b53,f3,t2_2,X), gt(b53,f2,t2_4,X), gt(b53,f3,t2_12,X).
-branch_struct(b54, X) :- le(b54,f2,t3_0,X), le(b54,f3,t3_1,X).
-branch_struct(b55, X) :- le(b55,f2,t3_0,X), gt(b55,f3,t3_1,X), le(b55,f1,t3_4,X), le(b55,f3,t3_25,X).
-branch_struct(b56, X) :- le(b56,f2,t3_0,X), gt(b56,f3,t3_1,X), le(b56,f1,t3_4,X), gt(b56,f3,t3_25,X).
-branch_struct(b57, X) :- le(b57,f2,t3_0,X), gt(b57,f3,t3_1,X), gt(b57,f1,t3_4,X), le(b57,f0,t3_26,X), le(b57,f2,t3_29,X).
-branch_struct(b58, X) :- le(b58,f2,t3_0,X), gt(b58,f3,t3_1,X), gt(b58,f1,t3_4,X), le(b58,f0,t3_26,X), gt(b58,f2,t3_29,X).
-branch_struct(b59, X) :- le(b59,f2,t3_0,X), gt(b59,f3,t3_1,X), gt(b59,f1,t3_4,X), gt(b59,f0,t3_26,X).
-branch_struct(b60, X) :- gt(b60,f2,t3_0,X), le(b60,f0,t3_2,X), le(b60,f0,t3_5,X), le(b60,f1,t3_7,X), le(b60,f1,t3_15,X).
-branch_struct(b61, X) :- gt(b61,f2,t3_0,X), le(b61,f0,t3_2,X), le(b61,f0,t3_5,X), le(b61,f1,t3_7,X), gt(b61,f1,t3_15,X), le(b61,f2,t3_18,X), le(b61,f2,t3_19,X).
-branch_struct(b62, X) :- gt(b62,f2,t3_0,X), le(b62,f0,t3_2,X), le(b62,f0,t3_5,X), le(b62,f1,t3_7,X), gt(b62,f1,t3_15,X), le(b62,f2,t3_18,X), gt(b62,f2,t3_19,X), le(b62,f0,t3_22,X).
-branch_struct(b63, X) :- gt(b63,f2,t3_0,X), le(b63,f0,t3_2,X), le(b63,f0,t3_5,X), le(b63,f1,t3_7,X), gt(b63,f1,t3_15,X), le(b63,f2,t3_18,X), gt(b63,f2,t3_19,X), gt(b63,f0,t3_22,X).
-branch_struct(b64, X) :- gt(b64,f2,t3_0,X), le(b64,f0,t3_2,X), le(b64,f0,t3_5,X), le(b64,f1,t3_7,X), gt(b64,f1,t3_15,X), gt(b64,f2,t3_18,X).
-branch_struct(b65, X) :- gt(b65,f2,t3_0,X), le(b65,f0,t3_2,X), le(b65,f0,t3_5,X), gt(b65,f1,t3_7,X).
-branch_struct(b66, X) :- gt(b66,f2,t3_0,X), le(b66,f0,t3_2,X), gt(b66,f0,t3_5,X), le(b66,f3,t3_8,X).
-branch_struct(b67, X) :- gt(b67,f2,t3_0,X), le(b67,f0,t3_2,X), gt(b67,f0,t3_5,X), gt(b67,f3,t3_8,X), le(b67,f3,t3_10,X), le(b67,f2,t3_11,X).
-branch_struct(b68, X) :- gt(b68,f2,t3_0,X), le(b68,f0,t3_2,X), gt(b68,f0,t3_5,X), gt(b68,f3,t3_8,X), le(b68,f3,t3_10,X), gt(b68,f2,t3_11,X).
-branch_struct(b69, X) :- gt(b69,f2,t3_0,X), le(b69,f0,t3_2,X), gt(b69,f0,t3_5,X), gt(b69,f3,t3_8,X), gt(b69,f3,t3_10,X).
-branch_struct(b70, X) :- gt(b70,f2,t3_0,X), gt(b70,f0,t3_2,X).
-branch_struct(b71, X) :- le(b71,f3,t4_0,X).
-branch_struct(b72, X) :- gt(b72,f3,t4_0,X), le(b72,f0,t4_2,X), le(b72,f2,t4_3,X), le(b72,f0,t4_5,X), le(b72,f1,t4_15,X).
-branch_struct(b73, X) :- gt(b73,f3,t4_0,X), le(b73,f0,t4_2,X), le(b73,f2,t4_3,X), le(b73,f0,t4_5,X), gt(b73,f1,t4_15,X), le(b73,f2,t4_18,X).
-branch_struct(b74, X) :- gt(b74,f3,t4_0,X), le(b74,f0,t4_2,X), le(b74,f2,t4_3,X), le(b74,f0,t4_5,X), gt(b74,f1,t4_15,X), gt(b74,f2,t4_18,X).
-branch_struct(b75, X) :- gt(b75,f3,t4_0,X), le(b75,f0,t4_2,X), le(b75,f2,t4_3,X), gt(b75,f0,t4_5,X).
-branch_struct(b76, X) :- gt(b76,f3,t4_0,X), le(b76,f0,t4_2,X), gt(b76,f2,t4_3,X), le(b76,f2,t4_6,X), le(b76,f3,t4_7,X).
-branch_struct(b77, X) :- gt(b77,f3,t4_0,X), le(b77,f0,t4_2,X), gt(b77,f2,t4_3,X), le(b77,f2,t4_6,X), gt(b77,f3,t4_7,X), le(b77,f2,t4_40,X), le(b77,f3,t4_41,X).
-branch_struct(b78, X) :- gt(b78,f3,t4_0,X), le(b78,f0,t4_2,X), gt(b78,f2,t4_3,X), le(b78,f2,t4_6,X), gt(b78,f3,t4_7,X), le(b78,f2,t4_40,X), gt(b78,f3,t4_41,X).
-branch_struct(b79, X) :- gt(b79,f3,t4_0,X), le(b79,f0,t4_2,X), gt(b79,f2,t4_3,X), le(b79,f2,t4_6,X), gt(b79,f3,t4_7,X), gt(b79,f2,t4_40,X).
-branch_struct(b80, X) :- gt(b80,f3,t4_0,X), le(b80,f0,t4_2,X), gt(b80,f2,t4_3,X), gt(b80,f2,t4_6,X), le(b80,f0,t4_8,X), le(b80,f0,t4_27,X).
-branch_struct(b81, X) :- gt(b81,f3,t4_0,X), le(b81,f0,t4_2,X), gt(b81,f2,t4_3,X), gt(b81,f2,t4_6,X), le(b81,f0,t4_8,X), gt(b81,f0,t4_27,X), le(b81,f3,t4_30,X).
-branch_struct(b82, X) :- gt(b82,f3,t4_0,X), le(b82,f0,t4_2,X), gt(b82,f2,t4_3,X), gt(b82,f2,t4_6,X), le(b82,f0,t4_8,X), gt(b82,f0,t4_27,X), gt(b82,f3,t4_30,X).
-branch_struct(b83, X) :- gt(b83,f3,t4_0,X), le(b83,f0,t4_2,X), gt(b83,f2,t4_3,X), gt(b83,f2,t4_6,X), gt(b83,f0,t4_8,X).
-branch_struct(b84, X) :- gt(b84,f3,t4_0,X), gt(b84,f0,t4_2,X), le(b84,f0,t4_4,X), le(b84,f3,t4_9,X), le(b84,f2,t4_11,X), le(b84,f1,t4_13,X), le(b84,f2,t4_33,X).
-branch_struct(b85, X) :- gt(b85,f3,t4_0,X), gt(b85,f0,t4_2,X), le(b85,f0,t4_4,X), le(b85,f3,t4_9,X), le(b85,f2,t4_11,X), le(b85,f1,t4_13,X), gt(b85,f2,t4_33,X), le(b85,f2,t4_36,X).
-branch_struct(b86, X) :- gt(b86,f3,t4_0,X), gt(b86,f0,t4_2,X), le(b86,f0,t4_4,X), le(b86,f3,t4_9,X), le(b86,f2,t4_11,X), le(b86,f1,t4_13,X), gt(b86,f2,t4_33,X), gt(b86,f2,t4_36,X).
-branch_struct(b87, X) :- gt(b87,f3,t4_0,X), gt(b87,f0,t4_2,X), le(b87,f0,t4_4,X), le(b87,f3,t4_9,X), le(b87,f2,t4_11,X), gt(b87,f1,t4_13,X).
-branch_struct(b88, X) :- gt(b88,f3,t4_0,X), gt(b88,f0,t4_2,X), le(b88,f0,t4_4,X), le(b88,f3,t4_9,X), gt(b88,f2,t4_11,X).
-branch_struct(b89, X) :- gt(b89,f3,t4_0,X), gt(b89,f0,t4_2,X), le(b89,f0,t4_4,X), gt(b89,f3,t4_9,X).
-branch_struct(b90, X) :- gt(b90,f3,t4_0,X), gt(b90,f0,t4_2,X), gt(b90,f0,t4_4,X), le(b90,f0,t4_10,X), le(b90,f1,t4_21,X).
-branch_struct(b91, X) :- gt(b91,f3,t4_0,X), gt(b91,f0,t4_2,X), gt(b91,f0,t4_4,X), le(b91,f0,t4_10,X), gt(b91,f1,t4_21,X), le(b91,f1,t4_24,X).
-branch_struct(b92, X) :- gt(b92,f3,t4_0,X), gt(b92,f0,t4_2,X), gt(b92,f0,t4_4,X), le(b92,f0,t4_10,X), gt(b92,f1,t4_21,X), gt(b92,f1,t4_24,X).
-branch_struct(b93, X) :- gt(b93,f3,t4_0,X), gt(b93,f0,t4_2,X), gt(b93,f0,t4_4,X), gt(b93,f0,t4_10,X).
-branch_struct(b94, X) :- le(b94,f3,t5_0,X), le(b94,f3,t5_1,X).
-branch_struct(b95, X) :- le(b95,f3,t5_0,X), gt(b95,f3,t5_1,X).
-branch_struct(b96, X) :- gt(b96,f3,t5_0,X), le(b96,f2,t5_2,X), le(b96,f3,t5_5,X), le(b96,f2,t5_7,X), le(b96,f3,t5_9,X).
-branch_struct(b97, X) :- gt(b97,f3,t5_0,X), le(b97,f2,t5_2,X), le(b97,f3,t5_5,X), le(b97,f2,t5_7,X), gt(b97,f3,t5_9,X), le(b97,f2,t5_14,X).
-branch_struct(b98, X) :- gt(b98,f3,t5_0,X), le(b98,f2,t5_2,X), le(b98,f3,t5_5,X), le(b98,f2,t5_7,X), gt(b98,f3,t5_9,X), gt(b98,f2,t5_14,X).
-branch_struct(b99, X) :- gt(b99,f3,t5_0,X), le(b99,f2,t5_2,X), le(b99,f3,t5_5,X), gt(b99,f2,t5_7,X), le(b99,f3,t5_10,X), le(b99,f1,t5_11,X), le(b99,f1,t5_17,X).
-branch_struct(b100, X) :- gt(b100,f3,t5_0,X), le(b100,f2,t5_2,X), le(b100,f3,t5_5,X), gt(b100,f2,t5_7,X), le(b100,f3,t5_10,X), le(b100,f1,t5_11,X), gt(b100,f1,t5_17,X).
-branch_struct(b101, X) :- gt(b101,f3,t5_0,X), le(b101,f2,t5_2,X), le(b101,f3,t5_5,X), gt(b101,f2,t5_7,X), le(b101,f3,t5_10,X), gt(b101,f1,t5_11,X).
-branch_struct(b102, X) :- gt(b102,f3,t5_0,X), le(b102,f2,t5_2,X), le(b102,f3,t5_5,X), gt(b102,f2,t5_7,X), gt(b102,f3,t5_10,X).
-branch_struct(b103, X) :- gt(b103,f3,t5_0,X), le(b103,f2,t5_2,X), gt(b103,f3,t5_5,X).
-branch_struct(b104, X) :- gt(b104,f3,t5_0,X), gt(b104,f2,t5_2,X).
-branch_struct(b105, X) :- le(b105,f2,t6_0,X), le(b105,f2,t6_1,X), le(b105,f2,t6_3,X).
-branch_struct(b106, X) :- le(b106,f2,t6_0,X), le(b106,f2,t6_1,X), gt(b106,f2,t6_3,X).
-branch_struct(b107, X) :- le(b107,f2,t6_0,X), gt(b107,f2,t6_1,X), le(b107,f2,t6_4,X), le(b107,f3,t6_7,X).
-branch_struct(b108, X) :- le(b108,f2,t6_0,X), gt(b108,f2,t6_1,X), le(b108,f2,t6_4,X), gt(b108,f3,t6_7,X), le(b108,f0,t6_16,X).
-branch_struct(b109, X) :- le(b109,f2,t6_0,X), gt(b109,f2,t6_1,X), le(b109,f2,t6_4,X), gt(b109,f3,t6_7,X), gt(b109,f0,t6_16,X).
-branch_struct(b110, X) :- le(b110,f2,t6_0,X), gt(b110,f2,t6_1,X), gt(b110,f2,t6_4,X), le(b110,f3,t6_8,X), le(b110,f2,t6_9,X).
-branch_struct(b111, X) :- le(b111,f2,t6_0,X), gt(b111,f2,t6_1,X), gt(b111,f2,t6_4,X), le(b111,f3,t6_8,X), gt(b111,f2,t6_9,X).
-branch_struct(b112, X) :- le(b112,f2,t6_0,X), gt(b112,f2,t6_1,X), gt(b112,f2,t6_4,X), gt(b112,f3,t6_8,X), le(b112,f3,t6_10,X).
-branch_struct(b113, X) :- le(b113,f2,t6_0,X), gt(b113,f2,t6_1,X), gt(b113,f2,t6_4,X), gt(b113,f3,t6_8,X), gt(b113,f3,t6_10,X).
-branch_struct(b114, X) :- gt(b114,f2,t6_0,X).
-branch_struct(b115, X) :- le(b115,f3,t7_0,X), le(b115,f3,t7_1,X).
-branch_struct(b116, X) :- le(b116,f3,t7_0,X), gt(b116,f3,t7_1,X).
-branch_struct(b117, X) :- gt(b117,f3,t7_0,X), le(b117,f2,t7_2,X), le(b117,f3,t7_3,X).
-branch_struct(b118, X) :- gt(b118,f3,t7_0,X), le(b118,f2,t7_2,X), gt(b118,f3,t7_3,X), le(b118,f0,t7_22,X).
-branch_struct(b119, X) :- gt(b119,f3,t7_0,X), le(b119,f2,t7_2,X), gt(b119,f3,t7_3,X), gt(b119,f0,t7_22,X).
-branch_struct(b120, X) :- gt(b120,f3,t7_0,X), gt(b120,f2,t7_2,X), le(b120,f2,t7_4,X).
-branch_struct(b121, X) :- gt(b121,f3,t7_0,X), gt(b121,f2,t7_2,X), gt(b121,f2,t7_4,X), le(b121,f3,t7_8,X), le(b121,f1,t7_9,X).
-branch_struct(b122, X) :- gt(b122,f3,t7_0,X), gt(b122,f2,t7_2,X), gt(b122,f2,t7_4,X), le(b122,f3,t7_8,X), gt(b122,f1,t7_9,X), le(b122,f0,t7_12,X), le(b122,f3,t7_13,X).
-branch_struct(b123, X) :- gt(b123,f3,t7_0,X), gt(b123,f2,t7_2,X), gt(b123,f2,t7_4,X), le(b123,f3,t7_8,X), gt(b123,f1,t7_9,X), le(b123,f0,t7_12,X), gt(b123,f3,t7_13,X).
-branch_struct(b124, X) :- gt(b124,f3,t7_0,X), gt(b124,f2,t7_2,X), gt(b124,f2,t7_4,X), le(b124,f3,t7_8,X), gt(b124,f1,t7_9,X), gt(b124,f0,t7_12,X), le(b124,f1,t7_14,X).
-branch_struct(b125, X) :- gt(b125,f3,t7_0,X), gt(b125,f2,t7_2,X), gt(b125,f2,t7_4,X), le(b125,f3,t7_8,X), gt(b125,f1,t7_9,X), gt(b125,f0,t7_12,X), gt(b125,f1,t7_14,X), le(b125,f3,t7_18,X).
-branch_struct(b126, X) :- gt(b126,f3,t7_0,X), gt(b126,f2,t7_2,X), gt(b126,f2,t7_4,X), le(b126,f3,t7_8,X), gt(b126,f1,t7_9,X), gt(b126,f0,t7_12,X), gt(b126,f1,t7_14,X), gt(b126,f3,t7_18,X).
-branch_struct(b127, X) :- gt(b127,f3,t7_0,X), gt(b127,f2,t7_2,X), gt(b127,f2,t7_4,X), gt(b127,f3,t7_8,X).
+branch_struct(b0, X) :- le(b0,f0,t0_0,X).
+branch_struct(b1, X) :- le(b1,f0,t0_0,X), gt(b1,f3,t0_1,X).
+branch_struct(b2, X) :- le(b2,f0,t0_0,X), gt(b2,f3,t0_1,X), gt(b2,f2,t0_4,X).
+branch_struct(b3, X) :- gt(b3,f0,t0_0,X).
+branch_struct(b4, X) :- gt(b4,f0,t0_0,X), le(b4,f0,t0_2,X), le(b4,f2,t0_5,X).
+branch_struct(b5, X) :- gt(b5,f0,t0_0,X), le(b5,f0,t0_2,X), gt(b5,f2,t0_5,X).
+branch_struct(b6, X) :- gt(b6,f0,t0_0,X), le(b6,f0,t0_2,X), gt(b6,f2,t0_5,X), gt(b6,f2,t0_8,X).
+branch_struct(b7, X) :- gt(b7,f0,t0_0,X), le(b7,f0,t0_2,X), gt(b7,f2,t0_5,X), gt(b7,f2,t0_8,X), le(b7,f2,t0_10,X).
+branch_struct(b8, X) :- gt(b8,f0,t0_0,X), le(b8,f0,t0_2,X), gt(b8,f2,t0_5,X), gt(b8,f2,t0_8,X), le(b8,f2,t0_10,X), le(b8,f3,t0_11,X), le(b8,f1,t0_15,X), le(b8,f0,t0_17,X).
+branch_struct(b9, X) :- gt(b9,f0,t0_0,X), le(b9,f0,t0_2,X), gt(b9,f2,t0_5,X), gt(b9,f2,t0_8,X), le(b9,f2,t0_10,X), le(b9,f3,t0_11,X), le(b9,f1,t0_15,X), le(b9,f0,t0_17,X), le(b9,f3,t0_25,X).
+branch_struct(b10, X) :- gt(b10,f0,t0_0,X), le(b10,f0,t0_2,X), gt(b10,f2,t0_5,X), gt(b10,f2,t0_8,X), le(b10,f2,t0_10,X), le(b10,f3,t0_11,X), le(b10,f1,t0_15,X), le(b10,f0,t0_17,X), le(b10,f3,t0_25,X), gt(b10,f2,t0_29,X).
+branch_struct(b11, X) :- gt(b11,f0,t0_0,X), le(b11,f0,t0_2,X), gt(b11,f2,t0_5,X), gt(b11,f2,t0_8,X), le(b11,f2,t0_10,X), le(b11,f3,t0_11,X), le(b11,f1,t0_15,X), gt(b11,f0,t0_17,X).
+branch_struct(b12, X) :- gt(b12,f0,t0_0,X), le(b12,f0,t0_2,X), gt(b12,f2,t0_5,X), gt(b12,f2,t0_8,X), le(b12,f2,t0_10,X), le(b12,f3,t0_11,X), gt(b12,f1,t0_15,X).
+branch_struct(b13, X).
+branch_struct(b14, X) :- le(b14,f3,t1_0,X), le(b14,f0,t1_1,X), le(b14,f3,t1_3,X).
+branch_struct(b15, X) :- le(b15,f3,t1_0,X), le(b15,f0,t1_1,X), le(b15,f3,t1_3,X), le(b15,f1,t1_5,X).
+branch_struct(b16, X) :- le(b16,f3,t1_0,X), le(b16,f0,t1_1,X), le(b16,f3,t1_3,X), le(b16,f1,t1_5,X), le(b16,f2,t1_7,X).
+branch_struct(b17, X) :- le(b17,f3,t1_0,X), le(b17,f0,t1_1,X), le(b17,f3,t1_3,X), le(b17,f1,t1_5,X), le(b17,f2,t1_7,X), gt(b17,f0,t1_9,X).
+branch_struct(b18, X) :- le(b18,f3,t1_0,X), le(b18,f0,t1_1,X), gt(b18,f3,t1_3,X), le(b18,f2,t1_6,X).
+branch_struct(b19, X) :- le(b19,f3,t1_0,X), le(b19,f0,t1_1,X), gt(b19,f3,t1_3,X), le(b19,f2,t1_6,X), le(b19,f1,t1_21,X).
+branch_struct(b20, X) :- le(b20,f3,t1_0,X), le(b20,f0,t1_1,X), gt(b20,f3,t1_3,X), le(b20,f2,t1_6,X), le(b20,f1,t1_21,X), gt(b20,f2,t1_25,X).
+branch_struct(b21, X) :- le(b21,f3,t1_0,X), le(b21,f0,t1_1,X), gt(b21,f3,t1_3,X), gt(b21,f2,t1_6,X).
+branch_struct(b22, X) :- le(b22,f3,t1_0,X), gt(b22,f0,t1_1,X).
+branch_struct(b23, X) :- le(b23,f3,t1_0,X), gt(b23,f0,t1_1,X), le(b23,f0,t1_4,X).
+branch_struct(b24, X) :- le(b24,f3,t1_0,X), gt(b24,f0,t1_1,X), le(b24,f0,t1_4,X), gt(b24,f2,t1_15,X).
+branch_struct(b25, X) :- le(b25,f0,t2_0,X).
+branch_struct(b26, X) :- le(b26,f0,t2_0,X), gt(b26,f0,t2_1,X).
+branch_struct(b27, X) :- le(b27,f0,t2_0,X), gt(b27,f0,t2_1,X), le(b27,f1,t2_6,X).
+branch_struct(b28, X) :- le(b28,f0,t2_0,X), gt(b28,f0,t2_1,X), le(b28,f1,t2_6,X), gt(b28,f3,t2_7,X), le(b28,f2,t2_10,X).
+branch_struct(b29, X) :- le(b29,f0,t2_0,X), gt(b29,f0,t2_1,X), le(b29,f1,t2_6,X), gt(b29,f3,t2_7,X), le(b29,f2,t2_10,X), le(b29,f3,t2_13,X).
+branch_struct(b30, X) :- le(b30,f0,t2_0,X), gt(b30,f0,t2_1,X), le(b30,f1,t2_6,X), gt(b30,f3,t2_7,X), gt(b30,f2,t2_10,X), le(b30,f2,t2_14,X).
+branch_struct(b31, X) :- le(b31,f0,t2_0,X), gt(b31,f0,t2_1,X), le(b31,f1,t2_6,X), gt(b31,f3,t2_7,X), gt(b31,f2,t2_10,X), le(b31,f2,t2_14,X), le(b31,f0,t2_15,X).
+branch_struct(b32, X) :- le(b32,f0,t2_0,X), gt(b32,f0,t2_1,X), le(b32,f1,t2_6,X), gt(b32,f3,t2_7,X), gt(b32,f2,t2_10,X), gt(b32,f2,t2_14,X).
+branch_struct(b33, X) :- le(b33,f0,t2_0,X), gt(b33,f0,t2_1,X), le(b33,f1,t2_6,X), gt(b33,f3,t2_7,X), gt(b33,f2,t2_10,X), gt(b33,f2,t2_14,X), gt(b33,f1,t2_16,X).
+branch_struct(b34, X) :- le(b34,f0,t2_0,X), gt(b34,f0,t2_1,X), le(b34,f1,t2_6,X), gt(b34,f3,t2_7,X), gt(b34,f2,t2_10,X), gt(b34,f2,t2_14,X), gt(b34,f1,t2_16,X), gt(b34,f3,t2_18,X).
+branch_struct(b35, X) :- gt(b35,f0,t2_0,X).
+branch_struct(b36, X) :- gt(b36,f0,t2_0,X), gt(b36,f3,t2_2,X).
+branch_struct(b37, X) :- gt(b37,f0,t2_0,X), gt(b37,f3,t2_2,X), gt(b37,f2,t2_4,X).
+branch_struct(b38, X) :- gt(b38,f0,t2_0,X), gt(b38,f3,t2_2,X), gt(b38,f2,t2_4,X), le(b38,f3,t2_12,X).
+branch_struct(b39, X) :- gt(b39,f0,t2_0,X), gt(b39,f3,t2_2,X), gt(b39,f2,t2_4,X), le(b39,f3,t2_12,X), le(b39,f3,t2_31,X).
+branch_struct(b40, X) :- gt(b40,f0,t2_0,X), gt(b40,f3,t2_2,X), gt(b40,f2,t2_4,X), le(b40,f3,t2_12,X), le(b40,f3,t2_31,X), gt(b40,f1,t2_33,X).
+branch_struct(b41, X) :- le(b41,f2,t3_0,X).
+branch_struct(b42, X) :- le(b42,f2,t3_0,X), gt(b42,f3,t3_1,X), le(b42,f1,t3_4,X).
+branch_struct(b43, X) :- le(b43,f2,t3_0,X), gt(b43,f3,t3_1,X), gt(b43,f1,t3_4,X).
+branch_struct(b44, X) :- le(b44,f2,t3_0,X), gt(b44,f3,t3_1,X), gt(b44,f1,t3_4,X), le(b44,f0,t3_26,X).
+branch_struct(b45, X) :- gt(b45,f2,t3_0,X).
+branch_struct(b46, X) :- gt(b46,f2,t3_0,X), le(b46,f0,t3_2,X), le(b46,f0,t3_5,X).
+branch_struct(b47, X) :- gt(b47,f2,t3_0,X), le(b47,f0,t3_2,X), le(b47,f0,t3_5,X), le(b47,f1,t3_7,X).
+branch_struct(b48, X) :- gt(b48,f2,t3_0,X), le(b48,f0,t3_2,X), le(b48,f0,t3_5,X), le(b48,f1,t3_7,X), gt(b48,f1,t3_15,X).
+branch_struct(b49, X) :- gt(b49,f2,t3_0,X), le(b49,f0,t3_2,X), le(b49,f0,t3_5,X), le(b49,f1,t3_7,X), gt(b49,f1,t3_15,X), le(b49,f2,t3_18,X).
+branch_struct(b50, X) :- gt(b50,f2,t3_0,X), le(b50,f0,t3_2,X), le(b50,f0,t3_5,X), le(b50,f1,t3_7,X), gt(b50,f1,t3_15,X), le(b50,f2,t3_18,X), gt(b50,f2,t3_19,X).
+branch_struct(b51, X) :- gt(b51,f2,t3_0,X), le(b51,f0,t3_2,X), gt(b51,f0,t3_5,X).
+branch_struct(b52, X) :- gt(b52,f2,t3_0,X), le(b52,f0,t3_2,X), gt(b52,f0,t3_5,X), gt(b52,f3,t3_8,X).
+branch_struct(b53, X) :- gt(b53,f2,t3_0,X), le(b53,f0,t3_2,X), gt(b53,f0,t3_5,X), gt(b53,f3,t3_8,X), le(b53,f3,t3_10,X).
+branch_struct(b54, X).
+branch_struct(b55, X) :- gt(b55,f3,t4_0,X), le(b55,f0,t4_2,X), le(b55,f2,t4_3,X).
+branch_struct(b56, X) :- gt(b56,f3,t4_0,X), le(b56,f0,t4_2,X), le(b56,f2,t4_3,X), le(b56,f0,t4_5,X).
+branch_struct(b57, X) :- gt(b57,f3,t4_0,X), le(b57,f0,t4_2,X), le(b57,f2,t4_3,X), le(b57,f0,t4_5,X), gt(b57,f1,t4_15,X).
+branch_struct(b58, X) :- gt(b58,f3,t4_0,X), le(b58,f0,t4_2,X), gt(b58,f2,t4_3,X), le(b58,f2,t4_6,X).
+branch_struct(b59, X) :- gt(b59,f3,t4_0,X), le(b59,f0,t4_2,X), gt(b59,f2,t4_3,X), le(b59,f2,t4_6,X), gt(b59,f3,t4_7,X).
+branch_struct(b60, X) :- gt(b60,f3,t4_0,X), le(b60,f0,t4_2,X), gt(b60,f2,t4_3,X), le(b60,f2,t4_6,X), gt(b60,f3,t4_7,X), le(b60,f2,t4_40,X).
+branch_struct(b61, X) :- gt(b61,f3,t4_0,X), le(b61,f0,t4_2,X), gt(b61,f2,t4_3,X), gt(b61,f2,t4_6,X).
+branch_struct(b62, X) :- gt(b62,f3,t4_0,X), le(b62,f0,t4_2,X), gt(b62,f2,t4_3,X), gt(b62,f2,t4_6,X), le(b62,f0,t4_8,X).
+branch_struct(b63, X) :- gt(b63,f3,t4_0,X), le(b63,f0,t4_2,X), gt(b63,f2,t4_3,X), gt(b63,f2,t4_6,X), le(b63,f0,t4_8,X), gt(b63,f0,t4_27,X).
+branch_struct(b64, X) :- gt(b64,f3,t4_0,X), gt(b64,f0,t4_2,X), le(b64,f0,t4_4,X).
+branch_struct(b65, X) :- gt(b65,f3,t4_0,X), gt(b65,f0,t4_2,X), le(b65,f0,t4_4,X), le(b65,f3,t4_9,X).
+branch_struct(b66, X) :- gt(b66,f3,t4_0,X), gt(b66,f0,t4_2,X), le(b66,f0,t4_4,X), le(b66,f3,t4_9,X), le(b66,f2,t4_11,X).
+branch_struct(b67, X) :- gt(b67,f3,t4_0,X), gt(b67,f0,t4_2,X), le(b67,f0,t4_4,X), le(b67,f3,t4_9,X), le(b67,f2,t4_11,X), le(b67,f1,t4_13,X).
+branch_struct(b68, X) :- gt(b68,f3,t4_0,X), gt(b68,f0,t4_2,X), le(b68,f0,t4_4,X), le(b68,f3,t4_9,X), le(b68,f2,t4_11,X), le(b68,f1,t4_13,X), gt(b68,f2,t4_33,X).
+branch_struct(b69, X) :- gt(b69,f3,t4_0,X), gt(b69,f0,t4_2,X), gt(b69,f0,t4_4,X).
+branch_struct(b70, X) :- gt(b70,f3,t4_0,X), gt(b70,f0,t4_2,X), gt(b70,f0,t4_4,X), le(b70,f0,t4_10,X).
+branch_struct(b71, X) :- gt(b71,f3,t4_0,X), gt(b71,f0,t4_2,X), gt(b71,f0,t4_4,X), le(b71,f0,t4_10,X), gt(b71,f1,t4_21,X).
+branch_struct(b72, X) :- le(b72,f3,t5_0,X).
+branch_struct(b73, X) :- gt(b73,f3,t5_0,X).
+branch_struct(b74, X) :- gt(b74,f3,t5_0,X), le(b74,f2,t5_2,X).
+branch_struct(b75, X) :- gt(b75,f3,t5_0,X), le(b75,f2,t5_2,X), le(b75,f3,t5_5,X), le(b75,f2,t5_7,X).
+branch_struct(b76, X) :- gt(b76,f3,t5_0,X), le(b76,f2,t5_2,X), le(b76,f3,t5_5,X), le(b76,f2,t5_7,X), gt(b76,f3,t5_9,X).
+branch_struct(b77, X) :- gt(b77,f3,t5_0,X), le(b77,f2,t5_2,X), le(b77,f3,t5_5,X), gt(b77,f2,t5_7,X).
+branch_struct(b78, X) :- gt(b78,f3,t5_0,X), le(b78,f2,t5_2,X), le(b78,f3,t5_5,X), gt(b78,f2,t5_7,X), le(b78,f3,t5_10,X).
+branch_struct(b79, X) :- gt(b79,f3,t5_0,X), le(b79,f2,t5_2,X), le(b79,f3,t5_5,X), gt(b79,f2,t5_7,X), le(b79,f3,t5_10,X), le(b79,f1,t5_11,X).
+branch_struct(b80, X).
+branch_struct(b81, X) :- le(b81,f2,t6_0,X), le(b81,f2,t6_1,X).
+branch_struct(b82, X) :- le(b82,f2,t6_0,X), gt(b82,f2,t6_1,X), le(b82,f2,t6_4,X).
+branch_struct(b83, X) :- le(b83,f2,t6_0,X), gt(b83,f2,t6_1,X), le(b83,f2,t6_4,X), gt(b83,f3,t6_7,X).
+branch_struct(b84, X) :- le(b84,f2,t6_0,X), gt(b84,f2,t6_1,X), gt(b84,f2,t6_4,X), le(b84,f3,t6_8,X).
+branch_struct(b85, X) :- le(b85,f2,t6_0,X), gt(b85,f2,t6_1,X), gt(b85,f2,t6_4,X), gt(b85,f3,t6_8,X).
+branch_struct(b86, X) :- le(b86,f3,t7_0,X).
+branch_struct(b87, X) :- gt(b87,f3,t7_0,X), le(b87,f2,t7_2,X).
+branch_struct(b88, X) :- gt(b88,f3,t7_0,X), le(b88,f2,t7_2,X), gt(b88,f3,t7_3,X).
+branch_struct(b89, X) :- gt(b89,f3,t7_0,X), gt(b89,f2,t7_2,X).
+branch_struct(b90, X) :- gt(b90,f3,t7_0,X), gt(b90,f2,t7_2,X), gt(b90,f2,t7_4,X).
+branch_struct(b91, X) :- gt(b91,f3,t7_0,X), gt(b91,f2,t7_2,X), gt(b91,f2,t7_4,X), le(b91,f3,t7_8,X).
+branch_struct(b92, X) :- gt(b92,f3,t7_0,X), gt(b92,f2,t7_2,X), gt(b92,f2,t7_4,X), le(b92,f3,t7_8,X), gt(b92,f1,t7_9,X), le(b92,f0,t7_12,X).
+branch_struct(b93, X) :- gt(b93,f3,t7_0,X), gt(b93,f2,t7_2,X), gt(b93,f2,t7_4,X), le(b93,f3,t7_8,X), gt(b93,f1,t7_9,X), gt(b93,f0,t7_12,X).
+branch_struct(b94, X) :- gt(b94,f3,t7_0,X), gt(b94,f2,t7_2,X), gt(b94,f2,t7_4,X), le(b94,f3,t7_8,X), gt(b94,f1,t7_9,X), gt(b94,f0,t7_12,X), gt(b94,f1,t7_14,X).
 
-0.80547625::z(b0,0).
-0.91892165::z(b1,0).
-0.78539240::z(b2,0).
-0.91892225::z(b3,0).
-0.79785699::z(b4,0).
-0.91892380::z(b5,0).
-0.92592376::z(b6,0).
-0.84039772::z(b7,0).
-0.91229874::z(b8,0).
-0.84039772::z(b9,0).
-0.84039772::z(b10,0).
-0.91229874::z(b11,0).
-0.84039772::z(b12,0).
-0.91229856::z(b13,0).
-0.84039181::z(b14,0).
-0.78537858::z(b15,0).
-0.79331213::z(b16,0).
-0.72587645::z(b17,0).
-0.82402176::z(b18,0).
-0.82402176::z(b19,0).
-0.91811228::z(b20,0).
-0.91811246::z(b21,0).
-0.82875842::z(b22,0).
-0.91811258::z(b23,0).
-0.91811353::z(b24,0).
-0.80452520::z(b25,0).
-0.91811228::z(b26,0).
-0.75175637::z(b27,0).
-0.91607690::z(b28,0).
-0.91607451::z(b29,0).
-0.91607440::z(b30,0).
-0.75173223::z(b31,0).
-0.77146941::z(b32,0).
-0.64466125::z(b33,0).
-0.71693122::z(b34,0).
-0.83844501::z(b35,0).
-0.83931756::z(b36,0).
-0.94698298::z(b37,0).
-0.94698304::z(b38,0).
-0.94698304::z(b39,0).
-0.82409030::z(b40,0).
-0.94698304::z(b41,0).
-0.82408124::z(b42,0).
-0.94698316::z(b43,0).
-0.82408124::z(b44,0).
-0.94698316::z(b45,0).
-0.87377721::z(b46,0).
-0.92228019::z(b47,0).
-0.92457783::z(b48,0).
-0.82407832::z(b49,0).
-0.94698316::z(b50,0).
-0.82409030::z(b51,0).
-0.77648562::z(b52,0).
-0.77645612::z(b53,0).
-0.75812900::z(b54,0).
-0.94390166::z(b55,0).
-0.82353342::z(b56,0).
-0.83869648::z(b57,0).
-0.95223993::z(b58,0).
-0.95223981::z(b59,0).
-0.81989229::z(b60,0).
-0.95524305::z(b61,0).
-0.81987697::z(b62,0).
-0.95524305::z(b63,0).
-0.81987512::z(b64,0).
-0.81987697::z(b65,0).
-0.91803628::z(b66,0).
-0.91803628::z(b67,0).
-0.78378767::z(b68,0).
-0.78378767::z(b69,0).
-0.79245740::z(b70,0).
-0.58932137::z(b71,0).
-0.92271078::z(b72,0).
-0.83909321::z(b73,0).
-0.92271078::z(b74,0).
-0.92317504::z(b75,0).
-0.92317522::z(b76,0).
-0.92317522::z(b77,0).
-0.78185087::z(b78,0).
-0.92317533::z(b79,0).
-0.78183150::z(b80,0).
-0.78185087::z(b81,0).
-0.92317653::z(b82,0).
-0.78182912::z(b83,0).
-0.92271078::z(b84,0).
-0.92271084::z(b85,0).
-0.82773584::z(b86,0).
-0.92271078::z(b87,0).
-0.78185087::z(b88,0).
-0.78372598::z(b89,0).
-0.78887254::z(b90,0).
-0.92796183::z(b91,0).
-0.78888607::z(b92,0).
-0.78372920::z(b93,0).
-0.64470893::z(b94,0).
-0.90334570::z(b95,0).
-0.90745956::z(b96,0).
-0.75068671::z(b97,0).
-0.90745652::z(b98,0).
-0.81344461::z(b99,0).
-0.89219052::z(b100,0).
-0.89219177::z(b101,0).
-0.75067800::z(b102,0).
-0.75068200::z(b103,0).
-0.75067967::z(b104,0).
-0.68503052::z(b105,0).
-0.91554523::z(b106,0).
-0.89717174::z(b107,0).
-0.75146610::z(b108,0).
-0.83303970::z(b109,0).
-0.74375081::z(b110,0).
-0.89716238::z(b111,0).
-0.89716238::z(b112,0).
-0.74373382::z(b113,0).
-0.68131012::z(b114,0).
-0.64470893::z(b115,0).
-0.90077013::z(b116,0).
-0.90771180::z(b117,0).
-0.76116252::z(b118,0).
-0.88919419::z(b119,0).
-0.90771145::z(b120,0).
-0.79872918::z(b121,0).
-0.90567750::z(b122,0).
-0.76746279::z(b123,0).
-0.76747674::z(b124,0).
-0.90567750::z(b125,0).
-0.76745248::z(b126,0).
-0.75131863::z(b127,0).
-0.59816074::z(b0,1).
-0.82922018::z(b1,1).
-0.68146956::z(b2,1).
-0.82922059::z(b3,1).
-0.63212460::z(b4,1).
-0.82922161::z(b5,1).
-0.83170754::z(b6,1).
-0.71844864::z(b7,1).
-0.83359647::z(b8,1).
-0.71844864::z(b9,1).
-0.71844864::z(b10,1).
-0.83359647::z(b11,1).
-0.71844864::z(b12,1).
-0.83359981::z(b13,1).
-0.71844447::z(b14,1).
-0.68145877::z(b15,1).
-0.67403984::z(b16,1).
-0.54619348::z(b17,1).
-0.63841188::z(b18,1).
-0.63841188::z(b19,1).
-0.85364932::z(b20,1).
-0.85364896::z(b21,1).
-0.64469600::z(b22,1).
-0.85364819::z(b23,1).
-0.85364491::z(b24,1).
-0.69817942::z(b25,1).
-0.85364950::z(b26,1).
-0.66651452::z(b27,1).
-0.84190023::z(b28,1).
-0.84189969::z(b29,1).
-0.84189969::z(b30,1).
-0.66649705::z(b31,1).
-0.68142605::z(b32,1).
-0.60550028::z(b33,1).
-0.54328007::z(b34,1).
-0.64927751::z(b35,1).
-0.65071905::z(b36,1).
-0.86067224::z(b37,1).
-0.86067247::z(b38,1).
-0.86067176::z(b39,1).
-0.70903146::z(b40,1).
-0.86067224::z(b41,1).
-0.70902359::z(b42,1).
-0.86067021::z(b43,1).
-0.70902359::z(b44,1).
-0.86067021::z(b45,1).
-0.66145384::z(b46,1).
-0.83236253::z(b47,1).
-0.84182537::z(b48,1).
-0.70902103::z(b49,1).
-0.86067021::z(b50,1).
-0.70903146::z(b51,1).
-0.67378032::z(b52,1).
-0.67375672::z(b53,1).
-0.69307464::z(b54,1).
-0.88701320::z(b55,1).
-0.72975504::z(b56,1).
-0.64847517::z(b57,1).
-0.86251795::z(b58,1).
-0.86251777::z(b59,1).
-0.68880540::z(b60,1).
-0.84552878::z(b61,1).
-0.68879277::z(b62,1).
-0.84552878::z(b63,1).
-0.68879122::z(b64,1).
-0.68879277::z(b65,1).
-0.82858151::z(b66,1).
-0.82858151::z(b67,1).
-0.68081963::z(b68,1).
-0.68081963::z(b69,1).
-0.67439568::z(b70,1).
-0.56093991::z(b71,1).
-0.84559357::z(b72,1).
-0.64477938::z(b73,1).
-0.84559262::z(b74,1).
-0.83717781::z(b75,1).
-0.83717775::z(b76,1).
-0.83717775::z(b77,1).
-0.67719275::z(b78,1).
-0.83717763::z(b79,1).
-0.67717749::z(b80,1).
-0.67719275::z(b81,1).
-0.83717722::z(b82,1).
-0.67717558::z(b83,1).
-0.84559309::z(b84,1).
-0.84558922::z(b85,1).
-0.70630443::z(b86,1).
-0.84559178::z(b87,1).
-0.67719275::z(b88,1).
-0.66850513::z(b89,1).
-0.66967940::z(b90,1).
-0.81776905::z(b91,1).
-0.66969031::z(b92,1).
-0.66850758::z(b93,1).
-0.60597581::z(b94,1).
-0.85910755::z(b95,1).
-0.84968233::z(b96,1).
-0.69218975::z(b97,1).
-0.84967953::z(b98,1).
-0.72811025::z(b99,1).
-0.84517187::z(b100,1).
-0.84517330::z(b101,1).
-0.69218278::z(b102,1).
-0.69218594::z(b103,1).
-0.69218409::z(b104,1).
-0.62196505::z(b105,1).
-0.85246450::z(b106,1).
-0.83061510::z(b107,1).
-0.67701674::z(b108,1).
-0.80117702::z(b109,1).
-0.67859310::z(b110,1).
-0.83060503::z(b111,1).
-0.83060503::z(b112,1).
-0.67857897::z(b113,1).
-0.61847514::z(b114,1).
-0.60597581::z(b115,1).
-0.85629547::z(b116,1).
-0.84991419::z(b117,1).
-0.69056410::z(b118,1).
-0.84026009::z(b119,1).
-0.84991378::z(b120,1).
-0.71578771::z(b121,1).
-0.86421615::z(b122,1).
-0.70074272::z(b123,1).
-0.70075208::z(b124,1).
-0.86421615::z(b125,1).
-0.70073563::z(b126,1).
-0.69257993::z(b127,1).
-0.88130534::z(b0,2).
-0.95868194::z(b1,2).
-0.83044505::z(b2,2).
-0.95868182::z(b3,2).
-0.87445307::z(b4,2).
-0.95868152::z(b5,2).
-0.96768749::z(b6,2).
-0.86803359::z(b7,2).
-0.95319891::z(b8,2).
-0.86803359::z(b9,2).
-0.86803359::z(b10,2).
-0.95319891::z(b11,2).
-0.86803359::z(b12,2).
-0.95319861::z(b13,2).
-0.86802810::z(b14,2).
-0.83042997::z(b15,2).
-0.87291425::z(b16,2).
-0.81138438::z(b17,2).
-0.81971288::z(b18,2).
-0.81971288::z(b19,2).
-0.93852174::z(b20,2).
-0.93852210::z(b21,2).
-0.80477792::z(b22,2).
-0.93852252::z(b23,2).
-0.93852460::z(b24,2).
-0.79091388::z(b25,2).
-0.93852168::z(b26,2).
-0.74067056::z(b27,2).
-0.93947428::z(b28,2).
-0.93947268::z(b29,2).
-0.93947256::z(b30,2).
-0.74063116::z(b31,2).
-0.75627220::z(b32,2).
-0.60550028::z(b33,2).
-0.80128711::z(b34,2).
-0.79349893::z(b35,2).
-0.83772510::z(b36,2).
-0.96565330::z(b37,2).
-0.96565330::z(b38,2).
-0.96565342::z(b39,2).
-0.84460145::z(b40,2).
-0.96565342::z(b41,2).
-0.84459203::z(b42,2).
-0.96565384::z(b43,2).
-0.84459203::z(b44,2).
-0.96565384::z(b45,2).
-0.84548116::z(b46,2).
-0.92608750::z(b47,2).
-0.95103306::z(b48,2).
-0.84458888::z(b49,2).
-0.96565384::z(b50,2).
-0.84460145::z(b51,2).
-0.79687250::z(b52,2).
-0.79683298::z(b53,2).
-0.77044684::z(b54,2).
-0.95923018::z(b55,2).
-0.83617568::z(b56,2).
-0.84823960::z(b57,2).
-0.97373509::z(b58,2).
-0.97373497::z(b59,2).
-0.88290489::z(b60,2).
-0.98242700::z(b61,2).
-0.88289148::z(b62,2).
-0.98242700::z(b63,2).
-0.88288993::z(b64,2).
-0.88289148::z(b65,2).
-0.95850700::z(b66,2).
-0.95850700::z(b67,2).
-0.82843077::z(b68,2).
-0.82843077::z(b69,2).
-0.87204355::z(b70,2).
-0.56093991::z(b71,2).
-0.95243907::z(b72,2).
-0.86649150::z(b73,2).
-0.95243919::z(b74,2).
-0.95402181::z(b75,2).
-0.95402181::z(b76,2).
-0.95402181::z(b77,2).
-0.81440359::z(b78,2).
-0.95402193::z(b79,2).
-0.81438082::z(b80,2).
-0.81440359::z(b81,2).
-0.95402259::z(b82,2).
-0.81437790::z(b83,2).
-0.95243919::z(b84,2).
-0.95243990::z(b85,2).
-0.84724581::z(b86,2).
-0.95243937::z(b87,2).
-0.81440359::z(b88,2).
-0.79298818::z(b89,2).
-0.79517567::z(b90,2).
-0.95018399::z(b91,2).
-0.79519069::z(b92,2).
-0.79299176::z(b93,2).
-0.60597581::z(b94,2).
-0.85910755::z(b95,2).
-0.93533355::z(b96,2).
-0.72382027::z(b97,2).
-0.93532789::z(b98,2).
-0.76850450::z(b99,2).
-0.92267960::z(b100,2).
-0.92268163::z(b101,2).
-0.72380108::z(b102,2).
-0.72380978::z(b103,2).
-0.72380459::z(b104,2).
-0.75507247::z(b105,2).
-0.95968395::z(b106,2).
-0.94988549::z(b107,2).
-0.77823174::z(b108,2).
-0.89745069::z(b109,2).
-0.76530939::z(b110,2).
-0.94987798::z(b111,2).
-0.94987798::z(b112,2).
-0.76528549::z(b113,2).
-0.75132591::z(b114,2).
-0.60597581::z(b115,2).
-0.85629547::z(b116,2).
-0.93572330::z(b117,2).
-0.74617571::z(b118,2).
-0.91661644::z(b119,2).
-0.93572241::z(b120,2).
-0.75094128::z(b121,2).
-0.91868830::z(b122,2).
-0.70303452::z(b123,2).
-0.70305866::z(b124,2).
-0.91868830::z(b125,2).
-0.70301646::z(b126,2).
-0.72556329::z(b127,2).
-0.71395361::z(b0,3).
-0.85321927::z(b1,3).
-0.69590598::z(b2,3).
-0.85321963::z(b3,3).
-0.70964289::z(b4,3).
-0.85322052::z(b5,3).
-0.86301559::z(b6,3).
-0.72427922::z(b7,3).
-0.85305774::z(b8,3).
-0.72427922::z(b9,3).
-0.72427922::z(b10,3).
-0.85305774::z(b11,3).
-0.72427922::z(b12,3).
-0.85305840::z(b13,3).
-0.72427249::z(b14,3).
-0.69589311::z(b15,3).
-0.70862204::z(b16,3).
-0.64791316::z(b17,3).
-0.67522275::z(b18,3).
-0.67522275::z(b19,3).
-0.85254896::z(b20,3).
-0.85254914::z(b21,3).
-0.66912729::z(b22,3).
-0.85254914::z(b23,3).
-0.85254979::z(b24,3).
-0.68616056::z(b25,3).
-0.85254896::z(b26,3).
-0.66036779::z(b27,3).
-0.84563136::z(b28,3).
-0.84562922::z(b29,3).
-0.84562916::z(b30,3).
-0.66034555::z(b31,3).
-0.67561072::z(b32,3).
-0.57858288::z(b33,3).
-0.64117992::z(b34,3).
-0.66154885::z(b35,3).
-0.68536729::z(b36,3).
-0.88056070::z(b37,3).
-0.88056082::z(b38,3).
-0.88056070::z(b39,3).
-0.71445739::z(b40,3).
-0.88056082::z(b41,3).
-0.71444821::z(b42,3).
-0.88056052::z(b43,3).
-0.71444821::z(b44,3).
-0.88056052::z(b45,3).
-0.70186120::z(b46,3).
-0.84711605::z(b47,3).
-0.85631692::z(b48,3).
-0.71444517::z(b49,3).
-0.88056052::z(b50,3).
-0.71445739::z(b51,3).
-0.68422419::z(b52,3).
-0.68419665::z(b53,3).
-0.67113990::z(b54,3).
-0.87243217::z(b55,3).
-0.70610100::z(b56,3).
-0.68034905::z(b57,3).
-0.88764656::z(b58,3).
-0.88764638::z(b59,3).
-0.71659154::z(b60,3).
-0.89355636::z(b61,3).
-0.71657646::z(b62,3).
-0.89355636::z(b63,3).
-0.71657461::z(b64,3).
-0.71657646::z(b65,3).
-0.85237086::z(b66,3).
-0.85237086::z(b67,3).
-0.69450080::z(b68,3).
-0.69450080::z(b69,3).
-0.70792055::z(b70,3).
-0.54178274::z(b71,3).
-0.85988444::z(b72,3).
-0.70372361::z(b73,3).
-0.85988426::z(b74,3).
-0.85573906::z(b75,3).
-0.85573924::z(b76,3).
-0.85573924::z(b77,3).
-0.69063401::z(b78,3).
-0.85573924::z(b79,3).
-0.69061601::z(b80,3).
-0.69063401::z(b81,3).
-0.85574025::z(b82,3).
-0.69061381::z(b83,3).
-0.85988438::z(b84,3).
-0.85988384::z(b85,3).
-0.71269643::z(b86,3).
-0.85988420::z(b87,3).
-0.69063401::z(b88,3).
-0.68769485::z(b89,3).
-0.68837631::z(b90,3).
-0.86367291::z(b91,3).
-0.68838930::z(b92,3).
-0.68769795::z(b93,3).
-0.57935798::z(b94,3).
-0.82100707::z(b95,3).
-0.83797473::z(b96,3).
-0.65951693::z(b97,3).
-0.83797014::z(b98,3).
-0.68710577::z(b99,3).
-0.83286625::z(b100,3).
-0.83286822::z(b101,3).
-0.65950751::z(b102,3).
-0.65951180::z(b103,3).
-0.65950924::z(b104,3).
-0.62196505::z(b105,3).
-0.85246450::z(b106,3).
-0.83292031::z(b107,3).
-0.66650373::z(b108,3).
-0.77244741::z(b109,3).
-0.66014755::z(b110,3).
-0.83290952::z(b111,3).
-0.83290952::z(b112,3).
-0.66013205::z(b113,3).
-0.61847514::z(b114,3).
-0.57935798::z(b115,3).
-0.81820297::z(b116,3).
-0.83830017::z(b117,3).
-0.66868019::z(b118,3).
-0.81841832::z(b119,3).
-0.83829939::z(b120,3).
-0.67513734::z(b121,3).
-0.83719754::z(b122,3).
-0.64770561::z(b123,3).
-0.64771825::z(b124,3).
-0.83719754::z(b125,3).
-0.64769626::z(b126,3).
-0.66015589::z(b127,3).
-0.77712727::z(b0,4).
-0.91208589::z(b1,4).
-0.76733971::z(b2,4).
-0.91208607::z(b3,4).
-0.77840406::z(b4,4).
-0.91208678::z(b5,4).
-0.92102307::z(b6,4).
-0.83100891::z(b7,4).
-0.90094101::z(b8,4).
-0.83100891::z(b9,4).
-0.83100891::z(b10,4).
-0.90094101::z(b11,4).
-0.83100891::z(b12,4).
-0.90094125::z(b13,4).
-0.83100367::z(b14,4).
-0.76732564::z(b15,4).
-0.78561080::z(b16,4).
-0.70108992::z(b17,4).
-0.81321555::z(b18,4).
-0.81321555::z(b19,4).
-0.90248924::z(b20,4).
-0.90248948::z(b21,4).
-0.81963837::z(b22,4).
-0.90248954::z(b23,4).
-0.90249044::z(b24,4).
-0.78454328::z(b25,4).
-0.90248924::z(b26,4).
-0.71980911::z(b27,4).
-0.90357608::z(b28,4).
-0.90357423::z(b29,4).
-0.90357417::z(b30,4).
-0.71978217::z(b31,4).
-0.73701888::z(b32,4).
-0.61873335::z(b33,4).
-0.69275331::z(b34,4).
-0.83536881::z(b35,4).
-0.83253717::z(b36,4).
-0.93610382::z(b37,4).
-0.93610394::z(b38,4).
-0.93610394::z(b39,4).
-0.80716830::z(b40,4).
-0.93610394::z(b41,4).
-0.80715913::z(b42,4).
-0.93610406::z(b43,4).
-0.80715913::z(b44,4).
-0.93610406::z(b45,4).
-0.88012058::z(b46,4).
-0.89905214::z(b47,4).
-0.91269630::z(b48,4).
-0.80715621::z(b49,4).
-0.93610406::z(b50,4).
-0.80716830::z(b51,4).
-0.74995285::z(b52,4).
-0.74992108::z(b53,4).
-0.73909324::z(b54,4).
-0.93929046::z(b55,4).
-0.81678116::z(b56,4).
-0.84061331::z(b57,4).
-0.94463933::z(b58,4).
-0.94463921::z(b59,4).
-0.81674230::z(b60,4).
-0.95049715::z(b61,4).
-0.81672734::z(b62,4).
-0.95049715::z(b63,4).
-0.81672555::z(b64,4).
-0.81672734::z(b65,4).
-0.91150254::z(b66,4).
-0.91150254::z(b67,4).
-0.76578093::z(b68,4).
-0.76578093::z(b69,4).
-0.78497469::z(b70,4).
-0.57045436::z(b71,4).
-0.90945554::z(b72,4).
-0.82858527::z(b73,4).
-0.90945554::z(b74,4).
-0.91274571::z(b75,4).
-0.91274583::z(b76,4).
-0.91274583::z(b77,4).
-0.75905925::z(b78,4).
-0.91274583::z(b79,4).
-0.75903934::z(b80,4).
-0.75905925::z(b81,4).
-0.91274661::z(b82,4).
-0.75903672::z(b83,4).
-0.90945554::z(b84,4).
-0.90945548::z(b85,4).
-0.81350493::z(b86,4).
-0.90945548::z(b87,4).
-0.75905925::z(b88,4).
-0.75034904::z(b89,4).
-0.75694293::z(b90,4).
-0.90399694::z(b91,4).
-0.75695646::z(b92,4).
-0.75035226::z(b93,4).
-0.61906278::z(b94,4).
-0.87547415::z(b95,4).
-0.89972091::z(b96,4).
-0.72172695::z(b97,4).
-0.89971656::z(b98,4).
-0.79406559::z(b99,4).
-0.87735164::z(b100,4).
-0.87735325::z(b101,4).
-0.72171575::z(b102,4).
-0.72172087::z(b103,4).
-0.72171783::z(b104,4).
-0.68503052::z(b105,4).
-0.91554523::z(b106,4).
-0.89868164::z(b107,4).
-0.73437947::z(b108,4).
-0.84323502::z(b109,4).
-0.72754335::z(b110,4).
-0.89867193::z(b111,4).
-0.89867193::z(b112,4).
-0.72752482::z(b113,4).
-0.68131012::z(b114,4).
-0.61906278::z(b115,4).
-0.87271428::z(b116,4).
-0.90004438::z(b117,4).
-0.73219329::z(b118,4).
-0.88236827::z(b119,4).
-0.90004361::z(b120,4).
-0.77823663::z(b121,4).
-0.89276457::z(b122,4).
-0.74787331::z(b123,4).
-0.74788886::z(b124,4).
-0.89276457::z(b125,4).
-0.74786168::z(b126,4).
-0.72260857::z(b127,4).
+0.81093448::z(b0,0).
+0.91739696::z(b1,0).
+0.92871046::z(b2,0).
+0.93930238::z(b3,0).
+0.80699641::z(b4,0).
+0.92668486::z(b5,0).
+0.91639805::z(b6,0).
+0.93213665::z(b7,0).
+0.80358535::z(b8,0).
+0.83727056::z(b9,0).
+0.92036533::z(b10,0).
+0.92036533::z(b11,0).
+0.91601342::z(b12,0).
+0.90195447::z(b13,0).
+0.84595299::z(b14,0).
+0.93114263::z(b15,0).
+0.93804312::z(b16,0).
+0.93514848::z(b17,0).
+0.92226875::z(b18,0).
+0.92341059::z(b19,0).
+0.83648503::z(b20,0).
+0.92723286::z(b21,0).
+0.91028100::z(b22,0).
+0.92499864::z(b23,0).
+0.92670798::z(b24,0).
+0.88286322::z(b25,0).
+0.90650266::z(b26,0).
+0.95767975::z(b27,0).
+0.94863158::z(b28,0).
+0.95159417::z(b29,0).
+0.94479018::z(b30,0).
+0.94038212::z(b31,0).
+0.87294936::z(b32,0).
+0.93899965::z(b33,0).
+0.87295413::z(b34,0).
+0.92002726::z(b35,0).
+0.77831167::z(b36,0).
+0.77473497::z(b37,0).
+0.78259146::z(b38,0).
+0.81791759::z(b39,0).
+0.93899703::z(b40,0).
+0.90642595::z(b41,0).
+0.94489950::z(b42,0).
+0.95457864::z(b43,0).
+0.95474637::z(b44,0).
+0.79317158::z(b45,0).
+0.82138228::z(b46,0).
+0.82015878::z(b47,0).
+0.81961924::z(b48,0).
+0.93843389::z(b49,0).
+0.81914306::z(b50,0).
+0.93217868::z(b51,0).
+0.83439082::z(b52,0).
+0.93217462::z(b53,0).
+0.89297140::z(b54,0).
+0.91900229::z(b55,0).
+0.91891348::z(b56,0).
+0.93066752::z(b57,0).
+0.92727602::z(b58,0).
+0.92835557::z(b59,0).
+0.92960215::z(b60,0).
+0.78105718::z(b61,0).
+0.78967750::z(b62,0).
+0.93227434::z(b63,0).
+0.91909605::z(b64,0).
+0.93121809::z(b65,0).
+0.92123991::z(b66,0).
+0.92159504::z(b67,0).
+0.92407066::z(b68,0).
+0.77907920::z(b69,0).
+0.84033096::z(b70,0).
+0.90228444::z(b71,0).
+0.90298057::z(b72,0).
+0.90626097::z(b73,0).
+0.90706444::z(b74,0).
+0.90676486::z(b75,0).
+0.90563506::z(b76,0).
+0.74731916::z(b77,0).
+0.88584161::z(b78,0).
+0.89097905::z(b79,0).
+0.91593552::z(b80,0).
+0.91632301::z(b81,0).
+0.89693987::z(b82,0).
+0.80384815::z(b83,0).
+0.89833736::z(b84,0).
+0.74075139::z(b85,0).
+0.64950633::z(b86,0).
+0.90846032::z(b87,0).
+0.88600904::z(b88,0).
+0.75192559::z(b89,0).
+0.75223309::z(b90,0).
+0.81164640::z(b91,0).
+0.78913027::z(b92,0).
+0.79140961::z(b93,0).
+0.79100293::z(b94,0).
+0.59929836::z(b0,1).
+0.82434553::z(b1,1).
+0.84799927::z(b2,1).
+0.73659062::z(b3,1).
+0.63754934::z(b4,1).
+0.83283192::z(b5,1).
+0.81759530::z(b6,1).
+0.85343003::z(b7,1).
+0.69251871::z(b8,1).
+0.74066979::z(b9,1).
+0.84354621::z(b10,1).
+0.84354621::z(b11,1).
+0.83933425::z(b12,1).
+0.85720193::z(b13,1).
+0.65677339::z(b14,1).
+0.83022010::z(b15,1).
+0.83758569::z(b16,1).
+0.85298687::z(b17,1).
+0.85707903::z(b18,1).
+0.85840577::z(b19,1).
+0.74938262::z(b20,1).
+0.85867471::z(b21,1).
+0.83620578::z(b22,1).
+0.85581756::z(b23,1).
+0.85863507::z(b24,1).
+0.66555405::z(b25,1).
+0.68129796::z(b26,1).
+0.79216057::z(b27,1).
+0.85983378::z(b28,1).
+0.86166519::z(b29,1).
+0.85891122::z(b30,1).
+0.86054128::z(b31,1).
+0.77233589::z(b32,1).
+0.86126524::z(b33,1).
+0.77233994::z(b34,1).
+0.82883769::z(b35,1).
+0.67236578::z(b36,1).
+0.66832709::z(b37,1).
+0.67701870::z(b38,1).
+0.70228565::z(b39,1).
+0.86125994::z(b40,1).
+0.84316075::z(b41,1).
+0.88762373::z(b42,1).
+0.86246961::z(b43,1).
+0.86259645::z(b44,1).
+0.66930580::z(b45,1).
+0.68399316::z(b46,1).
+0.68353593::z(b47,1).
+0.68327945::z(b48,1).
+0.83130538::z(b49,1).
+0.68300515::z(b50,1).
+0.85181731::z(b51,1).
+0.73402810::z(b52,1).
+0.85181051::z(b53,1).
+0.84750789::z(b54,1).
+0.82907623::z(b55,1).
+0.83749980::z(b56,1).
+0.82343698::z(b57,1).
+0.84522021::z(b58,1).
+0.84701836::z(b59,1).
+0.84905618::z(b60,1).
+0.67319220::z(b61,1).
+0.68248379::z(b62,1).
+0.85320592::z(b63,1).
+0.82391399::z(b64,1).
+0.85157722::z(b65,1).
+0.84463662::z(b66,1).
+0.84500366::z(b67,1).
+0.84682798::z(b68,1).
+0.66168725::z(b69,1).
+0.73591238::z(b70,1).
+0.81366444::z(b71,1).
+0.85849994::z(b72,1).
+0.84823114::z(b73,1).
+0.84906596::z(b74,1).
+0.84863484::z(b75,1).
+0.84761345::z(b76,1).
+0.68855512::z(b77,1).
+0.83918673::z(b78,1).
+0.84396499::z(b79,1).
+0.85283607::z(b80,1).
+0.85360980::z(b81,1).
+0.83023721::z(b82,1).
+0.78186560::z(b83,1).
+0.83230722::z(b84,1).
+0.67544621::z(b85,1).
+0.60992557::z(b86,1).
+0.85019857::z(b87,1).
+0.83946234::z(b88,1).
+0.69153368::z(b89,1).
+0.69183004::z(b90,1).
+0.72121060::z(b91,1).
+0.72828662::z(b92,1).
+0.71395123::z(b93,1).
+0.71323156::z(b94,1).
+0.88759798::z(b0,2).
+0.96026081::z(b1,2).
+0.95936501::z(b2,2).
+0.97794902::z(b3,2).
+0.88371044::z(b4,2).
+0.96818328::z(b5,2).
+0.96194822::z(b6,2).
+0.96013564::z(b7,2).
+0.85014063::z(b8,2).
+0.88561916::z(b9,2).
+0.95552856::z(b10,2).
+0.95552856::z(b11,2).
+0.95460927::z(b12,2).
+0.85720193::z(b13,2).
+0.83068997::z(b14,2).
+0.96505672::z(b15,2).
+0.96954060::z(b16,2).
+0.95814395::z(b17,2).
+0.94037622::z(b18,2).
+0.94129097::z(b19,2).
+0.85728079::z(b20,2).
+0.94266784::z(b21,2).
+0.89950186::z(b22,2).
+0.94191253::z(b23,2).
+0.94298822::z(b24,2).
+0.94476426::z(b25,2).
+0.88435203::z(b26,2).
+0.95828575::z(b27,2).
+0.96811599::z(b28,2).
+0.97097689::z(b29,2).
+0.96399200::z(b30,2).
+0.95827097::z(b31,2).
+0.89732558::z(b32,2).
+0.95588523::z(b33,2).
+0.89733011::z(b34,2).
+0.92388910::z(b35,2).
+0.80368036::z(b36,2).
+0.79645771::z(b37,2).
+0.81119102::z(b38,2).
+0.84222126::z(b39,2).
+0.95588350::z(b40,2).
+0.95050764::z(b41,2).
+0.96027005::z(b42,2).
+0.97586173::z(b43,2).
+0.97600096::z(b44,2).
+0.87337071::z(b45,2).
+0.88313389::z(b46,2).
+0.88288015::z(b47,2).
+0.88278490::z(b48,2).
+0.97119504::z(b49,2).
+0.88283825::z(b50,2).
+0.96047002::z(b51,2).
+0.88083541::z(b52,2).
+0.96046752::z(b53,2).
+0.84750789::z(b54,2).
+0.95344287::z(b55,2).
+0.95211732::z(b56,2).
+0.96979475::z(b57,2).
+0.95385170::z(b58,2).
+0.95421773::z(b59,2).
+0.95466816::z(b60,2).
+0.81436265::z(b61,2).
+0.82731938::z(b62,2).
+0.95534128::z(b63,2).
+0.92558587::z(b64,2).
+0.95526749::z(b65,2).
+0.95117939::z(b66,2).
+0.95131391::z(b67,2).
+0.95212620::z(b68,2).
+0.79020458::z(b69,2).
+0.85669714::z(b70,2).
+0.91837800::z(b71,2).
+0.85849994::z(b72,2).
+0.93385899::z(b73,2).
+0.93497252::z(b74,2).
+0.93483496::z(b75,2).
+0.93287063::z(b76,2).
+0.72047549::z(b77,2).
+0.91796607::z(b78,2).
+0.91745675::z(b79,2).
+0.95998025::z(b80,2).
+0.96011925::z(b81,2).
+0.94975138::z(b82,2).
+0.87078869::z(b83,2).
+0.94926655::z(b84,2).
+0.76263809::z(b85,2).
+0.60992557::z(b86,2).
+0.93744057::z(b87,2).
+0.91410977::z(b88,2).
+0.73266768::z(b89,2).
+0.73302156::z(b90,2).
+0.76574039::z(b91,2).
+0.79346102::z(b92,2).
+0.72637546::z(b93,2).
+0.72644335::z(b94,2).
+0.71940124::z(b0,3).
+0.85204405::z(b1,3).
+0.86299932::z(b2,3).
+0.87540108::z(b3,3).
+0.71838182::z(b4,3).
+0.86386955::z(b5,3).
+0.85063148::z(b6,3).
+0.86657232::z(b7,3).
+0.70753515::z(b8,3).
+0.75740516::z(b9,3).
+0.85984248::z(b10,3).
+0.85984248::z(b11,3).
+0.85697365::z(b12,3).
+0.81871253::z(b13,3).
+0.68940496::z(b14,3).
+0.86978883::z(b15,3).
+0.87845725::z(b16,3).
+0.87150258::z(b17,3).
+0.85499227::z(b18,3).
+0.85644096::z(b19,3).
+0.74793768::z(b20,3).
+0.85691285::z(b21,3).
+0.83079100::z(b22,3).
+0.85459328::z(b23,3).
+0.85676187::z(b24,3).
+0.80300856::z(b25,3).
+0.73181897::z(b26,3).
+0.84791654::z(b27,3).
+0.88361835::z(b28,3).
+0.88824350::z(b29,3).
+0.87782371::z(b30,3).
+0.87121212::z(b31,3).
+0.78101772::z(b32,3).
+0.86865884::z(b33,3).
+0.78102249::z(b34,3).
+0.84371543::z(b35,3).
+0.68561816::z(b36,3).
+0.68198204::z(b37,3).
+0.68980920::z(b38,3).
+0.71030933::z(b39,3).
+0.86865497::z(b40,3).
+0.84112805::z(b41,3).
+0.87310904::z(b42,3).
+0.89086354::z(b43,3).
+0.89114559::z(b44,3).
+0.70783013::z(b45,3).
+0.71524245::z(b46,3).
+0.71506768::z(b47,3).
+0.71498626::z(b48,3).
+0.86676341::z(b49,3).
+0.71502656::z(b50,3).
+0.86652279::z(b51,3).
+0.75051862::z(b52,3).
+0.86651742::z(b53,3).
+0.80912584::z(b54,3).
+0.85117215::z(b55,3).
+0.85695070::z(b56,3).
+0.87317282::z(b57,3).
+0.85949308::z(b58,3).
+0.86068714::z(b59,3).
+0.86207837::z(b60,3).
+0.68916953::z(b61,3).
+0.69737202::z(b62,3).
+0.86490721::z(b63,3).
+0.84305322::z(b64,3).
+0.86387497::z(b65,3).
+0.85874540::z(b66,3).
+0.85904455::z(b67,3).
+0.86075485::z(b68,3).
+0.68281394::z(b69,3).
+0.75965518::z(b70,3).
+0.83686602::z(b71,3).
+0.82018751::z(b72,3).
+0.83617491::z(b73,3).
+0.83726269::z(b74,3).
+0.83686590::z(b75,3).
+0.83529973::z(b76,3).
+0.65584785::z(b77,3).
+0.82706892::z(b78,3).
+0.82960135::z(b79,3).
+0.85283607::z(b80,3).
+0.85360980::z(b81,3).
+0.83252513::z(b82,3).
+0.74723572::z(b83,3).
+0.83351117::z(b84,3).
+0.65707642::z(b85,3).
+0.58267212::z(b86,3).
+0.83906394::z(b87,3).
+0.81506598::z(b88,3).
+0.66055143::z(b89,3).
+0.66085190::z(b90,3).
+0.68000066::z(b91,3).
+0.69759035::z(b92,3).
+0.65768772::z(b93,3).
+0.65721357::z(b94,3).
+0.78278089::z(b0,4).
+0.91154009::z(b1,4).
+0.91992545::z(b2,4).
+0.92244309::z(b3,4).
+0.78771216::z(b4,4).
+0.92184693::z(b5,4).
+0.91100574::z(b6,4).
+0.92278427::z(b7,4).
+0.78869504::z(b8,4).
+0.82197642::z(b9,4).
+0.90829182::z(b10,4).
+0.90829182::z(b11,4).
+0.90419823::z(b12,4).
+0.87375093::z(b13,4).
+0.83570367::z(b14,4).
+0.91827506::z(b15,4).
+0.92543435::z(b16,4).
+0.92063814::z(b17,4).
+0.90711367::z(b18,4).
+0.90829468::z(b19,4).
+0.81651276::z(b20,4).
+0.91331834::z(b21,4).
+0.88467169::z(b22,4).
+0.91141093::z(b23,4).
+0.91321474::z(b24,4).
+0.85995936::z(b25,4).
+0.91141212::z(b26,4).
+0.95271218::z(b27,4).
+0.93746191::z(b28,4).
+0.94058096::z(b29,4).
+0.93347573::z(b30,4).
+0.92908466::z(b31,4).
+0.85720623::z(b32,4).
+0.92778194::z(b33,4).
+0.85721105::z(b34,4).
+0.89637583::z(b35,4).
+0.75260878::z(b36,4).
+0.74761367::z(b37,4).
+0.75818008::z(b38,4).
+0.80028844::z(b39,4).
+0.92777908::z(b40,4).
+0.90512097::z(b41,4).
+0.94052726::z(b42,4).
+0.94701332::z(b43,4).
+0.94717896::z(b44,4).
+0.78461605::z(b45,4).
+0.81789714::z(b46,4).
+0.81644261::z(b47,4).
+0.81578964::z(b48,4).
+0.93493676::z(b49,4).
+0.81515896::z(b50,4).
+0.92269677::z(b51,4).
+0.82008338::z(b52,4).
+0.92269248::z(b53,4).
+0.86419874::z(b54,4).
+0.90916133::z(b55,4).
+0.90493715::z(b56,4).
+0.91835237::z(b57,4).
+0.91590977::z(b58,4).
+0.91689998::z(b59,4).
+0.91805094::z(b60,4).
+0.75765312::z(b61,4).
+0.76820880::z(b62,4).
+0.92033339::z(b63,4).
+0.89558923::z(b64,4).
+0.91952914::z(b65,4).
+0.90708923::z(b66,4).
+0.90743798::z(b67,4).
+0.90989107::z(b68,4).
+0.74561501::z(b69,4).
+0.80784023::z(b70,4).
+0.87251353::z(b71,4).
+0.87495732::z(b72,4).
+0.89826167::z(b73,4).
+0.89925849::z(b74,4).
+0.89897770::z(b75,4).
+0.89744264::z(b76,4).
+0.71825790::z(b77,4).
+0.87026483::z(b78,4).
+0.87472457::z(b79,4).
+0.91593552::z(b80,4).
+0.91632301::z(b81,4).
+0.89843881::z(b82,4).
+0.81677216::z(b83,4).
+0.89912474::z(b84,4).
+0.72457063::z(b85,4).
+0.62331033::z(b86,4).
+0.90115273::z(b87,4).
+0.87989140::z(b88,4).
+0.72459328::z(b89,4).
+0.72491246::z(b90,4).
+0.79462636::z(b91,4).
+0.77299720::z(b92,4).
+0.77660328::z(b93,4).
+0.77640909::z(b94,4).
 
 not_z(b0,X) :- \+ z(b0,X).
 not_z(b1,X) :- \+ z(b1,X).
@@ -986,90 +755,41 @@ not_z(b91,X) :- \+ z(b91,X).
 not_z(b92,X) :- \+ z(b92,X).
 not_z(b93,X) :- \+ z(b93,X).
 not_z(b94,X) :- \+ z(b94,X).
-not_z(b95,X) :- \+ z(b95,X).
-not_z(b96,X) :- \+ z(b96,X).
-not_z(b97,X) :- \+ z(b97,X).
-not_z(b98,X) :- \+ z(b98,X).
-not_z(b99,X) :- \+ z(b99,X).
-not_z(b100,X) :- \+ z(b100,X).
-not_z(b101,X) :- \+ z(b101,X).
-not_z(b102,X) :- \+ z(b102,X).
-not_z(b103,X) :- \+ z(b103,X).
-not_z(b104,X) :- \+ z(b104,X).
-not_z(b105,X) :- \+ z(b105,X).
-not_z(b106,X) :- \+ z(b106,X).
-not_z(b107,X) :- \+ z(b107,X).
-not_z(b108,X) :- \+ z(b108,X).
-not_z(b109,X) :- \+ z(b109,X).
-not_z(b110,X) :- \+ z(b110,X).
-not_z(b111,X) :- \+ z(b111,X).
-not_z(b112,X) :- \+ z(b112,X).
-not_z(b113,X) :- \+ z(b113,X).
-not_z(b114,X) :- \+ z(b114,X).
-not_z(b115,X) :- \+ z(b115,X).
-not_z(b116,X) :- \+ z(b116,X).
-not_z(b117,X) :- \+ z(b117,X).
-not_z(b118,X) :- \+ z(b118,X).
-not_z(b119,X) :- \+ z(b119,X).
-not_z(b120,X) :- \+ z(b120,X).
-not_z(b121,X) :- \+ z(b121,X).
-not_z(b122,X) :- \+ z(b122,X).
-not_z(b123,X) :- \+ z(b123,X).
-not_z(b124,X) :- \+ z(b124,X).
-not_z(b125,X) :- \+ z(b125,X).
-not_z(b126,X) :- \+ z(b126,X).
-not_z(b127,X) :- \+ z(b127,X).
 
 0.95000000::le(b0,f0,t0_0,X) :- z(b0,X).
 0.05000000::le(b0,f0,t0_0,X) :- not_z(b0,X).
-0.95000000::le(b0,f3,t0_1,X) :- z(b0,X).
-0.05000000::le(b0,f3,t0_1,X) :- not_z(b0,X).
 0.95000000::le(b1,f0,t0_0,X) :- z(b1,X).
 0.05000000::le(b1,f0,t0_0,X) :- not_z(b1,X).
 0.95000000::gt(b1,f3,t0_1,X) :- z(b1,X).
 0.05000000::gt(b1,f3,t0_1,X) :- not_z(b1,X).
-0.95000000::le(b1,f2,t0_4,X) :- z(b1,X).
-0.05000000::le(b1,f2,t0_4,X) :- not_z(b1,X).
 0.95000000::le(b2,f0,t0_0,X) :- z(b2,X).
 0.05000000::le(b2,f0,t0_0,X) :- not_z(b2,X).
 0.95000000::gt(b2,f3,t0_1,X) :- z(b2,X).
 0.05000000::gt(b2,f3,t0_1,X) :- not_z(b2,X).
 0.95000000::gt(b2,f2,t0_4,X) :- z(b2,X).
 0.05000000::gt(b2,f2,t0_4,X) :- not_z(b2,X).
-0.95000000::le(b2,f0,t0_22,X) :- z(b2,X).
-0.05000000::le(b2,f0,t0_22,X) :- not_z(b2,X).
-0.95000000::le(b3,f0,t0_0,X) :- z(b3,X).
-0.05000000::le(b3,f0,t0_0,X) :- not_z(b3,X).
-0.95000000::gt(b3,f3,t0_1,X) :- z(b3,X).
-0.05000000::gt(b3,f3,t0_1,X) :- not_z(b3,X).
-0.95000000::gt(b3,f2,t0_4,X) :- z(b3,X).
-0.05000000::gt(b3,f2,t0_4,X) :- not_z(b3,X).
-0.95000000::gt(b3,f0,t0_22,X) :- z(b3,X).
-0.05000000::gt(b3,f0,t0_22,X) :- not_z(b3,X).
+0.95000000::gt(b3,f0,t0_0,X) :- z(b3,X).
+0.05000000::gt(b3,f0,t0_0,X) :- not_z(b3,X).
 0.95000000::gt(b4,f0,t0_0,X) :- z(b4,X).
 0.05000000::gt(b4,f0,t0_0,X) :- not_z(b4,X).
 0.95000000::le(b4,f0,t0_2,X) :- z(b4,X).
 0.05000000::le(b4,f0,t0_2,X) :- not_z(b4,X).
 0.95000000::le(b4,f2,t0_5,X) :- z(b4,X).
 0.05000000::le(b4,f2,t0_5,X) :- not_z(b4,X).
-0.95000000::le(b4,f3,t0_7,X) :- z(b4,X).
-0.05000000::le(b4,f3,t0_7,X) :- not_z(b4,X).
 0.95000000::gt(b5,f0,t0_0,X) :- z(b5,X).
 0.05000000::gt(b5,f0,t0_0,X) :- not_z(b5,X).
 0.95000000::le(b5,f0,t0_2,X) :- z(b5,X).
 0.05000000::le(b5,f0,t0_2,X) :- not_z(b5,X).
-0.95000000::le(b5,f2,t0_5,X) :- z(b5,X).
-0.05000000::le(b5,f2,t0_5,X) :- not_z(b5,X).
-0.95000000::gt(b5,f3,t0_7,X) :- z(b5,X).
-0.05000000::gt(b5,f3,t0_7,X) :- not_z(b5,X).
+0.95000000::gt(b5,f2,t0_5,X) :- z(b5,X).
+0.05000000::gt(b5,f2,t0_5,X) :- not_z(b5,X).
 0.95000000::gt(b6,f0,t0_0,X) :- z(b6,X).
 0.05000000::gt(b6,f0,t0_0,X) :- not_z(b6,X).
 0.95000000::le(b6,f0,t0_2,X) :- z(b6,X).
 0.05000000::le(b6,f0,t0_2,X) :- not_z(b6,X).
 0.95000000::gt(b6,f2,t0_5,X) :- z(b6,X).
 0.05000000::gt(b6,f2,t0_5,X) :- not_z(b6,X).
-0.95000000::le(b6,f2,t0_8,X) :- z(b6,X).
-0.05000000::le(b6,f2,t0_8,X) :- not_z(b6,X).
+0.95000000::gt(b6,f2,t0_8,X) :- z(b6,X).
+0.05000000::gt(b6,f2,t0_8,X) :- not_z(b6,X).
 0.95000000::gt(b7,f0,t0_0,X) :- z(b7,X).
 0.05000000::gt(b7,f0,t0_0,X) :- not_z(b7,X).
 0.95000000::le(b7,f0,t0_2,X) :- z(b7,X).
@@ -1080,16 +800,6 @@ not_z(b127,X) :- \+ z(b127,X).
 0.05000000::gt(b7,f2,t0_8,X) :- not_z(b7,X).
 0.95000000::le(b7,f2,t0_10,X) :- z(b7,X).
 0.05000000::le(b7,f2,t0_10,X) :- not_z(b7,X).
-0.95000000::le(b7,f3,t0_11,X) :- z(b7,X).
-0.05000000::le(b7,f3,t0_11,X) :- not_z(b7,X).
-0.95000000::le(b7,f1,t0_15,X) :- z(b7,X).
-0.05000000::le(b7,f1,t0_15,X) :- not_z(b7,X).
-0.95000000::le(b7,f0,t0_17,X) :- z(b7,X).
-0.05000000::le(b7,f0,t0_17,X) :- not_z(b7,X).
-0.95000000::le(b7,f3,t0_25,X) :- z(b7,X).
-0.05000000::le(b7,f3,t0_25,X) :- not_z(b7,X).
-0.95000000::le(b7,f2,t0_29,X) :- z(b7,X).
-0.05000000::le(b7,f2,t0_29,X) :- not_z(b7,X).
 0.95000000::gt(b8,f0,t0_0,X) :- z(b8,X).
 0.05000000::gt(b8,f0,t0_0,X) :- not_z(b8,X).
 0.95000000::le(b8,f0,t0_2,X) :- z(b8,X).
@@ -1106,12 +816,6 @@ not_z(b127,X) :- \+ z(b127,X).
 0.05000000::le(b8,f1,t0_15,X) :- not_z(b8,X).
 0.95000000::le(b8,f0,t0_17,X) :- z(b8,X).
 0.05000000::le(b8,f0,t0_17,X) :- not_z(b8,X).
-0.95000000::le(b8,f3,t0_25,X) :- z(b8,X).
-0.05000000::le(b8,f3,t0_25,X) :- not_z(b8,X).
-0.95000000::gt(b8,f2,t0_29,X) :- z(b8,X).
-0.05000000::gt(b8,f2,t0_29,X) :- not_z(b8,X).
-0.95000000::le(b8,f3,t0_32,X) :- z(b8,X).
-0.05000000::le(b8,f3,t0_32,X) :- not_z(b8,X).
 0.95000000::gt(b9,f0,t0_0,X) :- z(b9,X).
 0.05000000::gt(b9,f0,t0_0,X) :- not_z(b9,X).
 0.95000000::le(b9,f0,t0_2,X) :- z(b9,X).
@@ -1130,10 +834,6 @@ not_z(b127,X) :- \+ z(b127,X).
 0.05000000::le(b9,f0,t0_17,X) :- not_z(b9,X).
 0.95000000::le(b9,f3,t0_25,X) :- z(b9,X).
 0.05000000::le(b9,f3,t0_25,X) :- not_z(b9,X).
-0.95000000::gt(b9,f2,t0_29,X) :- z(b9,X).
-0.05000000::gt(b9,f2,t0_29,X) :- not_z(b9,X).
-0.95000000::gt(b9,f3,t0_32,X) :- z(b9,X).
-0.05000000::gt(b9,f3,t0_32,X) :- not_z(b9,X).
 0.95000000::gt(b10,f0,t0_0,X) :- z(b10,X).
 0.05000000::gt(b10,f0,t0_0,X) :- not_z(b10,X).
 0.95000000::le(b10,f0,t0_2,X) :- z(b10,X).
@@ -1150,8 +850,10 @@ not_z(b127,X) :- \+ z(b127,X).
 0.05000000::le(b10,f1,t0_15,X) :- not_z(b10,X).
 0.95000000::le(b10,f0,t0_17,X) :- z(b10,X).
 0.05000000::le(b10,f0,t0_17,X) :- not_z(b10,X).
-0.95000000::gt(b10,f3,t0_25,X) :- z(b10,X).
-0.05000000::gt(b10,f3,t0_25,X) :- not_z(b10,X).
+0.95000000::le(b10,f3,t0_25,X) :- z(b10,X).
+0.05000000::le(b10,f3,t0_25,X) :- not_z(b10,X).
+0.95000000::gt(b10,f2,t0_29,X) :- z(b10,X).
+0.05000000::gt(b10,f2,t0_29,X) :- not_z(b10,X).
 0.95000000::gt(b11,f0,t0_0,X) :- z(b11,X).
 0.05000000::gt(b11,f0,t0_0,X) :- not_z(b11,X).
 0.95000000::le(b11,f0,t0_2,X) :- z(b11,X).
@@ -1168,8 +870,6 @@ not_z(b127,X) :- \+ z(b127,X).
 0.05000000::le(b11,f1,t0_15,X) :- not_z(b11,X).
 0.95000000::gt(b11,f0,t0_17,X) :- z(b11,X).
 0.05000000::gt(b11,f0,t0_17,X) :- not_z(b11,X).
-0.95000000::le(b11,f3,t0_26,X) :- z(b11,X).
-0.05000000::le(b11,f3,t0_26,X) :- not_z(b11,X).
 0.95000000::gt(b12,f0,t0_0,X) :- z(b12,X).
 0.05000000::gt(b12,f0,t0_0,X) :- not_z(b12,X).
 0.95000000::le(b12,f0,t0_2,X) :- z(b12,X).
@@ -1182,1253 +882,974 @@ not_z(b127,X) :- \+ z(b127,X).
 0.05000000::le(b12,f2,t0_10,X) :- not_z(b12,X).
 0.95000000::le(b12,f3,t0_11,X) :- z(b12,X).
 0.05000000::le(b12,f3,t0_11,X) :- not_z(b12,X).
-0.95000000::le(b12,f1,t0_15,X) :- z(b12,X).
-0.05000000::le(b12,f1,t0_15,X) :- not_z(b12,X).
-0.95000000::gt(b12,f0,t0_17,X) :- z(b12,X).
-0.05000000::gt(b12,f0,t0_17,X) :- not_z(b12,X).
-0.95000000::gt(b12,f3,t0_26,X) :- z(b12,X).
-0.05000000::gt(b12,f3,t0_26,X) :- not_z(b12,X).
-0.95000000::gt(b13,f0,t0_0,X) :- z(b13,X).
-0.05000000::gt(b13,f0,t0_0,X) :- not_z(b13,X).
-0.95000000::le(b13,f0,t0_2,X) :- z(b13,X).
-0.05000000::le(b13,f0,t0_2,X) :- not_z(b13,X).
-0.95000000::gt(b13,f2,t0_5,X) :- z(b13,X).
-0.05000000::gt(b13,f2,t0_5,X) :- not_z(b13,X).
-0.95000000::gt(b13,f2,t0_8,X) :- z(b13,X).
-0.05000000::gt(b13,f2,t0_8,X) :- not_z(b13,X).
-0.95000000::le(b13,f2,t0_10,X) :- z(b13,X).
-0.05000000::le(b13,f2,t0_10,X) :- not_z(b13,X).
-0.95000000::le(b13,f3,t0_11,X) :- z(b13,X).
-0.05000000::le(b13,f3,t0_11,X) :- not_z(b13,X).
-0.95000000::gt(b13,f1,t0_15,X) :- z(b13,X).
-0.05000000::gt(b13,f1,t0_15,X) :- not_z(b13,X).
-0.95000000::le(b13,f2,t0_18,X) :- z(b13,X).
-0.05000000::le(b13,f2,t0_18,X) :- not_z(b13,X).
-0.95000000::gt(b14,f0,t0_0,X) :- z(b14,X).
-0.05000000::gt(b14,f0,t0_0,X) :- not_z(b14,X).
-0.95000000::le(b14,f0,t0_2,X) :- z(b14,X).
-0.05000000::le(b14,f0,t0_2,X) :- not_z(b14,X).
-0.95000000::gt(b14,f2,t0_5,X) :- z(b14,X).
-0.05000000::gt(b14,f2,t0_5,X) :- not_z(b14,X).
-0.95000000::gt(b14,f2,t0_8,X) :- z(b14,X).
-0.05000000::gt(b14,f2,t0_8,X) :- not_z(b14,X).
-0.95000000::le(b14,f2,t0_10,X) :- z(b14,X).
-0.05000000::le(b14,f2,t0_10,X) :- not_z(b14,X).
-0.95000000::le(b14,f3,t0_11,X) :- z(b14,X).
-0.05000000::le(b14,f3,t0_11,X) :- not_z(b14,X).
-0.95000000::gt(b14,f1,t0_15,X) :- z(b14,X).
-0.05000000::gt(b14,f1,t0_15,X) :- not_z(b14,X).
-0.95000000::gt(b14,f2,t0_18,X) :- z(b14,X).
-0.05000000::gt(b14,f2,t0_18,X) :- not_z(b14,X).
-0.95000000::gt(b15,f0,t0_0,X) :- z(b15,X).
-0.05000000::gt(b15,f0,t0_0,X) :- not_z(b15,X).
-0.95000000::le(b15,f0,t0_2,X) :- z(b15,X).
-0.05000000::le(b15,f0,t0_2,X) :- not_z(b15,X).
-0.95000000::gt(b15,f2,t0_5,X) :- z(b15,X).
-0.05000000::gt(b15,f2,t0_5,X) :- not_z(b15,X).
-0.95000000::gt(b15,f2,t0_8,X) :- z(b15,X).
-0.05000000::gt(b15,f2,t0_8,X) :- not_z(b15,X).
-0.95000000::le(b15,f2,t0_10,X) :- z(b15,X).
-0.05000000::le(b15,f2,t0_10,X) :- not_z(b15,X).
-0.95000000::gt(b15,f3,t0_11,X) :- z(b15,X).
-0.05000000::gt(b15,f3,t0_11,X) :- not_z(b15,X).
-0.95000000::gt(b16,f0,t0_0,X) :- z(b16,X).
-0.05000000::gt(b16,f0,t0_0,X) :- not_z(b16,X).
-0.95000000::le(b16,f0,t0_2,X) :- z(b16,X).
-0.05000000::le(b16,f0,t0_2,X) :- not_z(b16,X).
-0.95000000::gt(b16,f2,t0_5,X) :- z(b16,X).
-0.05000000::gt(b16,f2,t0_5,X) :- not_z(b16,X).
-0.95000000::gt(b16,f2,t0_8,X) :- z(b16,X).
-0.05000000::gt(b16,f2,t0_8,X) :- not_z(b16,X).
-0.95000000::gt(b16,f2,t0_10,X) :- z(b16,X).
-0.05000000::gt(b16,f2,t0_10,X) :- not_z(b16,X).
-0.95000000::gt(b17,f0,t0_0,X) :- z(b17,X).
-0.05000000::gt(b17,f0,t0_0,X) :- not_z(b17,X).
-0.95000000::gt(b17,f0,t0_2,X) :- z(b17,X).
-0.05000000::gt(b17,f0,t0_2,X) :- not_z(b17,X).
+0.95000000::gt(b12,f1,t0_15,X) :- z(b12,X).
+0.05000000::gt(b12,f1,t0_15,X) :- not_z(b12,X).
+0.95000000::le(b14,f3,t1_0,X) :- z(b14,X).
+0.05000000::le(b14,f3,t1_0,X) :- not_z(b14,X).
+0.95000000::le(b14,f0,t1_1,X) :- z(b14,X).
+0.05000000::le(b14,f0,t1_1,X) :- not_z(b14,X).
+0.95000000::le(b14,f3,t1_3,X) :- z(b14,X).
+0.05000000::le(b14,f3,t1_3,X) :- not_z(b14,X).
+0.95000000::le(b15,f3,t1_0,X) :- z(b15,X).
+0.05000000::le(b15,f3,t1_0,X) :- not_z(b15,X).
+0.95000000::le(b15,f0,t1_1,X) :- z(b15,X).
+0.05000000::le(b15,f0,t1_1,X) :- not_z(b15,X).
+0.95000000::le(b15,f3,t1_3,X) :- z(b15,X).
+0.05000000::le(b15,f3,t1_3,X) :- not_z(b15,X).
+0.95000000::le(b15,f1,t1_5,X) :- z(b15,X).
+0.05000000::le(b15,f1,t1_5,X) :- not_z(b15,X).
+0.95000000::le(b16,f3,t1_0,X) :- z(b16,X).
+0.05000000::le(b16,f3,t1_0,X) :- not_z(b16,X).
+0.95000000::le(b16,f0,t1_1,X) :- z(b16,X).
+0.05000000::le(b16,f0,t1_1,X) :- not_z(b16,X).
+0.95000000::le(b16,f3,t1_3,X) :- z(b16,X).
+0.05000000::le(b16,f3,t1_3,X) :- not_z(b16,X).
+0.95000000::le(b16,f1,t1_5,X) :- z(b16,X).
+0.05000000::le(b16,f1,t1_5,X) :- not_z(b16,X).
+0.95000000::le(b16,f2,t1_7,X) :- z(b16,X).
+0.05000000::le(b16,f2,t1_7,X) :- not_z(b16,X).
+0.95000000::le(b17,f3,t1_0,X) :- z(b17,X).
+0.05000000::le(b17,f3,t1_0,X) :- not_z(b17,X).
+0.95000000::le(b17,f0,t1_1,X) :- z(b17,X).
+0.05000000::le(b17,f0,t1_1,X) :- not_z(b17,X).
+0.95000000::le(b17,f3,t1_3,X) :- z(b17,X).
+0.05000000::le(b17,f3,t1_3,X) :- not_z(b17,X).
+0.95000000::le(b17,f1,t1_5,X) :- z(b17,X).
+0.05000000::le(b17,f1,t1_5,X) :- not_z(b17,X).
+0.95000000::le(b17,f2,t1_7,X) :- z(b17,X).
+0.05000000::le(b17,f2,t1_7,X) :- not_z(b17,X).
+0.95000000::gt(b17,f0,t1_9,X) :- z(b17,X).
+0.05000000::gt(b17,f0,t1_9,X) :- not_z(b17,X).
 0.95000000::le(b18,f3,t1_0,X) :- z(b18,X).
 0.05000000::le(b18,f3,t1_0,X) :- not_z(b18,X).
 0.95000000::le(b18,f0,t1_1,X) :- z(b18,X).
 0.05000000::le(b18,f0,t1_1,X) :- not_z(b18,X).
-0.95000000::le(b18,f3,t1_3,X) :- z(b18,X).
-0.05000000::le(b18,f3,t1_3,X) :- not_z(b18,X).
-0.95000000::le(b18,f1,t1_5,X) :- z(b18,X).
-0.05000000::le(b18,f1,t1_5,X) :- not_z(b18,X).
-0.95000000::le(b18,f2,t1_7,X) :- z(b18,X).
-0.05000000::le(b18,f2,t1_7,X) :- not_z(b18,X).
-0.95000000::le(b18,f0,t1_9,X) :- z(b18,X).
-0.05000000::le(b18,f0,t1_9,X) :- not_z(b18,X).
+0.95000000::gt(b18,f3,t1_3,X) :- z(b18,X).
+0.05000000::gt(b18,f3,t1_3,X) :- not_z(b18,X).
+0.95000000::le(b18,f2,t1_6,X) :- z(b18,X).
+0.05000000::le(b18,f2,t1_6,X) :- not_z(b18,X).
 0.95000000::le(b19,f3,t1_0,X) :- z(b19,X).
 0.05000000::le(b19,f3,t1_0,X) :- not_z(b19,X).
 0.95000000::le(b19,f0,t1_1,X) :- z(b19,X).
 0.05000000::le(b19,f0,t1_1,X) :- not_z(b19,X).
-0.95000000::le(b19,f3,t1_3,X) :- z(b19,X).
-0.05000000::le(b19,f3,t1_3,X) :- not_z(b19,X).
-0.95000000::le(b19,f1,t1_5,X) :- z(b19,X).
-0.05000000::le(b19,f1,t1_5,X) :- not_z(b19,X).
-0.95000000::le(b19,f2,t1_7,X) :- z(b19,X).
-0.05000000::le(b19,f2,t1_7,X) :- not_z(b19,X).
-0.95000000::gt(b19,f0,t1_9,X) :- z(b19,X).
-0.05000000::gt(b19,f0,t1_9,X) :- not_z(b19,X).
-0.95000000::le(b19,f3,t1_12,X) :- z(b19,X).
-0.05000000::le(b19,f3,t1_12,X) :- not_z(b19,X).
+0.95000000::gt(b19,f3,t1_3,X) :- z(b19,X).
+0.05000000::gt(b19,f3,t1_3,X) :- not_z(b19,X).
+0.95000000::le(b19,f2,t1_6,X) :- z(b19,X).
+0.05000000::le(b19,f2,t1_6,X) :- not_z(b19,X).
+0.95000000::le(b19,f1,t1_21,X) :- z(b19,X).
+0.05000000::le(b19,f1,t1_21,X) :- not_z(b19,X).
 0.95000000::le(b20,f3,t1_0,X) :- z(b20,X).
 0.05000000::le(b20,f3,t1_0,X) :- not_z(b20,X).
 0.95000000::le(b20,f0,t1_1,X) :- z(b20,X).
 0.05000000::le(b20,f0,t1_1,X) :- not_z(b20,X).
-0.95000000::le(b20,f3,t1_3,X) :- z(b20,X).
-0.05000000::le(b20,f3,t1_3,X) :- not_z(b20,X).
-0.95000000::le(b20,f1,t1_5,X) :- z(b20,X).
-0.05000000::le(b20,f1,t1_5,X) :- not_z(b20,X).
-0.95000000::le(b20,f2,t1_7,X) :- z(b20,X).
-0.05000000::le(b20,f2,t1_7,X) :- not_z(b20,X).
-0.95000000::gt(b20,f0,t1_9,X) :- z(b20,X).
-0.05000000::gt(b20,f0,t1_9,X) :- not_z(b20,X).
-0.95000000::gt(b20,f3,t1_12,X) :- z(b20,X).
-0.05000000::gt(b20,f3,t1_12,X) :- not_z(b20,X).
+0.95000000::gt(b20,f3,t1_3,X) :- z(b20,X).
+0.05000000::gt(b20,f3,t1_3,X) :- not_z(b20,X).
+0.95000000::le(b20,f2,t1_6,X) :- z(b20,X).
+0.05000000::le(b20,f2,t1_6,X) :- not_z(b20,X).
+0.95000000::le(b20,f1,t1_21,X) :- z(b20,X).
+0.05000000::le(b20,f1,t1_21,X) :- not_z(b20,X).
+0.95000000::gt(b20,f2,t1_25,X) :- z(b20,X).
+0.05000000::gt(b20,f2,t1_25,X) :- not_z(b20,X).
 0.95000000::le(b21,f3,t1_0,X) :- z(b21,X).
 0.05000000::le(b21,f3,t1_0,X) :- not_z(b21,X).
 0.95000000::le(b21,f0,t1_1,X) :- z(b21,X).
 0.05000000::le(b21,f0,t1_1,X) :- not_z(b21,X).
-0.95000000::le(b21,f3,t1_3,X) :- z(b21,X).
-0.05000000::le(b21,f3,t1_3,X) :- not_z(b21,X).
-0.95000000::le(b21,f1,t1_5,X) :- z(b21,X).
-0.05000000::le(b21,f1,t1_5,X) :- not_z(b21,X).
-0.95000000::gt(b21,f2,t1_7,X) :- z(b21,X).
-0.05000000::gt(b21,f2,t1_7,X) :- not_z(b21,X).
+0.95000000::gt(b21,f3,t1_3,X) :- z(b21,X).
+0.05000000::gt(b21,f3,t1_3,X) :- not_z(b21,X).
+0.95000000::gt(b21,f2,t1_6,X) :- z(b21,X).
+0.05000000::gt(b21,f2,t1_6,X) :- not_z(b21,X).
 0.95000000::le(b22,f3,t1_0,X) :- z(b22,X).
 0.05000000::le(b22,f3,t1_0,X) :- not_z(b22,X).
-0.95000000::le(b22,f0,t1_1,X) :- z(b22,X).
-0.05000000::le(b22,f0,t1_1,X) :- not_z(b22,X).
-0.95000000::le(b22,f3,t1_3,X) :- z(b22,X).
-0.05000000::le(b22,f3,t1_3,X) :- not_z(b22,X).
-0.95000000::gt(b22,f1,t1_5,X) :- z(b22,X).
-0.05000000::gt(b22,f1,t1_5,X) :- not_z(b22,X).
+0.95000000::gt(b22,f0,t1_1,X) :- z(b22,X).
+0.05000000::gt(b22,f0,t1_1,X) :- not_z(b22,X).
 0.95000000::le(b23,f3,t1_0,X) :- z(b23,X).
 0.05000000::le(b23,f3,t1_0,X) :- not_z(b23,X).
-0.95000000::le(b23,f0,t1_1,X) :- z(b23,X).
-0.05000000::le(b23,f0,t1_1,X) :- not_z(b23,X).
-0.95000000::gt(b23,f3,t1_3,X) :- z(b23,X).
-0.05000000::gt(b23,f3,t1_3,X) :- not_z(b23,X).
-0.95000000::le(b23,f2,t1_6,X) :- z(b23,X).
-0.05000000::le(b23,f2,t1_6,X) :- not_z(b23,X).
-0.95000000::le(b23,f1,t1_21,X) :- z(b23,X).
-0.05000000::le(b23,f1,t1_21,X) :- not_z(b23,X).
-0.95000000::le(b23,f2,t1_25,X) :- z(b23,X).
-0.05000000::le(b23,f2,t1_25,X) :- not_z(b23,X).
+0.95000000::gt(b23,f0,t1_1,X) :- z(b23,X).
+0.05000000::gt(b23,f0,t1_1,X) :- not_z(b23,X).
+0.95000000::le(b23,f0,t1_4,X) :- z(b23,X).
+0.05000000::le(b23,f0,t1_4,X) :- not_z(b23,X).
 0.95000000::le(b24,f3,t1_0,X) :- z(b24,X).
 0.05000000::le(b24,f3,t1_0,X) :- not_z(b24,X).
-0.95000000::le(b24,f0,t1_1,X) :- z(b24,X).
-0.05000000::le(b24,f0,t1_1,X) :- not_z(b24,X).
-0.95000000::gt(b24,f3,t1_3,X) :- z(b24,X).
-0.05000000::gt(b24,f3,t1_3,X) :- not_z(b24,X).
-0.95000000::le(b24,f2,t1_6,X) :- z(b24,X).
-0.05000000::le(b24,f2,t1_6,X) :- not_z(b24,X).
-0.95000000::le(b24,f1,t1_21,X) :- z(b24,X).
-0.05000000::le(b24,f1,t1_21,X) :- not_z(b24,X).
-0.95000000::gt(b24,f2,t1_25,X) :- z(b24,X).
-0.05000000::gt(b24,f2,t1_25,X) :- not_z(b24,X).
-0.95000000::le(b24,f3,t1_28,X) :- z(b24,X).
-0.05000000::le(b24,f3,t1_28,X) :- not_z(b24,X).
-0.95000000::le(b25,f3,t1_0,X) :- z(b25,X).
-0.05000000::le(b25,f3,t1_0,X) :- not_z(b25,X).
-0.95000000::le(b25,f0,t1_1,X) :- z(b25,X).
-0.05000000::le(b25,f0,t1_1,X) :- not_z(b25,X).
-0.95000000::gt(b25,f3,t1_3,X) :- z(b25,X).
-0.05000000::gt(b25,f3,t1_3,X) :- not_z(b25,X).
-0.95000000::le(b25,f2,t1_6,X) :- z(b25,X).
-0.05000000::le(b25,f2,t1_6,X) :- not_z(b25,X).
-0.95000000::le(b25,f1,t1_21,X) :- z(b25,X).
-0.05000000::le(b25,f1,t1_21,X) :- not_z(b25,X).
-0.95000000::gt(b25,f2,t1_25,X) :- z(b25,X).
-0.05000000::gt(b25,f2,t1_25,X) :- not_z(b25,X).
-0.95000000::gt(b25,f3,t1_28,X) :- z(b25,X).
-0.05000000::gt(b25,f3,t1_28,X) :- not_z(b25,X).
-0.95000000::le(b26,f3,t1_0,X) :- z(b26,X).
-0.05000000::le(b26,f3,t1_0,X) :- not_z(b26,X).
-0.95000000::le(b26,f0,t1_1,X) :- z(b26,X).
-0.05000000::le(b26,f0,t1_1,X) :- not_z(b26,X).
-0.95000000::gt(b26,f3,t1_3,X) :- z(b26,X).
-0.05000000::gt(b26,f3,t1_3,X) :- not_z(b26,X).
-0.95000000::le(b26,f2,t1_6,X) :- z(b26,X).
-0.05000000::le(b26,f2,t1_6,X) :- not_z(b26,X).
-0.95000000::gt(b26,f1,t1_21,X) :- z(b26,X).
-0.05000000::gt(b26,f1,t1_21,X) :- not_z(b26,X).
-0.95000000::le(b27,f3,t1_0,X) :- z(b27,X).
-0.05000000::le(b27,f3,t1_0,X) :- not_z(b27,X).
-0.95000000::le(b27,f0,t1_1,X) :- z(b27,X).
-0.05000000::le(b27,f0,t1_1,X) :- not_z(b27,X).
-0.95000000::gt(b27,f3,t1_3,X) :- z(b27,X).
-0.05000000::gt(b27,f3,t1_3,X) :- not_z(b27,X).
-0.95000000::gt(b27,f2,t1_6,X) :- z(b27,X).
-0.05000000::gt(b27,f2,t1_6,X) :- not_z(b27,X).
-0.95000000::le(b27,f0,t1_22,X) :- z(b27,X).
-0.05000000::le(b27,f0,t1_22,X) :- not_z(b27,X).
-0.95000000::le(b28,f3,t1_0,X) :- z(b28,X).
-0.05000000::le(b28,f3,t1_0,X) :- not_z(b28,X).
-0.95000000::le(b28,f0,t1_1,X) :- z(b28,X).
-0.05000000::le(b28,f0,t1_1,X) :- not_z(b28,X).
-0.95000000::gt(b28,f3,t1_3,X) :- z(b28,X).
-0.05000000::gt(b28,f3,t1_3,X) :- not_z(b28,X).
-0.95000000::gt(b28,f2,t1_6,X) :- z(b28,X).
-0.05000000::gt(b28,f2,t1_6,X) :- not_z(b28,X).
-0.95000000::gt(b28,f0,t1_22,X) :- z(b28,X).
-0.05000000::gt(b28,f0,t1_22,X) :- not_z(b28,X).
-0.95000000::le(b29,f3,t1_0,X) :- z(b29,X).
-0.05000000::le(b29,f3,t1_0,X) :- not_z(b29,X).
-0.95000000::gt(b29,f0,t1_1,X) :- z(b29,X).
-0.05000000::gt(b29,f0,t1_1,X) :- not_z(b29,X).
-0.95000000::le(b29,f0,t1_4,X) :- z(b29,X).
-0.05000000::le(b29,f0,t1_4,X) :- not_z(b29,X).
-0.95000000::le(b29,f2,t1_15,X) :- z(b29,X).
-0.05000000::le(b29,f2,t1_15,X) :- not_z(b29,X).
-0.95000000::le(b30,f3,t1_0,X) :- z(b30,X).
-0.05000000::le(b30,f3,t1_0,X) :- not_z(b30,X).
-0.95000000::gt(b30,f0,t1_1,X) :- z(b30,X).
-0.05000000::gt(b30,f0,t1_1,X) :- not_z(b30,X).
-0.95000000::le(b30,f0,t1_4,X) :- z(b30,X).
-0.05000000::le(b30,f0,t1_4,X) :- not_z(b30,X).
-0.95000000::gt(b30,f2,t1_15,X) :- z(b30,X).
-0.05000000::gt(b30,f2,t1_15,X) :- not_z(b30,X).
-0.95000000::le(b30,f3,t1_18,X) :- z(b30,X).
-0.05000000::le(b30,f3,t1_18,X) :- not_z(b30,X).
-0.95000000::le(b31,f3,t1_0,X) :- z(b31,X).
-0.05000000::le(b31,f3,t1_0,X) :- not_z(b31,X).
-0.95000000::gt(b31,f0,t1_1,X) :- z(b31,X).
-0.05000000::gt(b31,f0,t1_1,X) :- not_z(b31,X).
-0.95000000::le(b31,f0,t1_4,X) :- z(b31,X).
-0.05000000::le(b31,f0,t1_4,X) :- not_z(b31,X).
-0.95000000::gt(b31,f2,t1_15,X) :- z(b31,X).
-0.05000000::gt(b31,f2,t1_15,X) :- not_z(b31,X).
-0.95000000::gt(b31,f3,t1_18,X) :- z(b31,X).
-0.05000000::gt(b31,f3,t1_18,X) :- not_z(b31,X).
-0.95000000::le(b32,f3,t1_0,X) :- z(b32,X).
-0.05000000::le(b32,f3,t1_0,X) :- not_z(b32,X).
-0.95000000::gt(b32,f0,t1_1,X) :- z(b32,X).
-0.05000000::gt(b32,f0,t1_1,X) :- not_z(b32,X).
-0.95000000::gt(b32,f0,t1_4,X) :- z(b32,X).
-0.05000000::gt(b32,f0,t1_4,X) :- not_z(b32,X).
-0.95000000::gt(b33,f3,t1_0,X) :- z(b33,X).
-0.05000000::gt(b33,f3,t1_0,X) :- not_z(b33,X).
+0.95000000::gt(b24,f0,t1_1,X) :- z(b24,X).
+0.05000000::gt(b24,f0,t1_1,X) :- not_z(b24,X).
+0.95000000::le(b24,f0,t1_4,X) :- z(b24,X).
+0.05000000::le(b24,f0,t1_4,X) :- not_z(b24,X).
+0.95000000::gt(b24,f2,t1_15,X) :- z(b24,X).
+0.05000000::gt(b24,f2,t1_15,X) :- not_z(b24,X).
+0.95000000::le(b25,f0,t2_0,X) :- z(b25,X).
+0.05000000::le(b25,f0,t2_0,X) :- not_z(b25,X).
+0.95000000::le(b26,f0,t2_0,X) :- z(b26,X).
+0.05000000::le(b26,f0,t2_0,X) :- not_z(b26,X).
+0.95000000::gt(b26,f0,t2_1,X) :- z(b26,X).
+0.05000000::gt(b26,f0,t2_1,X) :- not_z(b26,X).
+0.95000000::le(b27,f0,t2_0,X) :- z(b27,X).
+0.05000000::le(b27,f0,t2_0,X) :- not_z(b27,X).
+0.95000000::gt(b27,f0,t2_1,X) :- z(b27,X).
+0.05000000::gt(b27,f0,t2_1,X) :- not_z(b27,X).
+0.95000000::le(b27,f1,t2_6,X) :- z(b27,X).
+0.05000000::le(b27,f1,t2_6,X) :- not_z(b27,X).
+0.95000000::le(b28,f0,t2_0,X) :- z(b28,X).
+0.05000000::le(b28,f0,t2_0,X) :- not_z(b28,X).
+0.95000000::gt(b28,f0,t2_1,X) :- z(b28,X).
+0.05000000::gt(b28,f0,t2_1,X) :- not_z(b28,X).
+0.95000000::le(b28,f1,t2_6,X) :- z(b28,X).
+0.05000000::le(b28,f1,t2_6,X) :- not_z(b28,X).
+0.95000000::gt(b28,f3,t2_7,X) :- z(b28,X).
+0.05000000::gt(b28,f3,t2_7,X) :- not_z(b28,X).
+0.95000000::le(b28,f2,t2_10,X) :- z(b28,X).
+0.05000000::le(b28,f2,t2_10,X) :- not_z(b28,X).
+0.95000000::le(b29,f0,t2_0,X) :- z(b29,X).
+0.05000000::le(b29,f0,t2_0,X) :- not_z(b29,X).
+0.95000000::gt(b29,f0,t2_1,X) :- z(b29,X).
+0.05000000::gt(b29,f0,t2_1,X) :- not_z(b29,X).
+0.95000000::le(b29,f1,t2_6,X) :- z(b29,X).
+0.05000000::le(b29,f1,t2_6,X) :- not_z(b29,X).
+0.95000000::gt(b29,f3,t2_7,X) :- z(b29,X).
+0.05000000::gt(b29,f3,t2_7,X) :- not_z(b29,X).
+0.95000000::le(b29,f2,t2_10,X) :- z(b29,X).
+0.05000000::le(b29,f2,t2_10,X) :- not_z(b29,X).
+0.95000000::le(b29,f3,t2_13,X) :- z(b29,X).
+0.05000000::le(b29,f3,t2_13,X) :- not_z(b29,X).
+0.95000000::le(b30,f0,t2_0,X) :- z(b30,X).
+0.05000000::le(b30,f0,t2_0,X) :- not_z(b30,X).
+0.95000000::gt(b30,f0,t2_1,X) :- z(b30,X).
+0.05000000::gt(b30,f0,t2_1,X) :- not_z(b30,X).
+0.95000000::le(b30,f1,t2_6,X) :- z(b30,X).
+0.05000000::le(b30,f1,t2_6,X) :- not_z(b30,X).
+0.95000000::gt(b30,f3,t2_7,X) :- z(b30,X).
+0.05000000::gt(b30,f3,t2_7,X) :- not_z(b30,X).
+0.95000000::gt(b30,f2,t2_10,X) :- z(b30,X).
+0.05000000::gt(b30,f2,t2_10,X) :- not_z(b30,X).
+0.95000000::le(b30,f2,t2_14,X) :- z(b30,X).
+0.05000000::le(b30,f2,t2_14,X) :- not_z(b30,X).
+0.95000000::le(b31,f0,t2_0,X) :- z(b31,X).
+0.05000000::le(b31,f0,t2_0,X) :- not_z(b31,X).
+0.95000000::gt(b31,f0,t2_1,X) :- z(b31,X).
+0.05000000::gt(b31,f0,t2_1,X) :- not_z(b31,X).
+0.95000000::le(b31,f1,t2_6,X) :- z(b31,X).
+0.05000000::le(b31,f1,t2_6,X) :- not_z(b31,X).
+0.95000000::gt(b31,f3,t2_7,X) :- z(b31,X).
+0.05000000::gt(b31,f3,t2_7,X) :- not_z(b31,X).
+0.95000000::gt(b31,f2,t2_10,X) :- z(b31,X).
+0.05000000::gt(b31,f2,t2_10,X) :- not_z(b31,X).
+0.95000000::le(b31,f2,t2_14,X) :- z(b31,X).
+0.05000000::le(b31,f2,t2_14,X) :- not_z(b31,X).
+0.95000000::le(b31,f0,t2_15,X) :- z(b31,X).
+0.05000000::le(b31,f0,t2_15,X) :- not_z(b31,X).
+0.95000000::le(b32,f0,t2_0,X) :- z(b32,X).
+0.05000000::le(b32,f0,t2_0,X) :- not_z(b32,X).
+0.95000000::gt(b32,f0,t2_1,X) :- z(b32,X).
+0.05000000::gt(b32,f0,t2_1,X) :- not_z(b32,X).
+0.95000000::le(b32,f1,t2_6,X) :- z(b32,X).
+0.05000000::le(b32,f1,t2_6,X) :- not_z(b32,X).
+0.95000000::gt(b32,f3,t2_7,X) :- z(b32,X).
+0.05000000::gt(b32,f3,t2_7,X) :- not_z(b32,X).
+0.95000000::gt(b32,f2,t2_10,X) :- z(b32,X).
+0.05000000::gt(b32,f2,t2_10,X) :- not_z(b32,X).
+0.95000000::gt(b32,f2,t2_14,X) :- z(b32,X).
+0.05000000::gt(b32,f2,t2_14,X) :- not_z(b32,X).
+0.95000000::le(b33,f0,t2_0,X) :- z(b33,X).
+0.05000000::le(b33,f0,t2_0,X) :- not_z(b33,X).
+0.95000000::gt(b33,f0,t2_1,X) :- z(b33,X).
+0.05000000::gt(b33,f0,t2_1,X) :- not_z(b33,X).
+0.95000000::le(b33,f1,t2_6,X) :- z(b33,X).
+0.05000000::le(b33,f1,t2_6,X) :- not_z(b33,X).
+0.95000000::gt(b33,f3,t2_7,X) :- z(b33,X).
+0.05000000::gt(b33,f3,t2_7,X) :- not_z(b33,X).
+0.95000000::gt(b33,f2,t2_10,X) :- z(b33,X).
+0.05000000::gt(b33,f2,t2_10,X) :- not_z(b33,X).
+0.95000000::gt(b33,f2,t2_14,X) :- z(b33,X).
+0.05000000::gt(b33,f2,t2_14,X) :- not_z(b33,X).
+0.95000000::gt(b33,f1,t2_16,X) :- z(b33,X).
+0.05000000::gt(b33,f1,t2_16,X) :- not_z(b33,X).
 0.95000000::le(b34,f0,t2_0,X) :- z(b34,X).
 0.05000000::le(b34,f0,t2_0,X) :- not_z(b34,X).
-0.95000000::le(b34,f0,t2_1,X) :- z(b34,X).
-0.05000000::le(b34,f0,t2_1,X) :- not_z(b34,X).
-0.95000000::le(b35,f0,t2_0,X) :- z(b35,X).
-0.05000000::le(b35,f0,t2_0,X) :- not_z(b35,X).
-0.95000000::gt(b35,f0,t2_1,X) :- z(b35,X).
-0.05000000::gt(b35,f0,t2_1,X) :- not_z(b35,X).
-0.95000000::le(b35,f1,t2_6,X) :- z(b35,X).
-0.05000000::le(b35,f1,t2_6,X) :- not_z(b35,X).
-0.95000000::le(b35,f3,t2_7,X) :- z(b35,X).
-0.05000000::le(b35,f3,t2_7,X) :- not_z(b35,X).
-0.95000000::le(b36,f0,t2_0,X) :- z(b36,X).
-0.05000000::le(b36,f0,t2_0,X) :- not_z(b36,X).
-0.95000000::gt(b36,f0,t2_1,X) :- z(b36,X).
-0.05000000::gt(b36,f0,t2_1,X) :- not_z(b36,X).
-0.95000000::le(b36,f1,t2_6,X) :- z(b36,X).
-0.05000000::le(b36,f1,t2_6,X) :- not_z(b36,X).
-0.95000000::gt(b36,f3,t2_7,X) :- z(b36,X).
-0.05000000::gt(b36,f3,t2_7,X) :- not_z(b36,X).
-0.95000000::le(b36,f2,t2_10,X) :- z(b36,X).
-0.05000000::le(b36,f2,t2_10,X) :- not_z(b36,X).
-0.95000000::le(b36,f3,t2_13,X) :- z(b36,X).
-0.05000000::le(b36,f3,t2_13,X) :- not_z(b36,X).
-0.95000000::le(b36,f2,t2_23,X) :- z(b36,X).
-0.05000000::le(b36,f2,t2_23,X) :- not_z(b36,X).
-0.95000000::le(b37,f0,t2_0,X) :- z(b37,X).
-0.05000000::le(b37,f0,t2_0,X) :- not_z(b37,X).
-0.95000000::gt(b37,f0,t2_1,X) :- z(b37,X).
-0.05000000::gt(b37,f0,t2_1,X) :- not_z(b37,X).
-0.95000000::le(b37,f1,t2_6,X) :- z(b37,X).
-0.05000000::le(b37,f1,t2_6,X) :- not_z(b37,X).
-0.95000000::gt(b37,f3,t2_7,X) :- z(b37,X).
-0.05000000::gt(b37,f3,t2_7,X) :- not_z(b37,X).
-0.95000000::le(b37,f2,t2_10,X) :- z(b37,X).
-0.05000000::le(b37,f2,t2_10,X) :- not_z(b37,X).
-0.95000000::le(b37,f3,t2_13,X) :- z(b37,X).
-0.05000000::le(b37,f3,t2_13,X) :- not_z(b37,X).
-0.95000000::gt(b37,f2,t2_23,X) :- z(b37,X).
-0.05000000::gt(b37,f2,t2_23,X) :- not_z(b37,X).
-0.95000000::le(b38,f0,t2_0,X) :- z(b38,X).
-0.05000000::le(b38,f0,t2_0,X) :- not_z(b38,X).
-0.95000000::gt(b38,f0,t2_1,X) :- z(b38,X).
-0.05000000::gt(b38,f0,t2_1,X) :- not_z(b38,X).
-0.95000000::le(b38,f1,t2_6,X) :- z(b38,X).
-0.05000000::le(b38,f1,t2_6,X) :- not_z(b38,X).
-0.95000000::gt(b38,f3,t2_7,X) :- z(b38,X).
-0.05000000::gt(b38,f3,t2_7,X) :- not_z(b38,X).
-0.95000000::le(b38,f2,t2_10,X) :- z(b38,X).
-0.05000000::le(b38,f2,t2_10,X) :- not_z(b38,X).
-0.95000000::gt(b38,f3,t2_13,X) :- z(b38,X).
-0.05000000::gt(b38,f3,t2_13,X) :- not_z(b38,X).
-0.95000000::le(b39,f0,t2_0,X) :- z(b39,X).
-0.05000000::le(b39,f0,t2_0,X) :- not_z(b39,X).
-0.95000000::gt(b39,f0,t2_1,X) :- z(b39,X).
-0.05000000::gt(b39,f0,t2_1,X) :- not_z(b39,X).
-0.95000000::le(b39,f1,t2_6,X) :- z(b39,X).
-0.05000000::le(b39,f1,t2_6,X) :- not_z(b39,X).
-0.95000000::gt(b39,f3,t2_7,X) :- z(b39,X).
-0.05000000::gt(b39,f3,t2_7,X) :- not_z(b39,X).
-0.95000000::gt(b39,f2,t2_10,X) :- z(b39,X).
-0.05000000::gt(b39,f2,t2_10,X) :- not_z(b39,X).
-0.95000000::le(b39,f2,t2_14,X) :- z(b39,X).
-0.05000000::le(b39,f2,t2_14,X) :- not_z(b39,X).
-0.95000000::le(b39,f0,t2_15,X) :- z(b39,X).
-0.05000000::le(b39,f0,t2_15,X) :- not_z(b39,X).
-0.95000000::le(b39,f3,t2_27,X) :- z(b39,X).
-0.05000000::le(b39,f3,t2_27,X) :- not_z(b39,X).
-0.95000000::le(b40,f0,t2_0,X) :- z(b40,X).
-0.05000000::le(b40,f0,t2_0,X) :- not_z(b40,X).
-0.95000000::gt(b40,f0,t2_1,X) :- z(b40,X).
-0.05000000::gt(b40,f0,t2_1,X) :- not_z(b40,X).
-0.95000000::le(b40,f1,t2_6,X) :- z(b40,X).
-0.05000000::le(b40,f1,t2_6,X) :- not_z(b40,X).
-0.95000000::gt(b40,f3,t2_7,X) :- z(b40,X).
-0.05000000::gt(b40,f3,t2_7,X) :- not_z(b40,X).
-0.95000000::gt(b40,f2,t2_10,X) :- z(b40,X).
-0.05000000::gt(b40,f2,t2_10,X) :- not_z(b40,X).
-0.95000000::le(b40,f2,t2_14,X) :- z(b40,X).
-0.05000000::le(b40,f2,t2_14,X) :- not_z(b40,X).
-0.95000000::le(b40,f0,t2_15,X) :- z(b40,X).
-0.05000000::le(b40,f0,t2_15,X) :- not_z(b40,X).
-0.95000000::gt(b40,f3,t2_27,X) :- z(b40,X).
-0.05000000::gt(b40,f3,t2_27,X) :- not_z(b40,X).
-0.95000000::le(b41,f0,t2_0,X) :- z(b41,X).
-0.05000000::le(b41,f0,t2_0,X) :- not_z(b41,X).
-0.95000000::gt(b41,f0,t2_1,X) :- z(b41,X).
-0.05000000::gt(b41,f0,t2_1,X) :- not_z(b41,X).
-0.95000000::le(b41,f1,t2_6,X) :- z(b41,X).
-0.05000000::le(b41,f1,t2_6,X) :- not_z(b41,X).
-0.95000000::gt(b41,f3,t2_7,X) :- z(b41,X).
-0.05000000::gt(b41,f3,t2_7,X) :- not_z(b41,X).
-0.95000000::gt(b41,f2,t2_10,X) :- z(b41,X).
-0.05000000::gt(b41,f2,t2_10,X) :- not_z(b41,X).
-0.95000000::le(b41,f2,t2_14,X) :- z(b41,X).
-0.05000000::le(b41,f2,t2_14,X) :- not_z(b41,X).
-0.95000000::gt(b41,f0,t2_15,X) :- z(b41,X).
-0.05000000::gt(b41,f0,t2_15,X) :- not_z(b41,X).
-0.95000000::le(b42,f0,t2_0,X) :- z(b42,X).
-0.05000000::le(b42,f0,t2_0,X) :- not_z(b42,X).
-0.95000000::gt(b42,f0,t2_1,X) :- z(b42,X).
-0.05000000::gt(b42,f0,t2_1,X) :- not_z(b42,X).
-0.95000000::le(b42,f1,t2_6,X) :- z(b42,X).
-0.05000000::le(b42,f1,t2_6,X) :- not_z(b42,X).
-0.95000000::gt(b42,f3,t2_7,X) :- z(b42,X).
-0.05000000::gt(b42,f3,t2_7,X) :- not_z(b42,X).
-0.95000000::gt(b42,f2,t2_10,X) :- z(b42,X).
-0.05000000::gt(b42,f2,t2_10,X) :- not_z(b42,X).
-0.95000000::gt(b42,f2,t2_14,X) :- z(b42,X).
-0.05000000::gt(b42,f2,t2_14,X) :- not_z(b42,X).
-0.95000000::le(b42,f1,t2_16,X) :- z(b42,X).
-0.05000000::le(b42,f1,t2_16,X) :- not_z(b42,X).
-0.95000000::le(b43,f0,t2_0,X) :- z(b43,X).
-0.05000000::le(b43,f0,t2_0,X) :- not_z(b43,X).
-0.95000000::gt(b43,f0,t2_1,X) :- z(b43,X).
-0.05000000::gt(b43,f0,t2_1,X) :- not_z(b43,X).
-0.95000000::le(b43,f1,t2_6,X) :- z(b43,X).
-0.05000000::le(b43,f1,t2_6,X) :- not_z(b43,X).
-0.95000000::gt(b43,f3,t2_7,X) :- z(b43,X).
-0.05000000::gt(b43,f3,t2_7,X) :- not_z(b43,X).
-0.95000000::gt(b43,f2,t2_10,X) :- z(b43,X).
-0.05000000::gt(b43,f2,t2_10,X) :- not_z(b43,X).
-0.95000000::gt(b43,f2,t2_14,X) :- z(b43,X).
-0.05000000::gt(b43,f2,t2_14,X) :- not_z(b43,X).
-0.95000000::gt(b43,f1,t2_16,X) :- z(b43,X).
-0.05000000::gt(b43,f1,t2_16,X) :- not_z(b43,X).
-0.95000000::le(b43,f3,t2_18,X) :- z(b43,X).
-0.05000000::le(b43,f3,t2_18,X) :- not_z(b43,X).
-0.95000000::le(b44,f0,t2_0,X) :- z(b44,X).
-0.05000000::le(b44,f0,t2_0,X) :- not_z(b44,X).
-0.95000000::gt(b44,f0,t2_1,X) :- z(b44,X).
-0.05000000::gt(b44,f0,t2_1,X) :- not_z(b44,X).
-0.95000000::le(b44,f1,t2_6,X) :- z(b44,X).
-0.05000000::le(b44,f1,t2_6,X) :- not_z(b44,X).
-0.95000000::gt(b44,f3,t2_7,X) :- z(b44,X).
-0.05000000::gt(b44,f3,t2_7,X) :- not_z(b44,X).
-0.95000000::gt(b44,f2,t2_10,X) :- z(b44,X).
-0.05000000::gt(b44,f2,t2_10,X) :- not_z(b44,X).
-0.95000000::gt(b44,f2,t2_14,X) :- z(b44,X).
-0.05000000::gt(b44,f2,t2_14,X) :- not_z(b44,X).
-0.95000000::gt(b44,f1,t2_16,X) :- z(b44,X).
-0.05000000::gt(b44,f1,t2_16,X) :- not_z(b44,X).
-0.95000000::gt(b44,f3,t2_18,X) :- z(b44,X).
-0.05000000::gt(b44,f3,t2_18,X) :- not_z(b44,X).
-0.95000000::le(b44,f0,t2_20,X) :- z(b44,X).
-0.05000000::le(b44,f0,t2_20,X) :- not_z(b44,X).
-0.95000000::le(b45,f0,t2_0,X) :- z(b45,X).
-0.05000000::le(b45,f0,t2_0,X) :- not_z(b45,X).
-0.95000000::gt(b45,f0,t2_1,X) :- z(b45,X).
-0.05000000::gt(b45,f0,t2_1,X) :- not_z(b45,X).
-0.95000000::le(b45,f1,t2_6,X) :- z(b45,X).
-0.05000000::le(b45,f1,t2_6,X) :- not_z(b45,X).
-0.95000000::gt(b45,f3,t2_7,X) :- z(b45,X).
-0.05000000::gt(b45,f3,t2_7,X) :- not_z(b45,X).
-0.95000000::gt(b45,f2,t2_10,X) :- z(b45,X).
-0.05000000::gt(b45,f2,t2_10,X) :- not_z(b45,X).
-0.95000000::gt(b45,f2,t2_14,X) :- z(b45,X).
-0.05000000::gt(b45,f2,t2_14,X) :- not_z(b45,X).
-0.95000000::gt(b45,f1,t2_16,X) :- z(b45,X).
-0.05000000::gt(b45,f1,t2_16,X) :- not_z(b45,X).
-0.95000000::gt(b45,f3,t2_18,X) :- z(b45,X).
-0.05000000::gt(b45,f3,t2_18,X) :- not_z(b45,X).
-0.95000000::gt(b45,f0,t2_20,X) :- z(b45,X).
-0.05000000::gt(b45,f0,t2_20,X) :- not_z(b45,X).
-0.95000000::le(b46,f0,t2_0,X) :- z(b46,X).
-0.05000000::le(b46,f0,t2_0,X) :- not_z(b46,X).
-0.95000000::gt(b46,f0,t2_1,X) :- z(b46,X).
-0.05000000::gt(b46,f0,t2_1,X) :- not_z(b46,X).
-0.95000000::gt(b46,f1,t2_6,X) :- z(b46,X).
-0.05000000::gt(b46,f1,t2_6,X) :- not_z(b46,X).
-0.95000000::gt(b47,f0,t2_0,X) :- z(b47,X).
-0.05000000::gt(b47,f0,t2_0,X) :- not_z(b47,X).
-0.95000000::le(b47,f3,t2_2,X) :- z(b47,X).
-0.05000000::le(b47,f3,t2_2,X) :- not_z(b47,X).
-0.95000000::gt(b48,f0,t2_0,X) :- z(b48,X).
-0.05000000::gt(b48,f0,t2_0,X) :- not_z(b48,X).
-0.95000000::gt(b48,f3,t2_2,X) :- z(b48,X).
-0.05000000::gt(b48,f3,t2_2,X) :- not_z(b48,X).
-0.95000000::le(b48,f2,t2_4,X) :- z(b48,X).
-0.05000000::le(b48,f2,t2_4,X) :- not_z(b48,X).
-0.95000000::gt(b49,f0,t2_0,X) :- z(b49,X).
-0.05000000::gt(b49,f0,t2_0,X) :- not_z(b49,X).
-0.95000000::gt(b49,f3,t2_2,X) :- z(b49,X).
-0.05000000::gt(b49,f3,t2_2,X) :- not_z(b49,X).
-0.95000000::gt(b49,f2,t2_4,X) :- z(b49,X).
-0.05000000::gt(b49,f2,t2_4,X) :- not_z(b49,X).
-0.95000000::le(b49,f3,t2_12,X) :- z(b49,X).
-0.05000000::le(b49,f3,t2_12,X) :- not_z(b49,X).
-0.95000000::le(b49,f3,t2_31,X) :- z(b49,X).
-0.05000000::le(b49,f3,t2_31,X) :- not_z(b49,X).
-0.95000000::le(b49,f1,t2_33,X) :- z(b49,X).
-0.05000000::le(b49,f1,t2_33,X) :- not_z(b49,X).
-0.95000000::gt(b50,f0,t2_0,X) :- z(b50,X).
-0.05000000::gt(b50,f0,t2_0,X) :- not_z(b50,X).
-0.95000000::gt(b50,f3,t2_2,X) :- z(b50,X).
-0.05000000::gt(b50,f3,t2_2,X) :- not_z(b50,X).
-0.95000000::gt(b50,f2,t2_4,X) :- z(b50,X).
-0.05000000::gt(b50,f2,t2_4,X) :- not_z(b50,X).
-0.95000000::le(b50,f3,t2_12,X) :- z(b50,X).
-0.05000000::le(b50,f3,t2_12,X) :- not_z(b50,X).
-0.95000000::le(b50,f3,t2_31,X) :- z(b50,X).
-0.05000000::le(b50,f3,t2_31,X) :- not_z(b50,X).
-0.95000000::gt(b50,f1,t2_33,X) :- z(b50,X).
-0.05000000::gt(b50,f1,t2_33,X) :- not_z(b50,X).
-0.95000000::le(b50,f3,t2_36,X) :- z(b50,X).
-0.05000000::le(b50,f3,t2_36,X) :- not_z(b50,X).
-0.95000000::gt(b51,f0,t2_0,X) :- z(b51,X).
-0.05000000::gt(b51,f0,t2_0,X) :- not_z(b51,X).
-0.95000000::gt(b51,f3,t2_2,X) :- z(b51,X).
-0.05000000::gt(b51,f3,t2_2,X) :- not_z(b51,X).
-0.95000000::gt(b51,f2,t2_4,X) :- z(b51,X).
-0.05000000::gt(b51,f2,t2_4,X) :- not_z(b51,X).
-0.95000000::le(b51,f3,t2_12,X) :- z(b51,X).
-0.05000000::le(b51,f3,t2_12,X) :- not_z(b51,X).
-0.95000000::le(b51,f3,t2_31,X) :- z(b51,X).
-0.05000000::le(b51,f3,t2_31,X) :- not_z(b51,X).
-0.95000000::gt(b51,f1,t2_33,X) :- z(b51,X).
-0.05000000::gt(b51,f1,t2_33,X) :- not_z(b51,X).
-0.95000000::gt(b51,f3,t2_36,X) :- z(b51,X).
-0.05000000::gt(b51,f3,t2_36,X) :- not_z(b51,X).
-0.95000000::gt(b52,f0,t2_0,X) :- z(b52,X).
-0.05000000::gt(b52,f0,t2_0,X) :- not_z(b52,X).
-0.95000000::gt(b52,f3,t2_2,X) :- z(b52,X).
-0.05000000::gt(b52,f3,t2_2,X) :- not_z(b52,X).
-0.95000000::gt(b52,f2,t2_4,X) :- z(b52,X).
-0.05000000::gt(b52,f2,t2_4,X) :- not_z(b52,X).
-0.95000000::le(b52,f3,t2_12,X) :- z(b52,X).
-0.05000000::le(b52,f3,t2_12,X) :- not_z(b52,X).
-0.95000000::gt(b52,f3,t2_31,X) :- z(b52,X).
-0.05000000::gt(b52,f3,t2_31,X) :- not_z(b52,X).
-0.95000000::gt(b53,f0,t2_0,X) :- z(b53,X).
-0.05000000::gt(b53,f0,t2_0,X) :- not_z(b53,X).
-0.95000000::gt(b53,f3,t2_2,X) :- z(b53,X).
-0.05000000::gt(b53,f3,t2_2,X) :- not_z(b53,X).
-0.95000000::gt(b53,f2,t2_4,X) :- z(b53,X).
-0.05000000::gt(b53,f2,t2_4,X) :- not_z(b53,X).
-0.95000000::gt(b53,f3,t2_12,X) :- z(b53,X).
-0.05000000::gt(b53,f3,t2_12,X) :- not_z(b53,X).
-0.95000000::le(b54,f2,t3_0,X) :- z(b54,X).
-0.05000000::le(b54,f2,t3_0,X) :- not_z(b54,X).
-0.95000000::le(b54,f3,t3_1,X) :- z(b54,X).
-0.05000000::le(b54,f3,t3_1,X) :- not_z(b54,X).
-0.95000000::le(b55,f2,t3_0,X) :- z(b55,X).
-0.05000000::le(b55,f2,t3_0,X) :- not_z(b55,X).
-0.95000000::gt(b55,f3,t3_1,X) :- z(b55,X).
-0.05000000::gt(b55,f3,t3_1,X) :- not_z(b55,X).
-0.95000000::le(b55,f1,t3_4,X) :- z(b55,X).
-0.05000000::le(b55,f1,t3_4,X) :- not_z(b55,X).
-0.95000000::le(b55,f3,t3_25,X) :- z(b55,X).
-0.05000000::le(b55,f3,t3_25,X) :- not_z(b55,X).
-0.95000000::le(b56,f2,t3_0,X) :- z(b56,X).
-0.05000000::le(b56,f2,t3_0,X) :- not_z(b56,X).
-0.95000000::gt(b56,f3,t3_1,X) :- z(b56,X).
-0.05000000::gt(b56,f3,t3_1,X) :- not_z(b56,X).
-0.95000000::le(b56,f1,t3_4,X) :- z(b56,X).
-0.05000000::le(b56,f1,t3_4,X) :- not_z(b56,X).
-0.95000000::gt(b56,f3,t3_25,X) :- z(b56,X).
-0.05000000::gt(b56,f3,t3_25,X) :- not_z(b56,X).
-0.95000000::le(b57,f2,t3_0,X) :- z(b57,X).
-0.05000000::le(b57,f2,t3_0,X) :- not_z(b57,X).
-0.95000000::gt(b57,f3,t3_1,X) :- z(b57,X).
-0.05000000::gt(b57,f3,t3_1,X) :- not_z(b57,X).
-0.95000000::gt(b57,f1,t3_4,X) :- z(b57,X).
-0.05000000::gt(b57,f1,t3_4,X) :- not_z(b57,X).
-0.95000000::le(b57,f0,t3_26,X) :- z(b57,X).
-0.05000000::le(b57,f0,t3_26,X) :- not_z(b57,X).
-0.95000000::le(b57,f2,t3_29,X) :- z(b57,X).
-0.05000000::le(b57,f2,t3_29,X) :- not_z(b57,X).
-0.95000000::le(b58,f2,t3_0,X) :- z(b58,X).
-0.05000000::le(b58,f2,t3_0,X) :- not_z(b58,X).
-0.95000000::gt(b58,f3,t3_1,X) :- z(b58,X).
-0.05000000::gt(b58,f3,t3_1,X) :- not_z(b58,X).
-0.95000000::gt(b58,f1,t3_4,X) :- z(b58,X).
-0.05000000::gt(b58,f1,t3_4,X) :- not_z(b58,X).
-0.95000000::le(b58,f0,t3_26,X) :- z(b58,X).
-0.05000000::le(b58,f0,t3_26,X) :- not_z(b58,X).
-0.95000000::gt(b58,f2,t3_29,X) :- z(b58,X).
-0.05000000::gt(b58,f2,t3_29,X) :- not_z(b58,X).
-0.95000000::le(b59,f2,t3_0,X) :- z(b59,X).
-0.05000000::le(b59,f2,t3_0,X) :- not_z(b59,X).
-0.95000000::gt(b59,f3,t3_1,X) :- z(b59,X).
-0.05000000::gt(b59,f3,t3_1,X) :- not_z(b59,X).
-0.95000000::gt(b59,f1,t3_4,X) :- z(b59,X).
-0.05000000::gt(b59,f1,t3_4,X) :- not_z(b59,X).
-0.95000000::gt(b59,f0,t3_26,X) :- z(b59,X).
-0.05000000::gt(b59,f0,t3_26,X) :- not_z(b59,X).
-0.95000000::gt(b60,f2,t3_0,X) :- z(b60,X).
-0.05000000::gt(b60,f2,t3_0,X) :- not_z(b60,X).
-0.95000000::le(b60,f0,t3_2,X) :- z(b60,X).
-0.05000000::le(b60,f0,t3_2,X) :- not_z(b60,X).
-0.95000000::le(b60,f0,t3_5,X) :- z(b60,X).
-0.05000000::le(b60,f0,t3_5,X) :- not_z(b60,X).
-0.95000000::le(b60,f1,t3_7,X) :- z(b60,X).
-0.05000000::le(b60,f1,t3_7,X) :- not_z(b60,X).
-0.95000000::le(b60,f1,t3_15,X) :- z(b60,X).
-0.05000000::le(b60,f1,t3_15,X) :- not_z(b60,X).
-0.95000000::gt(b61,f2,t3_0,X) :- z(b61,X).
-0.05000000::gt(b61,f2,t3_0,X) :- not_z(b61,X).
-0.95000000::le(b61,f0,t3_2,X) :- z(b61,X).
-0.05000000::le(b61,f0,t3_2,X) :- not_z(b61,X).
-0.95000000::le(b61,f0,t3_5,X) :- z(b61,X).
-0.05000000::le(b61,f0,t3_5,X) :- not_z(b61,X).
-0.95000000::le(b61,f1,t3_7,X) :- z(b61,X).
-0.05000000::le(b61,f1,t3_7,X) :- not_z(b61,X).
-0.95000000::gt(b61,f1,t3_15,X) :- z(b61,X).
-0.05000000::gt(b61,f1,t3_15,X) :- not_z(b61,X).
-0.95000000::le(b61,f2,t3_18,X) :- z(b61,X).
-0.05000000::le(b61,f2,t3_18,X) :- not_z(b61,X).
-0.95000000::le(b61,f2,t3_19,X) :- z(b61,X).
-0.05000000::le(b61,f2,t3_19,X) :- not_z(b61,X).
-0.95000000::gt(b62,f2,t3_0,X) :- z(b62,X).
-0.05000000::gt(b62,f2,t3_0,X) :- not_z(b62,X).
-0.95000000::le(b62,f0,t3_2,X) :- z(b62,X).
-0.05000000::le(b62,f0,t3_2,X) :- not_z(b62,X).
-0.95000000::le(b62,f0,t3_5,X) :- z(b62,X).
-0.05000000::le(b62,f0,t3_5,X) :- not_z(b62,X).
-0.95000000::le(b62,f1,t3_7,X) :- z(b62,X).
-0.05000000::le(b62,f1,t3_7,X) :- not_z(b62,X).
-0.95000000::gt(b62,f1,t3_15,X) :- z(b62,X).
-0.05000000::gt(b62,f1,t3_15,X) :- not_z(b62,X).
-0.95000000::le(b62,f2,t3_18,X) :- z(b62,X).
-0.05000000::le(b62,f2,t3_18,X) :- not_z(b62,X).
-0.95000000::gt(b62,f2,t3_19,X) :- z(b62,X).
-0.05000000::gt(b62,f2,t3_19,X) :- not_z(b62,X).
-0.95000000::le(b62,f0,t3_22,X) :- z(b62,X).
-0.05000000::le(b62,f0,t3_22,X) :- not_z(b62,X).
-0.95000000::gt(b63,f2,t3_0,X) :- z(b63,X).
-0.05000000::gt(b63,f2,t3_0,X) :- not_z(b63,X).
-0.95000000::le(b63,f0,t3_2,X) :- z(b63,X).
-0.05000000::le(b63,f0,t3_2,X) :- not_z(b63,X).
-0.95000000::le(b63,f0,t3_5,X) :- z(b63,X).
-0.05000000::le(b63,f0,t3_5,X) :- not_z(b63,X).
-0.95000000::le(b63,f1,t3_7,X) :- z(b63,X).
-0.05000000::le(b63,f1,t3_7,X) :- not_z(b63,X).
-0.95000000::gt(b63,f1,t3_15,X) :- z(b63,X).
-0.05000000::gt(b63,f1,t3_15,X) :- not_z(b63,X).
-0.95000000::le(b63,f2,t3_18,X) :- z(b63,X).
-0.05000000::le(b63,f2,t3_18,X) :- not_z(b63,X).
-0.95000000::gt(b63,f2,t3_19,X) :- z(b63,X).
-0.05000000::gt(b63,f2,t3_19,X) :- not_z(b63,X).
-0.95000000::gt(b63,f0,t3_22,X) :- z(b63,X).
-0.05000000::gt(b63,f0,t3_22,X) :- not_z(b63,X).
-0.95000000::gt(b64,f2,t3_0,X) :- z(b64,X).
-0.05000000::gt(b64,f2,t3_0,X) :- not_z(b64,X).
-0.95000000::le(b64,f0,t3_2,X) :- z(b64,X).
-0.05000000::le(b64,f0,t3_2,X) :- not_z(b64,X).
-0.95000000::le(b64,f0,t3_5,X) :- z(b64,X).
-0.05000000::le(b64,f0,t3_5,X) :- not_z(b64,X).
-0.95000000::le(b64,f1,t3_7,X) :- z(b64,X).
-0.05000000::le(b64,f1,t3_7,X) :- not_z(b64,X).
-0.95000000::gt(b64,f1,t3_15,X) :- z(b64,X).
-0.05000000::gt(b64,f1,t3_15,X) :- not_z(b64,X).
-0.95000000::gt(b64,f2,t3_18,X) :- z(b64,X).
-0.05000000::gt(b64,f2,t3_18,X) :- not_z(b64,X).
-0.95000000::gt(b65,f2,t3_0,X) :- z(b65,X).
-0.05000000::gt(b65,f2,t3_0,X) :- not_z(b65,X).
-0.95000000::le(b65,f0,t3_2,X) :- z(b65,X).
-0.05000000::le(b65,f0,t3_2,X) :- not_z(b65,X).
-0.95000000::le(b65,f0,t3_5,X) :- z(b65,X).
-0.05000000::le(b65,f0,t3_5,X) :- not_z(b65,X).
-0.95000000::gt(b65,f1,t3_7,X) :- z(b65,X).
-0.05000000::gt(b65,f1,t3_7,X) :- not_z(b65,X).
-0.95000000::gt(b66,f2,t3_0,X) :- z(b66,X).
-0.05000000::gt(b66,f2,t3_0,X) :- not_z(b66,X).
-0.95000000::le(b66,f0,t3_2,X) :- z(b66,X).
-0.05000000::le(b66,f0,t3_2,X) :- not_z(b66,X).
-0.95000000::gt(b66,f0,t3_5,X) :- z(b66,X).
-0.05000000::gt(b66,f0,t3_5,X) :- not_z(b66,X).
-0.95000000::le(b66,f3,t3_8,X) :- z(b66,X).
-0.05000000::le(b66,f3,t3_8,X) :- not_z(b66,X).
-0.95000000::gt(b67,f2,t3_0,X) :- z(b67,X).
-0.05000000::gt(b67,f2,t3_0,X) :- not_z(b67,X).
-0.95000000::le(b67,f0,t3_2,X) :- z(b67,X).
-0.05000000::le(b67,f0,t3_2,X) :- not_z(b67,X).
-0.95000000::gt(b67,f0,t3_5,X) :- z(b67,X).
-0.05000000::gt(b67,f0,t3_5,X) :- not_z(b67,X).
-0.95000000::gt(b67,f3,t3_8,X) :- z(b67,X).
-0.05000000::gt(b67,f3,t3_8,X) :- not_z(b67,X).
-0.95000000::le(b67,f3,t3_10,X) :- z(b67,X).
-0.05000000::le(b67,f3,t3_10,X) :- not_z(b67,X).
-0.95000000::le(b67,f2,t3_11,X) :- z(b67,X).
-0.05000000::le(b67,f2,t3_11,X) :- not_z(b67,X).
-0.95000000::gt(b68,f2,t3_0,X) :- z(b68,X).
-0.05000000::gt(b68,f2,t3_0,X) :- not_z(b68,X).
-0.95000000::le(b68,f0,t3_2,X) :- z(b68,X).
-0.05000000::le(b68,f0,t3_2,X) :- not_z(b68,X).
-0.95000000::gt(b68,f0,t3_5,X) :- z(b68,X).
-0.05000000::gt(b68,f0,t3_5,X) :- not_z(b68,X).
-0.95000000::gt(b68,f3,t3_8,X) :- z(b68,X).
-0.05000000::gt(b68,f3,t3_8,X) :- not_z(b68,X).
-0.95000000::le(b68,f3,t3_10,X) :- z(b68,X).
-0.05000000::le(b68,f3,t3_10,X) :- not_z(b68,X).
-0.95000000::gt(b68,f2,t3_11,X) :- z(b68,X).
-0.05000000::gt(b68,f2,t3_11,X) :- not_z(b68,X).
-0.95000000::gt(b69,f2,t3_0,X) :- z(b69,X).
-0.05000000::gt(b69,f2,t3_0,X) :- not_z(b69,X).
-0.95000000::le(b69,f0,t3_2,X) :- z(b69,X).
-0.05000000::le(b69,f0,t3_2,X) :- not_z(b69,X).
-0.95000000::gt(b69,f0,t3_5,X) :- z(b69,X).
-0.05000000::gt(b69,f0,t3_5,X) :- not_z(b69,X).
-0.95000000::gt(b69,f3,t3_8,X) :- z(b69,X).
-0.05000000::gt(b69,f3,t3_8,X) :- not_z(b69,X).
-0.95000000::gt(b69,f3,t3_10,X) :- z(b69,X).
-0.05000000::gt(b69,f3,t3_10,X) :- not_z(b69,X).
-0.95000000::gt(b70,f2,t3_0,X) :- z(b70,X).
-0.05000000::gt(b70,f2,t3_0,X) :- not_z(b70,X).
-0.95000000::gt(b70,f0,t3_2,X) :- z(b70,X).
-0.05000000::gt(b70,f0,t3_2,X) :- not_z(b70,X).
-0.95000000::le(b71,f3,t4_0,X) :- z(b71,X).
-0.05000000::le(b71,f3,t4_0,X) :- not_z(b71,X).
-0.95000000::gt(b72,f3,t4_0,X) :- z(b72,X).
-0.05000000::gt(b72,f3,t4_0,X) :- not_z(b72,X).
-0.95000000::le(b72,f0,t4_2,X) :- z(b72,X).
-0.05000000::le(b72,f0,t4_2,X) :- not_z(b72,X).
-0.95000000::le(b72,f2,t4_3,X) :- z(b72,X).
-0.05000000::le(b72,f2,t4_3,X) :- not_z(b72,X).
-0.95000000::le(b72,f0,t4_5,X) :- z(b72,X).
-0.05000000::le(b72,f0,t4_5,X) :- not_z(b72,X).
-0.95000000::le(b72,f1,t4_15,X) :- z(b72,X).
-0.05000000::le(b72,f1,t4_15,X) :- not_z(b72,X).
-0.95000000::gt(b73,f3,t4_0,X) :- z(b73,X).
-0.05000000::gt(b73,f3,t4_0,X) :- not_z(b73,X).
-0.95000000::le(b73,f0,t4_2,X) :- z(b73,X).
-0.05000000::le(b73,f0,t4_2,X) :- not_z(b73,X).
-0.95000000::le(b73,f2,t4_3,X) :- z(b73,X).
-0.05000000::le(b73,f2,t4_3,X) :- not_z(b73,X).
-0.95000000::le(b73,f0,t4_5,X) :- z(b73,X).
-0.05000000::le(b73,f0,t4_5,X) :- not_z(b73,X).
-0.95000000::gt(b73,f1,t4_15,X) :- z(b73,X).
-0.05000000::gt(b73,f1,t4_15,X) :- not_z(b73,X).
-0.95000000::le(b73,f2,t4_18,X) :- z(b73,X).
-0.05000000::le(b73,f2,t4_18,X) :- not_z(b73,X).
-0.95000000::gt(b74,f3,t4_0,X) :- z(b74,X).
-0.05000000::gt(b74,f3,t4_0,X) :- not_z(b74,X).
-0.95000000::le(b74,f0,t4_2,X) :- z(b74,X).
-0.05000000::le(b74,f0,t4_2,X) :- not_z(b74,X).
-0.95000000::le(b74,f2,t4_3,X) :- z(b74,X).
-0.05000000::le(b74,f2,t4_3,X) :- not_z(b74,X).
-0.95000000::le(b74,f0,t4_5,X) :- z(b74,X).
-0.05000000::le(b74,f0,t4_5,X) :- not_z(b74,X).
-0.95000000::gt(b74,f1,t4_15,X) :- z(b74,X).
-0.05000000::gt(b74,f1,t4_15,X) :- not_z(b74,X).
-0.95000000::gt(b74,f2,t4_18,X) :- z(b74,X).
-0.05000000::gt(b74,f2,t4_18,X) :- not_z(b74,X).
-0.95000000::gt(b75,f3,t4_0,X) :- z(b75,X).
-0.05000000::gt(b75,f3,t4_0,X) :- not_z(b75,X).
-0.95000000::le(b75,f0,t4_2,X) :- z(b75,X).
-0.05000000::le(b75,f0,t4_2,X) :- not_z(b75,X).
-0.95000000::le(b75,f2,t4_3,X) :- z(b75,X).
-0.05000000::le(b75,f2,t4_3,X) :- not_z(b75,X).
-0.95000000::gt(b75,f0,t4_5,X) :- z(b75,X).
-0.05000000::gt(b75,f0,t4_5,X) :- not_z(b75,X).
-0.95000000::gt(b76,f3,t4_0,X) :- z(b76,X).
-0.05000000::gt(b76,f3,t4_0,X) :- not_z(b76,X).
-0.95000000::le(b76,f0,t4_2,X) :- z(b76,X).
-0.05000000::le(b76,f0,t4_2,X) :- not_z(b76,X).
-0.95000000::gt(b76,f2,t4_3,X) :- z(b76,X).
-0.05000000::gt(b76,f2,t4_3,X) :- not_z(b76,X).
-0.95000000::le(b76,f2,t4_6,X) :- z(b76,X).
-0.05000000::le(b76,f2,t4_6,X) :- not_z(b76,X).
-0.95000000::le(b76,f3,t4_7,X) :- z(b76,X).
-0.05000000::le(b76,f3,t4_7,X) :- not_z(b76,X).
-0.95000000::gt(b77,f3,t4_0,X) :- z(b77,X).
-0.05000000::gt(b77,f3,t4_0,X) :- not_z(b77,X).
-0.95000000::le(b77,f0,t4_2,X) :- z(b77,X).
-0.05000000::le(b77,f0,t4_2,X) :- not_z(b77,X).
-0.95000000::gt(b77,f2,t4_3,X) :- z(b77,X).
-0.05000000::gt(b77,f2,t4_3,X) :- not_z(b77,X).
-0.95000000::le(b77,f2,t4_6,X) :- z(b77,X).
-0.05000000::le(b77,f2,t4_6,X) :- not_z(b77,X).
-0.95000000::gt(b77,f3,t4_7,X) :- z(b77,X).
-0.05000000::gt(b77,f3,t4_7,X) :- not_z(b77,X).
-0.95000000::le(b77,f2,t4_40,X) :- z(b77,X).
-0.05000000::le(b77,f2,t4_40,X) :- not_z(b77,X).
-0.95000000::le(b77,f3,t4_41,X) :- z(b77,X).
-0.05000000::le(b77,f3,t4_41,X) :- not_z(b77,X).
-0.95000000::gt(b78,f3,t4_0,X) :- z(b78,X).
-0.05000000::gt(b78,f3,t4_0,X) :- not_z(b78,X).
-0.95000000::le(b78,f0,t4_2,X) :- z(b78,X).
-0.05000000::le(b78,f0,t4_2,X) :- not_z(b78,X).
-0.95000000::gt(b78,f2,t4_3,X) :- z(b78,X).
-0.05000000::gt(b78,f2,t4_3,X) :- not_z(b78,X).
-0.95000000::le(b78,f2,t4_6,X) :- z(b78,X).
-0.05000000::le(b78,f2,t4_6,X) :- not_z(b78,X).
-0.95000000::gt(b78,f3,t4_7,X) :- z(b78,X).
-0.05000000::gt(b78,f3,t4_7,X) :- not_z(b78,X).
-0.95000000::le(b78,f2,t4_40,X) :- z(b78,X).
-0.05000000::le(b78,f2,t4_40,X) :- not_z(b78,X).
-0.95000000::gt(b78,f3,t4_41,X) :- z(b78,X).
-0.05000000::gt(b78,f3,t4_41,X) :- not_z(b78,X).
-0.95000000::gt(b79,f3,t4_0,X) :- z(b79,X).
-0.05000000::gt(b79,f3,t4_0,X) :- not_z(b79,X).
-0.95000000::le(b79,f0,t4_2,X) :- z(b79,X).
-0.05000000::le(b79,f0,t4_2,X) :- not_z(b79,X).
-0.95000000::gt(b79,f2,t4_3,X) :- z(b79,X).
-0.05000000::gt(b79,f2,t4_3,X) :- not_z(b79,X).
-0.95000000::le(b79,f2,t4_6,X) :- z(b79,X).
-0.05000000::le(b79,f2,t4_6,X) :- not_z(b79,X).
-0.95000000::gt(b79,f3,t4_7,X) :- z(b79,X).
-0.05000000::gt(b79,f3,t4_7,X) :- not_z(b79,X).
-0.95000000::gt(b79,f2,t4_40,X) :- z(b79,X).
-0.05000000::gt(b79,f2,t4_40,X) :- not_z(b79,X).
-0.95000000::gt(b80,f3,t4_0,X) :- z(b80,X).
-0.05000000::gt(b80,f3,t4_0,X) :- not_z(b80,X).
-0.95000000::le(b80,f0,t4_2,X) :- z(b80,X).
-0.05000000::le(b80,f0,t4_2,X) :- not_z(b80,X).
-0.95000000::gt(b80,f2,t4_3,X) :- z(b80,X).
-0.05000000::gt(b80,f2,t4_3,X) :- not_z(b80,X).
-0.95000000::gt(b80,f2,t4_6,X) :- z(b80,X).
-0.05000000::gt(b80,f2,t4_6,X) :- not_z(b80,X).
-0.95000000::le(b80,f0,t4_8,X) :- z(b80,X).
-0.05000000::le(b80,f0,t4_8,X) :- not_z(b80,X).
-0.95000000::le(b80,f0,t4_27,X) :- z(b80,X).
-0.05000000::le(b80,f0,t4_27,X) :- not_z(b80,X).
-0.95000000::gt(b81,f3,t4_0,X) :- z(b81,X).
-0.05000000::gt(b81,f3,t4_0,X) :- not_z(b81,X).
-0.95000000::le(b81,f0,t4_2,X) :- z(b81,X).
-0.05000000::le(b81,f0,t4_2,X) :- not_z(b81,X).
-0.95000000::gt(b81,f2,t4_3,X) :- z(b81,X).
-0.05000000::gt(b81,f2,t4_3,X) :- not_z(b81,X).
-0.95000000::gt(b81,f2,t4_6,X) :- z(b81,X).
-0.05000000::gt(b81,f2,t4_6,X) :- not_z(b81,X).
-0.95000000::le(b81,f0,t4_8,X) :- z(b81,X).
-0.05000000::le(b81,f0,t4_8,X) :- not_z(b81,X).
-0.95000000::gt(b81,f0,t4_27,X) :- z(b81,X).
-0.05000000::gt(b81,f0,t4_27,X) :- not_z(b81,X).
-0.95000000::le(b81,f3,t4_30,X) :- z(b81,X).
-0.05000000::le(b81,f3,t4_30,X) :- not_z(b81,X).
-0.95000000::gt(b82,f3,t4_0,X) :- z(b82,X).
-0.05000000::gt(b82,f3,t4_0,X) :- not_z(b82,X).
-0.95000000::le(b82,f0,t4_2,X) :- z(b82,X).
-0.05000000::le(b82,f0,t4_2,X) :- not_z(b82,X).
-0.95000000::gt(b82,f2,t4_3,X) :- z(b82,X).
-0.05000000::gt(b82,f2,t4_3,X) :- not_z(b82,X).
-0.95000000::gt(b82,f2,t4_6,X) :- z(b82,X).
-0.05000000::gt(b82,f2,t4_6,X) :- not_z(b82,X).
-0.95000000::le(b82,f0,t4_8,X) :- z(b82,X).
-0.05000000::le(b82,f0,t4_8,X) :- not_z(b82,X).
-0.95000000::gt(b82,f0,t4_27,X) :- z(b82,X).
-0.05000000::gt(b82,f0,t4_27,X) :- not_z(b82,X).
-0.95000000::gt(b82,f3,t4_30,X) :- z(b82,X).
-0.05000000::gt(b82,f3,t4_30,X) :- not_z(b82,X).
-0.95000000::gt(b83,f3,t4_0,X) :- z(b83,X).
-0.05000000::gt(b83,f3,t4_0,X) :- not_z(b83,X).
-0.95000000::le(b83,f0,t4_2,X) :- z(b83,X).
-0.05000000::le(b83,f0,t4_2,X) :- not_z(b83,X).
-0.95000000::gt(b83,f2,t4_3,X) :- z(b83,X).
-0.05000000::gt(b83,f2,t4_3,X) :- not_z(b83,X).
-0.95000000::gt(b83,f2,t4_6,X) :- z(b83,X).
-0.05000000::gt(b83,f2,t4_6,X) :- not_z(b83,X).
-0.95000000::gt(b83,f0,t4_8,X) :- z(b83,X).
-0.05000000::gt(b83,f0,t4_8,X) :- not_z(b83,X).
-0.95000000::gt(b84,f3,t4_0,X) :- z(b84,X).
-0.05000000::gt(b84,f3,t4_0,X) :- not_z(b84,X).
-0.95000000::gt(b84,f0,t4_2,X) :- z(b84,X).
-0.05000000::gt(b84,f0,t4_2,X) :- not_z(b84,X).
-0.95000000::le(b84,f0,t4_4,X) :- z(b84,X).
-0.05000000::le(b84,f0,t4_4,X) :- not_z(b84,X).
-0.95000000::le(b84,f3,t4_9,X) :- z(b84,X).
-0.05000000::le(b84,f3,t4_9,X) :- not_z(b84,X).
-0.95000000::le(b84,f2,t4_11,X) :- z(b84,X).
-0.05000000::le(b84,f2,t4_11,X) :- not_z(b84,X).
-0.95000000::le(b84,f1,t4_13,X) :- z(b84,X).
-0.05000000::le(b84,f1,t4_13,X) :- not_z(b84,X).
-0.95000000::le(b84,f2,t4_33,X) :- z(b84,X).
-0.05000000::le(b84,f2,t4_33,X) :- not_z(b84,X).
-0.95000000::gt(b85,f3,t4_0,X) :- z(b85,X).
-0.05000000::gt(b85,f3,t4_0,X) :- not_z(b85,X).
-0.95000000::gt(b85,f0,t4_2,X) :- z(b85,X).
-0.05000000::gt(b85,f0,t4_2,X) :- not_z(b85,X).
-0.95000000::le(b85,f0,t4_4,X) :- z(b85,X).
-0.05000000::le(b85,f0,t4_4,X) :- not_z(b85,X).
-0.95000000::le(b85,f3,t4_9,X) :- z(b85,X).
-0.05000000::le(b85,f3,t4_9,X) :- not_z(b85,X).
-0.95000000::le(b85,f2,t4_11,X) :- z(b85,X).
-0.05000000::le(b85,f2,t4_11,X) :- not_z(b85,X).
-0.95000000::le(b85,f1,t4_13,X) :- z(b85,X).
-0.05000000::le(b85,f1,t4_13,X) :- not_z(b85,X).
-0.95000000::gt(b85,f2,t4_33,X) :- z(b85,X).
-0.05000000::gt(b85,f2,t4_33,X) :- not_z(b85,X).
-0.95000000::le(b85,f2,t4_36,X) :- z(b85,X).
-0.05000000::le(b85,f2,t4_36,X) :- not_z(b85,X).
-0.95000000::gt(b86,f3,t4_0,X) :- z(b86,X).
-0.05000000::gt(b86,f3,t4_0,X) :- not_z(b86,X).
-0.95000000::gt(b86,f0,t4_2,X) :- z(b86,X).
-0.05000000::gt(b86,f0,t4_2,X) :- not_z(b86,X).
-0.95000000::le(b86,f0,t4_4,X) :- z(b86,X).
-0.05000000::le(b86,f0,t4_4,X) :- not_z(b86,X).
-0.95000000::le(b86,f3,t4_9,X) :- z(b86,X).
-0.05000000::le(b86,f3,t4_9,X) :- not_z(b86,X).
-0.95000000::le(b86,f2,t4_11,X) :- z(b86,X).
-0.05000000::le(b86,f2,t4_11,X) :- not_z(b86,X).
-0.95000000::le(b86,f1,t4_13,X) :- z(b86,X).
-0.05000000::le(b86,f1,t4_13,X) :- not_z(b86,X).
-0.95000000::gt(b86,f2,t4_33,X) :- z(b86,X).
-0.05000000::gt(b86,f2,t4_33,X) :- not_z(b86,X).
-0.95000000::gt(b86,f2,t4_36,X) :- z(b86,X).
-0.05000000::gt(b86,f2,t4_36,X) :- not_z(b86,X).
-0.95000000::gt(b87,f3,t4_0,X) :- z(b87,X).
-0.05000000::gt(b87,f3,t4_0,X) :- not_z(b87,X).
-0.95000000::gt(b87,f0,t4_2,X) :- z(b87,X).
-0.05000000::gt(b87,f0,t4_2,X) :- not_z(b87,X).
-0.95000000::le(b87,f0,t4_4,X) :- z(b87,X).
-0.05000000::le(b87,f0,t4_4,X) :- not_z(b87,X).
-0.95000000::le(b87,f3,t4_9,X) :- z(b87,X).
-0.05000000::le(b87,f3,t4_9,X) :- not_z(b87,X).
-0.95000000::le(b87,f2,t4_11,X) :- z(b87,X).
-0.05000000::le(b87,f2,t4_11,X) :- not_z(b87,X).
-0.95000000::gt(b87,f1,t4_13,X) :- z(b87,X).
-0.05000000::gt(b87,f1,t4_13,X) :- not_z(b87,X).
-0.95000000::gt(b88,f3,t4_0,X) :- z(b88,X).
-0.05000000::gt(b88,f3,t4_0,X) :- not_z(b88,X).
-0.95000000::gt(b88,f0,t4_2,X) :- z(b88,X).
-0.05000000::gt(b88,f0,t4_2,X) :- not_z(b88,X).
-0.95000000::le(b88,f0,t4_4,X) :- z(b88,X).
-0.05000000::le(b88,f0,t4_4,X) :- not_z(b88,X).
-0.95000000::le(b88,f3,t4_9,X) :- z(b88,X).
-0.05000000::le(b88,f3,t4_9,X) :- not_z(b88,X).
-0.95000000::gt(b88,f2,t4_11,X) :- z(b88,X).
-0.05000000::gt(b88,f2,t4_11,X) :- not_z(b88,X).
-0.95000000::gt(b89,f3,t4_0,X) :- z(b89,X).
-0.05000000::gt(b89,f3,t4_0,X) :- not_z(b89,X).
-0.95000000::gt(b89,f0,t4_2,X) :- z(b89,X).
-0.05000000::gt(b89,f0,t4_2,X) :- not_z(b89,X).
-0.95000000::le(b89,f0,t4_4,X) :- z(b89,X).
-0.05000000::le(b89,f0,t4_4,X) :- not_z(b89,X).
-0.95000000::gt(b89,f3,t4_9,X) :- z(b89,X).
-0.05000000::gt(b89,f3,t4_9,X) :- not_z(b89,X).
-0.95000000::gt(b90,f3,t4_0,X) :- z(b90,X).
-0.05000000::gt(b90,f3,t4_0,X) :- not_z(b90,X).
-0.95000000::gt(b90,f0,t4_2,X) :- z(b90,X).
-0.05000000::gt(b90,f0,t4_2,X) :- not_z(b90,X).
-0.95000000::gt(b90,f0,t4_4,X) :- z(b90,X).
-0.05000000::gt(b90,f0,t4_4,X) :- not_z(b90,X).
-0.95000000::le(b90,f0,t4_10,X) :- z(b90,X).
-0.05000000::le(b90,f0,t4_10,X) :- not_z(b90,X).
-0.95000000::le(b90,f1,t4_21,X) :- z(b90,X).
-0.05000000::le(b90,f1,t4_21,X) :- not_z(b90,X).
-0.95000000::gt(b91,f3,t4_0,X) :- z(b91,X).
-0.05000000::gt(b91,f3,t4_0,X) :- not_z(b91,X).
-0.95000000::gt(b91,f0,t4_2,X) :- z(b91,X).
-0.05000000::gt(b91,f0,t4_2,X) :- not_z(b91,X).
-0.95000000::gt(b91,f0,t4_4,X) :- z(b91,X).
-0.05000000::gt(b91,f0,t4_4,X) :- not_z(b91,X).
-0.95000000::le(b91,f0,t4_10,X) :- z(b91,X).
-0.05000000::le(b91,f0,t4_10,X) :- not_z(b91,X).
-0.95000000::gt(b91,f1,t4_21,X) :- z(b91,X).
-0.05000000::gt(b91,f1,t4_21,X) :- not_z(b91,X).
-0.95000000::le(b91,f1,t4_24,X) :- z(b91,X).
-0.05000000::le(b91,f1,t4_24,X) :- not_z(b91,X).
-0.95000000::gt(b92,f3,t4_0,X) :- z(b92,X).
-0.05000000::gt(b92,f3,t4_0,X) :- not_z(b92,X).
-0.95000000::gt(b92,f0,t4_2,X) :- z(b92,X).
-0.05000000::gt(b92,f0,t4_2,X) :- not_z(b92,X).
-0.95000000::gt(b92,f0,t4_4,X) :- z(b92,X).
-0.05000000::gt(b92,f0,t4_4,X) :- not_z(b92,X).
-0.95000000::le(b92,f0,t4_10,X) :- z(b92,X).
-0.05000000::le(b92,f0,t4_10,X) :- not_z(b92,X).
-0.95000000::gt(b92,f1,t4_21,X) :- z(b92,X).
-0.05000000::gt(b92,f1,t4_21,X) :- not_z(b92,X).
-0.95000000::gt(b92,f1,t4_24,X) :- z(b92,X).
-0.05000000::gt(b92,f1,t4_24,X) :- not_z(b92,X).
-0.95000000::gt(b93,f3,t4_0,X) :- z(b93,X).
-0.05000000::gt(b93,f3,t4_0,X) :- not_z(b93,X).
-0.95000000::gt(b93,f0,t4_2,X) :- z(b93,X).
-0.05000000::gt(b93,f0,t4_2,X) :- not_z(b93,X).
-0.95000000::gt(b93,f0,t4_4,X) :- z(b93,X).
-0.05000000::gt(b93,f0,t4_4,X) :- not_z(b93,X).
-0.95000000::gt(b93,f0,t4_10,X) :- z(b93,X).
-0.05000000::gt(b93,f0,t4_10,X) :- not_z(b93,X).
-0.95000000::le(b94,f3,t5_0,X) :- z(b94,X).
-0.05000000::le(b94,f3,t5_0,X) :- not_z(b94,X).
-0.95000000::le(b94,f3,t5_1,X) :- z(b94,X).
-0.05000000::le(b94,f3,t5_1,X) :- not_z(b94,X).
-0.95000000::le(b95,f3,t5_0,X) :- z(b95,X).
-0.05000000::le(b95,f3,t5_0,X) :- not_z(b95,X).
-0.95000000::gt(b95,f3,t5_1,X) :- z(b95,X).
-0.05000000::gt(b95,f3,t5_1,X) :- not_z(b95,X).
-0.95000000::gt(b96,f3,t5_0,X) :- z(b96,X).
-0.05000000::gt(b96,f3,t5_0,X) :- not_z(b96,X).
-0.95000000::le(b96,f2,t5_2,X) :- z(b96,X).
-0.05000000::le(b96,f2,t5_2,X) :- not_z(b96,X).
-0.95000000::le(b96,f3,t5_5,X) :- z(b96,X).
-0.05000000::le(b96,f3,t5_5,X) :- not_z(b96,X).
-0.95000000::le(b96,f2,t5_7,X) :- z(b96,X).
-0.05000000::le(b96,f2,t5_7,X) :- not_z(b96,X).
-0.95000000::le(b96,f3,t5_9,X) :- z(b96,X).
-0.05000000::le(b96,f3,t5_9,X) :- not_z(b96,X).
-0.95000000::gt(b97,f3,t5_0,X) :- z(b97,X).
-0.05000000::gt(b97,f3,t5_0,X) :- not_z(b97,X).
-0.95000000::le(b97,f2,t5_2,X) :- z(b97,X).
-0.05000000::le(b97,f2,t5_2,X) :- not_z(b97,X).
-0.95000000::le(b97,f3,t5_5,X) :- z(b97,X).
-0.05000000::le(b97,f3,t5_5,X) :- not_z(b97,X).
-0.95000000::le(b97,f2,t5_7,X) :- z(b97,X).
-0.05000000::le(b97,f2,t5_7,X) :- not_z(b97,X).
-0.95000000::gt(b97,f3,t5_9,X) :- z(b97,X).
-0.05000000::gt(b97,f3,t5_9,X) :- not_z(b97,X).
-0.95000000::le(b97,f2,t5_14,X) :- z(b97,X).
-0.05000000::le(b97,f2,t5_14,X) :- not_z(b97,X).
-0.95000000::gt(b98,f3,t5_0,X) :- z(b98,X).
-0.05000000::gt(b98,f3,t5_0,X) :- not_z(b98,X).
-0.95000000::le(b98,f2,t5_2,X) :- z(b98,X).
-0.05000000::le(b98,f2,t5_2,X) :- not_z(b98,X).
-0.95000000::le(b98,f3,t5_5,X) :- z(b98,X).
-0.05000000::le(b98,f3,t5_5,X) :- not_z(b98,X).
-0.95000000::le(b98,f2,t5_7,X) :- z(b98,X).
-0.05000000::le(b98,f2,t5_7,X) :- not_z(b98,X).
-0.95000000::gt(b98,f3,t5_9,X) :- z(b98,X).
-0.05000000::gt(b98,f3,t5_9,X) :- not_z(b98,X).
-0.95000000::gt(b98,f2,t5_14,X) :- z(b98,X).
-0.05000000::gt(b98,f2,t5_14,X) :- not_z(b98,X).
-0.95000000::gt(b99,f3,t5_0,X) :- z(b99,X).
-0.05000000::gt(b99,f3,t5_0,X) :- not_z(b99,X).
-0.95000000::le(b99,f2,t5_2,X) :- z(b99,X).
-0.05000000::le(b99,f2,t5_2,X) :- not_z(b99,X).
-0.95000000::le(b99,f3,t5_5,X) :- z(b99,X).
-0.05000000::le(b99,f3,t5_5,X) :- not_z(b99,X).
-0.95000000::gt(b99,f2,t5_7,X) :- z(b99,X).
-0.05000000::gt(b99,f2,t5_7,X) :- not_z(b99,X).
-0.95000000::le(b99,f3,t5_10,X) :- z(b99,X).
-0.05000000::le(b99,f3,t5_10,X) :- not_z(b99,X).
-0.95000000::le(b99,f1,t5_11,X) :- z(b99,X).
-0.05000000::le(b99,f1,t5_11,X) :- not_z(b99,X).
-0.95000000::le(b99,f1,t5_17,X) :- z(b99,X).
-0.05000000::le(b99,f1,t5_17,X) :- not_z(b99,X).
-0.95000000::gt(b100,f3,t5_0,X) :- z(b100,X).
-0.05000000::gt(b100,f3,t5_0,X) :- not_z(b100,X).
-0.95000000::le(b100,f2,t5_2,X) :- z(b100,X).
-0.05000000::le(b100,f2,t5_2,X) :- not_z(b100,X).
-0.95000000::le(b100,f3,t5_5,X) :- z(b100,X).
-0.05000000::le(b100,f3,t5_5,X) :- not_z(b100,X).
-0.95000000::gt(b100,f2,t5_7,X) :- z(b100,X).
-0.05000000::gt(b100,f2,t5_7,X) :- not_z(b100,X).
-0.95000000::le(b100,f3,t5_10,X) :- z(b100,X).
-0.05000000::le(b100,f3,t5_10,X) :- not_z(b100,X).
-0.95000000::le(b100,f1,t5_11,X) :- z(b100,X).
-0.05000000::le(b100,f1,t5_11,X) :- not_z(b100,X).
-0.95000000::gt(b100,f1,t5_17,X) :- z(b100,X).
-0.05000000::gt(b100,f1,t5_17,X) :- not_z(b100,X).
-0.95000000::gt(b101,f3,t5_0,X) :- z(b101,X).
-0.05000000::gt(b101,f3,t5_0,X) :- not_z(b101,X).
-0.95000000::le(b101,f2,t5_2,X) :- z(b101,X).
-0.05000000::le(b101,f2,t5_2,X) :- not_z(b101,X).
-0.95000000::le(b101,f3,t5_5,X) :- z(b101,X).
-0.05000000::le(b101,f3,t5_5,X) :- not_z(b101,X).
-0.95000000::gt(b101,f2,t5_7,X) :- z(b101,X).
-0.05000000::gt(b101,f2,t5_7,X) :- not_z(b101,X).
-0.95000000::le(b101,f3,t5_10,X) :- z(b101,X).
-0.05000000::le(b101,f3,t5_10,X) :- not_z(b101,X).
-0.95000000::gt(b101,f1,t5_11,X) :- z(b101,X).
-0.05000000::gt(b101,f1,t5_11,X) :- not_z(b101,X).
-0.95000000::gt(b102,f3,t5_0,X) :- z(b102,X).
-0.05000000::gt(b102,f3,t5_0,X) :- not_z(b102,X).
-0.95000000::le(b102,f2,t5_2,X) :- z(b102,X).
-0.05000000::le(b102,f2,t5_2,X) :- not_z(b102,X).
-0.95000000::le(b102,f3,t5_5,X) :- z(b102,X).
-0.05000000::le(b102,f3,t5_5,X) :- not_z(b102,X).
-0.95000000::gt(b102,f2,t5_7,X) :- z(b102,X).
-0.05000000::gt(b102,f2,t5_7,X) :- not_z(b102,X).
-0.95000000::gt(b102,f3,t5_10,X) :- z(b102,X).
-0.05000000::gt(b102,f3,t5_10,X) :- not_z(b102,X).
-0.95000000::gt(b103,f3,t5_0,X) :- z(b103,X).
-0.05000000::gt(b103,f3,t5_0,X) :- not_z(b103,X).
-0.95000000::le(b103,f2,t5_2,X) :- z(b103,X).
-0.05000000::le(b103,f2,t5_2,X) :- not_z(b103,X).
-0.95000000::gt(b103,f3,t5_5,X) :- z(b103,X).
-0.05000000::gt(b103,f3,t5_5,X) :- not_z(b103,X).
-0.95000000::gt(b104,f3,t5_0,X) :- z(b104,X).
-0.05000000::gt(b104,f3,t5_0,X) :- not_z(b104,X).
-0.95000000::gt(b104,f2,t5_2,X) :- z(b104,X).
-0.05000000::gt(b104,f2,t5_2,X) :- not_z(b104,X).
-0.95000000::le(b105,f2,t6_0,X) :- z(b105,X).
-0.05000000::le(b105,f2,t6_0,X) :- not_z(b105,X).
-0.95000000::le(b105,f2,t6_1,X) :- z(b105,X).
-0.05000000::le(b105,f2,t6_1,X) :- not_z(b105,X).
-0.95000000::le(b105,f2,t6_3,X) :- z(b105,X).
-0.05000000::le(b105,f2,t6_3,X) :- not_z(b105,X).
-0.95000000::le(b106,f2,t6_0,X) :- z(b106,X).
-0.05000000::le(b106,f2,t6_0,X) :- not_z(b106,X).
-0.95000000::le(b106,f2,t6_1,X) :- z(b106,X).
-0.05000000::le(b106,f2,t6_1,X) :- not_z(b106,X).
-0.95000000::gt(b106,f2,t6_3,X) :- z(b106,X).
-0.05000000::gt(b106,f2,t6_3,X) :- not_z(b106,X).
-0.95000000::le(b107,f2,t6_0,X) :- z(b107,X).
-0.05000000::le(b107,f2,t6_0,X) :- not_z(b107,X).
-0.95000000::gt(b107,f2,t6_1,X) :- z(b107,X).
-0.05000000::gt(b107,f2,t6_1,X) :- not_z(b107,X).
-0.95000000::le(b107,f2,t6_4,X) :- z(b107,X).
-0.05000000::le(b107,f2,t6_4,X) :- not_z(b107,X).
-0.95000000::le(b107,f3,t6_7,X) :- z(b107,X).
-0.05000000::le(b107,f3,t6_7,X) :- not_z(b107,X).
-0.95000000::le(b108,f2,t6_0,X) :- z(b108,X).
-0.05000000::le(b108,f2,t6_0,X) :- not_z(b108,X).
-0.95000000::gt(b108,f2,t6_1,X) :- z(b108,X).
-0.05000000::gt(b108,f2,t6_1,X) :- not_z(b108,X).
-0.95000000::le(b108,f2,t6_4,X) :- z(b108,X).
-0.05000000::le(b108,f2,t6_4,X) :- not_z(b108,X).
-0.95000000::gt(b108,f3,t6_7,X) :- z(b108,X).
-0.05000000::gt(b108,f3,t6_7,X) :- not_z(b108,X).
-0.95000000::le(b108,f0,t6_16,X) :- z(b108,X).
-0.05000000::le(b108,f0,t6_16,X) :- not_z(b108,X).
-0.95000000::le(b109,f2,t6_0,X) :- z(b109,X).
-0.05000000::le(b109,f2,t6_0,X) :- not_z(b109,X).
-0.95000000::gt(b109,f2,t6_1,X) :- z(b109,X).
-0.05000000::gt(b109,f2,t6_1,X) :- not_z(b109,X).
-0.95000000::le(b109,f2,t6_4,X) :- z(b109,X).
-0.05000000::le(b109,f2,t6_4,X) :- not_z(b109,X).
-0.95000000::gt(b109,f3,t6_7,X) :- z(b109,X).
-0.05000000::gt(b109,f3,t6_7,X) :- not_z(b109,X).
-0.95000000::gt(b109,f0,t6_16,X) :- z(b109,X).
-0.05000000::gt(b109,f0,t6_16,X) :- not_z(b109,X).
-0.95000000::le(b110,f2,t6_0,X) :- z(b110,X).
-0.05000000::le(b110,f2,t6_0,X) :- not_z(b110,X).
-0.95000000::gt(b110,f2,t6_1,X) :- z(b110,X).
-0.05000000::gt(b110,f2,t6_1,X) :- not_z(b110,X).
-0.95000000::gt(b110,f2,t6_4,X) :- z(b110,X).
-0.05000000::gt(b110,f2,t6_4,X) :- not_z(b110,X).
-0.95000000::le(b110,f3,t6_8,X) :- z(b110,X).
-0.05000000::le(b110,f3,t6_8,X) :- not_z(b110,X).
-0.95000000::le(b110,f2,t6_9,X) :- z(b110,X).
-0.05000000::le(b110,f2,t6_9,X) :- not_z(b110,X).
-0.95000000::le(b111,f2,t6_0,X) :- z(b111,X).
-0.05000000::le(b111,f2,t6_0,X) :- not_z(b111,X).
-0.95000000::gt(b111,f2,t6_1,X) :- z(b111,X).
-0.05000000::gt(b111,f2,t6_1,X) :- not_z(b111,X).
-0.95000000::gt(b111,f2,t6_4,X) :- z(b111,X).
-0.05000000::gt(b111,f2,t6_4,X) :- not_z(b111,X).
-0.95000000::le(b111,f3,t6_8,X) :- z(b111,X).
-0.05000000::le(b111,f3,t6_8,X) :- not_z(b111,X).
-0.95000000::gt(b111,f2,t6_9,X) :- z(b111,X).
-0.05000000::gt(b111,f2,t6_9,X) :- not_z(b111,X).
-0.95000000::le(b112,f2,t6_0,X) :- z(b112,X).
-0.05000000::le(b112,f2,t6_0,X) :- not_z(b112,X).
-0.95000000::gt(b112,f2,t6_1,X) :- z(b112,X).
-0.05000000::gt(b112,f2,t6_1,X) :- not_z(b112,X).
-0.95000000::gt(b112,f2,t6_4,X) :- z(b112,X).
-0.05000000::gt(b112,f2,t6_4,X) :- not_z(b112,X).
-0.95000000::gt(b112,f3,t6_8,X) :- z(b112,X).
-0.05000000::gt(b112,f3,t6_8,X) :- not_z(b112,X).
-0.95000000::le(b112,f3,t6_10,X) :- z(b112,X).
-0.05000000::le(b112,f3,t6_10,X) :- not_z(b112,X).
-0.95000000::le(b113,f2,t6_0,X) :- z(b113,X).
-0.05000000::le(b113,f2,t6_0,X) :- not_z(b113,X).
-0.95000000::gt(b113,f2,t6_1,X) :- z(b113,X).
-0.05000000::gt(b113,f2,t6_1,X) :- not_z(b113,X).
-0.95000000::gt(b113,f2,t6_4,X) :- z(b113,X).
-0.05000000::gt(b113,f2,t6_4,X) :- not_z(b113,X).
-0.95000000::gt(b113,f3,t6_8,X) :- z(b113,X).
-0.05000000::gt(b113,f3,t6_8,X) :- not_z(b113,X).
-0.95000000::gt(b113,f3,t6_10,X) :- z(b113,X).
-0.05000000::gt(b113,f3,t6_10,X) :- not_z(b113,X).
-0.95000000::gt(b114,f2,t6_0,X) :- z(b114,X).
-0.05000000::gt(b114,f2,t6_0,X) :- not_z(b114,X).
-0.95000000::le(b115,f3,t7_0,X) :- z(b115,X).
-0.05000000::le(b115,f3,t7_0,X) :- not_z(b115,X).
-0.95000000::le(b115,f3,t7_1,X) :- z(b115,X).
-0.05000000::le(b115,f3,t7_1,X) :- not_z(b115,X).
-0.95000000::le(b116,f3,t7_0,X) :- z(b116,X).
-0.05000000::le(b116,f3,t7_0,X) :- not_z(b116,X).
-0.95000000::gt(b116,f3,t7_1,X) :- z(b116,X).
-0.05000000::gt(b116,f3,t7_1,X) :- not_z(b116,X).
-0.95000000::gt(b117,f3,t7_0,X) :- z(b117,X).
-0.05000000::gt(b117,f3,t7_0,X) :- not_z(b117,X).
-0.95000000::le(b117,f2,t7_2,X) :- z(b117,X).
-0.05000000::le(b117,f2,t7_2,X) :- not_z(b117,X).
-0.95000000::le(b117,f3,t7_3,X) :- z(b117,X).
-0.05000000::le(b117,f3,t7_3,X) :- not_z(b117,X).
-0.95000000::gt(b118,f3,t7_0,X) :- z(b118,X).
-0.05000000::gt(b118,f3,t7_0,X) :- not_z(b118,X).
-0.95000000::le(b118,f2,t7_2,X) :- z(b118,X).
-0.05000000::le(b118,f2,t7_2,X) :- not_z(b118,X).
-0.95000000::gt(b118,f3,t7_3,X) :- z(b118,X).
-0.05000000::gt(b118,f3,t7_3,X) :- not_z(b118,X).
-0.95000000::le(b118,f0,t7_22,X) :- z(b118,X).
-0.05000000::le(b118,f0,t7_22,X) :- not_z(b118,X).
-0.95000000::gt(b119,f3,t7_0,X) :- z(b119,X).
-0.05000000::gt(b119,f3,t7_0,X) :- not_z(b119,X).
-0.95000000::le(b119,f2,t7_2,X) :- z(b119,X).
-0.05000000::le(b119,f2,t7_2,X) :- not_z(b119,X).
-0.95000000::gt(b119,f3,t7_3,X) :- z(b119,X).
-0.05000000::gt(b119,f3,t7_3,X) :- not_z(b119,X).
-0.95000000::gt(b119,f0,t7_22,X) :- z(b119,X).
-0.05000000::gt(b119,f0,t7_22,X) :- not_z(b119,X).
-0.95000000::gt(b120,f3,t7_0,X) :- z(b120,X).
-0.05000000::gt(b120,f3,t7_0,X) :- not_z(b120,X).
-0.95000000::gt(b120,f2,t7_2,X) :- z(b120,X).
-0.05000000::gt(b120,f2,t7_2,X) :- not_z(b120,X).
-0.95000000::le(b120,f2,t7_4,X) :- z(b120,X).
-0.05000000::le(b120,f2,t7_4,X) :- not_z(b120,X).
-0.95000000::gt(b121,f3,t7_0,X) :- z(b121,X).
-0.05000000::gt(b121,f3,t7_0,X) :- not_z(b121,X).
-0.95000000::gt(b121,f2,t7_2,X) :- z(b121,X).
-0.05000000::gt(b121,f2,t7_2,X) :- not_z(b121,X).
-0.95000000::gt(b121,f2,t7_4,X) :- z(b121,X).
-0.05000000::gt(b121,f2,t7_4,X) :- not_z(b121,X).
-0.95000000::le(b121,f3,t7_8,X) :- z(b121,X).
-0.05000000::le(b121,f3,t7_8,X) :- not_z(b121,X).
-0.95000000::le(b121,f1,t7_9,X) :- z(b121,X).
-0.05000000::le(b121,f1,t7_9,X) :- not_z(b121,X).
-0.95000000::gt(b122,f3,t7_0,X) :- z(b122,X).
-0.05000000::gt(b122,f3,t7_0,X) :- not_z(b122,X).
-0.95000000::gt(b122,f2,t7_2,X) :- z(b122,X).
-0.05000000::gt(b122,f2,t7_2,X) :- not_z(b122,X).
-0.95000000::gt(b122,f2,t7_4,X) :- z(b122,X).
-0.05000000::gt(b122,f2,t7_4,X) :- not_z(b122,X).
-0.95000000::le(b122,f3,t7_8,X) :- z(b122,X).
-0.05000000::le(b122,f3,t7_8,X) :- not_z(b122,X).
-0.95000000::gt(b122,f1,t7_9,X) :- z(b122,X).
-0.05000000::gt(b122,f1,t7_9,X) :- not_z(b122,X).
-0.95000000::le(b122,f0,t7_12,X) :- z(b122,X).
-0.05000000::le(b122,f0,t7_12,X) :- not_z(b122,X).
-0.95000000::le(b122,f3,t7_13,X) :- z(b122,X).
-0.05000000::le(b122,f3,t7_13,X) :- not_z(b122,X).
-0.95000000::gt(b123,f3,t7_0,X) :- z(b123,X).
-0.05000000::gt(b123,f3,t7_0,X) :- not_z(b123,X).
-0.95000000::gt(b123,f2,t7_2,X) :- z(b123,X).
-0.05000000::gt(b123,f2,t7_2,X) :- not_z(b123,X).
-0.95000000::gt(b123,f2,t7_4,X) :- z(b123,X).
-0.05000000::gt(b123,f2,t7_4,X) :- not_z(b123,X).
-0.95000000::le(b123,f3,t7_8,X) :- z(b123,X).
-0.05000000::le(b123,f3,t7_8,X) :- not_z(b123,X).
-0.95000000::gt(b123,f1,t7_9,X) :- z(b123,X).
-0.05000000::gt(b123,f1,t7_9,X) :- not_z(b123,X).
-0.95000000::le(b123,f0,t7_12,X) :- z(b123,X).
-0.05000000::le(b123,f0,t7_12,X) :- not_z(b123,X).
-0.95000000::gt(b123,f3,t7_13,X) :- z(b123,X).
-0.05000000::gt(b123,f3,t7_13,X) :- not_z(b123,X).
-0.95000000::gt(b124,f3,t7_0,X) :- z(b124,X).
-0.05000000::gt(b124,f3,t7_0,X) :- not_z(b124,X).
-0.95000000::gt(b124,f2,t7_2,X) :- z(b124,X).
-0.05000000::gt(b124,f2,t7_2,X) :- not_z(b124,X).
-0.95000000::gt(b124,f2,t7_4,X) :- z(b124,X).
-0.05000000::gt(b124,f2,t7_4,X) :- not_z(b124,X).
-0.95000000::le(b124,f3,t7_8,X) :- z(b124,X).
-0.05000000::le(b124,f3,t7_8,X) :- not_z(b124,X).
-0.95000000::gt(b124,f1,t7_9,X) :- z(b124,X).
-0.05000000::gt(b124,f1,t7_9,X) :- not_z(b124,X).
-0.95000000::gt(b124,f0,t7_12,X) :- z(b124,X).
-0.05000000::gt(b124,f0,t7_12,X) :- not_z(b124,X).
-0.95000000::le(b124,f1,t7_14,X) :- z(b124,X).
-0.05000000::le(b124,f1,t7_14,X) :- not_z(b124,X).
-0.95000000::gt(b125,f3,t7_0,X) :- z(b125,X).
-0.05000000::gt(b125,f3,t7_0,X) :- not_z(b125,X).
-0.95000000::gt(b125,f2,t7_2,X) :- z(b125,X).
-0.05000000::gt(b125,f2,t7_2,X) :- not_z(b125,X).
-0.95000000::gt(b125,f2,t7_4,X) :- z(b125,X).
-0.05000000::gt(b125,f2,t7_4,X) :- not_z(b125,X).
-0.95000000::le(b125,f3,t7_8,X) :- z(b125,X).
-0.05000000::le(b125,f3,t7_8,X) :- not_z(b125,X).
-0.95000000::gt(b125,f1,t7_9,X) :- z(b125,X).
-0.05000000::gt(b125,f1,t7_9,X) :- not_z(b125,X).
-0.95000000::gt(b125,f0,t7_12,X) :- z(b125,X).
-0.05000000::gt(b125,f0,t7_12,X) :- not_z(b125,X).
-0.95000000::gt(b125,f1,t7_14,X) :- z(b125,X).
-0.05000000::gt(b125,f1,t7_14,X) :- not_z(b125,X).
-0.95000000::le(b125,f3,t7_18,X) :- z(b125,X).
-0.05000000::le(b125,f3,t7_18,X) :- not_z(b125,X).
-0.95000000::gt(b126,f3,t7_0,X) :- z(b126,X).
-0.05000000::gt(b126,f3,t7_0,X) :- not_z(b126,X).
-0.95000000::gt(b126,f2,t7_2,X) :- z(b126,X).
-0.05000000::gt(b126,f2,t7_2,X) :- not_z(b126,X).
-0.95000000::gt(b126,f2,t7_4,X) :- z(b126,X).
-0.05000000::gt(b126,f2,t7_4,X) :- not_z(b126,X).
-0.95000000::le(b126,f3,t7_8,X) :- z(b126,X).
-0.05000000::le(b126,f3,t7_8,X) :- not_z(b126,X).
-0.95000000::gt(b126,f1,t7_9,X) :- z(b126,X).
-0.05000000::gt(b126,f1,t7_9,X) :- not_z(b126,X).
-0.95000000::gt(b126,f0,t7_12,X) :- z(b126,X).
-0.05000000::gt(b126,f0,t7_12,X) :- not_z(b126,X).
-0.95000000::gt(b126,f1,t7_14,X) :- z(b126,X).
-0.05000000::gt(b126,f1,t7_14,X) :- not_z(b126,X).
-0.95000000::gt(b126,f3,t7_18,X) :- z(b126,X).
-0.05000000::gt(b126,f3,t7_18,X) :- not_z(b126,X).
-0.95000000::gt(b127,f3,t7_0,X) :- z(b127,X).
-0.05000000::gt(b127,f3,t7_0,X) :- not_z(b127,X).
-0.95000000::gt(b127,f2,t7_2,X) :- z(b127,X).
-0.05000000::gt(b127,f2,t7_2,X) :- not_z(b127,X).
-0.95000000::gt(b127,f2,t7_4,X) :- z(b127,X).
-0.05000000::gt(b127,f2,t7_4,X) :- not_z(b127,X).
-0.95000000::gt(b127,f3,t7_8,X) :- z(b127,X).
-0.05000000::gt(b127,f3,t7_8,X) :- not_z(b127,X).
+0.95000000::gt(b34,f0,t2_1,X) :- z(b34,X).
+0.05000000::gt(b34,f0,t2_1,X) :- not_z(b34,X).
+0.95000000::le(b34,f1,t2_6,X) :- z(b34,X).
+0.05000000::le(b34,f1,t2_6,X) :- not_z(b34,X).
+0.95000000::gt(b34,f3,t2_7,X) :- z(b34,X).
+0.05000000::gt(b34,f3,t2_7,X) :- not_z(b34,X).
+0.95000000::gt(b34,f2,t2_10,X) :- z(b34,X).
+0.05000000::gt(b34,f2,t2_10,X) :- not_z(b34,X).
+0.95000000::gt(b34,f2,t2_14,X) :- z(b34,X).
+0.05000000::gt(b34,f2,t2_14,X) :- not_z(b34,X).
+0.95000000::gt(b34,f1,t2_16,X) :- z(b34,X).
+0.05000000::gt(b34,f1,t2_16,X) :- not_z(b34,X).
+0.95000000::gt(b34,f3,t2_18,X) :- z(b34,X).
+0.05000000::gt(b34,f3,t2_18,X) :- not_z(b34,X).
+0.95000000::gt(b35,f0,t2_0,X) :- z(b35,X).
+0.05000000::gt(b35,f0,t2_0,X) :- not_z(b35,X).
+0.95000000::gt(b36,f0,t2_0,X) :- z(b36,X).
+0.05000000::gt(b36,f0,t2_0,X) :- not_z(b36,X).
+0.95000000::gt(b36,f3,t2_2,X) :- z(b36,X).
+0.05000000::gt(b36,f3,t2_2,X) :- not_z(b36,X).
+0.95000000::gt(b37,f0,t2_0,X) :- z(b37,X).
+0.05000000::gt(b37,f0,t2_0,X) :- not_z(b37,X).
+0.95000000::gt(b37,f3,t2_2,X) :- z(b37,X).
+0.05000000::gt(b37,f3,t2_2,X) :- not_z(b37,X).
+0.95000000::gt(b37,f2,t2_4,X) :- z(b37,X).
+0.05000000::gt(b37,f2,t2_4,X) :- not_z(b37,X).
+0.95000000::gt(b38,f0,t2_0,X) :- z(b38,X).
+0.05000000::gt(b38,f0,t2_0,X) :- not_z(b38,X).
+0.95000000::gt(b38,f3,t2_2,X) :- z(b38,X).
+0.05000000::gt(b38,f3,t2_2,X) :- not_z(b38,X).
+0.95000000::gt(b38,f2,t2_4,X) :- z(b38,X).
+0.05000000::gt(b38,f2,t2_4,X) :- not_z(b38,X).
+0.95000000::le(b38,f3,t2_12,X) :- z(b38,X).
+0.05000000::le(b38,f3,t2_12,X) :- not_z(b38,X).
+0.95000000::gt(b39,f0,t2_0,X) :- z(b39,X).
+0.05000000::gt(b39,f0,t2_0,X) :- not_z(b39,X).
+0.95000000::gt(b39,f3,t2_2,X) :- z(b39,X).
+0.05000000::gt(b39,f3,t2_2,X) :- not_z(b39,X).
+0.95000000::gt(b39,f2,t2_4,X) :- z(b39,X).
+0.05000000::gt(b39,f2,t2_4,X) :- not_z(b39,X).
+0.95000000::le(b39,f3,t2_12,X) :- z(b39,X).
+0.05000000::le(b39,f3,t2_12,X) :- not_z(b39,X).
+0.95000000::le(b39,f3,t2_31,X) :- z(b39,X).
+0.05000000::le(b39,f3,t2_31,X) :- not_z(b39,X).
+0.95000000::gt(b40,f0,t2_0,X) :- z(b40,X).
+0.05000000::gt(b40,f0,t2_0,X) :- not_z(b40,X).
+0.95000000::gt(b40,f3,t2_2,X) :- z(b40,X).
+0.05000000::gt(b40,f3,t2_2,X) :- not_z(b40,X).
+0.95000000::gt(b40,f2,t2_4,X) :- z(b40,X).
+0.05000000::gt(b40,f2,t2_4,X) :- not_z(b40,X).
+0.95000000::le(b40,f3,t2_12,X) :- z(b40,X).
+0.05000000::le(b40,f3,t2_12,X) :- not_z(b40,X).
+0.95000000::le(b40,f3,t2_31,X) :- z(b40,X).
+0.05000000::le(b40,f3,t2_31,X) :- not_z(b40,X).
+0.95000000::gt(b40,f1,t2_33,X) :- z(b40,X).
+0.05000000::gt(b40,f1,t2_33,X) :- not_z(b40,X).
+0.95000000::le(b41,f2,t3_0,X) :- z(b41,X).
+0.05000000::le(b41,f2,t3_0,X) :- not_z(b41,X).
+0.95000000::le(b42,f2,t3_0,X) :- z(b42,X).
+0.05000000::le(b42,f2,t3_0,X) :- not_z(b42,X).
+0.95000000::gt(b42,f3,t3_1,X) :- z(b42,X).
+0.05000000::gt(b42,f3,t3_1,X) :- not_z(b42,X).
+0.95000000::le(b42,f1,t3_4,X) :- z(b42,X).
+0.05000000::le(b42,f1,t3_4,X) :- not_z(b42,X).
+0.95000000::le(b43,f2,t3_0,X) :- z(b43,X).
+0.05000000::le(b43,f2,t3_0,X) :- not_z(b43,X).
+0.95000000::gt(b43,f3,t3_1,X) :- z(b43,X).
+0.05000000::gt(b43,f3,t3_1,X) :- not_z(b43,X).
+0.95000000::gt(b43,f1,t3_4,X) :- z(b43,X).
+0.05000000::gt(b43,f1,t3_4,X) :- not_z(b43,X).
+0.95000000::le(b44,f2,t3_0,X) :- z(b44,X).
+0.05000000::le(b44,f2,t3_0,X) :- not_z(b44,X).
+0.95000000::gt(b44,f3,t3_1,X) :- z(b44,X).
+0.05000000::gt(b44,f3,t3_1,X) :- not_z(b44,X).
+0.95000000::gt(b44,f1,t3_4,X) :- z(b44,X).
+0.05000000::gt(b44,f1,t3_4,X) :- not_z(b44,X).
+0.95000000::le(b44,f0,t3_26,X) :- z(b44,X).
+0.05000000::le(b44,f0,t3_26,X) :- not_z(b44,X).
+0.95000000::gt(b45,f2,t3_0,X) :- z(b45,X).
+0.05000000::gt(b45,f2,t3_0,X) :- not_z(b45,X).
+0.95000000::gt(b46,f2,t3_0,X) :- z(b46,X).
+0.05000000::gt(b46,f2,t3_0,X) :- not_z(b46,X).
+0.95000000::le(b46,f0,t3_2,X) :- z(b46,X).
+0.05000000::le(b46,f0,t3_2,X) :- not_z(b46,X).
+0.95000000::le(b46,f0,t3_5,X) :- z(b46,X).
+0.05000000::le(b46,f0,t3_5,X) :- not_z(b46,X).
+0.95000000::gt(b47,f2,t3_0,X) :- z(b47,X).
+0.05000000::gt(b47,f2,t3_0,X) :- not_z(b47,X).
+0.95000000::le(b47,f0,t3_2,X) :- z(b47,X).
+0.05000000::le(b47,f0,t3_2,X) :- not_z(b47,X).
+0.95000000::le(b47,f0,t3_5,X) :- z(b47,X).
+0.05000000::le(b47,f0,t3_5,X) :- not_z(b47,X).
+0.95000000::le(b47,f1,t3_7,X) :- z(b47,X).
+0.05000000::le(b47,f1,t3_7,X) :- not_z(b47,X).
+0.95000000::gt(b48,f2,t3_0,X) :- z(b48,X).
+0.05000000::gt(b48,f2,t3_0,X) :- not_z(b48,X).
+0.95000000::le(b48,f0,t3_2,X) :- z(b48,X).
+0.05000000::le(b48,f0,t3_2,X) :- not_z(b48,X).
+0.95000000::le(b48,f0,t3_5,X) :- z(b48,X).
+0.05000000::le(b48,f0,t3_5,X) :- not_z(b48,X).
+0.95000000::le(b48,f1,t3_7,X) :- z(b48,X).
+0.05000000::le(b48,f1,t3_7,X) :- not_z(b48,X).
+0.95000000::gt(b48,f1,t3_15,X) :- z(b48,X).
+0.05000000::gt(b48,f1,t3_15,X) :- not_z(b48,X).
+0.95000000::gt(b49,f2,t3_0,X) :- z(b49,X).
+0.05000000::gt(b49,f2,t3_0,X) :- not_z(b49,X).
+0.95000000::le(b49,f0,t3_2,X) :- z(b49,X).
+0.05000000::le(b49,f0,t3_2,X) :- not_z(b49,X).
+0.95000000::le(b49,f0,t3_5,X) :- z(b49,X).
+0.05000000::le(b49,f0,t3_5,X) :- not_z(b49,X).
+0.95000000::le(b49,f1,t3_7,X) :- z(b49,X).
+0.05000000::le(b49,f1,t3_7,X) :- not_z(b49,X).
+0.95000000::gt(b49,f1,t3_15,X) :- z(b49,X).
+0.05000000::gt(b49,f1,t3_15,X) :- not_z(b49,X).
+0.95000000::le(b49,f2,t3_18,X) :- z(b49,X).
+0.05000000::le(b49,f2,t3_18,X) :- not_z(b49,X).
+0.95000000::gt(b50,f2,t3_0,X) :- z(b50,X).
+0.05000000::gt(b50,f2,t3_0,X) :- not_z(b50,X).
+0.95000000::le(b50,f0,t3_2,X) :- z(b50,X).
+0.05000000::le(b50,f0,t3_2,X) :- not_z(b50,X).
+0.95000000::le(b50,f0,t3_5,X) :- z(b50,X).
+0.05000000::le(b50,f0,t3_5,X) :- not_z(b50,X).
+0.95000000::le(b50,f1,t3_7,X) :- z(b50,X).
+0.05000000::le(b50,f1,t3_7,X) :- not_z(b50,X).
+0.95000000::gt(b50,f1,t3_15,X) :- z(b50,X).
+0.05000000::gt(b50,f1,t3_15,X) :- not_z(b50,X).
+0.95000000::le(b50,f2,t3_18,X) :- z(b50,X).
+0.05000000::le(b50,f2,t3_18,X) :- not_z(b50,X).
+0.95000000::gt(b50,f2,t3_19,X) :- z(b50,X).
+0.05000000::gt(b50,f2,t3_19,X) :- not_z(b50,X).
+0.95000000::gt(b51,f2,t3_0,X) :- z(b51,X).
+0.05000000::gt(b51,f2,t3_0,X) :- not_z(b51,X).
+0.95000000::le(b51,f0,t3_2,X) :- z(b51,X).
+0.05000000::le(b51,f0,t3_2,X) :- not_z(b51,X).
+0.95000000::gt(b51,f0,t3_5,X) :- z(b51,X).
+0.05000000::gt(b51,f0,t3_5,X) :- not_z(b51,X).
+0.95000000::gt(b52,f2,t3_0,X) :- z(b52,X).
+0.05000000::gt(b52,f2,t3_0,X) :- not_z(b52,X).
+0.95000000::le(b52,f0,t3_2,X) :- z(b52,X).
+0.05000000::le(b52,f0,t3_2,X) :- not_z(b52,X).
+0.95000000::gt(b52,f0,t3_5,X) :- z(b52,X).
+0.05000000::gt(b52,f0,t3_5,X) :- not_z(b52,X).
+0.95000000::gt(b52,f3,t3_8,X) :- z(b52,X).
+0.05000000::gt(b52,f3,t3_8,X) :- not_z(b52,X).
+0.95000000::gt(b53,f2,t3_0,X) :- z(b53,X).
+0.05000000::gt(b53,f2,t3_0,X) :- not_z(b53,X).
+0.95000000::le(b53,f0,t3_2,X) :- z(b53,X).
+0.05000000::le(b53,f0,t3_2,X) :- not_z(b53,X).
+0.95000000::gt(b53,f0,t3_5,X) :- z(b53,X).
+0.05000000::gt(b53,f0,t3_5,X) :- not_z(b53,X).
+0.95000000::gt(b53,f3,t3_8,X) :- z(b53,X).
+0.05000000::gt(b53,f3,t3_8,X) :- not_z(b53,X).
+0.95000000::le(b53,f3,t3_10,X) :- z(b53,X).
+0.05000000::le(b53,f3,t3_10,X) :- not_z(b53,X).
+0.95000000::gt(b55,f3,t4_0,X) :- z(b55,X).
+0.05000000::gt(b55,f3,t4_0,X) :- not_z(b55,X).
+0.95000000::le(b55,f0,t4_2,X) :- z(b55,X).
+0.05000000::le(b55,f0,t4_2,X) :- not_z(b55,X).
+0.95000000::le(b55,f2,t4_3,X) :- z(b55,X).
+0.05000000::le(b55,f2,t4_3,X) :- not_z(b55,X).
+0.95000000::gt(b56,f3,t4_0,X) :- z(b56,X).
+0.05000000::gt(b56,f3,t4_0,X) :- not_z(b56,X).
+0.95000000::le(b56,f0,t4_2,X) :- z(b56,X).
+0.05000000::le(b56,f0,t4_2,X) :- not_z(b56,X).
+0.95000000::le(b56,f2,t4_3,X) :- z(b56,X).
+0.05000000::le(b56,f2,t4_3,X) :- not_z(b56,X).
+0.95000000::le(b56,f0,t4_5,X) :- z(b56,X).
+0.05000000::le(b56,f0,t4_5,X) :- not_z(b56,X).
+0.95000000::gt(b57,f3,t4_0,X) :- z(b57,X).
+0.05000000::gt(b57,f3,t4_0,X) :- not_z(b57,X).
+0.95000000::le(b57,f0,t4_2,X) :- z(b57,X).
+0.05000000::le(b57,f0,t4_2,X) :- not_z(b57,X).
+0.95000000::le(b57,f2,t4_3,X) :- z(b57,X).
+0.05000000::le(b57,f2,t4_3,X) :- not_z(b57,X).
+0.95000000::le(b57,f0,t4_5,X) :- z(b57,X).
+0.05000000::le(b57,f0,t4_5,X) :- not_z(b57,X).
+0.95000000::gt(b57,f1,t4_15,X) :- z(b57,X).
+0.05000000::gt(b57,f1,t4_15,X) :- not_z(b57,X).
+0.95000000::gt(b58,f3,t4_0,X) :- z(b58,X).
+0.05000000::gt(b58,f3,t4_0,X) :- not_z(b58,X).
+0.95000000::le(b58,f0,t4_2,X) :- z(b58,X).
+0.05000000::le(b58,f0,t4_2,X) :- not_z(b58,X).
+0.95000000::gt(b58,f2,t4_3,X) :- z(b58,X).
+0.05000000::gt(b58,f2,t4_3,X) :- not_z(b58,X).
+0.95000000::le(b58,f2,t4_6,X) :- z(b58,X).
+0.05000000::le(b58,f2,t4_6,X) :- not_z(b58,X).
+0.95000000::gt(b59,f3,t4_0,X) :- z(b59,X).
+0.05000000::gt(b59,f3,t4_0,X) :- not_z(b59,X).
+0.95000000::le(b59,f0,t4_2,X) :- z(b59,X).
+0.05000000::le(b59,f0,t4_2,X) :- not_z(b59,X).
+0.95000000::gt(b59,f2,t4_3,X) :- z(b59,X).
+0.05000000::gt(b59,f2,t4_3,X) :- not_z(b59,X).
+0.95000000::le(b59,f2,t4_6,X) :- z(b59,X).
+0.05000000::le(b59,f2,t4_6,X) :- not_z(b59,X).
+0.95000000::gt(b59,f3,t4_7,X) :- z(b59,X).
+0.05000000::gt(b59,f3,t4_7,X) :- not_z(b59,X).
+0.95000000::gt(b60,f3,t4_0,X) :- z(b60,X).
+0.05000000::gt(b60,f3,t4_0,X) :- not_z(b60,X).
+0.95000000::le(b60,f0,t4_2,X) :- z(b60,X).
+0.05000000::le(b60,f0,t4_2,X) :- not_z(b60,X).
+0.95000000::gt(b60,f2,t4_3,X) :- z(b60,X).
+0.05000000::gt(b60,f2,t4_3,X) :- not_z(b60,X).
+0.95000000::le(b60,f2,t4_6,X) :- z(b60,X).
+0.05000000::le(b60,f2,t4_6,X) :- not_z(b60,X).
+0.95000000::gt(b60,f3,t4_7,X) :- z(b60,X).
+0.05000000::gt(b60,f3,t4_7,X) :- not_z(b60,X).
+0.95000000::le(b60,f2,t4_40,X) :- z(b60,X).
+0.05000000::le(b60,f2,t4_40,X) :- not_z(b60,X).
+0.95000000::gt(b61,f3,t4_0,X) :- z(b61,X).
+0.05000000::gt(b61,f3,t4_0,X) :- not_z(b61,X).
+0.95000000::le(b61,f0,t4_2,X) :- z(b61,X).
+0.05000000::le(b61,f0,t4_2,X) :- not_z(b61,X).
+0.95000000::gt(b61,f2,t4_3,X) :- z(b61,X).
+0.05000000::gt(b61,f2,t4_3,X) :- not_z(b61,X).
+0.95000000::gt(b61,f2,t4_6,X) :- z(b61,X).
+0.05000000::gt(b61,f2,t4_6,X) :- not_z(b61,X).
+0.95000000::gt(b62,f3,t4_0,X) :- z(b62,X).
+0.05000000::gt(b62,f3,t4_0,X) :- not_z(b62,X).
+0.95000000::le(b62,f0,t4_2,X) :- z(b62,X).
+0.05000000::le(b62,f0,t4_2,X) :- not_z(b62,X).
+0.95000000::gt(b62,f2,t4_3,X) :- z(b62,X).
+0.05000000::gt(b62,f2,t4_3,X) :- not_z(b62,X).
+0.95000000::gt(b62,f2,t4_6,X) :- z(b62,X).
+0.05000000::gt(b62,f2,t4_6,X) :- not_z(b62,X).
+0.95000000::le(b62,f0,t4_8,X) :- z(b62,X).
+0.05000000::le(b62,f0,t4_8,X) :- not_z(b62,X).
+0.95000000::gt(b63,f3,t4_0,X) :- z(b63,X).
+0.05000000::gt(b63,f3,t4_0,X) :- not_z(b63,X).
+0.95000000::le(b63,f0,t4_2,X) :- z(b63,X).
+0.05000000::le(b63,f0,t4_2,X) :- not_z(b63,X).
+0.95000000::gt(b63,f2,t4_3,X) :- z(b63,X).
+0.05000000::gt(b63,f2,t4_3,X) :- not_z(b63,X).
+0.95000000::gt(b63,f2,t4_6,X) :- z(b63,X).
+0.05000000::gt(b63,f2,t4_6,X) :- not_z(b63,X).
+0.95000000::le(b63,f0,t4_8,X) :- z(b63,X).
+0.05000000::le(b63,f0,t4_8,X) :- not_z(b63,X).
+0.95000000::gt(b63,f0,t4_27,X) :- z(b63,X).
+0.05000000::gt(b63,f0,t4_27,X) :- not_z(b63,X).
+0.95000000::gt(b64,f3,t4_0,X) :- z(b64,X).
+0.05000000::gt(b64,f3,t4_0,X) :- not_z(b64,X).
+0.95000000::gt(b64,f0,t4_2,X) :- z(b64,X).
+0.05000000::gt(b64,f0,t4_2,X) :- not_z(b64,X).
+0.95000000::le(b64,f0,t4_4,X) :- z(b64,X).
+0.05000000::le(b64,f0,t4_4,X) :- not_z(b64,X).
+0.95000000::gt(b65,f3,t4_0,X) :- z(b65,X).
+0.05000000::gt(b65,f3,t4_0,X) :- not_z(b65,X).
+0.95000000::gt(b65,f0,t4_2,X) :- z(b65,X).
+0.05000000::gt(b65,f0,t4_2,X) :- not_z(b65,X).
+0.95000000::le(b65,f0,t4_4,X) :- z(b65,X).
+0.05000000::le(b65,f0,t4_4,X) :- not_z(b65,X).
+0.95000000::le(b65,f3,t4_9,X) :- z(b65,X).
+0.05000000::le(b65,f3,t4_9,X) :- not_z(b65,X).
+0.95000000::gt(b66,f3,t4_0,X) :- z(b66,X).
+0.05000000::gt(b66,f3,t4_0,X) :- not_z(b66,X).
+0.95000000::gt(b66,f0,t4_2,X) :- z(b66,X).
+0.05000000::gt(b66,f0,t4_2,X) :- not_z(b66,X).
+0.95000000::le(b66,f0,t4_4,X) :- z(b66,X).
+0.05000000::le(b66,f0,t4_4,X) :- not_z(b66,X).
+0.95000000::le(b66,f3,t4_9,X) :- z(b66,X).
+0.05000000::le(b66,f3,t4_9,X) :- not_z(b66,X).
+0.95000000::le(b66,f2,t4_11,X) :- z(b66,X).
+0.05000000::le(b66,f2,t4_11,X) :- not_z(b66,X).
+0.95000000::gt(b67,f3,t4_0,X) :- z(b67,X).
+0.05000000::gt(b67,f3,t4_0,X) :- not_z(b67,X).
+0.95000000::gt(b67,f0,t4_2,X) :- z(b67,X).
+0.05000000::gt(b67,f0,t4_2,X) :- not_z(b67,X).
+0.95000000::le(b67,f0,t4_4,X) :- z(b67,X).
+0.05000000::le(b67,f0,t4_4,X) :- not_z(b67,X).
+0.95000000::le(b67,f3,t4_9,X) :- z(b67,X).
+0.05000000::le(b67,f3,t4_9,X) :- not_z(b67,X).
+0.95000000::le(b67,f2,t4_11,X) :- z(b67,X).
+0.05000000::le(b67,f2,t4_11,X) :- not_z(b67,X).
+0.95000000::le(b67,f1,t4_13,X) :- z(b67,X).
+0.05000000::le(b67,f1,t4_13,X) :- not_z(b67,X).
+0.95000000::gt(b68,f3,t4_0,X) :- z(b68,X).
+0.05000000::gt(b68,f3,t4_0,X) :- not_z(b68,X).
+0.95000000::gt(b68,f0,t4_2,X) :- z(b68,X).
+0.05000000::gt(b68,f0,t4_2,X) :- not_z(b68,X).
+0.95000000::le(b68,f0,t4_4,X) :- z(b68,X).
+0.05000000::le(b68,f0,t4_4,X) :- not_z(b68,X).
+0.95000000::le(b68,f3,t4_9,X) :- z(b68,X).
+0.05000000::le(b68,f3,t4_9,X) :- not_z(b68,X).
+0.95000000::le(b68,f2,t4_11,X) :- z(b68,X).
+0.05000000::le(b68,f2,t4_11,X) :- not_z(b68,X).
+0.95000000::le(b68,f1,t4_13,X) :- z(b68,X).
+0.05000000::le(b68,f1,t4_13,X) :- not_z(b68,X).
+0.95000000::gt(b68,f2,t4_33,X) :- z(b68,X).
+0.05000000::gt(b68,f2,t4_33,X) :- not_z(b68,X).
+0.95000000::gt(b69,f3,t4_0,X) :- z(b69,X).
+0.05000000::gt(b69,f3,t4_0,X) :- not_z(b69,X).
+0.95000000::gt(b69,f0,t4_2,X) :- z(b69,X).
+0.05000000::gt(b69,f0,t4_2,X) :- not_z(b69,X).
+0.95000000::gt(b69,f0,t4_4,X) :- z(b69,X).
+0.05000000::gt(b69,f0,t4_4,X) :- not_z(b69,X).
+0.95000000::gt(b70,f3,t4_0,X) :- z(b70,X).
+0.05000000::gt(b70,f3,t4_0,X) :- not_z(b70,X).
+0.95000000::gt(b70,f0,t4_2,X) :- z(b70,X).
+0.05000000::gt(b70,f0,t4_2,X) :- not_z(b70,X).
+0.95000000::gt(b70,f0,t4_4,X) :- z(b70,X).
+0.05000000::gt(b70,f0,t4_4,X) :- not_z(b70,X).
+0.95000000::le(b70,f0,t4_10,X) :- z(b70,X).
+0.05000000::le(b70,f0,t4_10,X) :- not_z(b70,X).
+0.95000000::gt(b71,f3,t4_0,X) :- z(b71,X).
+0.05000000::gt(b71,f3,t4_0,X) :- not_z(b71,X).
+0.95000000::gt(b71,f0,t4_2,X) :- z(b71,X).
+0.05000000::gt(b71,f0,t4_2,X) :- not_z(b71,X).
+0.95000000::gt(b71,f0,t4_4,X) :- z(b71,X).
+0.05000000::gt(b71,f0,t4_4,X) :- not_z(b71,X).
+0.95000000::le(b71,f0,t4_10,X) :- z(b71,X).
+0.05000000::le(b71,f0,t4_10,X) :- not_z(b71,X).
+0.95000000::gt(b71,f1,t4_21,X) :- z(b71,X).
+0.05000000::gt(b71,f1,t4_21,X) :- not_z(b71,X).
+0.95000000::le(b72,f3,t5_0,X) :- z(b72,X).
+0.05000000::le(b72,f3,t5_0,X) :- not_z(b72,X).
+0.95000000::gt(b73,f3,t5_0,X) :- z(b73,X).
+0.05000000::gt(b73,f3,t5_0,X) :- not_z(b73,X).
+0.95000000::gt(b74,f3,t5_0,X) :- z(b74,X).
+0.05000000::gt(b74,f3,t5_0,X) :- not_z(b74,X).
+0.95000000::le(b74,f2,t5_2,X) :- z(b74,X).
+0.05000000::le(b74,f2,t5_2,X) :- not_z(b74,X).
+0.95000000::gt(b75,f3,t5_0,X) :- z(b75,X).
+0.05000000::gt(b75,f3,t5_0,X) :- not_z(b75,X).
+0.95000000::le(b75,f2,t5_2,X) :- z(b75,X).
+0.05000000::le(b75,f2,t5_2,X) :- not_z(b75,X).
+0.95000000::le(b75,f3,t5_5,X) :- z(b75,X).
+0.05000000::le(b75,f3,t5_5,X) :- not_z(b75,X).
+0.95000000::le(b75,f2,t5_7,X) :- z(b75,X).
+0.05000000::le(b75,f2,t5_7,X) :- not_z(b75,X).
+0.95000000::gt(b76,f3,t5_0,X) :- z(b76,X).
+0.05000000::gt(b76,f3,t5_0,X) :- not_z(b76,X).
+0.95000000::le(b76,f2,t5_2,X) :- z(b76,X).
+0.05000000::le(b76,f2,t5_2,X) :- not_z(b76,X).
+0.95000000::le(b76,f3,t5_5,X) :- z(b76,X).
+0.05000000::le(b76,f3,t5_5,X) :- not_z(b76,X).
+0.95000000::le(b76,f2,t5_7,X) :- z(b76,X).
+0.05000000::le(b76,f2,t5_7,X) :- not_z(b76,X).
+0.95000000::gt(b76,f3,t5_9,X) :- z(b76,X).
+0.05000000::gt(b76,f3,t5_9,X) :- not_z(b76,X).
+0.95000000::gt(b77,f3,t5_0,X) :- z(b77,X).
+0.05000000::gt(b77,f3,t5_0,X) :- not_z(b77,X).
+0.95000000::le(b77,f2,t5_2,X) :- z(b77,X).
+0.05000000::le(b77,f2,t5_2,X) :- not_z(b77,X).
+0.95000000::le(b77,f3,t5_5,X) :- z(b77,X).
+0.05000000::le(b77,f3,t5_5,X) :- not_z(b77,X).
+0.95000000::gt(b77,f2,t5_7,X) :- z(b77,X).
+0.05000000::gt(b77,f2,t5_7,X) :- not_z(b77,X).
+0.95000000::gt(b78,f3,t5_0,X) :- z(b78,X).
+0.05000000::gt(b78,f3,t5_0,X) :- not_z(b78,X).
+0.95000000::le(b78,f2,t5_2,X) :- z(b78,X).
+0.05000000::le(b78,f2,t5_2,X) :- not_z(b78,X).
+0.95000000::le(b78,f3,t5_5,X) :- z(b78,X).
+0.05000000::le(b78,f3,t5_5,X) :- not_z(b78,X).
+0.95000000::gt(b78,f2,t5_7,X) :- z(b78,X).
+0.05000000::gt(b78,f2,t5_7,X) :- not_z(b78,X).
+0.95000000::le(b78,f3,t5_10,X) :- z(b78,X).
+0.05000000::le(b78,f3,t5_10,X) :- not_z(b78,X).
+0.95000000::gt(b79,f3,t5_0,X) :- z(b79,X).
+0.05000000::gt(b79,f3,t5_0,X) :- not_z(b79,X).
+0.95000000::le(b79,f2,t5_2,X) :- z(b79,X).
+0.05000000::le(b79,f2,t5_2,X) :- not_z(b79,X).
+0.95000000::le(b79,f3,t5_5,X) :- z(b79,X).
+0.05000000::le(b79,f3,t5_5,X) :- not_z(b79,X).
+0.95000000::gt(b79,f2,t5_7,X) :- z(b79,X).
+0.05000000::gt(b79,f2,t5_7,X) :- not_z(b79,X).
+0.95000000::le(b79,f3,t5_10,X) :- z(b79,X).
+0.05000000::le(b79,f3,t5_10,X) :- not_z(b79,X).
+0.95000000::le(b79,f1,t5_11,X) :- z(b79,X).
+0.05000000::le(b79,f1,t5_11,X) :- not_z(b79,X).
+0.95000000::le(b81,f2,t6_0,X) :- z(b81,X).
+0.05000000::le(b81,f2,t6_0,X) :- not_z(b81,X).
+0.95000000::le(b81,f2,t6_1,X) :- z(b81,X).
+0.05000000::le(b81,f2,t6_1,X) :- not_z(b81,X).
+0.95000000::le(b82,f2,t6_0,X) :- z(b82,X).
+0.05000000::le(b82,f2,t6_0,X) :- not_z(b82,X).
+0.95000000::gt(b82,f2,t6_1,X) :- z(b82,X).
+0.05000000::gt(b82,f2,t6_1,X) :- not_z(b82,X).
+0.95000000::le(b82,f2,t6_4,X) :- z(b82,X).
+0.05000000::le(b82,f2,t6_4,X) :- not_z(b82,X).
+0.95000000::le(b83,f2,t6_0,X) :- z(b83,X).
+0.05000000::le(b83,f2,t6_0,X) :- not_z(b83,X).
+0.95000000::gt(b83,f2,t6_1,X) :- z(b83,X).
+0.05000000::gt(b83,f2,t6_1,X) :- not_z(b83,X).
+0.95000000::le(b83,f2,t6_4,X) :- z(b83,X).
+0.05000000::le(b83,f2,t6_4,X) :- not_z(b83,X).
+0.95000000::gt(b83,f3,t6_7,X) :- z(b83,X).
+0.05000000::gt(b83,f3,t6_7,X) :- not_z(b83,X).
+0.95000000::le(b84,f2,t6_0,X) :- z(b84,X).
+0.05000000::le(b84,f2,t6_0,X) :- not_z(b84,X).
+0.95000000::gt(b84,f2,t6_1,X) :- z(b84,X).
+0.05000000::gt(b84,f2,t6_1,X) :- not_z(b84,X).
+0.95000000::gt(b84,f2,t6_4,X) :- z(b84,X).
+0.05000000::gt(b84,f2,t6_4,X) :- not_z(b84,X).
+0.95000000::le(b84,f3,t6_8,X) :- z(b84,X).
+0.05000000::le(b84,f3,t6_8,X) :- not_z(b84,X).
+0.95000000::le(b85,f2,t6_0,X) :- z(b85,X).
+0.05000000::le(b85,f2,t6_0,X) :- not_z(b85,X).
+0.95000000::gt(b85,f2,t6_1,X) :- z(b85,X).
+0.05000000::gt(b85,f2,t6_1,X) :- not_z(b85,X).
+0.95000000::gt(b85,f2,t6_4,X) :- z(b85,X).
+0.05000000::gt(b85,f2,t6_4,X) :- not_z(b85,X).
+0.95000000::gt(b85,f3,t6_8,X) :- z(b85,X).
+0.05000000::gt(b85,f3,t6_8,X) :- not_z(b85,X).
+0.95000000::le(b86,f3,t7_0,X) :- z(b86,X).
+0.05000000::le(b86,f3,t7_0,X) :- not_z(b86,X).
+0.95000000::gt(b87,f3,t7_0,X) :- z(b87,X).
+0.05000000::gt(b87,f3,t7_0,X) :- not_z(b87,X).
+0.95000000::le(b87,f2,t7_2,X) :- z(b87,X).
+0.05000000::le(b87,f2,t7_2,X) :- not_z(b87,X).
+0.95000000::gt(b88,f3,t7_0,X) :- z(b88,X).
+0.05000000::gt(b88,f3,t7_0,X) :- not_z(b88,X).
+0.95000000::le(b88,f2,t7_2,X) :- z(b88,X).
+0.05000000::le(b88,f2,t7_2,X) :- not_z(b88,X).
+0.95000000::gt(b88,f3,t7_3,X) :- z(b88,X).
+0.05000000::gt(b88,f3,t7_3,X) :- not_z(b88,X).
+0.95000000::gt(b89,f3,t7_0,X) :- z(b89,X).
+0.05000000::gt(b89,f3,t7_0,X) :- not_z(b89,X).
+0.95000000::gt(b89,f2,t7_2,X) :- z(b89,X).
+0.05000000::gt(b89,f2,t7_2,X) :- not_z(b89,X).
+0.95000000::gt(b90,f3,t7_0,X) :- z(b90,X).
+0.05000000::gt(b90,f3,t7_0,X) :- not_z(b90,X).
+0.95000000::gt(b90,f2,t7_2,X) :- z(b90,X).
+0.05000000::gt(b90,f2,t7_2,X) :- not_z(b90,X).
+0.95000000::gt(b90,f2,t7_4,X) :- z(b90,X).
+0.05000000::gt(b90,f2,t7_4,X) :- not_z(b90,X).
+0.95000000::gt(b91,f3,t7_0,X) :- z(b91,X).
+0.05000000::gt(b91,f3,t7_0,X) :- not_z(b91,X).
+0.95000000::gt(b91,f2,t7_2,X) :- z(b91,X).
+0.05000000::gt(b91,f2,t7_2,X) :- not_z(b91,X).
+0.95000000::gt(b91,f2,t7_4,X) :- z(b91,X).
+0.05000000::gt(b91,f2,t7_4,X) :- not_z(b91,X).
+0.95000000::le(b91,f3,t7_8,X) :- z(b91,X).
+0.05000000::le(b91,f3,t7_8,X) :- not_z(b91,X).
+0.95000000::gt(b92,f3,t7_0,X) :- z(b92,X).
+0.05000000::gt(b92,f3,t7_0,X) :- not_z(b92,X).
+0.95000000::gt(b92,f2,t7_2,X) :- z(b92,X).
+0.05000000::gt(b92,f2,t7_2,X) :- not_z(b92,X).
+0.95000000::gt(b92,f2,t7_4,X) :- z(b92,X).
+0.05000000::gt(b92,f2,t7_4,X) :- not_z(b92,X).
+0.95000000::le(b92,f3,t7_8,X) :- z(b92,X).
+0.05000000::le(b92,f3,t7_8,X) :- not_z(b92,X).
+0.95000000::gt(b92,f1,t7_9,X) :- z(b92,X).
+0.05000000::gt(b92,f1,t7_9,X) :- not_z(b92,X).
+0.95000000::le(b92,f0,t7_12,X) :- z(b92,X).
+0.05000000::le(b92,f0,t7_12,X) :- not_z(b92,X).
+0.95000000::gt(b93,f3,t7_0,X) :- z(b93,X).
+0.05000000::gt(b93,f3,t7_0,X) :- not_z(b93,X).
+0.95000000::gt(b93,f2,t7_2,X) :- z(b93,X).
+0.05000000::gt(b93,f2,t7_2,X) :- not_z(b93,X).
+0.95000000::gt(b93,f2,t7_4,X) :- z(b93,X).
+0.05000000::gt(b93,f2,t7_4,X) :- not_z(b93,X).
+0.95000000::le(b93,f3,t7_8,X) :- z(b93,X).
+0.05000000::le(b93,f3,t7_8,X) :- not_z(b93,X).
+0.95000000::gt(b93,f1,t7_9,X) :- z(b93,X).
+0.05000000::gt(b93,f1,t7_9,X) :- not_z(b93,X).
+0.95000000::gt(b93,f0,t7_12,X) :- z(b93,X).
+0.05000000::gt(b93,f0,t7_12,X) :- not_z(b93,X).
+0.95000000::gt(b94,f3,t7_0,X) :- z(b94,X).
+0.05000000::gt(b94,f3,t7_0,X) :- not_z(b94,X).
+0.95000000::gt(b94,f2,t7_2,X) :- z(b94,X).
+0.05000000::gt(b94,f2,t7_2,X) :- not_z(b94,X).
+0.95000000::gt(b94,f2,t7_4,X) :- z(b94,X).
+0.05000000::gt(b94,f2,t7_4,X) :- not_z(b94,X).
+0.95000000::le(b94,f3,t7_8,X) :- z(b94,X).
+0.05000000::le(b94,f3,t7_8,X) :- not_z(b94,X).
+0.95000000::gt(b94,f1,t7_9,X) :- z(b94,X).
+0.05000000::gt(b94,f1,t7_9,X) :- not_z(b94,X).
+0.95000000::gt(b94,f0,t7_12,X) :- z(b94,X).
+0.05000000::gt(b94,f0,t7_12,X) :- not_z(b94,X).
+0.95000000::gt(b94,f1,t7_14,X) :- z(b94,X).
+0.05000000::gt(b94,f1,t7_14,X) :- not_z(b94,X).
+
+% Branch-to-class support rules initialized from BranchNet class proportions
+0.39166667::supports(b0,c0,X) :- z(b0,X).
+0.13333333::supports(b0,c1,X) :- z(b0,X).
+0.00833333::supports(b0,c2,X) :- z(b0,X).
+0.00000000::supports(b1,c0,X) :- z(b1,X).
+0.13333333::supports(b1,c1,X) :- z(b1,X).
+0.00833333::supports(b1,c2,X) :- z(b1,X).
+0.00000000::supports(b2,c0,X) :- z(b2,X).
+0.02500000::supports(b2,c1,X) :- z(b2,X).
+0.00833333::supports(b2,c2,X) :- z(b2,X).
+0.02500000::supports(b3,c0,X) :- z(b3,X).
+0.28333333::supports(b3,c1,X) :- z(b3,X).
+0.15833333::supports(b3,c2,X) :- z(b3,X).
+0.02500000::supports(b4,c0,X) :- z(b4,X).
+0.00833333::supports(b4,c1,X) :- z(b4,X).
+0.00000000::supports(b4,c2,X) :- z(b4,X).
+0.00000000::supports(b5,c0,X) :- z(b5,X).
+0.27500000::supports(b5,c1,X) :- z(b5,X).
+0.13333333::supports(b5,c2,X) :- z(b5,X).
+0.00000000::supports(b6,c0,X) :- z(b6,X).
+0.09166667::supports(b6,c1,X) :- z(b6,X).
+0.13333333::supports(b6,c2,X) :- z(b6,X).
+0.00000000::supports(b7,c0,X) :- z(b7,X).
+0.09166667::supports(b7,c1,X) :- z(b7,X).
+0.07500000::supports(b7,c2,X) :- z(b7,X).
+0.00000000::supports(b8,c0,X) :- z(b8,X).
+0.00833333::supports(b8,c1,X) :- z(b8,X).
+0.02500000::supports(b8,c2,X) :- z(b8,X).
+0.00000000::supports(b9,c0,X) :- z(b9,X).
+0.00833333::supports(b9,c1,X) :- z(b9,X).
+0.01666667::supports(b9,c2,X) :- z(b9,X).
+0.00000000::supports(b10,c0,X) :- z(b10,X).
+0.00833333::supports(b10,c1,X) :- z(b10,X).
+0.00833333::supports(b10,c2,X) :- z(b10,X).
+0.00000000::supports(b11,c0,X) :- z(b11,X).
+0.00833333::supports(b11,c1,X) :- z(b11,X).
+0.00833333::supports(b11,c2,X) :- z(b11,X).
+0.00000000::supports(b12,c0,X) :- z(b12,X).
+0.07500000::supports(b12,c1,X) :- z(b12,X).
+0.02500000::supports(b12,c2,X) :- z(b12,X).
+0.41666667::supports(b13,c0,X) :- z(b13,X).
+0.41666667::supports(b13,c1,X) :- z(b13,X).
+0.16666667::supports(b13,c2,X) :- z(b13,X).
+0.41666667::supports(b14,c0,X) :- z(b14,X).
+0.11666667::supports(b14,c1,X) :- z(b14,X).
+0.00000000::supports(b14,c2,X) :- z(b14,X).
+0.06666667::supports(b15,c0,X) :- z(b15,X).
+0.11666667::supports(b15,c1,X) :- z(b15,X).
+0.00000000::supports(b15,c2,X) :- z(b15,X).
+0.06666667::supports(b16,c0,X) :- z(b16,X).
+0.07500000::supports(b16,c1,X) :- z(b16,X).
+0.00000000::supports(b16,c2,X) :- z(b16,X).
+0.03333333::supports(b17,c0,X) :- z(b17,X).
+0.07500000::supports(b17,c1,X) :- z(b17,X).
+0.00000000::supports(b17,c2,X) :- z(b17,X).
+0.00000000::supports(b18,c0,X) :- z(b18,X).
+0.12500000::supports(b18,c1,X) :- z(b18,X).
+0.01666667::supports(b18,c2,X) :- z(b18,X).
+0.00000000::supports(b19,c0,X) :- z(b19,X).
+0.03333333::supports(b19,c1,X) :- z(b19,X).
+0.01666667::supports(b19,c2,X) :- z(b19,X).
+0.00000000::supports(b20,c0,X) :- z(b20,X).
+0.00833333::supports(b20,c1,X) :- z(b20,X).
+0.01666667::supports(b20,c2,X) :- z(b20,X).
+0.00000000::supports(b21,c0,X) :- z(b21,X).
+0.00833333::supports(b21,c1,X) :- z(b21,X).
+0.00833333::supports(b21,c2,X) :- z(b21,X).
+0.00000000::supports(b22,c0,X) :- z(b22,X).
+0.16666667::supports(b22,c1,X) :- z(b22,X).
+0.04166667::supports(b22,c2,X) :- z(b22,X).
+0.00000000::supports(b23,c0,X) :- z(b23,X).
+0.16666667::supports(b23,c1,X) :- z(b23,X).
+0.03333333::supports(b23,c2,X) :- z(b23,X).
+0.00000000::supports(b24,c0,X) :- z(b24,X).
+0.10000000::supports(b24,c1,X) :- z(b24,X).
+0.03333333::supports(b24,c2,X) :- z(b24,X).
+0.41666667::supports(b25,c0,X) :- z(b25,X).
+0.28333333::supports(b25,c1,X) :- z(b25,X).
+0.04166667::supports(b25,c2,X) :- z(b25,X).
+0.37500000::supports(b26,c0,X) :- z(b26,X).
+0.28333333::supports(b26,c1,X) :- z(b26,X).
+0.04166667::supports(b26,c2,X) :- z(b26,X).
+0.24166667::supports(b27,c0,X) :- z(b27,X).
+0.28333333::supports(b27,c1,X) :- z(b27,X).
+0.04166667::supports(b27,c2,X) :- z(b27,X).
+0.01666667::supports(b28,c0,X) :- z(b28,X).
+0.19166667::supports(b28,c1,X) :- z(b28,X).
+0.00000000::supports(b28,c2,X) :- z(b28,X).
+0.01666667::supports(b29,c0,X) :- z(b29,X).
+0.05833333::supports(b29,c1,X) :- z(b29,X).
+0.00000000::supports(b29,c2,X) :- z(b29,X).
+0.00000000::supports(b30,c0,X) :- z(b30,X).
+0.07500000::supports(b30,c1,X) :- z(b30,X).
+0.00833333::supports(b30,c2,X) :- z(b30,X).
+0.00000000::supports(b31,c0,X) :- z(b31,X).
+0.02500000::supports(b31,c1,X) :- z(b31,X).
+0.00833333::supports(b31,c2,X) :- z(b31,X).
+0.00000000::supports(b32,c0,X) :- z(b32,X).
+0.01666667::supports(b32,c1,X) :- z(b32,X).
+0.03333333::supports(b32,c2,X) :- z(b32,X).
+0.00000000::supports(b33,c0,X) :- z(b33,X).
+0.01666667::supports(b33,c1,X) :- z(b33,X).
+0.01666667::supports(b33,c2,X) :- z(b33,X).
+0.00000000::supports(b34,c0,X) :- z(b34,X).
+0.00833333::supports(b34,c1,X) :- z(b34,X).
+0.01666667::supports(b34,c2,X) :- z(b34,X).
+0.00000000::supports(b35,c0,X) :- z(b35,X).
+0.13333333::supports(b35,c1,X) :- z(b35,X).
+0.12500000::supports(b35,c2,X) :- z(b35,X).
+0.00000000::supports(b36,c0,X) :- z(b36,X).
+0.01666667::supports(b36,c1,X) :- z(b36,X).
+0.12500000::supports(b36,c2,X) :- z(b36,X).
+0.00000000::supports(b37,c0,X) :- z(b37,X).
+0.00833333::supports(b37,c1,X) :- z(b37,X).
+0.12500000::supports(b37,c2,X) :- z(b37,X).
+0.00000000::supports(b38,c0,X) :- z(b38,X).
+0.00833333::supports(b38,c1,X) :- z(b38,X).
+0.04166667::supports(b38,c2,X) :- z(b38,X).
+0.00000000::supports(b39,c0,X) :- z(b39,X).
+0.00833333::supports(b39,c1,X) :- z(b39,X).
+0.03333333::supports(b39,c2,X) :- z(b39,X).
+0.00000000::supports(b40,c0,X) :- z(b40,X).
+0.00833333::supports(b40,c1,X) :- z(b40,X).
+0.00833333::supports(b40,c2,X) :- z(b40,X).
+0.41666667::supports(b41,c0,X) :- z(b41,X).
+0.38333333::supports(b41,c1,X) :- z(b41,X).
+0.00833333::supports(b41,c2,X) :- z(b41,X).
+0.00000000::supports(b42,c0,X) :- z(b42,X).
+0.12500000::supports(b42,c1,X) :- z(b42,X).
+0.00833333::supports(b42,c2,X) :- z(b42,X).
+0.00833333::supports(b43,c0,X) :- z(b43,X).
+0.25833333::supports(b43,c1,X) :- z(b43,X).
+0.00000000::supports(b43,c2,X) :- z(b43,X).
+0.00833333::supports(b44,c0,X) :- z(b44,X).
+0.16666667::supports(b44,c1,X) :- z(b44,X).
+0.00000000::supports(b44,c2,X) :- z(b44,X).
+0.00000000::supports(b45,c0,X) :- z(b45,X).
+0.03333333::supports(b45,c1,X) :- z(b45,X).
+0.15833333::supports(b45,c2,X) :- z(b45,X).
+0.00000000::supports(b46,c0,X) :- z(b46,X).
+0.01666667::supports(b46,c1,X) :- z(b46,X).
+0.09166667::supports(b46,c2,X) :- z(b46,X).
+0.00000000::supports(b47,c0,X) :- z(b47,X).
+0.01666667::supports(b47,c1,X) :- z(b47,X).
+0.06666667::supports(b47,c2,X) :- z(b47,X).
+0.00000000::supports(b48,c0,X) :- z(b48,X).
+0.01666667::supports(b48,c1,X) :- z(b48,X).
+0.05833333::supports(b48,c2,X) :- z(b48,X).
+0.00000000::supports(b49,c0,X) :- z(b49,X).
+0.01666667::supports(b49,c1,X) :- z(b49,X).
+0.02500000::supports(b49,c2,X) :- z(b49,X).
+0.00000000::supports(b50,c0,X) :- z(b50,X).
+0.00833333::supports(b50,c1,X) :- z(b50,X).
+0.02500000::supports(b50,c2,X) :- z(b50,X).
+0.00000000::supports(b51,c0,X) :- z(b51,X).
+0.01666667::supports(b51,c1,X) :- z(b51,X).
+0.01666667::supports(b51,c2,X) :- z(b51,X).
+0.00000000::supports(b52,c0,X) :- z(b52,X).
+0.00833333::supports(b52,c1,X) :- z(b52,X).
+0.01666667::supports(b52,c2,X) :- z(b52,X).
+0.00000000::supports(b53,c0,X) :- z(b53,X).
+0.00833333::supports(b53,c1,X) :- z(b53,X).
+0.00833333::supports(b53,c2,X) :- z(b53,X).
+0.41666667::supports(b54,c0,X) :- z(b54,X).
+0.41666667::supports(b54,c1,X) :- z(b54,X).
+0.16666667::supports(b54,c2,X) :- z(b54,X).
+0.01666667::supports(b55,c0,X) :- z(b55,X).
+0.19166667::supports(b55,c1,X) :- z(b55,X).
+0.00000000::supports(b55,c2,X) :- z(b55,X).
+0.01666667::supports(b56,c0,X) :- z(b56,X).
+0.07500000::supports(b56,c1,X) :- z(b56,X).
+0.00000000::supports(b56,c2,X) :- z(b56,X).
+0.01666667::supports(b57,c0,X) :- z(b57,X).
+0.02500000::supports(b57,c1,X) :- z(b57,X).
+0.00000000::supports(b57,c2,X) :- z(b57,X).
+0.00000000::supports(b58,c0,X) :- z(b58,X).
+0.14166667::supports(b58,c1,X) :- z(b58,X).
+0.00833333::supports(b58,c2,X) :- z(b58,X).
+0.00000000::supports(b59,c0,X) :- z(b59,X).
+0.09166667::supports(b59,c1,X) :- z(b59,X).
+0.00833333::supports(b59,c2,X) :- z(b59,X).
+0.00000000::supports(b60,c0,X) :- z(b60,X).
+0.05833333::supports(b60,c1,X) :- z(b60,X).
+0.00833333::supports(b60,c2,X) :- z(b60,X).
+0.00000000::supports(b61,c0,X) :- z(b61,X).
+0.00833333::supports(b61,c1,X) :- z(b61,X).
+0.06666667::supports(b61,c2,X) :- z(b61,X).
+0.00000000::supports(b62,c0,X) :- z(b62,X).
+0.00833333::supports(b62,c1,X) :- z(b62,X).
+0.03333333::supports(b62,c2,X) :- z(b62,X).
+0.00000000::supports(b63,c0,X) :- z(b63,X).
+0.00833333::supports(b63,c1,X) :- z(b63,X).
+0.00833333::supports(b63,c2,X) :- z(b63,X).
+0.00000000::supports(b64,c0,X) :- z(b64,X).
+0.05833333::supports(b64,c1,X) :- z(b64,X).
+0.04166667::supports(b64,c2,X) :- z(b64,X).
+0.00000000::supports(b65,c0,X) :- z(b65,X).
+0.05833333::supports(b65,c1,X) :- z(b65,X).
+0.01666667::supports(b65,c2,X) :- z(b65,X).
+0.00000000::supports(b66,c0,X) :- z(b66,X).
+0.05833333::supports(b66,c1,X) :- z(b66,X).
+0.00833333::supports(b66,c2,X) :- z(b66,X).
+0.00000000::supports(b67,c0,X) :- z(b67,X).
+0.04166667::supports(b67,c1,X) :- z(b67,X).
+0.00833333::supports(b67,c2,X) :- z(b67,X).
+0.00000000::supports(b68,c0,X) :- z(b68,X).
+0.00833333::supports(b68,c1,X) :- z(b68,X).
+0.00833333::supports(b68,c2,X) :- z(b68,X).
+0.00000000::supports(b69,c0,X) :- z(b69,X).
+0.01666667::supports(b69,c1,X) :- z(b69,X).
+0.05000000::supports(b69,c2,X) :- z(b69,X).
+0.00000000::supports(b70,c0,X) :- z(b70,X).
+0.01666667::supports(b70,c1,X) :- z(b70,X).
+0.03333333::supports(b70,c2,X) :- z(b70,X).
+0.00000000::supports(b71,c0,X) :- z(b71,X).
+0.01666667::supports(b71,c1,X) :- z(b71,X).
+0.00833333::supports(b71,c2,X) :- z(b71,X).
+0.41666667::supports(b72,c0,X) :- z(b72,X).
+0.23333333::supports(b72,c1,X) :- z(b72,X).
+0.00000000::supports(b72,c2,X) :- z(b72,X).
+0.00000000::supports(b73,c0,X) :- z(b73,X).
+0.18333333::supports(b73,c1,X) :- z(b73,X).
+0.16666667::supports(b73,c2,X) :- z(b73,X).
+0.00000000::supports(b74,c0,X) :- z(b74,X).
+0.18333333::supports(b74,c1,X) :- z(b74,X).
+0.13333333::supports(b74,c2,X) :- z(b74,X).
+0.00000000::supports(b75,c0,X) :- z(b75,X).
+0.15000000::supports(b75,c1,X) :- z(b75,X).
+0.00833333::supports(b75,c2,X) :- z(b75,X).
+0.00000000::supports(b76,c0,X) :- z(b76,X).
+0.00833333::supports(b76,c1,X) :- z(b76,X).
+0.00833333::supports(b76,c2,X) :- z(b76,X).
+0.00000000::supports(b77,c0,X) :- z(b77,X).
+0.03333333::supports(b77,c1,X) :- z(b77,X).
+0.10833333::supports(b77,c2,X) :- z(b77,X).
+0.00000000::supports(b78,c0,X) :- z(b78,X).
+0.03333333::supports(b78,c1,X) :- z(b78,X).
+0.00833333::supports(b78,c2,X) :- z(b78,X).
+0.00000000::supports(b79,c0,X) :- z(b79,X).
+0.00833333::supports(b79,c1,X) :- z(b79,X).
+0.00833333::supports(b79,c2,X) :- z(b79,X).
+0.41666667::supports(b80,c0,X) :- z(b80,X).
+0.41666667::supports(b80,c1,X) :- z(b80,X).
+0.16666667::supports(b80,c2,X) :- z(b80,X).
+0.41666667::supports(b81,c0,X) :- z(b81,X).
+0.19166667::supports(b81,c1,X) :- z(b81,X).
+0.00000000::supports(b81,c2,X) :- z(b81,X).
+0.00000000::supports(b82,c0,X) :- z(b82,X).
+0.20833333::supports(b82,c1,X) :- z(b82,X).
+0.00833333::supports(b82,c2,X) :- z(b82,X).
+0.00000000::supports(b83,c0,X) :- z(b83,X).
+0.10000000::supports(b83,c1,X) :- z(b83,X).
+0.00833333::supports(b83,c2,X) :- z(b83,X).
+0.00000000::supports(b84,c0,X) :- z(b84,X).
+0.00833333::supports(b84,c1,X) :- z(b84,X).
+0.00833333::supports(b84,c2,X) :- z(b84,X).
+0.00000000::supports(b85,c0,X) :- z(b85,X).
+0.00833333::supports(b85,c1,X) :- z(b85,X).
+0.03333333::supports(b85,c2,X) :- z(b85,X).
+0.41666667::supports(b86,c0,X) :- z(b86,X).
+0.05833333::supports(b86,c1,X) :- z(b86,X).
+0.00000000::supports(b86,c2,X) :- z(b86,X).
+0.00000000::supports(b87,c0,X) :- z(b87,X).
+0.32500000::supports(b87,c1,X) :- z(b87,X).
+0.00833333::supports(b87,c2,X) :- z(b87,X).
+0.00000000::supports(b88,c0,X) :- z(b88,X).
+0.30000000::supports(b88,c1,X) :- z(b88,X).
+0.00833333::supports(b88,c2,X) :- z(b88,X).
+0.00000000::supports(b89,c0,X) :- z(b89,X).
+0.03333333::supports(b89,c1,X) :- z(b89,X).
+0.15833333::supports(b89,c2,X) :- z(b89,X).
+0.00000000::supports(b90,c0,X) :- z(b90,X).
+0.01666667::supports(b90,c1,X) :- z(b90,X).
+0.15833333::supports(b90,c2,X) :- z(b90,X).
+0.00000000::supports(b91,c0,X) :- z(b91,X).
+0.01666667::supports(b91,c1,X) :- z(b91,X).
+0.10000000::supports(b91,c2,X) :- z(b91,X).
+0.00000000::supports(b92,c0,X) :- z(b92,X).
+0.00833333::supports(b92,c1,X) :- z(b92,X).
+0.01666667::supports(b92,c2,X) :- z(b92,X).
+0.00000000::supports(b93,c0,X) :- z(b93,X).
+0.00833333::supports(b93,c1,X) :- z(b93,X).
+0.07500000::supports(b93,c2,X) :- z(b93,X).
+0.00000000::supports(b94,c0,X) :- z(b94,X).
+0.00833333::supports(b94,c1,X) :- z(b94,X).
+0.06666667::supports(b94,c2,X) :- z(b94,X).
+
+% Class predicates aggregate support from all active branches
+class(X,c0) :- supports(B,c0,X).
+class(X,c1) :- supports(B,c1,X).
+class(X,c2) :- supports(B,c2,X).
 
 % Observed evidence for branch conditions
 evidence(le(b0,f0,t0_0,0), false).
-evidence(le(b0,f3,t0_1,0), false).
 evidence(le(b1,f0,t0_0,0), false).
 evidence(gt(b1,f3,t0_1,0)).
-evidence(le(b1,f2,t0_4,0), false).
 evidence(le(b2,f0,t0_0,0), false).
 evidence(gt(b2,f3,t0_1,0)).
 evidence(gt(b2,f2,t0_4,0)).
-evidence(le(b2,f0,t0_22,0), false).
-evidence(le(b3,f0,t0_0,0), false).
-evidence(gt(b3,f3,t0_1,0)).
-evidence(gt(b3,f2,t0_4,0)).
-evidence(gt(b3,f0,t0_22,0)).
+evidence(gt(b3,f0,t0_0,0)).
 evidence(gt(b4,f0,t0_0,0)).
 evidence(le(b4,f0,t0_2,0)).
 evidence(le(b4,f2,t0_5,0), false).
-evidence(le(b4,f3,t0_7,0), false).
 evidence(gt(b5,f0,t0_0,0)).
 evidence(le(b5,f0,t0_2,0)).
-evidence(le(b5,f2,t0_5,0), false).
-evidence(gt(b5,f3,t0_7,0)).
+evidence(gt(b5,f2,t0_5,0)).
 evidence(gt(b6,f0,t0_0,0)).
 evidence(le(b6,f0,t0_2,0)).
 evidence(gt(b6,f2,t0_5,0)).
-evidence(le(b6,f2,t0_8,0), false).
+evidence(gt(b6,f2,t0_8,0)).
 evidence(gt(b7,f0,t0_0,0)).
 evidence(le(b7,f0,t0_2,0)).
 evidence(gt(b7,f2,t0_5,0)).
 evidence(gt(b7,f2,t0_8,0)).
 evidence(le(b7,f2,t0_10,0), false).
-evidence(le(b7,f3,t0_11,0), false).
-evidence(le(b7,f1,t0_15,0), false).
-evidence(le(b7,f0,t0_17,0), false).
-evidence(le(b7,f3,t0_25,0), false).
-evidence(le(b7,f2,t0_29,0), false).
 evidence(gt(b8,f0,t0_0,0)).
 evidence(le(b8,f0,t0_2,0)).
 evidence(gt(b8,f2,t0_5,0)).
@@ -2437,9 +1858,6 @@ evidence(le(b8,f2,t0_10,0), false).
 evidence(le(b8,f3,t0_11,0), false).
 evidence(le(b8,f1,t0_15,0), false).
 evidence(le(b8,f0,t0_17,0), false).
-evidence(le(b8,f3,t0_25,0), false).
-evidence(gt(b8,f2,t0_29,0)).
-evidence(le(b8,f3,t0_32,0), false).
 evidence(gt(b9,f0,t0_0,0)).
 evidence(le(b9,f0,t0_2,0)).
 evidence(gt(b9,f2,t0_5,0)).
@@ -2449,8 +1867,6 @@ evidence(le(b9,f3,t0_11,0), false).
 evidence(le(b9,f1,t0_15,0), false).
 evidence(le(b9,f0,t0_17,0), false).
 evidence(le(b9,f3,t0_25,0), false).
-evidence(gt(b9,f2,t0_29,0)).
-evidence(gt(b9,f3,t0_32,0)).
 evidence(gt(b10,f0,t0_0,0)).
 evidence(le(b10,f0,t0_2,0)).
 evidence(gt(b10,f2,t0_5,0)).
@@ -2459,7 +1875,8 @@ evidence(le(b10,f2,t0_10,0), false).
 evidence(le(b10,f3,t0_11,0), false).
 evidence(le(b10,f1,t0_15,0), false).
 evidence(le(b10,f0,t0_17,0), false).
-evidence(gt(b10,f3,t0_25,0)).
+evidence(le(b10,f3,t0_25,0), false).
+evidence(gt(b10,f2,t0_29,0)).
 evidence(gt(b11,f0,t0_0,0)).
 evidence(le(b11,f0,t0_2,0)).
 evidence(gt(b11,f2,t0_5,0)).
@@ -2468,653 +1885,360 @@ evidence(le(b11,f2,t0_10,0), false).
 evidence(le(b11,f3,t0_11,0), false).
 evidence(le(b11,f1,t0_15,0), false).
 evidence(gt(b11,f0,t0_17,0)).
-evidence(le(b11,f3,t0_26,0), false).
 evidence(gt(b12,f0,t0_0,0)).
 evidence(le(b12,f0,t0_2,0)).
 evidence(gt(b12,f2,t0_5,0)).
 evidence(gt(b12,f2,t0_8,0)).
 evidence(le(b12,f2,t0_10,0), false).
 evidence(le(b12,f3,t0_11,0), false).
-evidence(le(b12,f1,t0_15,0), false).
-evidence(gt(b12,f0,t0_17,0)).
-evidence(gt(b12,f3,t0_26,0)).
-evidence(gt(b13,f0,t0_0,0)).
-evidence(le(b13,f0,t0_2,0)).
-evidence(gt(b13,f2,t0_5,0)).
-evidence(gt(b13,f2,t0_8,0)).
-evidence(le(b13,f2,t0_10,0), false).
-evidence(le(b13,f3,t0_11,0), false).
-evidence(gt(b13,f1,t0_15,0)).
-evidence(le(b13,f2,t0_18,0), false).
-evidence(gt(b14,f0,t0_0,0)).
-evidence(le(b14,f0,t0_2,0)).
-evidence(gt(b14,f2,t0_5,0)).
-evidence(gt(b14,f2,t0_8,0)).
-evidence(le(b14,f2,t0_10,0), false).
-evidence(le(b14,f3,t0_11,0), false).
-evidence(gt(b14,f1,t0_15,0)).
-evidence(gt(b14,f2,t0_18,0)).
-evidence(gt(b15,f0,t0_0,0)).
-evidence(le(b15,f0,t0_2,0)).
-evidence(gt(b15,f2,t0_5,0)).
-evidence(gt(b15,f2,t0_8,0)).
-evidence(le(b15,f2,t0_10,0), false).
-evidence(gt(b15,f3,t0_11,0)).
-evidence(gt(b16,f0,t0_0,0)).
-evidence(le(b16,f0,t0_2,0)).
-evidence(gt(b16,f2,t0_5,0)).
-evidence(gt(b16,f2,t0_8,0)).
-evidence(gt(b16,f2,t0_10,0)).
-evidence(gt(b17,f0,t0_0,0)).
-evidence(gt(b17,f0,t0_2,0), false).
+evidence(gt(b12,f1,t0_15,0)).
+evidence(le(b14,f3,t1_0,0), false).
+evidence(le(b14,f0,t1_1,0), false).
+evidence(le(b14,f3,t1_3,0), false).
+evidence(le(b15,f3,t1_0,0), false).
+evidence(le(b15,f0,t1_1,0), false).
+evidence(le(b15,f3,t1_3,0), false).
+evidence(le(b15,f1,t1_5,0), false).
+evidence(le(b16,f3,t1_0,0), false).
+evidence(le(b16,f0,t1_1,0), false).
+evidence(le(b16,f3,t1_3,0), false).
+evidence(le(b16,f1,t1_5,0), false).
+evidence(le(b16,f2,t1_7,0), false).
+evidence(le(b17,f3,t1_0,0), false).
+evidence(le(b17,f0,t1_1,0), false).
+evidence(le(b17,f3,t1_3,0), false).
+evidence(le(b17,f1,t1_5,0), false).
+evidence(le(b17,f2,t1_7,0), false).
+evidence(gt(b17,f0,t1_9,0)).
 evidence(le(b18,f3,t1_0,0), false).
 evidence(le(b18,f0,t1_1,0), false).
-evidence(le(b18,f3,t1_3,0), false).
-evidence(le(b18,f1,t1_5,0), false).
-evidence(le(b18,f2,t1_7,0), false).
-evidence(le(b18,f0,t1_9,0), false).
+evidence(gt(b18,f3,t1_3,0)).
+evidence(le(b18,f2,t1_6,0), false).
 evidence(le(b19,f3,t1_0,0), false).
 evidence(le(b19,f0,t1_1,0), false).
-evidence(le(b19,f3,t1_3,0), false).
-evidence(le(b19,f1,t1_5,0), false).
-evidence(le(b19,f2,t1_7,0), false).
-evidence(gt(b19,f0,t1_9,0)).
-evidence(le(b19,f3,t1_12,0), false).
+evidence(gt(b19,f3,t1_3,0)).
+evidence(le(b19,f2,t1_6,0), false).
+evidence(le(b19,f1,t1_21,0), false).
 evidence(le(b20,f3,t1_0,0), false).
 evidence(le(b20,f0,t1_1,0), false).
-evidence(le(b20,f3,t1_3,0), false).
-evidence(le(b20,f1,t1_5,0), false).
-evidence(le(b20,f2,t1_7,0), false).
-evidence(gt(b20,f0,t1_9,0)).
-evidence(gt(b20,f3,t1_12,0)).
+evidence(gt(b20,f3,t1_3,0)).
+evidence(le(b20,f2,t1_6,0), false).
+evidence(le(b20,f1,t1_21,0), false).
+evidence(gt(b20,f2,t1_25,0)).
 evidence(le(b21,f3,t1_0,0), false).
 evidence(le(b21,f0,t1_1,0), false).
-evidence(le(b21,f3,t1_3,0), false).
-evidence(le(b21,f1,t1_5,0), false).
-evidence(gt(b21,f2,t1_7,0)).
+evidence(gt(b21,f3,t1_3,0)).
+evidence(gt(b21,f2,t1_6,0)).
 evidence(le(b22,f3,t1_0,0), false).
-evidence(le(b22,f0,t1_1,0), false).
-evidence(le(b22,f3,t1_3,0), false).
-evidence(gt(b22,f1,t1_5,0)).
+evidence(gt(b22,f0,t1_1,0)).
 evidence(le(b23,f3,t1_0,0), false).
-evidence(le(b23,f0,t1_1,0), false).
-evidence(gt(b23,f3,t1_3,0)).
-evidence(le(b23,f2,t1_6,0), false).
-evidence(le(b23,f1,t1_21,0), false).
-evidence(le(b23,f2,t1_25,0), false).
+evidence(gt(b23,f0,t1_1,0)).
+evidence(le(b23,f0,t1_4,0)).
 evidence(le(b24,f3,t1_0,0), false).
-evidence(le(b24,f0,t1_1,0), false).
-evidence(gt(b24,f3,t1_3,0)).
-evidence(le(b24,f2,t1_6,0), false).
-evidence(le(b24,f1,t1_21,0), false).
-evidence(gt(b24,f2,t1_25,0)).
-evidence(le(b24,f3,t1_28,0), false).
-evidence(le(b25,f3,t1_0,0), false).
-evidence(le(b25,f0,t1_1,0), false).
-evidence(gt(b25,f3,t1_3,0)).
-evidence(le(b25,f2,t1_6,0), false).
-evidence(le(b25,f1,t1_21,0), false).
-evidence(gt(b25,f2,t1_25,0)).
-evidence(gt(b25,f3,t1_28,0)).
-evidence(le(b26,f3,t1_0,0), false).
-evidence(le(b26,f0,t1_1,0), false).
-evidence(gt(b26,f3,t1_3,0)).
-evidence(le(b26,f2,t1_6,0), false).
-evidence(gt(b26,f1,t1_21,0)).
-evidence(le(b27,f3,t1_0,0), false).
-evidence(le(b27,f0,t1_1,0), false).
-evidence(gt(b27,f3,t1_3,0)).
-evidence(gt(b27,f2,t1_6,0)).
-evidence(le(b27,f0,t1_22,0), false).
-evidence(le(b28,f3,t1_0,0), false).
-evidence(le(b28,f0,t1_1,0), false).
-evidence(gt(b28,f3,t1_3,0)).
-evidence(gt(b28,f2,t1_6,0)).
-evidence(gt(b28,f0,t1_22,0)).
-evidence(le(b29,f3,t1_0,0), false).
-evidence(gt(b29,f0,t1_1,0)).
-evidence(le(b29,f0,t1_4,0)).
-evidence(le(b29,f2,t1_15,0), false).
-evidence(le(b30,f3,t1_0,0), false).
-evidence(gt(b30,f0,t1_1,0)).
-evidence(le(b30,f0,t1_4,0)).
-evidence(gt(b30,f2,t1_15,0)).
-evidence(le(b30,f3,t1_18,0), false).
-evidence(le(b31,f3,t1_0,0), false).
-evidence(gt(b31,f0,t1_1,0)).
-evidence(le(b31,f0,t1_4,0)).
-evidence(gt(b31,f2,t1_15,0)).
-evidence(gt(b31,f3,t1_18,0)).
-evidence(le(b32,f3,t1_0,0), false).
-evidence(gt(b32,f0,t1_1,0)).
-evidence(gt(b32,f0,t1_4,0), false).
-evidence(gt(b33,f3,t1_0,0)).
+evidence(gt(b24,f0,t1_1,0)).
+evidence(le(b24,f0,t1_4,0)).
+evidence(gt(b24,f2,t1_15,0)).
+evidence(le(b25,f0,t2_0,0), false).
+evidence(le(b26,f0,t2_0,0), false).
+evidence(gt(b26,f0,t2_1,0)).
+evidence(le(b27,f0,t2_0,0), false).
+evidence(gt(b27,f0,t2_1,0)).
+evidence(le(b27,f1,t2_6,0)).
+evidence(le(b28,f0,t2_0,0), false).
+evidence(gt(b28,f0,t2_1,0)).
+evidence(le(b28,f1,t2_6,0)).
+evidence(gt(b28,f3,t2_7,0)).
+evidence(le(b28,f2,t2_10,0), false).
+evidence(le(b29,f0,t2_0,0), false).
+evidence(gt(b29,f0,t2_1,0)).
+evidence(le(b29,f1,t2_6,0)).
+evidence(gt(b29,f3,t2_7,0)).
+evidence(le(b29,f2,t2_10,0), false).
+evidence(le(b29,f3,t2_13,0), false).
+evidence(le(b30,f0,t2_0,0), false).
+evidence(gt(b30,f0,t2_1,0)).
+evidence(le(b30,f1,t2_6,0)).
+evidence(gt(b30,f3,t2_7,0)).
+evidence(gt(b30,f2,t2_10,0)).
+evidence(le(b30,f2,t2_14,0), false).
+evidence(le(b31,f0,t2_0,0), false).
+evidence(gt(b31,f0,t2_1,0)).
+evidence(le(b31,f1,t2_6,0)).
+evidence(gt(b31,f3,t2_7,0)).
+evidence(gt(b31,f2,t2_10,0)).
+evidence(le(b31,f2,t2_14,0), false).
+evidence(le(b31,f0,t2_15,0), false).
+evidence(le(b32,f0,t2_0,0), false).
+evidence(gt(b32,f0,t2_1,0)).
+evidence(le(b32,f1,t2_6,0)).
+evidence(gt(b32,f3,t2_7,0)).
+evidence(gt(b32,f2,t2_10,0)).
+evidence(gt(b32,f2,t2_14,0)).
+evidence(le(b33,f0,t2_0,0), false).
+evidence(gt(b33,f0,t2_1,0)).
+evidence(le(b33,f1,t2_6,0)).
+evidence(gt(b33,f3,t2_7,0)).
+evidence(gt(b33,f2,t2_10,0)).
+evidence(gt(b33,f2,t2_14,0)).
+evidence(gt(b33,f1,t2_16,0)).
 evidence(le(b34,f0,t2_0,0), false).
-evidence(le(b34,f0,t2_1,0), false).
-evidence(le(b35,f0,t2_0,0), false).
-evidence(gt(b35,f0,t2_1,0)).
-evidence(le(b35,f1,t2_6,0)).
-evidence(le(b35,f3,t2_7,0), false).
-evidence(le(b36,f0,t2_0,0), false).
-evidence(gt(b36,f0,t2_1,0)).
-evidence(le(b36,f1,t2_6,0)).
-evidence(gt(b36,f3,t2_7,0)).
-evidence(le(b36,f2,t2_10,0), false).
-evidence(le(b36,f3,t2_13,0), false).
-evidence(le(b36,f2,t2_23,0), false).
-evidence(le(b37,f0,t2_0,0), false).
-evidence(gt(b37,f0,t2_1,0)).
-evidence(le(b37,f1,t2_6,0)).
-evidence(gt(b37,f3,t2_7,0)).
-evidence(le(b37,f2,t2_10,0), false).
-evidence(le(b37,f3,t2_13,0), false).
-evidence(gt(b37,f2,t2_23,0)).
-evidence(le(b38,f0,t2_0,0), false).
-evidence(gt(b38,f0,t2_1,0)).
-evidence(le(b38,f1,t2_6,0)).
-evidence(gt(b38,f3,t2_7,0)).
-evidence(le(b38,f2,t2_10,0), false).
-evidence(gt(b38,f3,t2_13,0)).
-evidence(le(b39,f0,t2_0,0), false).
-evidence(gt(b39,f0,t2_1,0)).
-evidence(le(b39,f1,t2_6,0)).
-evidence(gt(b39,f3,t2_7,0)).
-evidence(gt(b39,f2,t2_10,0)).
-evidence(le(b39,f2,t2_14,0), false).
-evidence(le(b39,f0,t2_15,0), false).
-evidence(le(b39,f3,t2_27,0), false).
-evidence(le(b40,f0,t2_0,0), false).
-evidence(gt(b40,f0,t2_1,0)).
-evidence(le(b40,f1,t2_6,0)).
-evidence(gt(b40,f3,t2_7,0)).
-evidence(gt(b40,f2,t2_10,0)).
-evidence(le(b40,f2,t2_14,0), false).
-evidence(le(b40,f0,t2_15,0), false).
-evidence(gt(b40,f3,t2_27,0)).
-evidence(le(b41,f0,t2_0,0), false).
-evidence(gt(b41,f0,t2_1,0)).
-evidence(le(b41,f1,t2_6,0)).
-evidence(gt(b41,f3,t2_7,0)).
-evidence(gt(b41,f2,t2_10,0)).
-evidence(le(b41,f2,t2_14,0), false).
-evidence(gt(b41,f0,t2_15,0)).
-evidence(le(b42,f0,t2_0,0), false).
-evidence(gt(b42,f0,t2_1,0)).
-evidence(le(b42,f1,t2_6,0)).
-evidence(gt(b42,f3,t2_7,0)).
-evidence(gt(b42,f2,t2_10,0)).
-evidence(gt(b42,f2,t2_14,0)).
-evidence(le(b42,f1,t2_16,0), false).
-evidence(le(b43,f0,t2_0,0), false).
-evidence(gt(b43,f0,t2_1,0)).
-evidence(le(b43,f1,t2_6,0)).
-evidence(gt(b43,f3,t2_7,0)).
-evidence(gt(b43,f2,t2_10,0)).
-evidence(gt(b43,f2,t2_14,0)).
-evidence(gt(b43,f1,t2_16,0)).
-evidence(le(b43,f3,t2_18,0), false).
-evidence(le(b44,f0,t2_0,0), false).
-evidence(gt(b44,f0,t2_1,0)).
-evidence(le(b44,f1,t2_6,0)).
-evidence(gt(b44,f3,t2_7,0)).
-evidence(gt(b44,f2,t2_10,0)).
-evidence(gt(b44,f2,t2_14,0)).
-evidence(gt(b44,f1,t2_16,0)).
-evidence(gt(b44,f3,t2_18,0)).
-evidence(le(b44,f0,t2_20,0), false).
-evidence(le(b45,f0,t2_0,0), false).
-evidence(gt(b45,f0,t2_1,0)).
-evidence(le(b45,f1,t2_6,0)).
-evidence(gt(b45,f3,t2_7,0)).
-evidence(gt(b45,f2,t2_10,0)).
-evidence(gt(b45,f2,t2_14,0)).
-evidence(gt(b45,f1,t2_16,0)).
-evidence(gt(b45,f3,t2_18,0)).
-evidence(gt(b45,f0,t2_20,0)).
-evidence(le(b46,f0,t2_0,0), false).
-evidence(gt(b46,f0,t2_1,0)).
-evidence(gt(b46,f1,t2_6,0), false).
-evidence(gt(b47,f0,t2_0,0)).
-evidence(le(b47,f3,t2_2,0), false).
-evidence(gt(b48,f0,t2_0,0)).
-evidence(gt(b48,f3,t2_2,0)).
-evidence(le(b48,f2,t2_4,0), false).
-evidence(gt(b49,f0,t2_0,0)).
-evidence(gt(b49,f3,t2_2,0)).
-evidence(gt(b49,f2,t2_4,0)).
-evidence(le(b49,f3,t2_12,0), false).
-evidence(le(b49,f3,t2_31,0), false).
-evidence(le(b49,f1,t2_33,0), false).
-evidence(gt(b50,f0,t2_0,0)).
-evidence(gt(b50,f3,t2_2,0)).
-evidence(gt(b50,f2,t2_4,0)).
-evidence(le(b50,f3,t2_12,0), false).
-evidence(le(b50,f3,t2_31,0), false).
-evidence(gt(b50,f1,t2_33,0)).
-evidence(le(b50,f3,t2_36,0), false).
-evidence(gt(b51,f0,t2_0,0)).
-evidence(gt(b51,f3,t2_2,0)).
-evidence(gt(b51,f2,t2_4,0)).
-evidence(le(b51,f3,t2_12,0), false).
-evidence(le(b51,f3,t2_31,0), false).
-evidence(gt(b51,f1,t2_33,0)).
-evidence(gt(b51,f3,t2_36,0)).
-evidence(gt(b52,f0,t2_0,0)).
-evidence(gt(b52,f3,t2_2,0)).
-evidence(gt(b52,f2,t2_4,0)).
-evidence(le(b52,f3,t2_12,0), false).
-evidence(gt(b52,f3,t2_31,0)).
-evidence(gt(b53,f0,t2_0,0)).
-evidence(gt(b53,f3,t2_2,0)).
-evidence(gt(b53,f2,t2_4,0)).
-evidence(gt(b53,f3,t2_12,0)).
-evidence(le(b54,f2,t3_0,0), false).
-evidence(le(b54,f3,t3_1,0), false).
-evidence(le(b55,f2,t3_0,0), false).
-evidence(gt(b55,f3,t3_1,0)).
-evidence(le(b55,f1,t3_4,0), false).
-evidence(le(b55,f3,t3_25,0), false).
-evidence(le(b56,f2,t3_0,0), false).
-evidence(gt(b56,f3,t3_1,0)).
-evidence(le(b56,f1,t3_4,0), false).
-evidence(gt(b56,f3,t3_25,0)).
-evidence(le(b57,f2,t3_0,0), false).
-evidence(gt(b57,f3,t3_1,0)).
-evidence(gt(b57,f1,t3_4,0)).
-evidence(le(b57,f0,t3_26,0), false).
-evidence(le(b57,f2,t3_29,0), false).
-evidence(le(b58,f2,t3_0,0), false).
-evidence(gt(b58,f3,t3_1,0)).
-evidence(gt(b58,f1,t3_4,0)).
-evidence(le(b58,f0,t3_26,0), false).
-evidence(gt(b58,f2,t3_29,0)).
-evidence(le(b59,f2,t3_0,0), false).
-evidence(gt(b59,f3,t3_1,0)).
-evidence(gt(b59,f1,t3_4,0)).
-evidence(gt(b59,f0,t3_26,0)).
-evidence(gt(b60,f2,t3_0,0)).
-evidence(le(b60,f0,t3_2,0)).
-evidence(le(b60,f0,t3_5,0), false).
-evidence(le(b60,f1,t3_7,0), false).
-evidence(le(b60,f1,t3_15,0), false).
-evidence(gt(b61,f2,t3_0,0)).
-evidence(le(b61,f0,t3_2,0)).
-evidence(le(b61,f0,t3_5,0), false).
-evidence(le(b61,f1,t3_7,0), false).
-evidence(gt(b61,f1,t3_15,0)).
-evidence(le(b61,f2,t3_18,0), false).
-evidence(le(b61,f2,t3_19,0), false).
-evidence(gt(b62,f2,t3_0,0)).
-evidence(le(b62,f0,t3_2,0)).
-evidence(le(b62,f0,t3_5,0), false).
-evidence(le(b62,f1,t3_7,0), false).
-evidence(gt(b62,f1,t3_15,0)).
-evidence(le(b62,f2,t3_18,0), false).
-evidence(gt(b62,f2,t3_19,0)).
-evidence(le(b62,f0,t3_22,0), false).
-evidence(gt(b63,f2,t3_0,0)).
-evidence(le(b63,f0,t3_2,0)).
-evidence(le(b63,f0,t3_5,0), false).
-evidence(le(b63,f1,t3_7,0), false).
-evidence(gt(b63,f1,t3_15,0)).
-evidence(le(b63,f2,t3_18,0), false).
-evidence(gt(b63,f2,t3_19,0)).
-evidence(gt(b63,f0,t3_22,0)).
-evidence(gt(b64,f2,t3_0,0)).
-evidence(le(b64,f0,t3_2,0)).
-evidence(le(b64,f0,t3_5,0), false).
-evidence(le(b64,f1,t3_7,0), false).
-evidence(gt(b64,f1,t3_15,0)).
-evidence(gt(b64,f2,t3_18,0)).
-evidence(gt(b65,f2,t3_0,0)).
-evidence(le(b65,f0,t3_2,0)).
-evidence(le(b65,f0,t3_5,0), false).
-evidence(gt(b65,f1,t3_7,0)).
-evidence(gt(b66,f2,t3_0,0)).
-evidence(le(b66,f0,t3_2,0)).
-evidence(gt(b66,f0,t3_5,0)).
-evidence(le(b66,f3,t3_8,0), false).
-evidence(gt(b67,f2,t3_0,0)).
-evidence(le(b67,f0,t3_2,0)).
-evidence(gt(b67,f0,t3_5,0)).
-evidence(gt(b67,f3,t3_8,0)).
-evidence(le(b67,f3,t3_10,0), false).
-evidence(le(b67,f2,t3_11,0), false).
-evidence(gt(b68,f2,t3_0,0)).
-evidence(le(b68,f0,t3_2,0)).
-evidence(gt(b68,f0,t3_5,0)).
-evidence(gt(b68,f3,t3_8,0)).
-evidence(le(b68,f3,t3_10,0), false).
-evidence(gt(b68,f2,t3_11,0)).
-evidence(gt(b69,f2,t3_0,0)).
-evidence(le(b69,f0,t3_2,0)).
-evidence(gt(b69,f0,t3_5,0)).
-evidence(gt(b69,f3,t3_8,0)).
-evidence(gt(b69,f3,t3_10,0)).
-evidence(gt(b70,f2,t3_0,0)).
-evidence(gt(b70,f0,t3_2,0), false).
-evidence(le(b71,f3,t4_0,0), false).
-evidence(gt(b72,f3,t4_0,0)).
-evidence(le(b72,f0,t4_2,0), false).
-evidence(le(b72,f2,t4_3,0), false).
-evidence(le(b72,f0,t4_5,0), false).
-evidence(le(b72,f1,t4_15,0), false).
-evidence(gt(b73,f3,t4_0,0)).
-evidence(le(b73,f0,t4_2,0), false).
-evidence(le(b73,f2,t4_3,0), false).
-evidence(le(b73,f0,t4_5,0), false).
-evidence(gt(b73,f1,t4_15,0)).
-evidence(le(b73,f2,t4_18,0), false).
-evidence(gt(b74,f3,t4_0,0)).
-evidence(le(b74,f0,t4_2,0), false).
-evidence(le(b74,f2,t4_3,0), false).
-evidence(le(b74,f0,t4_5,0), false).
-evidence(gt(b74,f1,t4_15,0)).
-evidence(gt(b74,f2,t4_18,0)).
-evidence(gt(b75,f3,t4_0,0)).
-evidence(le(b75,f0,t4_2,0), false).
-evidence(le(b75,f2,t4_3,0), false).
-evidence(gt(b75,f0,t4_5,0)).
-evidence(gt(b76,f3,t4_0,0)).
-evidence(le(b76,f0,t4_2,0), false).
-evidence(gt(b76,f2,t4_3,0)).
-evidence(le(b76,f2,t4_6,0), false).
-evidence(le(b76,f3,t4_7,0), false).
-evidence(gt(b77,f3,t4_0,0)).
-evidence(le(b77,f0,t4_2,0), false).
-evidence(gt(b77,f2,t4_3,0)).
-evidence(le(b77,f2,t4_6,0), false).
-evidence(gt(b77,f3,t4_7,0)).
-evidence(le(b77,f2,t4_40,0), false).
-evidence(le(b77,f3,t4_41,0), false).
-evidence(gt(b78,f3,t4_0,0)).
-evidence(le(b78,f0,t4_2,0), false).
-evidence(gt(b78,f2,t4_3,0)).
-evidence(le(b78,f2,t4_6,0), false).
-evidence(gt(b78,f3,t4_7,0)).
-evidence(le(b78,f2,t4_40,0), false).
-evidence(gt(b78,f3,t4_41,0)).
-evidence(gt(b79,f3,t4_0,0)).
-evidence(le(b79,f0,t4_2,0), false).
-evidence(gt(b79,f2,t4_3,0)).
-evidence(le(b79,f2,t4_6,0), false).
-evidence(gt(b79,f3,t4_7,0)).
-evidence(gt(b79,f2,t4_40,0)).
-evidence(gt(b80,f3,t4_0,0)).
-evidence(le(b80,f0,t4_2,0), false).
-evidence(gt(b80,f2,t4_3,0)).
-evidence(gt(b80,f2,t4_6,0)).
-evidence(le(b80,f0,t4_8,0), false).
-evidence(le(b80,f0,t4_27,0), false).
-evidence(gt(b81,f3,t4_0,0)).
-evidence(le(b81,f0,t4_2,0), false).
-evidence(gt(b81,f2,t4_3,0)).
-evidence(gt(b81,f2,t4_6,0)).
-evidence(le(b81,f0,t4_8,0), false).
-evidence(gt(b81,f0,t4_27,0)).
-evidence(le(b81,f3,t4_30,0), false).
-evidence(gt(b82,f3,t4_0,0)).
-evidence(le(b82,f0,t4_2,0), false).
-evidence(gt(b82,f2,t4_3,0)).
-evidence(gt(b82,f2,t4_6,0)).
-evidence(le(b82,f0,t4_8,0), false).
-evidence(gt(b82,f0,t4_27,0)).
-evidence(gt(b82,f3,t4_30,0)).
-evidence(gt(b83,f3,t4_0,0)).
-evidence(le(b83,f0,t4_2,0), false).
-evidence(gt(b83,f2,t4_3,0)).
-evidence(gt(b83,f2,t4_6,0)).
-evidence(gt(b83,f0,t4_8,0)).
-evidence(gt(b84,f3,t4_0,0)).
-evidence(gt(b84,f0,t4_2,0)).
-evidence(le(b84,f0,t4_4,0), false).
-evidence(le(b84,f3,t4_9,0), false).
-evidence(le(b84,f2,t4_11,0)).
-evidence(le(b84,f1,t4_13,0), false).
-evidence(le(b84,f2,t4_33,0), false).
-evidence(gt(b85,f3,t4_0,0)).
-evidence(gt(b85,f0,t4_2,0)).
-evidence(le(b85,f0,t4_4,0), false).
-evidence(le(b85,f3,t4_9,0), false).
-evidence(le(b85,f2,t4_11,0)).
-evidence(le(b85,f1,t4_13,0), false).
-evidence(gt(b85,f2,t4_33,0)).
-evidence(le(b85,f2,t4_36,0), false).
-evidence(gt(b86,f3,t4_0,0)).
-evidence(gt(b86,f0,t4_2,0)).
-evidence(le(b86,f0,t4_4,0), false).
-evidence(le(b86,f3,t4_9,0), false).
-evidence(le(b86,f2,t4_11,0)).
-evidence(le(b86,f1,t4_13,0), false).
-evidence(gt(b86,f2,t4_33,0)).
-evidence(gt(b86,f2,t4_36,0)).
-evidence(gt(b87,f3,t4_0,0)).
-evidence(gt(b87,f0,t4_2,0)).
-evidence(le(b87,f0,t4_4,0), false).
-evidence(le(b87,f3,t4_9,0), false).
-evidence(le(b87,f2,t4_11,0)).
-evidence(gt(b87,f1,t4_13,0)).
-evidence(gt(b88,f3,t4_0,0)).
-evidence(gt(b88,f0,t4_2,0)).
-evidence(le(b88,f0,t4_4,0), false).
-evidence(le(b88,f3,t4_9,0), false).
-evidence(gt(b88,f2,t4_11,0), false).
-evidence(gt(b89,f3,t4_0,0)).
-evidence(gt(b89,f0,t4_2,0)).
-evidence(le(b89,f0,t4_4,0), false).
-evidence(gt(b89,f3,t4_9,0)).
-evidence(gt(b90,f3,t4_0,0)).
-evidence(gt(b90,f0,t4_2,0)).
-evidence(gt(b90,f0,t4_4,0)).
-evidence(le(b90,f0,t4_10,0)).
-evidence(le(b90,f1,t4_21,0), false).
-evidence(gt(b91,f3,t4_0,0)).
-evidence(gt(b91,f0,t4_2,0)).
-evidence(gt(b91,f0,t4_4,0)).
-evidence(le(b91,f0,t4_10,0)).
-evidence(gt(b91,f1,t4_21,0)).
-evidence(le(b91,f1,t4_24,0)).
-evidence(gt(b92,f3,t4_0,0)).
-evidence(gt(b92,f0,t4_2,0)).
-evidence(gt(b92,f0,t4_4,0)).
-evidence(le(b92,f0,t4_10,0)).
-evidence(gt(b92,f1,t4_21,0)).
-evidence(gt(b92,f1,t4_24,0), false).
-evidence(gt(b93,f3,t4_0,0)).
-evidence(gt(b93,f0,t4_2,0)).
-evidence(gt(b93,f0,t4_4,0)).
-evidence(gt(b93,f0,t4_10,0), false).
-evidence(le(b94,f3,t5_0,0), false).
-evidence(le(b94,f3,t5_1,0), false).
-evidence(le(b95,f3,t5_0,0), false).
-evidence(gt(b95,f3,t5_1,0)).
-evidence(gt(b96,f3,t5_0,0)).
-evidence(le(b96,f2,t5_2,0)).
-evidence(le(b96,f3,t5_5,0)).
-evidence(le(b96,f2,t5_7,0), false).
-evidence(le(b96,f3,t5_9,0), false).
-evidence(gt(b97,f3,t5_0,0)).
-evidence(le(b97,f2,t5_2,0)).
-evidence(le(b97,f3,t5_5,0)).
-evidence(le(b97,f2,t5_7,0), false).
-evidence(gt(b97,f3,t5_9,0)).
-evidence(le(b97,f2,t5_14,0), false).
-evidence(gt(b98,f3,t5_0,0)).
-evidence(le(b98,f2,t5_2,0)).
-evidence(le(b98,f3,t5_5,0)).
-evidence(le(b98,f2,t5_7,0), false).
-evidence(gt(b98,f3,t5_9,0)).
-evidence(gt(b98,f2,t5_14,0)).
-evidence(gt(b99,f3,t5_0,0)).
-evidence(le(b99,f2,t5_2,0)).
-evidence(le(b99,f3,t5_5,0)).
-evidence(gt(b99,f2,t5_7,0)).
-evidence(le(b99,f3,t5_10,0), false).
-evidence(le(b99,f1,t5_11,0), false).
-evidence(le(b99,f1,t5_17,0), false).
-evidence(gt(b100,f3,t5_0,0)).
-evidence(le(b100,f2,t5_2,0)).
-evidence(le(b100,f3,t5_5,0)).
-evidence(gt(b100,f2,t5_7,0)).
-evidence(le(b100,f3,t5_10,0), false).
-evidence(le(b100,f1,t5_11,0), false).
-evidence(gt(b100,f1,t5_17,0)).
-evidence(gt(b101,f3,t5_0,0)).
-evidence(le(b101,f2,t5_2,0)).
-evidence(le(b101,f3,t5_5,0)).
-evidence(gt(b101,f2,t5_7,0)).
-evidence(le(b101,f3,t5_10,0), false).
-evidence(gt(b101,f1,t5_11,0)).
-evidence(gt(b102,f3,t5_0,0)).
-evidence(le(b102,f2,t5_2,0)).
-evidence(le(b102,f3,t5_5,0)).
-evidence(gt(b102,f2,t5_7,0)).
-evidence(gt(b102,f3,t5_10,0)).
-evidence(gt(b103,f3,t5_0,0)).
-evidence(le(b103,f2,t5_2,0)).
-evidence(gt(b103,f3,t5_5,0), false).
-evidence(gt(b104,f3,t5_0,0)).
-evidence(gt(b104,f2,t5_2,0), false).
-evidence(le(b105,f2,t6_0,0), false).
-evidence(le(b105,f2,t6_1,0), false).
-evidence(le(b105,f2,t6_3,0), false).
-evidence(le(b106,f2,t6_0,0), false).
-evidence(le(b106,f2,t6_1,0), false).
-evidence(gt(b106,f2,t6_3,0)).
-evidence(le(b107,f2,t6_0,0), false).
-evidence(gt(b107,f2,t6_1,0)).
-evidence(le(b107,f2,t6_4,0), false).
-evidence(le(b107,f3,t6_7,0), false).
-evidence(le(b108,f2,t6_0,0), false).
-evidence(gt(b108,f2,t6_1,0)).
-evidence(le(b108,f2,t6_4,0), false).
-evidence(gt(b108,f3,t6_7,0)).
-evidence(le(b108,f0,t6_16,0), false).
-evidence(le(b109,f2,t6_0,0), false).
-evidence(gt(b109,f2,t6_1,0)).
-evidence(le(b109,f2,t6_4,0), false).
-evidence(gt(b109,f3,t6_7,0)).
-evidence(gt(b109,f0,t6_16,0)).
-evidence(le(b110,f2,t6_0,0), false).
-evidence(gt(b110,f2,t6_1,0)).
-evidence(gt(b110,f2,t6_4,0)).
-evidence(le(b110,f3,t6_8,0), false).
-evidence(le(b110,f2,t6_9,0), false).
-evidence(le(b111,f2,t6_0,0), false).
-evidence(gt(b111,f2,t6_1,0)).
-evidence(gt(b111,f2,t6_4,0)).
-evidence(le(b111,f3,t6_8,0), false).
-evidence(gt(b111,f2,t6_9,0)).
-evidence(le(b112,f2,t6_0,0), false).
-evidence(gt(b112,f2,t6_1,0)).
-evidence(gt(b112,f2,t6_4,0)).
-evidence(gt(b112,f3,t6_8,0)).
-evidence(le(b112,f3,t6_10,0), false).
-evidence(le(b113,f2,t6_0,0), false).
-evidence(gt(b113,f2,t6_1,0)).
-evidence(gt(b113,f2,t6_4,0)).
-evidence(gt(b113,f3,t6_8,0)).
-evidence(gt(b113,f3,t6_10,0)).
-evidence(gt(b114,f2,t6_0,0)).
-evidence(le(b115,f3,t7_0,0), false).
-evidence(le(b115,f3,t7_1,0), false).
-evidence(le(b116,f3,t7_0,0), false).
-evidence(gt(b116,f3,t7_1,0)).
-evidence(gt(b117,f3,t7_0,0)).
-evidence(le(b117,f2,t7_2,0), false).
-evidence(le(b117,f3,t7_3,0), false).
-evidence(gt(b118,f3,t7_0,0)).
-evidence(le(b118,f2,t7_2,0), false).
-evidence(gt(b118,f3,t7_3,0)).
-evidence(le(b118,f0,t7_22,0), false).
-evidence(gt(b119,f3,t7_0,0)).
-evidence(le(b119,f2,t7_2,0), false).
-evidence(gt(b119,f3,t7_3,0)).
-evidence(gt(b119,f0,t7_22,0)).
-evidence(gt(b120,f3,t7_0,0)).
-evidence(gt(b120,f2,t7_2,0)).
-evidence(le(b120,f2,t7_4,0), false).
-evidence(gt(b121,f3,t7_0,0)).
-evidence(gt(b121,f2,t7_2,0)).
-evidence(gt(b121,f2,t7_4,0)).
-evidence(le(b121,f3,t7_8,0), false).
-evidence(le(b121,f1,t7_9,0), false).
-evidence(gt(b122,f3,t7_0,0)).
-evidence(gt(b122,f2,t7_2,0)).
-evidence(gt(b122,f2,t7_4,0)).
-evidence(le(b122,f3,t7_8,0), false).
-evidence(gt(b122,f1,t7_9,0)).
-evidence(le(b122,f0,t7_12,0), false).
-evidence(le(b122,f3,t7_13,0), false).
-evidence(gt(b123,f3,t7_0,0)).
-evidence(gt(b123,f2,t7_2,0)).
-evidence(gt(b123,f2,t7_4,0)).
-evidence(le(b123,f3,t7_8,0), false).
-evidence(gt(b123,f1,t7_9,0)).
-evidence(le(b123,f0,t7_12,0), false).
-evidence(gt(b123,f3,t7_13,0)).
-evidence(gt(b124,f3,t7_0,0)).
-evidence(gt(b124,f2,t7_2,0)).
-evidence(gt(b124,f2,t7_4,0)).
-evidence(le(b124,f3,t7_8,0), false).
-evidence(gt(b124,f1,t7_9,0)).
-evidence(gt(b124,f0,t7_12,0)).
-evidence(le(b124,f1,t7_14,0), false).
-evidence(gt(b125,f3,t7_0,0)).
-evidence(gt(b125,f2,t7_2,0)).
-evidence(gt(b125,f2,t7_4,0)).
-evidence(le(b125,f3,t7_8,0), false).
-evidence(gt(b125,f1,t7_9,0)).
-evidence(gt(b125,f0,t7_12,0)).
-evidence(gt(b125,f1,t7_14,0)).
-evidence(le(b125,f3,t7_18,0), false).
-evidence(gt(b126,f3,t7_0,0)).
-evidence(gt(b126,f2,t7_2,0)).
-evidence(gt(b126,f2,t7_4,0)).
-evidence(le(b126,f3,t7_8,0), false).
-evidence(gt(b126,f1,t7_9,0)).
-evidence(gt(b126,f0,t7_12,0)).
-evidence(gt(b126,f1,t7_14,0)).
-evidence(gt(b126,f3,t7_18,0)).
-evidence(gt(b127,f3,t7_0,0)).
-evidence(gt(b127,f2,t7_2,0)).
-evidence(gt(b127,f2,t7_4,0)).
-evidence(gt(b127,f3,t7_8,0)).
+evidence(gt(b34,f0,t2_1,0)).
+evidence(le(b34,f1,t2_6,0)).
+evidence(gt(b34,f3,t2_7,0)).
+evidence(gt(b34,f2,t2_10,0)).
+evidence(gt(b34,f2,t2_14,0)).
+evidence(gt(b34,f1,t2_16,0)).
+evidence(gt(b34,f3,t2_18,0)).
+evidence(gt(b35,f0,t2_0,0)).
+evidence(gt(b36,f0,t2_0,0)).
+evidence(gt(b36,f3,t2_2,0)).
+evidence(gt(b37,f0,t2_0,0)).
+evidence(gt(b37,f3,t2_2,0)).
+evidence(gt(b37,f2,t2_4,0)).
+evidence(gt(b38,f0,t2_0,0)).
+evidence(gt(b38,f3,t2_2,0)).
+evidence(gt(b38,f2,t2_4,0)).
+evidence(le(b38,f3,t2_12,0), false).
+evidence(gt(b39,f0,t2_0,0)).
+evidence(gt(b39,f3,t2_2,0)).
+evidence(gt(b39,f2,t2_4,0)).
+evidence(le(b39,f3,t2_12,0), false).
+evidence(le(b39,f3,t2_31,0), false).
+evidence(gt(b40,f0,t2_0,0)).
+evidence(gt(b40,f3,t2_2,0)).
+evidence(gt(b40,f2,t2_4,0)).
+evidence(le(b40,f3,t2_12,0), false).
+evidence(le(b40,f3,t2_31,0), false).
+evidence(gt(b40,f1,t2_33,0)).
+evidence(le(b41,f2,t3_0,0), false).
+evidence(le(b42,f2,t3_0,0), false).
+evidence(gt(b42,f3,t3_1,0)).
+evidence(le(b42,f1,t3_4,0), false).
+evidence(le(b43,f2,t3_0,0), false).
+evidence(gt(b43,f3,t3_1,0)).
+evidence(gt(b43,f1,t3_4,0)).
+evidence(le(b44,f2,t3_0,0), false).
+evidence(gt(b44,f3,t3_1,0)).
+evidence(gt(b44,f1,t3_4,0)).
+evidence(le(b44,f0,t3_26,0), false).
+evidence(gt(b45,f2,t3_0,0)).
+evidence(gt(b46,f2,t3_0,0)).
+evidence(le(b46,f0,t3_2,0)).
+evidence(le(b46,f0,t3_5,0), false).
+evidence(gt(b47,f2,t3_0,0)).
+evidence(le(b47,f0,t3_2,0)).
+evidence(le(b47,f0,t3_5,0), false).
+evidence(le(b47,f1,t3_7,0), false).
+evidence(gt(b48,f2,t3_0,0)).
+evidence(le(b48,f0,t3_2,0)).
+evidence(le(b48,f0,t3_5,0), false).
+evidence(le(b48,f1,t3_7,0), false).
+evidence(gt(b48,f1,t3_15,0)).
+evidence(gt(b49,f2,t3_0,0)).
+evidence(le(b49,f0,t3_2,0)).
+evidence(le(b49,f0,t3_5,0), false).
+evidence(le(b49,f1,t3_7,0), false).
+evidence(gt(b49,f1,t3_15,0)).
+evidence(le(b49,f2,t3_18,0), false).
+evidence(gt(b50,f2,t3_0,0)).
+evidence(le(b50,f0,t3_2,0)).
+evidence(le(b50,f0,t3_5,0), false).
+evidence(le(b50,f1,t3_7,0), false).
+evidence(gt(b50,f1,t3_15,0)).
+evidence(le(b50,f2,t3_18,0), false).
+evidence(gt(b50,f2,t3_19,0)).
+evidence(gt(b51,f2,t3_0,0)).
+evidence(le(b51,f0,t3_2,0)).
+evidence(gt(b51,f0,t3_5,0)).
+evidence(gt(b52,f2,t3_0,0)).
+evidence(le(b52,f0,t3_2,0)).
+evidence(gt(b52,f0,t3_5,0)).
+evidence(gt(b52,f3,t3_8,0)).
+evidence(gt(b53,f2,t3_0,0)).
+evidence(le(b53,f0,t3_2,0)).
+evidence(gt(b53,f0,t3_5,0)).
+evidence(gt(b53,f3,t3_8,0)).
+evidence(le(b53,f3,t3_10,0), false).
+evidence(gt(b55,f3,t4_0,0)).
+evidence(le(b55,f0,t4_2,0), false).
+evidence(le(b55,f2,t4_3,0), false).
+evidence(gt(b56,f3,t4_0,0)).
+evidence(le(b56,f0,t4_2,0), false).
+evidence(le(b56,f2,t4_3,0), false).
+evidence(le(b56,f0,t4_5,0), false).
+evidence(gt(b57,f3,t4_0,0)).
+evidence(le(b57,f0,t4_2,0), false).
+evidence(le(b57,f2,t4_3,0), false).
+evidence(le(b57,f0,t4_5,0), false).
+evidence(gt(b57,f1,t4_15,0)).
+evidence(gt(b58,f3,t4_0,0)).
+evidence(le(b58,f0,t4_2,0), false).
+evidence(gt(b58,f2,t4_3,0)).
+evidence(le(b58,f2,t4_6,0), false).
+evidence(gt(b59,f3,t4_0,0)).
+evidence(le(b59,f0,t4_2,0), false).
+evidence(gt(b59,f2,t4_3,0)).
+evidence(le(b59,f2,t4_6,0), false).
+evidence(gt(b59,f3,t4_7,0)).
+evidence(gt(b60,f3,t4_0,0)).
+evidence(le(b60,f0,t4_2,0), false).
+evidence(gt(b60,f2,t4_3,0)).
+evidence(le(b60,f2,t4_6,0), false).
+evidence(gt(b60,f3,t4_7,0)).
+evidence(le(b60,f2,t4_40,0), false).
+evidence(gt(b61,f3,t4_0,0)).
+evidence(le(b61,f0,t4_2,0), false).
+evidence(gt(b61,f2,t4_3,0)).
+evidence(gt(b61,f2,t4_6,0)).
+evidence(gt(b62,f3,t4_0,0)).
+evidence(le(b62,f0,t4_2,0), false).
+evidence(gt(b62,f2,t4_3,0)).
+evidence(gt(b62,f2,t4_6,0)).
+evidence(le(b62,f0,t4_8,0), false).
+evidence(gt(b63,f3,t4_0,0)).
+evidence(le(b63,f0,t4_2,0), false).
+evidence(gt(b63,f2,t4_3,0)).
+evidence(gt(b63,f2,t4_6,0)).
+evidence(le(b63,f0,t4_8,0), false).
+evidence(gt(b63,f0,t4_27,0)).
+evidence(gt(b64,f3,t4_0,0)).
+evidence(gt(b64,f0,t4_2,0)).
+evidence(le(b64,f0,t4_4,0), false).
+evidence(gt(b65,f3,t4_0,0)).
+evidence(gt(b65,f0,t4_2,0)).
+evidence(le(b65,f0,t4_4,0), false).
+evidence(le(b65,f3,t4_9,0), false).
+evidence(gt(b66,f3,t4_0,0)).
+evidence(gt(b66,f0,t4_2,0)).
+evidence(le(b66,f0,t4_4,0), false).
+evidence(le(b66,f3,t4_9,0), false).
+evidence(le(b66,f2,t4_11,0)).
+evidence(gt(b67,f3,t4_0,0)).
+evidence(gt(b67,f0,t4_2,0)).
+evidence(le(b67,f0,t4_4,0), false).
+evidence(le(b67,f3,t4_9,0), false).
+evidence(le(b67,f2,t4_11,0)).
+evidence(le(b67,f1,t4_13,0), false).
+evidence(gt(b68,f3,t4_0,0)).
+evidence(gt(b68,f0,t4_2,0)).
+evidence(le(b68,f0,t4_4,0), false).
+evidence(le(b68,f3,t4_9,0), false).
+evidence(le(b68,f2,t4_11,0)).
+evidence(le(b68,f1,t4_13,0), false).
+evidence(gt(b68,f2,t4_33,0)).
+evidence(gt(b69,f3,t4_0,0)).
+evidence(gt(b69,f0,t4_2,0)).
+evidence(gt(b69,f0,t4_4,0)).
+evidence(gt(b70,f3,t4_0,0)).
+evidence(gt(b70,f0,t4_2,0)).
+evidence(gt(b70,f0,t4_4,0)).
+evidence(le(b70,f0,t4_10,0)).
+evidence(gt(b71,f3,t4_0,0)).
+evidence(gt(b71,f0,t4_2,0)).
+evidence(gt(b71,f0,t4_4,0)).
+evidence(le(b71,f0,t4_10,0)).
+evidence(gt(b71,f1,t4_21,0)).
+evidence(le(b72,f3,t5_0,0), false).
+evidence(gt(b73,f3,t5_0,0)).
+evidence(gt(b74,f3,t5_0,0)).
+evidence(le(b74,f2,t5_2,0)).
+evidence(gt(b75,f3,t5_0,0)).
+evidence(le(b75,f2,t5_2,0)).
+evidence(le(b75,f3,t5_5,0)).
+evidence(le(b75,f2,t5_7,0), false).
+evidence(gt(b76,f3,t5_0,0)).
+evidence(le(b76,f2,t5_2,0)).
+evidence(le(b76,f3,t5_5,0)).
+evidence(le(b76,f2,t5_7,0), false).
+evidence(gt(b76,f3,t5_9,0)).
+evidence(gt(b77,f3,t5_0,0)).
+evidence(le(b77,f2,t5_2,0)).
+evidence(le(b77,f3,t5_5,0)).
+evidence(gt(b77,f2,t5_7,0)).
+evidence(gt(b78,f3,t5_0,0)).
+evidence(le(b78,f2,t5_2,0)).
+evidence(le(b78,f3,t5_5,0)).
+evidence(gt(b78,f2,t5_7,0)).
+evidence(le(b78,f3,t5_10,0), false).
+evidence(gt(b79,f3,t5_0,0)).
+evidence(le(b79,f2,t5_2,0)).
+evidence(le(b79,f3,t5_5,0)).
+evidence(gt(b79,f2,t5_7,0)).
+evidence(le(b79,f3,t5_10,0), false).
+evidence(le(b79,f1,t5_11,0), false).
+evidence(le(b81,f2,t6_0,0), false).
+evidence(le(b81,f2,t6_1,0), false).
+evidence(le(b82,f2,t6_0,0), false).
+evidence(gt(b82,f2,t6_1,0)).
+evidence(le(b82,f2,t6_4,0), false).
+evidence(le(b83,f2,t6_0,0), false).
+evidence(gt(b83,f2,t6_1,0)).
+evidence(le(b83,f2,t6_4,0), false).
+evidence(gt(b83,f3,t6_7,0)).
+evidence(le(b84,f2,t6_0,0), false).
+evidence(gt(b84,f2,t6_1,0)).
+evidence(gt(b84,f2,t6_4,0)).
+evidence(le(b84,f3,t6_8,0), false).
+evidence(le(b85,f2,t6_0,0), false).
+evidence(gt(b85,f2,t6_1,0)).
+evidence(gt(b85,f2,t6_4,0)).
+evidence(gt(b85,f3,t6_8,0)).
+evidence(le(b86,f3,t7_0,0), false).
+evidence(gt(b87,f3,t7_0,0)).
+evidence(le(b87,f2,t7_2,0), false).
+evidence(gt(b88,f3,t7_0,0)).
+evidence(le(b88,f2,t7_2,0), false).
+evidence(gt(b88,f3,t7_3,0)).
+evidence(gt(b89,f3,t7_0,0)).
+evidence(gt(b89,f2,t7_2,0)).
+evidence(gt(b90,f3,t7_0,0)).
+evidence(gt(b90,f2,t7_2,0)).
+evidence(gt(b90,f2,t7_4,0)).
+evidence(gt(b91,f3,t7_0,0)).
+evidence(gt(b91,f2,t7_2,0)).
+evidence(gt(b91,f2,t7_4,0)).
+evidence(le(b91,f3,t7_8,0), false).
+evidence(gt(b92,f3,t7_0,0)).
+evidence(gt(b92,f2,t7_2,0)).
+evidence(gt(b92,f2,t7_4,0)).
+evidence(le(b92,f3,t7_8,0), false).
+evidence(gt(b92,f1,t7_9,0)).
+evidence(le(b92,f0,t7_12,0), false).
+evidence(gt(b93,f3,t7_0,0)).
+evidence(gt(b93,f2,t7_2,0)).
+evidence(gt(b93,f2,t7_4,0)).
+evidence(le(b93,f3,t7_8,0), false).
+evidence(gt(b93,f1,t7_9,0)).
+evidence(gt(b93,f0,t7_12,0)).
+evidence(gt(b94,f3,t7_0,0)).
+evidence(gt(b94,f2,t7_2,0)).
+evidence(gt(b94,f2,t7_4,0)).
+evidence(le(b94,f3,t7_8,0), false).
+evidence(gt(b94,f1,t7_9,0)).
+evidence(gt(b94,f0,t7_12,0)).
+evidence(gt(b94,f1,t7_14,0)).
 evidence(le(b0,f0,t0_0,1)).
-evidence(le(b0,f3,t0_1,1), false).
 evidence(le(b1,f0,t0_0,1)).
 evidence(gt(b1,f3,t0_1,1)).
-evidence(le(b1,f2,t0_4,1), false).
 evidence(le(b2,f0,t0_0,1)).
 evidence(gt(b2,f3,t0_1,1)).
 evidence(gt(b2,f2,t0_4,1)).
-evidence(le(b2,f0,t0_22,1), false).
-evidence(le(b3,f0,t0_0,1)).
-evidence(gt(b3,f3,t0_1,1)).
-evidence(gt(b3,f2,t0_4,1)).
-evidence(gt(b3,f0,t0_22,1)).
+evidence(gt(b3,f0,t0_0,1), false).
 evidence(gt(b4,f0,t0_0,1), false).
 evidence(le(b4,f0,t0_2,1)).
 evidence(le(b4,f2,t0_5,1), false).
-evidence(le(b4,f3,t0_7,1), false).
 evidence(gt(b5,f0,t0_0,1), false).
 evidence(le(b5,f0,t0_2,1)).
-evidence(le(b5,f2,t0_5,1), false).
-evidence(gt(b5,f3,t0_7,1)).
+evidence(gt(b5,f2,t0_5,1)).
 evidence(gt(b6,f0,t0_0,1), false).
 evidence(le(b6,f0,t0_2,1)).
 evidence(gt(b6,f2,t0_5,1)).
-evidence(le(b6,f2,t0_8,1), false).
+evidence(gt(b6,f2,t0_8,1)).
 evidence(gt(b7,f0,t0_0,1), false).
 evidence(le(b7,f0,t0_2,1)).
 evidence(gt(b7,f2,t0_5,1)).
 evidence(gt(b7,f2,t0_8,1)).
 evidence(le(b7,f2,t0_10,1)).
-evidence(le(b7,f3,t0_11,1)).
-evidence(le(b7,f1,t0_15,1), false).
-evidence(le(b7,f0,t0_17,1)).
-evidence(le(b7,f3,t0_25,1), false).
-evidence(le(b7,f2,t0_29,1)).
 evidence(gt(b8,f0,t0_0,1), false).
 evidence(le(b8,f0,t0_2,1)).
 evidence(gt(b8,f2,t0_5,1)).
@@ -3123,9 +2247,6 @@ evidence(le(b8,f2,t0_10,1)).
 evidence(le(b8,f3,t0_11,1)).
 evidence(le(b8,f1,t0_15,1), false).
 evidence(le(b8,f0,t0_17,1)).
-evidence(le(b8,f3,t0_25,1), false).
-evidence(gt(b8,f2,t0_29,1), false).
-evidence(le(b8,f3,t0_32,1), false).
 evidence(gt(b9,f0,t0_0,1), false).
 evidence(le(b9,f0,t0_2,1)).
 evidence(gt(b9,f2,t0_5,1)).
@@ -3135,8 +2256,6 @@ evidence(le(b9,f3,t0_11,1)).
 evidence(le(b9,f1,t0_15,1), false).
 evidence(le(b9,f0,t0_17,1)).
 evidence(le(b9,f3,t0_25,1), false).
-evidence(gt(b9,f2,t0_29,1), false).
-evidence(gt(b9,f3,t0_32,1)).
 evidence(gt(b10,f0,t0_0,1), false).
 evidence(le(b10,f0,t0_2,1)).
 evidence(gt(b10,f2,t0_5,1)).
@@ -3145,7 +2264,8 @@ evidence(le(b10,f2,t0_10,1)).
 evidence(le(b10,f3,t0_11,1)).
 evidence(le(b10,f1,t0_15,1), false).
 evidence(le(b10,f0,t0_17,1)).
-evidence(gt(b10,f3,t0_25,1)).
+evidence(le(b10,f3,t0_25,1), false).
+evidence(gt(b10,f2,t0_29,1), false).
 evidence(gt(b11,f0,t0_0,1), false).
 evidence(le(b11,f0,t0_2,1)).
 evidence(gt(b11,f2,t0_5,1)).
@@ -3154,653 +2274,360 @@ evidence(le(b11,f2,t0_10,1)).
 evidence(le(b11,f3,t0_11,1)).
 evidence(le(b11,f1,t0_15,1), false).
 evidence(gt(b11,f0,t0_17,1), false).
-evidence(le(b11,f3,t0_26,1), false).
 evidence(gt(b12,f0,t0_0,1), false).
 evidence(le(b12,f0,t0_2,1)).
 evidence(gt(b12,f2,t0_5,1)).
 evidence(gt(b12,f2,t0_8,1)).
 evidence(le(b12,f2,t0_10,1)).
 evidence(le(b12,f3,t0_11,1)).
-evidence(le(b12,f1,t0_15,1), false).
-evidence(gt(b12,f0,t0_17,1), false).
-evidence(gt(b12,f3,t0_26,1)).
-evidence(gt(b13,f0,t0_0,1), false).
-evidence(le(b13,f0,t0_2,1)).
-evidence(gt(b13,f2,t0_5,1)).
-evidence(gt(b13,f2,t0_8,1)).
-evidence(le(b13,f2,t0_10,1)).
-evidence(le(b13,f3,t0_11,1)).
-evidence(gt(b13,f1,t0_15,1)).
-evidence(le(b13,f2,t0_18,1)).
-evidence(gt(b14,f0,t0_0,1), false).
-evidence(le(b14,f0,t0_2,1)).
-evidence(gt(b14,f2,t0_5,1)).
-evidence(gt(b14,f2,t0_8,1)).
-evidence(le(b14,f2,t0_10,1)).
-evidence(le(b14,f3,t0_11,1)).
-evidence(gt(b14,f1,t0_15,1)).
-evidence(gt(b14,f2,t0_18,1), false).
-evidence(gt(b15,f0,t0_0,1), false).
-evidence(le(b15,f0,t0_2,1)).
-evidence(gt(b15,f2,t0_5,1)).
-evidence(gt(b15,f2,t0_8,1)).
-evidence(le(b15,f2,t0_10,1)).
-evidence(gt(b15,f3,t0_11,1), false).
-evidence(gt(b16,f0,t0_0,1), false).
-evidence(le(b16,f0,t0_2,1)).
-evidence(gt(b16,f2,t0_5,1)).
-evidence(gt(b16,f2,t0_8,1)).
-evidence(gt(b16,f2,t0_10,1), false).
-evidence(gt(b17,f0,t0_0,1), false).
-evidence(gt(b17,f0,t0_2,1), false).
+evidence(gt(b12,f1,t0_15,1)).
+evidence(le(b14,f3,t1_0,1), false).
+evidence(le(b14,f0,t1_1,1)).
+evidence(le(b14,f3,t1_3,1), false).
+evidence(le(b15,f3,t1_0,1), false).
+evidence(le(b15,f0,t1_1,1)).
+evidence(le(b15,f3,t1_3,1), false).
+evidence(le(b15,f1,t1_5,1)).
+evidence(le(b16,f3,t1_0,1), false).
+evidence(le(b16,f0,t1_1,1)).
+evidence(le(b16,f3,t1_3,1), false).
+evidence(le(b16,f1,t1_5,1)).
+evidence(le(b16,f2,t1_7,1), false).
+evidence(le(b17,f3,t1_0,1), false).
+evidence(le(b17,f0,t1_1,1)).
+evidence(le(b17,f3,t1_3,1), false).
+evidence(le(b17,f1,t1_5,1)).
+evidence(le(b17,f2,t1_7,1), false).
+evidence(gt(b17,f0,t1_9,1)).
 evidence(le(b18,f3,t1_0,1), false).
 evidence(le(b18,f0,t1_1,1)).
-evidence(le(b18,f3,t1_3,1), false).
-evidence(le(b18,f1,t1_5,1)).
-evidence(le(b18,f2,t1_7,1), false).
-evidence(le(b18,f0,t1_9,1), false).
+evidence(gt(b18,f3,t1_3,1)).
+evidence(le(b18,f2,t1_6,1)).
 evidence(le(b19,f3,t1_0,1), false).
 evidence(le(b19,f0,t1_1,1)).
-evidence(le(b19,f3,t1_3,1), false).
-evidence(le(b19,f1,t1_5,1)).
-evidence(le(b19,f2,t1_7,1), false).
-evidence(gt(b19,f0,t1_9,1)).
-evidence(le(b19,f3,t1_12,1), false).
+evidence(gt(b19,f3,t1_3,1)).
+evidence(le(b19,f2,t1_6,1)).
+evidence(le(b19,f1,t1_21,1), false).
 evidence(le(b20,f3,t1_0,1), false).
 evidence(le(b20,f0,t1_1,1)).
-evidence(le(b20,f3,t1_3,1), false).
-evidence(le(b20,f1,t1_5,1)).
-evidence(le(b20,f2,t1_7,1), false).
-evidence(gt(b20,f0,t1_9,1)).
-evidence(gt(b20,f3,t1_12,1)).
+evidence(gt(b20,f3,t1_3,1)).
+evidence(le(b20,f2,t1_6,1)).
+evidence(le(b20,f1,t1_21,1), false).
+evidence(gt(b20,f2,t1_25,1)).
 evidence(le(b21,f3,t1_0,1), false).
 evidence(le(b21,f0,t1_1,1)).
-evidence(le(b21,f3,t1_3,1), false).
-evidence(le(b21,f1,t1_5,1)).
-evidence(gt(b21,f2,t1_7,1)).
+evidence(gt(b21,f3,t1_3,1)).
+evidence(gt(b21,f2,t1_6,1), false).
 evidence(le(b22,f3,t1_0,1), false).
-evidence(le(b22,f0,t1_1,1)).
-evidence(le(b22,f3,t1_3,1), false).
-evidence(gt(b22,f1,t1_5,1), false).
+evidence(gt(b22,f0,t1_1,1), false).
 evidence(le(b23,f3,t1_0,1), false).
-evidence(le(b23,f0,t1_1,1)).
-evidence(gt(b23,f3,t1_3,1)).
-evidence(le(b23,f2,t1_6,1)).
-evidence(le(b23,f1,t1_21,1), false).
-evidence(le(b23,f2,t1_25,1), false).
+evidence(gt(b23,f0,t1_1,1), false).
+evidence(le(b23,f0,t1_4,1)).
 evidence(le(b24,f3,t1_0,1), false).
-evidence(le(b24,f0,t1_1,1)).
-evidence(gt(b24,f3,t1_3,1)).
-evidence(le(b24,f2,t1_6,1)).
-evidence(le(b24,f1,t1_21,1), false).
-evidence(gt(b24,f2,t1_25,1)).
-evidence(le(b24,f3,t1_28,1), false).
-evidence(le(b25,f3,t1_0,1), false).
-evidence(le(b25,f0,t1_1,1)).
-evidence(gt(b25,f3,t1_3,1)).
-evidence(le(b25,f2,t1_6,1)).
-evidence(le(b25,f1,t1_21,1), false).
-evidence(gt(b25,f2,t1_25,1)).
-evidence(gt(b25,f3,t1_28,1)).
-evidence(le(b26,f3,t1_0,1), false).
-evidence(le(b26,f0,t1_1,1)).
-evidence(gt(b26,f3,t1_3,1)).
-evidence(le(b26,f2,t1_6,1)).
-evidence(gt(b26,f1,t1_21,1)).
-evidence(le(b27,f3,t1_0,1), false).
-evidence(le(b27,f0,t1_1,1)).
-evidence(gt(b27,f3,t1_3,1)).
-evidence(gt(b27,f2,t1_6,1), false).
-evidence(le(b27,f0,t1_22,1)).
-evidence(le(b28,f3,t1_0,1), false).
-evidence(le(b28,f0,t1_1,1)).
-evidence(gt(b28,f3,t1_3,1)).
-evidence(gt(b28,f2,t1_6,1), false).
-evidence(gt(b28,f0,t1_22,1), false).
-evidence(le(b29,f3,t1_0,1), false).
-evidence(gt(b29,f0,t1_1,1), false).
-evidence(le(b29,f0,t1_4,1)).
-evidence(le(b29,f2,t1_15,1), false).
-evidence(le(b30,f3,t1_0,1), false).
-evidence(gt(b30,f0,t1_1,1), false).
-evidence(le(b30,f0,t1_4,1)).
-evidence(gt(b30,f2,t1_15,1)).
-evidence(le(b30,f3,t1_18,1), false).
-evidence(le(b31,f3,t1_0,1), false).
-evidence(gt(b31,f0,t1_1,1), false).
-evidence(le(b31,f0,t1_4,1)).
-evidence(gt(b31,f2,t1_15,1)).
-evidence(gt(b31,f3,t1_18,1)).
-evidence(le(b32,f3,t1_0,1), false).
-evidence(gt(b32,f0,t1_1,1), false).
-evidence(gt(b32,f0,t1_4,1), false).
-evidence(gt(b33,f3,t1_0,1)).
+evidence(gt(b24,f0,t1_1,1), false).
+evidence(le(b24,f0,t1_4,1)).
+evidence(gt(b24,f2,t1_15,1)).
+evidence(le(b25,f0,t2_0,1)).
+evidence(le(b26,f0,t2_0,1)).
+evidence(gt(b26,f0,t2_1,1)).
+evidence(le(b27,f0,t2_0,1)).
+evidence(gt(b27,f0,t2_1,1)).
+evidence(le(b27,f1,t2_6,1)).
+evidence(le(b28,f0,t2_0,1)).
+evidence(gt(b28,f0,t2_1,1)).
+evidence(le(b28,f1,t2_6,1)).
+evidence(gt(b28,f3,t2_7,1)).
+evidence(le(b28,f2,t2_10,1), false).
+evidence(le(b29,f0,t2_0,1)).
+evidence(gt(b29,f0,t2_1,1)).
+evidence(le(b29,f1,t2_6,1)).
+evidence(gt(b29,f3,t2_7,1)).
+evidence(le(b29,f2,t2_10,1), false).
+evidence(le(b29,f3,t2_13,1), false).
+evidence(le(b30,f0,t2_0,1)).
+evidence(gt(b30,f0,t2_1,1)).
+evidence(le(b30,f1,t2_6,1)).
+evidence(gt(b30,f3,t2_7,1)).
+evidence(gt(b30,f2,t2_10,1)).
+evidence(le(b30,f2,t2_14,1), false).
+evidence(le(b31,f0,t2_0,1)).
+evidence(gt(b31,f0,t2_1,1)).
+evidence(le(b31,f1,t2_6,1)).
+evidence(gt(b31,f3,t2_7,1)).
+evidence(gt(b31,f2,t2_10,1)).
+evidence(le(b31,f2,t2_14,1), false).
+evidence(le(b31,f0,t2_15,1)).
+evidence(le(b32,f0,t2_0,1)).
+evidence(gt(b32,f0,t2_1,1)).
+evidence(le(b32,f1,t2_6,1)).
+evidence(gt(b32,f3,t2_7,1)).
+evidence(gt(b32,f2,t2_10,1)).
+evidence(gt(b32,f2,t2_14,1)).
+evidence(le(b33,f0,t2_0,1)).
+evidence(gt(b33,f0,t2_1,1)).
+evidence(le(b33,f1,t2_6,1)).
+evidence(gt(b33,f3,t2_7,1)).
+evidence(gt(b33,f2,t2_10,1)).
+evidence(gt(b33,f2,t2_14,1)).
+evidence(gt(b33,f1,t2_16,1)).
 evidence(le(b34,f0,t2_0,1)).
-evidence(le(b34,f0,t2_1,1), false).
-evidence(le(b35,f0,t2_0,1)).
-evidence(gt(b35,f0,t2_1,1)).
-evidence(le(b35,f1,t2_6,1)).
-evidence(le(b35,f3,t2_7,1), false).
-evidence(le(b36,f0,t2_0,1)).
-evidence(gt(b36,f0,t2_1,1)).
-evidence(le(b36,f1,t2_6,1)).
-evidence(gt(b36,f3,t2_7,1)).
-evidence(le(b36,f2,t2_10,1), false).
-evidence(le(b36,f3,t2_13,1), false).
-evidence(le(b36,f2,t2_23,1), false).
-evidence(le(b37,f0,t2_0,1)).
-evidence(gt(b37,f0,t2_1,1)).
-evidence(le(b37,f1,t2_6,1)).
-evidence(gt(b37,f3,t2_7,1)).
-evidence(le(b37,f2,t2_10,1), false).
-evidence(le(b37,f3,t2_13,1), false).
-evidence(gt(b37,f2,t2_23,1)).
-evidence(le(b38,f0,t2_0,1)).
-evidence(gt(b38,f0,t2_1,1)).
-evidence(le(b38,f1,t2_6,1)).
-evidence(gt(b38,f3,t2_7,1)).
-evidence(le(b38,f2,t2_10,1), false).
-evidence(gt(b38,f3,t2_13,1)).
-evidence(le(b39,f0,t2_0,1)).
-evidence(gt(b39,f0,t2_1,1)).
-evidence(le(b39,f1,t2_6,1)).
-evidence(gt(b39,f3,t2_7,1)).
-evidence(gt(b39,f2,t2_10,1)).
-evidence(le(b39,f2,t2_14,1), false).
-evidence(le(b39,f0,t2_15,1)).
-evidence(le(b39,f3,t2_27,1), false).
-evidence(le(b40,f0,t2_0,1)).
-evidence(gt(b40,f0,t2_1,1)).
-evidence(le(b40,f1,t2_6,1)).
-evidence(gt(b40,f3,t2_7,1)).
-evidence(gt(b40,f2,t2_10,1)).
-evidence(le(b40,f2,t2_14,1), false).
-evidence(le(b40,f0,t2_15,1)).
-evidence(gt(b40,f3,t2_27,1)).
-evidence(le(b41,f0,t2_0,1)).
-evidence(gt(b41,f0,t2_1,1)).
-evidence(le(b41,f1,t2_6,1)).
-evidence(gt(b41,f3,t2_7,1)).
-evidence(gt(b41,f2,t2_10,1)).
-evidence(le(b41,f2,t2_14,1), false).
-evidence(gt(b41,f0,t2_15,1), false).
-evidence(le(b42,f0,t2_0,1)).
-evidence(gt(b42,f0,t2_1,1)).
-evidence(le(b42,f1,t2_6,1)).
-evidence(gt(b42,f3,t2_7,1)).
-evidence(gt(b42,f2,t2_10,1)).
-evidence(gt(b42,f2,t2_14,1)).
-evidence(le(b42,f1,t2_16,1), false).
-evidence(le(b43,f0,t2_0,1)).
-evidence(gt(b43,f0,t2_1,1)).
-evidence(le(b43,f1,t2_6,1)).
-evidence(gt(b43,f3,t2_7,1)).
-evidence(gt(b43,f2,t2_10,1)).
-evidence(gt(b43,f2,t2_14,1)).
-evidence(gt(b43,f1,t2_16,1)).
-evidence(le(b43,f3,t2_18,1), false).
-evidence(le(b44,f0,t2_0,1)).
-evidence(gt(b44,f0,t2_1,1)).
-evidence(le(b44,f1,t2_6,1)).
-evidence(gt(b44,f3,t2_7,1)).
-evidence(gt(b44,f2,t2_10,1)).
-evidence(gt(b44,f2,t2_14,1)).
-evidence(gt(b44,f1,t2_16,1)).
-evidence(gt(b44,f3,t2_18,1)).
-evidence(le(b44,f0,t2_20,1)).
-evidence(le(b45,f0,t2_0,1)).
-evidence(gt(b45,f0,t2_1,1)).
-evidence(le(b45,f1,t2_6,1)).
-evidence(gt(b45,f3,t2_7,1)).
-evidence(gt(b45,f2,t2_10,1)).
-evidence(gt(b45,f2,t2_14,1)).
-evidence(gt(b45,f1,t2_16,1)).
-evidence(gt(b45,f3,t2_18,1)).
-evidence(gt(b45,f0,t2_20,1), false).
-evidence(le(b46,f0,t2_0,1)).
-evidence(gt(b46,f0,t2_1,1)).
-evidence(gt(b46,f1,t2_6,1), false).
-evidence(gt(b47,f0,t2_0,1), false).
-evidence(le(b47,f3,t2_2,1), false).
-evidence(gt(b48,f0,t2_0,1), false).
-evidence(gt(b48,f3,t2_2,1)).
-evidence(le(b48,f2,t2_4,1), false).
-evidence(gt(b49,f0,t2_0,1), false).
-evidence(gt(b49,f3,t2_2,1)).
-evidence(gt(b49,f2,t2_4,1)).
-evidence(le(b49,f3,t2_12,1), false).
-evidence(le(b49,f3,t2_31,1), false).
-evidence(le(b49,f1,t2_33,1)).
-evidence(gt(b50,f0,t2_0,1), false).
-evidence(gt(b50,f3,t2_2,1)).
-evidence(gt(b50,f2,t2_4,1)).
-evidence(le(b50,f3,t2_12,1), false).
-evidence(le(b50,f3,t2_31,1), false).
-evidence(gt(b50,f1,t2_33,1), false).
-evidence(le(b50,f3,t2_36,1), false).
-evidence(gt(b51,f0,t2_0,1), false).
-evidence(gt(b51,f3,t2_2,1)).
-evidence(gt(b51,f2,t2_4,1)).
-evidence(le(b51,f3,t2_12,1), false).
-evidence(le(b51,f3,t2_31,1), false).
-evidence(gt(b51,f1,t2_33,1), false).
-evidence(gt(b51,f3,t2_36,1)).
-evidence(gt(b52,f0,t2_0,1), false).
-evidence(gt(b52,f3,t2_2,1)).
-evidence(gt(b52,f2,t2_4,1)).
-evidence(le(b52,f3,t2_12,1), false).
-evidence(gt(b52,f3,t2_31,1)).
-evidence(gt(b53,f0,t2_0,1), false).
-evidence(gt(b53,f3,t2_2,1)).
-evidence(gt(b53,f2,t2_4,1)).
-evidence(gt(b53,f3,t2_12,1)).
-evidence(le(b54,f2,t3_0,1), false).
-evidence(le(b54,f3,t3_1,1), false).
-evidence(le(b55,f2,t3_0,1), false).
-evidence(gt(b55,f3,t3_1,1)).
-evidence(le(b55,f1,t3_4,1), false).
-evidence(le(b55,f3,t3_25,1), false).
-evidence(le(b56,f2,t3_0,1), false).
-evidence(gt(b56,f3,t3_1,1)).
-evidence(le(b56,f1,t3_4,1), false).
-evidence(gt(b56,f3,t3_25,1)).
-evidence(le(b57,f2,t3_0,1), false).
-evidence(gt(b57,f3,t3_1,1)).
-evidence(gt(b57,f1,t3_4,1)).
-evidence(le(b57,f0,t3_26,1)).
-evidence(le(b57,f2,t3_29,1), false).
-evidence(le(b58,f2,t3_0,1), false).
-evidence(gt(b58,f3,t3_1,1)).
-evidence(gt(b58,f1,t3_4,1)).
-evidence(le(b58,f0,t3_26,1)).
-evidence(gt(b58,f2,t3_29,1)).
-evidence(le(b59,f2,t3_0,1), false).
-evidence(gt(b59,f3,t3_1,1)).
-evidence(gt(b59,f1,t3_4,1)).
-evidence(gt(b59,f0,t3_26,1), false).
-evidence(gt(b60,f2,t3_0,1)).
-evidence(le(b60,f0,t3_2,1)).
-evidence(le(b60,f0,t3_5,1)).
-evidence(le(b60,f1,t3_7,1)).
-evidence(le(b60,f1,t3_15,1), false).
-evidence(gt(b61,f2,t3_0,1)).
-evidence(le(b61,f0,t3_2,1)).
-evidence(le(b61,f0,t3_5,1)).
-evidence(le(b61,f1,t3_7,1)).
-evidence(gt(b61,f1,t3_15,1)).
-evidence(le(b61,f2,t3_18,1)).
-evidence(le(b61,f2,t3_19,1)).
-evidence(gt(b62,f2,t3_0,1)).
-evidence(le(b62,f0,t3_2,1)).
-evidence(le(b62,f0,t3_5,1)).
-evidence(le(b62,f1,t3_7,1)).
-evidence(gt(b62,f1,t3_15,1)).
-evidence(le(b62,f2,t3_18,1)).
-evidence(gt(b62,f2,t3_19,1), false).
-evidence(le(b62,f0,t3_22,1)).
-evidence(gt(b63,f2,t3_0,1)).
-evidence(le(b63,f0,t3_2,1)).
-evidence(le(b63,f0,t3_5,1)).
-evidence(le(b63,f1,t3_7,1)).
-evidence(gt(b63,f1,t3_15,1)).
-evidence(le(b63,f2,t3_18,1)).
-evidence(gt(b63,f2,t3_19,1), false).
-evidence(gt(b63,f0,t3_22,1), false).
-evidence(gt(b64,f2,t3_0,1)).
-evidence(le(b64,f0,t3_2,1)).
-evidence(le(b64,f0,t3_5,1)).
-evidence(le(b64,f1,t3_7,1)).
-evidence(gt(b64,f1,t3_15,1)).
-evidence(gt(b64,f2,t3_18,1), false).
-evidence(gt(b65,f2,t3_0,1)).
-evidence(le(b65,f0,t3_2,1)).
-evidence(le(b65,f0,t3_5,1)).
-evidence(gt(b65,f1,t3_7,1), false).
-evidence(gt(b66,f2,t3_0,1)).
-evidence(le(b66,f0,t3_2,1)).
-evidence(gt(b66,f0,t3_5,1), false).
-evidence(le(b66,f3,t3_8,1), false).
-evidence(gt(b67,f2,t3_0,1)).
-evidence(le(b67,f0,t3_2,1)).
-evidence(gt(b67,f0,t3_5,1), false).
-evidence(gt(b67,f3,t3_8,1)).
-evidence(le(b67,f3,t3_10,1), false).
-evidence(le(b67,f2,t3_11,1)).
-evidence(gt(b68,f2,t3_0,1)).
-evidence(le(b68,f0,t3_2,1)).
-evidence(gt(b68,f0,t3_5,1), false).
-evidence(gt(b68,f3,t3_8,1)).
-evidence(le(b68,f3,t3_10,1), false).
-evidence(gt(b68,f2,t3_11,1), false).
-evidence(gt(b69,f2,t3_0,1)).
-evidence(le(b69,f0,t3_2,1)).
-evidence(gt(b69,f0,t3_5,1), false).
-evidence(gt(b69,f3,t3_8,1)).
-evidence(gt(b69,f3,t3_10,1)).
-evidence(gt(b70,f2,t3_0,1)).
-evidence(gt(b70,f0,t3_2,1), false).
-evidence(le(b71,f3,t4_0,1), false).
-evidence(gt(b72,f3,t4_0,1)).
-evidence(le(b72,f0,t4_2,1)).
-evidence(le(b72,f2,t4_3,1), false).
-evidence(le(b72,f0,t4_5,1), false).
-evidence(le(b72,f1,t4_15,1), false).
-evidence(gt(b73,f3,t4_0,1)).
-evidence(le(b73,f0,t4_2,1)).
-evidence(le(b73,f2,t4_3,1), false).
-evidence(le(b73,f0,t4_5,1), false).
-evidence(gt(b73,f1,t4_15,1)).
-evidence(le(b73,f2,t4_18,1), false).
-evidence(gt(b74,f3,t4_0,1)).
-evidence(le(b74,f0,t4_2,1)).
-evidence(le(b74,f2,t4_3,1), false).
-evidence(le(b74,f0,t4_5,1), false).
-evidence(gt(b74,f1,t4_15,1)).
-evidence(gt(b74,f2,t4_18,1)).
-evidence(gt(b75,f3,t4_0,1)).
-evidence(le(b75,f0,t4_2,1)).
-evidence(le(b75,f2,t4_3,1), false).
-evidence(gt(b75,f0,t4_5,1)).
-evidence(gt(b76,f3,t4_0,1)).
-evidence(le(b76,f0,t4_2,1)).
-evidence(gt(b76,f2,t4_3,1)).
-evidence(le(b76,f2,t4_6,1)).
-evidence(le(b76,f3,t4_7,1), false).
-evidence(gt(b77,f3,t4_0,1)).
-evidence(le(b77,f0,t4_2,1)).
-evidence(gt(b77,f2,t4_3,1)).
-evidence(le(b77,f2,t4_6,1)).
-evidence(gt(b77,f3,t4_7,1)).
-evidence(le(b77,f2,t4_40,1), false).
-evidence(le(b77,f3,t4_41,1), false).
-evidence(gt(b78,f3,t4_0,1)).
-evidence(le(b78,f0,t4_2,1)).
-evidence(gt(b78,f2,t4_3,1)).
-evidence(le(b78,f2,t4_6,1)).
-evidence(gt(b78,f3,t4_7,1)).
-evidence(le(b78,f2,t4_40,1), false).
-evidence(gt(b78,f3,t4_41,1)).
-evidence(gt(b79,f3,t4_0,1)).
-evidence(le(b79,f0,t4_2,1)).
-evidence(gt(b79,f2,t4_3,1)).
-evidence(le(b79,f2,t4_6,1)).
-evidence(gt(b79,f3,t4_7,1)).
-evidence(gt(b79,f2,t4_40,1)).
-evidence(gt(b80,f3,t4_0,1)).
-evidence(le(b80,f0,t4_2,1)).
-evidence(gt(b80,f2,t4_3,1)).
-evidence(gt(b80,f2,t4_6,1), false).
-evidence(le(b80,f0,t4_8,1)).
-evidence(le(b80,f0,t4_27,1)).
-evidence(gt(b81,f3,t4_0,1)).
-evidence(le(b81,f0,t4_2,1)).
-evidence(gt(b81,f2,t4_3,1)).
-evidence(gt(b81,f2,t4_6,1), false).
-evidence(le(b81,f0,t4_8,1)).
-evidence(gt(b81,f0,t4_27,1), false).
-evidence(le(b81,f3,t4_30,1), false).
-evidence(gt(b82,f3,t4_0,1)).
-evidence(le(b82,f0,t4_2,1)).
-evidence(gt(b82,f2,t4_3,1)).
-evidence(gt(b82,f2,t4_6,1), false).
-evidence(le(b82,f0,t4_8,1)).
-evidence(gt(b82,f0,t4_27,1), false).
-evidence(gt(b82,f3,t4_30,1)).
-evidence(gt(b83,f3,t4_0,1)).
-evidence(le(b83,f0,t4_2,1)).
-evidence(gt(b83,f2,t4_3,1)).
-evidence(gt(b83,f2,t4_6,1), false).
-evidence(gt(b83,f0,t4_8,1), false).
-evidence(gt(b84,f3,t4_0,1)).
-evidence(gt(b84,f0,t4_2,1), false).
-evidence(le(b84,f0,t4_4,1)).
-evidence(le(b84,f3,t4_9,1), false).
-evidence(le(b84,f2,t4_11,1)).
-evidence(le(b84,f1,t4_13,1)).
-evidence(le(b84,f2,t4_33,1), false).
-evidence(gt(b85,f3,t4_0,1)).
-evidence(gt(b85,f0,t4_2,1), false).
-evidence(le(b85,f0,t4_4,1)).
-evidence(le(b85,f3,t4_9,1), false).
-evidence(le(b85,f2,t4_11,1)).
-evidence(le(b85,f1,t4_13,1)).
-evidence(gt(b85,f2,t4_33,1)).
-evidence(le(b85,f2,t4_36,1)).
-evidence(gt(b86,f3,t4_0,1)).
-evidence(gt(b86,f0,t4_2,1), false).
-evidence(le(b86,f0,t4_4,1)).
-evidence(le(b86,f3,t4_9,1), false).
-evidence(le(b86,f2,t4_11,1)).
-evidence(le(b86,f1,t4_13,1)).
-evidence(gt(b86,f2,t4_33,1)).
-evidence(gt(b86,f2,t4_36,1), false).
-evidence(gt(b87,f3,t4_0,1)).
-evidence(gt(b87,f0,t4_2,1), false).
-evidence(le(b87,f0,t4_4,1)).
-evidence(le(b87,f3,t4_9,1), false).
-evidence(le(b87,f2,t4_11,1)).
-evidence(gt(b87,f1,t4_13,1), false).
-evidence(gt(b88,f3,t4_0,1)).
-evidence(gt(b88,f0,t4_2,1), false).
-evidence(le(b88,f0,t4_4,1)).
-evidence(le(b88,f3,t4_9,1), false).
-evidence(gt(b88,f2,t4_11,1), false).
-evidence(gt(b89,f3,t4_0,1)).
-evidence(gt(b89,f0,t4_2,1), false).
-evidence(le(b89,f0,t4_4,1)).
-evidence(gt(b89,f3,t4_9,1)).
-evidence(gt(b90,f3,t4_0,1)).
-evidence(gt(b90,f0,t4_2,1), false).
-evidence(gt(b90,f0,t4_4,1), false).
-evidence(le(b90,f0,t4_10,1)).
-evidence(le(b90,f1,t4_21,1)).
-evidence(gt(b91,f3,t4_0,1)).
-evidence(gt(b91,f0,t4_2,1), false).
-evidence(gt(b91,f0,t4_4,1), false).
-evidence(le(b91,f0,t4_10,1)).
-evidence(gt(b91,f1,t4_21,1), false).
-evidence(le(b91,f1,t4_24,1)).
-evidence(gt(b92,f3,t4_0,1)).
-evidence(gt(b92,f0,t4_2,1), false).
-evidence(gt(b92,f0,t4_4,1), false).
-evidence(le(b92,f0,t4_10,1)).
-evidence(gt(b92,f1,t4_21,1), false).
-evidence(gt(b92,f1,t4_24,1), false).
-evidence(gt(b93,f3,t4_0,1)).
-evidence(gt(b93,f0,t4_2,1), false).
-evidence(gt(b93,f0,t4_4,1), false).
-evidence(gt(b93,f0,t4_10,1), false).
-evidence(le(b94,f3,t5_0,1), false).
-evidence(le(b94,f3,t5_1,1), false).
-evidence(le(b95,f3,t5_0,1), false).
-evidence(gt(b95,f3,t5_1,1)).
-evidence(gt(b96,f3,t5_0,1)).
-evidence(le(b96,f2,t5_2,1)).
-evidence(le(b96,f3,t5_5,1)).
-evidence(le(b96,f2,t5_7,1), false).
-evidence(le(b96,f3,t5_9,1), false).
-evidence(gt(b97,f3,t5_0,1)).
-evidence(le(b97,f2,t5_2,1)).
-evidence(le(b97,f3,t5_5,1)).
-evidence(le(b97,f2,t5_7,1), false).
-evidence(gt(b97,f3,t5_9,1)).
-evidence(le(b97,f2,t5_14,1), false).
-evidence(gt(b98,f3,t5_0,1)).
-evidence(le(b98,f2,t5_2,1)).
-evidence(le(b98,f3,t5_5,1)).
-evidence(le(b98,f2,t5_7,1), false).
-evidence(gt(b98,f3,t5_9,1)).
-evidence(gt(b98,f2,t5_14,1)).
-evidence(gt(b99,f3,t5_0,1)).
-evidence(le(b99,f2,t5_2,1)).
-evidence(le(b99,f3,t5_5,1)).
-evidence(gt(b99,f2,t5_7,1)).
-evidence(le(b99,f3,t5_10,1), false).
-evidence(le(b99,f1,t5_11,1), false).
-evidence(le(b99,f1,t5_17,1), false).
-evidence(gt(b100,f3,t5_0,1)).
-evidence(le(b100,f2,t5_2,1)).
-evidence(le(b100,f3,t5_5,1)).
-evidence(gt(b100,f2,t5_7,1)).
-evidence(le(b100,f3,t5_10,1), false).
-evidence(le(b100,f1,t5_11,1), false).
-evidence(gt(b100,f1,t5_17,1)).
-evidence(gt(b101,f3,t5_0,1)).
-evidence(le(b101,f2,t5_2,1)).
-evidence(le(b101,f3,t5_5,1)).
-evidence(gt(b101,f2,t5_7,1)).
-evidence(le(b101,f3,t5_10,1), false).
-evidence(gt(b101,f1,t5_11,1)).
-evidence(gt(b102,f3,t5_0,1)).
-evidence(le(b102,f2,t5_2,1)).
-evidence(le(b102,f3,t5_5,1)).
-evidence(gt(b102,f2,t5_7,1)).
-evidence(gt(b102,f3,t5_10,1)).
-evidence(gt(b103,f3,t5_0,1)).
-evidence(le(b103,f2,t5_2,1)).
-evidence(gt(b103,f3,t5_5,1), false).
-evidence(gt(b104,f3,t5_0,1)).
-evidence(gt(b104,f2,t5_2,1), false).
-evidence(le(b105,f2,t6_0,1)).
-evidence(le(b105,f2,t6_1,1), false).
-evidence(le(b105,f2,t6_3,1), false).
-evidence(le(b106,f2,t6_0,1)).
-evidence(le(b106,f2,t6_1,1), false).
-evidence(gt(b106,f2,t6_3,1)).
-evidence(le(b107,f2,t6_0,1)).
-evidence(gt(b107,f2,t6_1,1)).
-evidence(le(b107,f2,t6_4,1)).
-evidence(le(b107,f3,t6_7,1), false).
-evidence(le(b108,f2,t6_0,1)).
-evidence(gt(b108,f2,t6_1,1)).
-evidence(le(b108,f2,t6_4,1)).
-evidence(gt(b108,f3,t6_7,1)).
-evidence(le(b108,f0,t6_16,1), false).
-evidence(le(b109,f2,t6_0,1)).
-evidence(gt(b109,f2,t6_1,1)).
-evidence(le(b109,f2,t6_4,1)).
-evidence(gt(b109,f3,t6_7,1)).
-evidence(gt(b109,f0,t6_16,1)).
-evidence(le(b110,f2,t6_0,1)).
-evidence(gt(b110,f2,t6_1,1)).
-evidence(gt(b110,f2,t6_4,1), false).
-evidence(le(b110,f3,t6_8,1), false).
-evidence(le(b110,f2,t6_9,1)).
-evidence(le(b111,f2,t6_0,1)).
-evidence(gt(b111,f2,t6_1,1)).
-evidence(gt(b111,f2,t6_4,1), false).
-evidence(le(b111,f3,t6_8,1), false).
-evidence(gt(b111,f2,t6_9,1), false).
-evidence(le(b112,f2,t6_0,1)).
-evidence(gt(b112,f2,t6_1,1)).
-evidence(gt(b112,f2,t6_4,1), false).
-evidence(gt(b112,f3,t6_8,1)).
-evidence(le(b112,f3,t6_10,1), false).
-evidence(le(b113,f2,t6_0,1)).
-evidence(gt(b113,f2,t6_1,1)).
-evidence(gt(b113,f2,t6_4,1), false).
-evidence(gt(b113,f3,t6_8,1)).
-evidence(gt(b113,f3,t6_10,1)).
-evidence(gt(b114,f2,t6_0,1), false).
-evidence(le(b115,f3,t7_0,1), false).
-evidence(le(b115,f3,t7_1,1), false).
-evidence(le(b116,f3,t7_0,1), false).
-evidence(gt(b116,f3,t7_1,1)).
-evidence(gt(b117,f3,t7_0,1)).
-evidence(le(b117,f2,t7_2,1), false).
-evidence(le(b117,f3,t7_3,1), false).
-evidence(gt(b118,f3,t7_0,1)).
-evidence(le(b118,f2,t7_2,1), false).
-evidence(gt(b118,f3,t7_3,1)).
-evidence(le(b118,f0,t7_22,1), false).
-evidence(gt(b119,f3,t7_0,1)).
-evidence(le(b119,f2,t7_2,1), false).
-evidence(gt(b119,f3,t7_3,1)).
-evidence(gt(b119,f0,t7_22,1)).
-evidence(gt(b120,f3,t7_0,1)).
-evidence(gt(b120,f2,t7_2,1)).
-evidence(le(b120,f2,t7_4,1)).
-evidence(gt(b121,f3,t7_0,1)).
-evidence(gt(b121,f2,t7_2,1)).
-evidence(gt(b121,f2,t7_4,1), false).
-evidence(le(b121,f3,t7_8,1)).
-evidence(le(b121,f1,t7_9,1), false).
-evidence(gt(b122,f3,t7_0,1)).
-evidence(gt(b122,f2,t7_2,1)).
-evidence(gt(b122,f2,t7_4,1), false).
-evidence(le(b122,f3,t7_8,1)).
-evidence(gt(b122,f1,t7_9,1)).
-evidence(le(b122,f0,t7_12,1)).
-evidence(le(b122,f3,t7_13,1), false).
-evidence(gt(b123,f3,t7_0,1)).
-evidence(gt(b123,f2,t7_2,1)).
-evidence(gt(b123,f2,t7_4,1), false).
-evidence(le(b123,f3,t7_8,1)).
-evidence(gt(b123,f1,t7_9,1)).
-evidence(le(b123,f0,t7_12,1)).
-evidence(gt(b123,f3,t7_13,1)).
-evidence(gt(b124,f3,t7_0,1)).
-evidence(gt(b124,f2,t7_2,1)).
-evidence(gt(b124,f2,t7_4,1), false).
-evidence(le(b124,f3,t7_8,1)).
-evidence(gt(b124,f1,t7_9,1)).
-evidence(gt(b124,f0,t7_12,1), false).
-evidence(le(b124,f1,t7_14,1), false).
-evidence(gt(b125,f3,t7_0,1)).
-evidence(gt(b125,f2,t7_2,1)).
-evidence(gt(b125,f2,t7_4,1), false).
-evidence(le(b125,f3,t7_8,1)).
-evidence(gt(b125,f1,t7_9,1)).
-evidence(gt(b125,f0,t7_12,1), false).
-evidence(gt(b125,f1,t7_14,1)).
-evidence(le(b125,f3,t7_18,1), false).
-evidence(gt(b126,f3,t7_0,1)).
-evidence(gt(b126,f2,t7_2,1)).
-evidence(gt(b126,f2,t7_4,1), false).
-evidence(le(b126,f3,t7_8,1)).
-evidence(gt(b126,f1,t7_9,1)).
-evidence(gt(b126,f0,t7_12,1), false).
-evidence(gt(b126,f1,t7_14,1)).
-evidence(gt(b126,f3,t7_18,1)).
-evidence(gt(b127,f3,t7_0,1)).
-evidence(gt(b127,f2,t7_2,1)).
-evidence(gt(b127,f2,t7_4,1), false).
-evidence(gt(b127,f3,t7_8,1), false).
+evidence(gt(b34,f0,t2_1,1)).
+evidence(le(b34,f1,t2_6,1)).
+evidence(gt(b34,f3,t2_7,1)).
+evidence(gt(b34,f2,t2_10,1)).
+evidence(gt(b34,f2,t2_14,1)).
+evidence(gt(b34,f1,t2_16,1)).
+evidence(gt(b34,f3,t2_18,1)).
+evidence(gt(b35,f0,t2_0,1), false).
+evidence(gt(b36,f0,t2_0,1), false).
+evidence(gt(b36,f3,t2_2,1)).
+evidence(gt(b37,f0,t2_0,1), false).
+evidence(gt(b37,f3,t2_2,1)).
+evidence(gt(b37,f2,t2_4,1)).
+evidence(gt(b38,f0,t2_0,1), false).
+evidence(gt(b38,f3,t2_2,1)).
+evidence(gt(b38,f2,t2_4,1)).
+evidence(le(b38,f3,t2_12,1), false).
+evidence(gt(b39,f0,t2_0,1), false).
+evidence(gt(b39,f3,t2_2,1)).
+evidence(gt(b39,f2,t2_4,1)).
+evidence(le(b39,f3,t2_12,1), false).
+evidence(le(b39,f3,t2_31,1), false).
+evidence(gt(b40,f0,t2_0,1), false).
+evidence(gt(b40,f3,t2_2,1)).
+evidence(gt(b40,f2,t2_4,1)).
+evidence(le(b40,f3,t2_12,1), false).
+evidence(le(b40,f3,t2_31,1), false).
+evidence(gt(b40,f1,t2_33,1), false).
+evidence(le(b41,f2,t3_0,1), false).
+evidence(le(b42,f2,t3_0,1), false).
+evidence(gt(b42,f3,t3_1,1)).
+evidence(le(b42,f1,t3_4,1), false).
+evidence(le(b43,f2,t3_0,1), false).
+evidence(gt(b43,f3,t3_1,1)).
+evidence(gt(b43,f1,t3_4,1)).
+evidence(le(b44,f2,t3_0,1), false).
+evidence(gt(b44,f3,t3_1,1)).
+evidence(gt(b44,f1,t3_4,1)).
+evidence(le(b44,f0,t3_26,1)).
+evidence(gt(b45,f2,t3_0,1)).
+evidence(gt(b46,f2,t3_0,1)).
+evidence(le(b46,f0,t3_2,1)).
+evidence(le(b46,f0,t3_5,1)).
+evidence(gt(b47,f2,t3_0,1)).
+evidence(le(b47,f0,t3_2,1)).
+evidence(le(b47,f0,t3_5,1)).
+evidence(le(b47,f1,t3_7,1)).
+evidence(gt(b48,f2,t3_0,1)).
+evidence(le(b48,f0,t3_2,1)).
+evidence(le(b48,f0,t3_5,1)).
+evidence(le(b48,f1,t3_7,1)).
+evidence(gt(b48,f1,t3_15,1)).
+evidence(gt(b49,f2,t3_0,1)).
+evidence(le(b49,f0,t3_2,1)).
+evidence(le(b49,f0,t3_5,1)).
+evidence(le(b49,f1,t3_7,1)).
+evidence(gt(b49,f1,t3_15,1)).
+evidence(le(b49,f2,t3_18,1)).
+evidence(gt(b50,f2,t3_0,1)).
+evidence(le(b50,f0,t3_2,1)).
+evidence(le(b50,f0,t3_5,1)).
+evidence(le(b50,f1,t3_7,1)).
+evidence(gt(b50,f1,t3_15,1)).
+evidence(le(b50,f2,t3_18,1)).
+evidence(gt(b50,f2,t3_19,1), false).
+evidence(gt(b51,f2,t3_0,1)).
+evidence(le(b51,f0,t3_2,1)).
+evidence(gt(b51,f0,t3_5,1), false).
+evidence(gt(b52,f2,t3_0,1)).
+evidence(le(b52,f0,t3_2,1)).
+evidence(gt(b52,f0,t3_5,1), false).
+evidence(gt(b52,f3,t3_8,1)).
+evidence(gt(b53,f2,t3_0,1)).
+evidence(le(b53,f0,t3_2,1)).
+evidence(gt(b53,f0,t3_5,1), false).
+evidence(gt(b53,f3,t3_8,1)).
+evidence(le(b53,f3,t3_10,1), false).
+evidence(gt(b55,f3,t4_0,1)).
+evidence(le(b55,f0,t4_2,1)).
+evidence(le(b55,f2,t4_3,1), false).
+evidence(gt(b56,f3,t4_0,1)).
+evidence(le(b56,f0,t4_2,1)).
+evidence(le(b56,f2,t4_3,1), false).
+evidence(le(b56,f0,t4_5,1), false).
+evidence(gt(b57,f3,t4_0,1)).
+evidence(le(b57,f0,t4_2,1)).
+evidence(le(b57,f2,t4_3,1), false).
+evidence(le(b57,f0,t4_5,1), false).
+evidence(gt(b57,f1,t4_15,1)).
+evidence(gt(b58,f3,t4_0,1)).
+evidence(le(b58,f0,t4_2,1)).
+evidence(gt(b58,f2,t4_3,1)).
+evidence(le(b58,f2,t4_6,1)).
+evidence(gt(b59,f3,t4_0,1)).
+evidence(le(b59,f0,t4_2,1)).
+evidence(gt(b59,f2,t4_3,1)).
+evidence(le(b59,f2,t4_6,1)).
+evidence(gt(b59,f3,t4_7,1)).
+evidence(gt(b60,f3,t4_0,1)).
+evidence(le(b60,f0,t4_2,1)).
+evidence(gt(b60,f2,t4_3,1)).
+evidence(le(b60,f2,t4_6,1)).
+evidence(gt(b60,f3,t4_7,1)).
+evidence(le(b60,f2,t4_40,1), false).
+evidence(gt(b61,f3,t4_0,1)).
+evidence(le(b61,f0,t4_2,1)).
+evidence(gt(b61,f2,t4_3,1)).
+evidence(gt(b61,f2,t4_6,1), false).
+evidence(gt(b62,f3,t4_0,1)).
+evidence(le(b62,f0,t4_2,1)).
+evidence(gt(b62,f2,t4_3,1)).
+evidence(gt(b62,f2,t4_6,1), false).
+evidence(le(b62,f0,t4_8,1)).
+evidence(gt(b63,f3,t4_0,1)).
+evidence(le(b63,f0,t4_2,1)).
+evidence(gt(b63,f2,t4_3,1)).
+evidence(gt(b63,f2,t4_6,1), false).
+evidence(le(b63,f0,t4_8,1)).
+evidence(gt(b63,f0,t4_27,1), false).
+evidence(gt(b64,f3,t4_0,1)).
+evidence(gt(b64,f0,t4_2,1), false).
+evidence(le(b64,f0,t4_4,1)).
+evidence(gt(b65,f3,t4_0,1)).
+evidence(gt(b65,f0,t4_2,1), false).
+evidence(le(b65,f0,t4_4,1)).
+evidence(le(b65,f3,t4_9,1), false).
+evidence(gt(b66,f3,t4_0,1)).
+evidence(gt(b66,f0,t4_2,1), false).
+evidence(le(b66,f0,t4_4,1)).
+evidence(le(b66,f3,t4_9,1), false).
+evidence(le(b66,f2,t4_11,1)).
+evidence(gt(b67,f3,t4_0,1)).
+evidence(gt(b67,f0,t4_2,1), false).
+evidence(le(b67,f0,t4_4,1)).
+evidence(le(b67,f3,t4_9,1), false).
+evidence(le(b67,f2,t4_11,1)).
+evidence(le(b67,f1,t4_13,1)).
+evidence(gt(b68,f3,t4_0,1)).
+evidence(gt(b68,f0,t4_2,1), false).
+evidence(le(b68,f0,t4_4,1)).
+evidence(le(b68,f3,t4_9,1), false).
+evidence(le(b68,f2,t4_11,1)).
+evidence(le(b68,f1,t4_13,1)).
+evidence(gt(b68,f2,t4_33,1)).
+evidence(gt(b69,f3,t4_0,1)).
+evidence(gt(b69,f0,t4_2,1), false).
+evidence(gt(b69,f0,t4_4,1), false).
+evidence(gt(b70,f3,t4_0,1)).
+evidence(gt(b70,f0,t4_2,1), false).
+evidence(gt(b70,f0,t4_4,1), false).
+evidence(le(b70,f0,t4_10,1)).
+evidence(gt(b71,f3,t4_0,1)).
+evidence(gt(b71,f0,t4_2,1), false).
+evidence(gt(b71,f0,t4_4,1), false).
+evidence(le(b71,f0,t4_10,1)).
+evidence(gt(b71,f1,t4_21,1), false).
+evidence(le(b72,f3,t5_0,1), false).
+evidence(gt(b73,f3,t5_0,1)).
+evidence(gt(b74,f3,t5_0,1)).
+evidence(le(b74,f2,t5_2,1)).
+evidence(gt(b75,f3,t5_0,1)).
+evidence(le(b75,f2,t5_2,1)).
+evidence(le(b75,f3,t5_5,1)).
+evidence(le(b75,f2,t5_7,1), false).
+evidence(gt(b76,f3,t5_0,1)).
+evidence(le(b76,f2,t5_2,1)).
+evidence(le(b76,f3,t5_5,1)).
+evidence(le(b76,f2,t5_7,1), false).
+evidence(gt(b76,f3,t5_9,1)).
+evidence(gt(b77,f3,t5_0,1)).
+evidence(le(b77,f2,t5_2,1)).
+evidence(le(b77,f3,t5_5,1)).
+evidence(gt(b77,f2,t5_7,1)).
+evidence(gt(b78,f3,t5_0,1)).
+evidence(le(b78,f2,t5_2,1)).
+evidence(le(b78,f3,t5_5,1)).
+evidence(gt(b78,f2,t5_7,1)).
+evidence(le(b78,f3,t5_10,1), false).
+evidence(gt(b79,f3,t5_0,1)).
+evidence(le(b79,f2,t5_2,1)).
+evidence(le(b79,f3,t5_5,1)).
+evidence(gt(b79,f2,t5_7,1)).
+evidence(le(b79,f3,t5_10,1), false).
+evidence(le(b79,f1,t5_11,1), false).
+evidence(le(b81,f2,t6_0,1)).
+evidence(le(b81,f2,t6_1,1), false).
+evidence(le(b82,f2,t6_0,1)).
+evidence(gt(b82,f2,t6_1,1)).
+evidence(le(b82,f2,t6_4,1)).
+evidence(le(b83,f2,t6_0,1)).
+evidence(gt(b83,f2,t6_1,1)).
+evidence(le(b83,f2,t6_4,1)).
+evidence(gt(b83,f3,t6_7,1)).
+evidence(le(b84,f2,t6_0,1)).
+evidence(gt(b84,f2,t6_1,1)).
+evidence(gt(b84,f2,t6_4,1), false).
+evidence(le(b84,f3,t6_8,1), false).
+evidence(le(b85,f2,t6_0,1)).
+evidence(gt(b85,f2,t6_1,1)).
+evidence(gt(b85,f2,t6_4,1), false).
+evidence(gt(b85,f3,t6_8,1)).
+evidence(le(b86,f3,t7_0,1), false).
+evidence(gt(b87,f3,t7_0,1)).
+evidence(le(b87,f2,t7_2,1), false).
+evidence(gt(b88,f3,t7_0,1)).
+evidence(le(b88,f2,t7_2,1), false).
+evidence(gt(b88,f3,t7_3,1)).
+evidence(gt(b89,f3,t7_0,1)).
+evidence(gt(b89,f2,t7_2,1)).
+evidence(gt(b90,f3,t7_0,1)).
+evidence(gt(b90,f2,t7_2,1)).
+evidence(gt(b90,f2,t7_4,1), false).
+evidence(gt(b91,f3,t7_0,1)).
+evidence(gt(b91,f2,t7_2,1)).
+evidence(gt(b91,f2,t7_4,1), false).
+evidence(le(b91,f3,t7_8,1)).
+evidence(gt(b92,f3,t7_0,1)).
+evidence(gt(b92,f2,t7_2,1)).
+evidence(gt(b92,f2,t7_4,1), false).
+evidence(le(b92,f3,t7_8,1)).
+evidence(gt(b92,f1,t7_9,1)).
+evidence(le(b92,f0,t7_12,1)).
+evidence(gt(b93,f3,t7_0,1)).
+evidence(gt(b93,f2,t7_2,1)).
+evidence(gt(b93,f2,t7_4,1), false).
+evidence(le(b93,f3,t7_8,1)).
+evidence(gt(b93,f1,t7_9,1)).
+evidence(gt(b93,f0,t7_12,1), false).
+evidence(gt(b94,f3,t7_0,1)).
+evidence(gt(b94,f2,t7_2,1)).
+evidence(gt(b94,f2,t7_4,1), false).
+evidence(le(b94,f3,t7_8,1)).
+evidence(gt(b94,f1,t7_9,1)).
+evidence(gt(b94,f0,t7_12,1), false).
+evidence(gt(b94,f1,t7_14,1)).
 evidence(le(b0,f0,t0_0,2), false).
-evidence(le(b0,f3,t0_1,2), false).
 evidence(le(b1,f0,t0_0,2), false).
 evidence(gt(b1,f3,t0_1,2)).
-evidence(le(b1,f2,t0_4,2), false).
 evidence(le(b2,f0,t0_0,2), false).
 evidence(gt(b2,f3,t0_1,2)).
 evidence(gt(b2,f2,t0_4,2)).
-evidence(le(b2,f0,t0_22,2), false).
-evidence(le(b3,f0,t0_0,2), false).
-evidence(gt(b3,f3,t0_1,2)).
-evidence(gt(b3,f2,t0_4,2)).
-evidence(gt(b3,f0,t0_22,2)).
+evidence(gt(b3,f0,t0_0,2)).
 evidence(gt(b4,f0,t0_0,2)).
 evidence(le(b4,f0,t0_2,2), false).
 evidence(le(b4,f2,t0_5,2), false).
-evidence(le(b4,f3,t0_7,2), false).
 evidence(gt(b5,f0,t0_0,2)).
 evidence(le(b5,f0,t0_2,2), false).
-evidence(le(b5,f2,t0_5,2), false).
-evidence(gt(b5,f3,t0_7,2)).
+evidence(gt(b5,f2,t0_5,2)).
 evidence(gt(b6,f0,t0_0,2)).
 evidence(le(b6,f0,t0_2,2), false).
 evidence(gt(b6,f2,t0_5,2)).
-evidence(le(b6,f2,t0_8,2), false).
+evidence(gt(b6,f2,t0_8,2)).
 evidence(gt(b7,f0,t0_0,2)).
 evidence(le(b7,f0,t0_2,2), false).
 evidence(gt(b7,f2,t0_5,2)).
 evidence(gt(b7,f2,t0_8,2)).
 evidence(le(b7,f2,t0_10,2), false).
-evidence(le(b7,f3,t0_11,2)).
-evidence(le(b7,f1,t0_15,2), false).
-evidence(le(b7,f0,t0_17,2), false).
-evidence(le(b7,f3,t0_25,2), false).
-evidence(le(b7,f2,t0_29,2), false).
 evidence(gt(b8,f0,t0_0,2)).
 evidence(le(b8,f0,t0_2,2), false).
 evidence(gt(b8,f2,t0_5,2)).
@@ -3809,9 +2636,6 @@ evidence(le(b8,f2,t0_10,2), false).
 evidence(le(b8,f3,t0_11,2)).
 evidence(le(b8,f1,t0_15,2), false).
 evidence(le(b8,f0,t0_17,2), false).
-evidence(le(b8,f3,t0_25,2), false).
-evidence(gt(b8,f2,t0_29,2)).
-evidence(le(b8,f3,t0_32,2), false).
 evidence(gt(b9,f0,t0_0,2)).
 evidence(le(b9,f0,t0_2,2), false).
 evidence(gt(b9,f2,t0_5,2)).
@@ -3821,8 +2645,6 @@ evidence(le(b9,f3,t0_11,2)).
 evidence(le(b9,f1,t0_15,2), false).
 evidence(le(b9,f0,t0_17,2), false).
 evidence(le(b9,f3,t0_25,2), false).
-evidence(gt(b9,f2,t0_29,2)).
-evidence(gt(b9,f3,t0_32,2)).
 evidence(gt(b10,f0,t0_0,2)).
 evidence(le(b10,f0,t0_2,2), false).
 evidence(gt(b10,f2,t0_5,2)).
@@ -3831,7 +2653,8 @@ evidence(le(b10,f2,t0_10,2), false).
 evidence(le(b10,f3,t0_11,2)).
 evidence(le(b10,f1,t0_15,2), false).
 evidence(le(b10,f0,t0_17,2), false).
-evidence(gt(b10,f3,t0_25,2)).
+evidence(le(b10,f3,t0_25,2), false).
+evidence(gt(b10,f2,t0_29,2)).
 evidence(gt(b11,f0,t0_0,2)).
 evidence(le(b11,f0,t0_2,2), false).
 evidence(gt(b11,f2,t0_5,2)).
@@ -3840,653 +2663,360 @@ evidence(le(b11,f2,t0_10,2), false).
 evidence(le(b11,f3,t0_11,2)).
 evidence(le(b11,f1,t0_15,2), false).
 evidence(gt(b11,f0,t0_17,2)).
-evidence(le(b11,f3,t0_26,2), false).
 evidence(gt(b12,f0,t0_0,2)).
 evidence(le(b12,f0,t0_2,2), false).
 evidence(gt(b12,f2,t0_5,2)).
 evidence(gt(b12,f2,t0_8,2)).
 evidence(le(b12,f2,t0_10,2), false).
 evidence(le(b12,f3,t0_11,2)).
-evidence(le(b12,f1,t0_15,2), false).
-evidence(gt(b12,f0,t0_17,2)).
-evidence(gt(b12,f3,t0_26,2)).
-evidence(gt(b13,f0,t0_0,2)).
-evidence(le(b13,f0,t0_2,2), false).
-evidence(gt(b13,f2,t0_5,2)).
-evidence(gt(b13,f2,t0_8,2)).
-evidence(le(b13,f2,t0_10,2), false).
-evidence(le(b13,f3,t0_11,2)).
-evidence(gt(b13,f1,t0_15,2)).
-evidence(le(b13,f2,t0_18,2), false).
-evidence(gt(b14,f0,t0_0,2)).
-evidence(le(b14,f0,t0_2,2), false).
-evidence(gt(b14,f2,t0_5,2)).
-evidence(gt(b14,f2,t0_8,2)).
-evidence(le(b14,f2,t0_10,2), false).
-evidence(le(b14,f3,t0_11,2)).
-evidence(gt(b14,f1,t0_15,2)).
-evidence(gt(b14,f2,t0_18,2)).
-evidence(gt(b15,f0,t0_0,2)).
-evidence(le(b15,f0,t0_2,2), false).
-evidence(gt(b15,f2,t0_5,2)).
-evidence(gt(b15,f2,t0_8,2)).
-evidence(le(b15,f2,t0_10,2), false).
-evidence(gt(b15,f3,t0_11,2), false).
-evidence(gt(b16,f0,t0_0,2)).
-evidence(le(b16,f0,t0_2,2), false).
-evidence(gt(b16,f2,t0_5,2)).
-evidence(gt(b16,f2,t0_8,2)).
-evidence(gt(b16,f2,t0_10,2)).
-evidence(gt(b17,f0,t0_0,2)).
-evidence(gt(b17,f0,t0_2,2)).
+evidence(gt(b12,f1,t0_15,2)).
+evidence(le(b14,f3,t1_0,2), false).
+evidence(le(b14,f0,t1_1,2), false).
+evidence(le(b14,f3,t1_3,2), false).
+evidence(le(b15,f3,t1_0,2), false).
+evidence(le(b15,f0,t1_1,2), false).
+evidence(le(b15,f3,t1_3,2), false).
+evidence(le(b15,f1,t1_5,2)).
+evidence(le(b16,f3,t1_0,2), false).
+evidence(le(b16,f0,t1_1,2), false).
+evidence(le(b16,f3,t1_3,2), false).
+evidence(le(b16,f1,t1_5,2)).
+evidence(le(b16,f2,t1_7,2), false).
+evidence(le(b17,f3,t1_0,2), false).
+evidence(le(b17,f0,t1_1,2), false).
+evidence(le(b17,f3,t1_3,2), false).
+evidence(le(b17,f1,t1_5,2)).
+evidence(le(b17,f2,t1_7,2), false).
+evidence(gt(b17,f0,t1_9,2)).
 evidence(le(b18,f3,t1_0,2), false).
 evidence(le(b18,f0,t1_1,2), false).
-evidence(le(b18,f3,t1_3,2), false).
-evidence(le(b18,f1,t1_5,2)).
-evidence(le(b18,f2,t1_7,2), false).
-evidence(le(b18,f0,t1_9,2), false).
+evidence(gt(b18,f3,t1_3,2)).
+evidence(le(b18,f2,t1_6,2), false).
 evidence(le(b19,f3,t1_0,2), false).
 evidence(le(b19,f0,t1_1,2), false).
-evidence(le(b19,f3,t1_3,2), false).
-evidence(le(b19,f1,t1_5,2)).
-evidence(le(b19,f2,t1_7,2), false).
-evidence(gt(b19,f0,t1_9,2)).
-evidence(le(b19,f3,t1_12,2), false).
+evidence(gt(b19,f3,t1_3,2)).
+evidence(le(b19,f2,t1_6,2), false).
+evidence(le(b19,f1,t1_21,2), false).
 evidence(le(b20,f3,t1_0,2), false).
 evidence(le(b20,f0,t1_1,2), false).
-evidence(le(b20,f3,t1_3,2), false).
-evidence(le(b20,f1,t1_5,2)).
-evidence(le(b20,f2,t1_7,2), false).
-evidence(gt(b20,f0,t1_9,2)).
-evidence(gt(b20,f3,t1_12,2)).
+evidence(gt(b20,f3,t1_3,2)).
+evidence(le(b20,f2,t1_6,2), false).
+evidence(le(b20,f1,t1_21,2), false).
+evidence(gt(b20,f2,t1_25,2)).
 evidence(le(b21,f3,t1_0,2), false).
 evidence(le(b21,f0,t1_1,2), false).
-evidence(le(b21,f3,t1_3,2), false).
-evidence(le(b21,f1,t1_5,2)).
-evidence(gt(b21,f2,t1_7,2)).
+evidence(gt(b21,f3,t1_3,2)).
+evidence(gt(b21,f2,t1_6,2)).
 evidence(le(b22,f3,t1_0,2), false).
-evidence(le(b22,f0,t1_1,2), false).
-evidence(le(b22,f3,t1_3,2), false).
-evidence(gt(b22,f1,t1_5,2), false).
+evidence(gt(b22,f0,t1_1,2)).
 evidence(le(b23,f3,t1_0,2), false).
-evidence(le(b23,f0,t1_1,2), false).
-evidence(gt(b23,f3,t1_3,2)).
-evidence(le(b23,f2,t1_6,2), false).
-evidence(le(b23,f1,t1_21,2), false).
-evidence(le(b23,f2,t1_25,2), false).
+evidence(gt(b23,f0,t1_1,2)).
+evidence(le(b23,f0,t1_4,2), false).
 evidence(le(b24,f3,t1_0,2), false).
-evidence(le(b24,f0,t1_1,2), false).
-evidence(gt(b24,f3,t1_3,2)).
-evidence(le(b24,f2,t1_6,2), false).
-evidence(le(b24,f1,t1_21,2), false).
-evidence(gt(b24,f2,t1_25,2)).
-evidence(le(b24,f3,t1_28,2), false).
-evidence(le(b25,f3,t1_0,2), false).
-evidence(le(b25,f0,t1_1,2), false).
-evidence(gt(b25,f3,t1_3,2)).
-evidence(le(b25,f2,t1_6,2), false).
-evidence(le(b25,f1,t1_21,2), false).
-evidence(gt(b25,f2,t1_25,2)).
-evidence(gt(b25,f3,t1_28,2)).
-evidence(le(b26,f3,t1_0,2), false).
-evidence(le(b26,f0,t1_1,2), false).
-evidence(gt(b26,f3,t1_3,2)).
-evidence(le(b26,f2,t1_6,2), false).
-evidence(gt(b26,f1,t1_21,2)).
-evidence(le(b27,f3,t1_0,2), false).
-evidence(le(b27,f0,t1_1,2), false).
-evidence(gt(b27,f3,t1_3,2)).
-evidence(gt(b27,f2,t1_6,2)).
-evidence(le(b27,f0,t1_22,2), false).
-evidence(le(b28,f3,t1_0,2), false).
-evidence(le(b28,f0,t1_1,2), false).
-evidence(gt(b28,f3,t1_3,2)).
-evidence(gt(b28,f2,t1_6,2)).
-evidence(gt(b28,f0,t1_22,2)).
-evidence(le(b29,f3,t1_0,2), false).
-evidence(gt(b29,f0,t1_1,2)).
-evidence(le(b29,f0,t1_4,2), false).
-evidence(le(b29,f2,t1_15,2), false).
-evidence(le(b30,f3,t1_0,2), false).
-evidence(gt(b30,f0,t1_1,2)).
-evidence(le(b30,f0,t1_4,2), false).
-evidence(gt(b30,f2,t1_15,2)).
-evidence(le(b30,f3,t1_18,2), false).
-evidence(le(b31,f3,t1_0,2), false).
-evidence(gt(b31,f0,t1_1,2)).
-evidence(le(b31,f0,t1_4,2), false).
-evidence(gt(b31,f2,t1_15,2)).
-evidence(gt(b31,f3,t1_18,2)).
-evidence(le(b32,f3,t1_0,2), false).
-evidence(gt(b32,f0,t1_1,2)).
-evidence(gt(b32,f0,t1_4,2)).
-evidence(gt(b33,f3,t1_0,2)).
+evidence(gt(b24,f0,t1_1,2)).
+evidence(le(b24,f0,t1_4,2), false).
+evidence(gt(b24,f2,t1_15,2)).
+evidence(le(b25,f0,t2_0,2), false).
+evidence(le(b26,f0,t2_0,2), false).
+evidence(gt(b26,f0,t2_1,2)).
+evidence(le(b27,f0,t2_0,2), false).
+evidence(gt(b27,f0,t2_1,2)).
+evidence(le(b27,f1,t2_6,2)).
+evidence(le(b28,f0,t2_0,2), false).
+evidence(gt(b28,f0,t2_1,2)).
+evidence(le(b28,f1,t2_6,2)).
+evidence(gt(b28,f3,t2_7,2)).
+evidence(le(b28,f2,t2_10,2), false).
+evidence(le(b29,f0,t2_0,2), false).
+evidence(gt(b29,f0,t2_1,2)).
+evidence(le(b29,f1,t2_6,2)).
+evidence(gt(b29,f3,t2_7,2)).
+evidence(le(b29,f2,t2_10,2), false).
+evidence(le(b29,f3,t2_13,2), false).
+evidence(le(b30,f0,t2_0,2), false).
+evidence(gt(b30,f0,t2_1,2)).
+evidence(le(b30,f1,t2_6,2)).
+evidence(gt(b30,f3,t2_7,2)).
+evidence(gt(b30,f2,t2_10,2)).
+evidence(le(b30,f2,t2_14,2), false).
+evidence(le(b31,f0,t2_0,2), false).
+evidence(gt(b31,f0,t2_1,2)).
+evidence(le(b31,f1,t2_6,2)).
+evidence(gt(b31,f3,t2_7,2)).
+evidence(gt(b31,f2,t2_10,2)).
+evidence(le(b31,f2,t2_14,2), false).
+evidence(le(b31,f0,t2_15,2), false).
+evidence(le(b32,f0,t2_0,2), false).
+evidence(gt(b32,f0,t2_1,2)).
+evidence(le(b32,f1,t2_6,2)).
+evidence(gt(b32,f3,t2_7,2)).
+evidence(gt(b32,f2,t2_10,2)).
+evidence(gt(b32,f2,t2_14,2)).
+evidence(le(b33,f0,t2_0,2), false).
+evidence(gt(b33,f0,t2_1,2)).
+evidence(le(b33,f1,t2_6,2)).
+evidence(gt(b33,f3,t2_7,2)).
+evidence(gt(b33,f2,t2_10,2)).
+evidence(gt(b33,f2,t2_14,2)).
+evidence(gt(b33,f1,t2_16,2)).
 evidence(le(b34,f0,t2_0,2), false).
-evidence(le(b34,f0,t2_1,2), false).
-evidence(le(b35,f0,t2_0,2), false).
-evidence(gt(b35,f0,t2_1,2)).
-evidence(le(b35,f1,t2_6,2)).
-evidence(le(b35,f3,t2_7,2), false).
-evidence(le(b36,f0,t2_0,2), false).
-evidence(gt(b36,f0,t2_1,2)).
-evidence(le(b36,f1,t2_6,2)).
-evidence(gt(b36,f3,t2_7,2)).
-evidence(le(b36,f2,t2_10,2), false).
-evidence(le(b36,f3,t2_13,2), false).
-evidence(le(b36,f2,t2_23,2), false).
-evidence(le(b37,f0,t2_0,2), false).
-evidence(gt(b37,f0,t2_1,2)).
-evidence(le(b37,f1,t2_6,2)).
-evidence(gt(b37,f3,t2_7,2)).
-evidence(le(b37,f2,t2_10,2), false).
-evidence(le(b37,f3,t2_13,2), false).
-evidence(gt(b37,f2,t2_23,2)).
-evidence(le(b38,f0,t2_0,2), false).
-evidence(gt(b38,f0,t2_1,2)).
-evidence(le(b38,f1,t2_6,2)).
-evidence(gt(b38,f3,t2_7,2)).
-evidence(le(b38,f2,t2_10,2), false).
-evidence(gt(b38,f3,t2_13,2)).
-evidence(le(b39,f0,t2_0,2), false).
-evidence(gt(b39,f0,t2_1,2)).
-evidence(le(b39,f1,t2_6,2)).
-evidence(gt(b39,f3,t2_7,2)).
-evidence(gt(b39,f2,t2_10,2)).
-evidence(le(b39,f2,t2_14,2), false).
-evidence(le(b39,f0,t2_15,2), false).
-evidence(le(b39,f3,t2_27,2), false).
-evidence(le(b40,f0,t2_0,2), false).
-evidence(gt(b40,f0,t2_1,2)).
-evidence(le(b40,f1,t2_6,2)).
-evidence(gt(b40,f3,t2_7,2)).
-evidence(gt(b40,f2,t2_10,2)).
-evidence(le(b40,f2,t2_14,2), false).
-evidence(le(b40,f0,t2_15,2), false).
-evidence(gt(b40,f3,t2_27,2)).
-evidence(le(b41,f0,t2_0,2), false).
-evidence(gt(b41,f0,t2_1,2)).
-evidence(le(b41,f1,t2_6,2)).
-evidence(gt(b41,f3,t2_7,2)).
-evidence(gt(b41,f2,t2_10,2)).
-evidence(le(b41,f2,t2_14,2), false).
-evidence(gt(b41,f0,t2_15,2)).
-evidence(le(b42,f0,t2_0,2), false).
-evidence(gt(b42,f0,t2_1,2)).
-evidence(le(b42,f1,t2_6,2)).
-evidence(gt(b42,f3,t2_7,2)).
-evidence(gt(b42,f2,t2_10,2)).
-evidence(gt(b42,f2,t2_14,2)).
-evidence(le(b42,f1,t2_16,2), false).
-evidence(le(b43,f0,t2_0,2), false).
-evidence(gt(b43,f0,t2_1,2)).
-evidence(le(b43,f1,t2_6,2)).
-evidence(gt(b43,f3,t2_7,2)).
-evidence(gt(b43,f2,t2_10,2)).
-evidence(gt(b43,f2,t2_14,2)).
-evidence(gt(b43,f1,t2_16,2)).
-evidence(le(b43,f3,t2_18,2), false).
-evidence(le(b44,f0,t2_0,2), false).
-evidence(gt(b44,f0,t2_1,2)).
-evidence(le(b44,f1,t2_6,2)).
-evidence(gt(b44,f3,t2_7,2)).
-evidence(gt(b44,f2,t2_10,2)).
-evidence(gt(b44,f2,t2_14,2)).
-evidence(gt(b44,f1,t2_16,2)).
-evidence(gt(b44,f3,t2_18,2)).
-evidence(le(b44,f0,t2_20,2), false).
-evidence(le(b45,f0,t2_0,2), false).
-evidence(gt(b45,f0,t2_1,2)).
-evidence(le(b45,f1,t2_6,2)).
-evidence(gt(b45,f3,t2_7,2)).
-evidence(gt(b45,f2,t2_10,2)).
-evidence(gt(b45,f2,t2_14,2)).
-evidence(gt(b45,f1,t2_16,2)).
-evidence(gt(b45,f3,t2_18,2)).
-evidence(gt(b45,f0,t2_20,2)).
-evidence(le(b46,f0,t2_0,2), false).
-evidence(gt(b46,f0,t2_1,2)).
-evidence(gt(b46,f1,t2_6,2), false).
-evidence(gt(b47,f0,t2_0,2)).
-evidence(le(b47,f3,t2_2,2), false).
-evidence(gt(b48,f0,t2_0,2)).
-evidence(gt(b48,f3,t2_2,2)).
-evidence(le(b48,f2,t2_4,2), false).
-evidence(gt(b49,f0,t2_0,2)).
-evidence(gt(b49,f3,t2_2,2)).
-evidence(gt(b49,f2,t2_4,2)).
-evidence(le(b49,f3,t2_12,2), false).
-evidence(le(b49,f3,t2_31,2), false).
-evidence(le(b49,f1,t2_33,2)).
-evidence(gt(b50,f0,t2_0,2)).
-evidence(gt(b50,f3,t2_2,2)).
-evidence(gt(b50,f2,t2_4,2)).
-evidence(le(b50,f3,t2_12,2), false).
-evidence(le(b50,f3,t2_31,2), false).
-evidence(gt(b50,f1,t2_33,2), false).
-evidence(le(b50,f3,t2_36,2), false).
-evidence(gt(b51,f0,t2_0,2)).
-evidence(gt(b51,f3,t2_2,2)).
-evidence(gt(b51,f2,t2_4,2)).
-evidence(le(b51,f3,t2_12,2), false).
-evidence(le(b51,f3,t2_31,2), false).
-evidence(gt(b51,f1,t2_33,2), false).
-evidence(gt(b51,f3,t2_36,2)).
-evidence(gt(b52,f0,t2_0,2)).
-evidence(gt(b52,f3,t2_2,2)).
-evidence(gt(b52,f2,t2_4,2)).
-evidence(le(b52,f3,t2_12,2), false).
-evidence(gt(b52,f3,t2_31,2)).
-evidence(gt(b53,f0,t2_0,2)).
-evidence(gt(b53,f3,t2_2,2)).
-evidence(gt(b53,f2,t2_4,2)).
-evidence(gt(b53,f3,t2_12,2)).
-evidence(le(b54,f2,t3_0,2), false).
-evidence(le(b54,f3,t3_1,2), false).
-evidence(le(b55,f2,t3_0,2), false).
-evidence(gt(b55,f3,t3_1,2)).
-evidence(le(b55,f1,t3_4,2), false).
-evidence(le(b55,f3,t3_25,2), false).
-evidence(le(b56,f2,t3_0,2), false).
-evidence(gt(b56,f3,t3_1,2)).
-evidence(le(b56,f1,t3_4,2), false).
-evidence(gt(b56,f3,t3_25,2)).
-evidence(le(b57,f2,t3_0,2), false).
-evidence(gt(b57,f3,t3_1,2)).
-evidence(gt(b57,f1,t3_4,2)).
-evidence(le(b57,f0,t3_26,2), false).
-evidence(le(b57,f2,t3_29,2), false).
-evidence(le(b58,f2,t3_0,2), false).
-evidence(gt(b58,f3,t3_1,2)).
-evidence(gt(b58,f1,t3_4,2)).
-evidence(le(b58,f0,t3_26,2), false).
-evidence(gt(b58,f2,t3_29,2)).
-evidence(le(b59,f2,t3_0,2), false).
-evidence(gt(b59,f3,t3_1,2)).
-evidence(gt(b59,f1,t3_4,2)).
-evidence(gt(b59,f0,t3_26,2)).
-evidence(gt(b60,f2,t3_0,2)).
-evidence(le(b60,f0,t3_2,2), false).
-evidence(le(b60,f0,t3_5,2), false).
-evidence(le(b60,f1,t3_7,2)).
-evidence(le(b60,f1,t3_15,2), false).
-evidence(gt(b61,f2,t3_0,2)).
-evidence(le(b61,f0,t3_2,2), false).
-evidence(le(b61,f0,t3_5,2), false).
-evidence(le(b61,f1,t3_7,2)).
-evidence(gt(b61,f1,t3_15,2)).
-evidence(le(b61,f2,t3_18,2), false).
-evidence(le(b61,f2,t3_19,2), false).
-evidence(gt(b62,f2,t3_0,2)).
-evidence(le(b62,f0,t3_2,2), false).
-evidence(le(b62,f0,t3_5,2), false).
-evidence(le(b62,f1,t3_7,2)).
-evidence(gt(b62,f1,t3_15,2)).
-evidence(le(b62,f2,t3_18,2), false).
-evidence(gt(b62,f2,t3_19,2)).
-evidence(le(b62,f0,t3_22,2), false).
-evidence(gt(b63,f2,t3_0,2)).
-evidence(le(b63,f0,t3_2,2), false).
-evidence(le(b63,f0,t3_5,2), false).
-evidence(le(b63,f1,t3_7,2)).
-evidence(gt(b63,f1,t3_15,2)).
-evidence(le(b63,f2,t3_18,2), false).
-evidence(gt(b63,f2,t3_19,2)).
-evidence(gt(b63,f0,t3_22,2)).
-evidence(gt(b64,f2,t3_0,2)).
-evidence(le(b64,f0,t3_2,2), false).
-evidence(le(b64,f0,t3_5,2), false).
-evidence(le(b64,f1,t3_7,2)).
-evidence(gt(b64,f1,t3_15,2)).
-evidence(gt(b64,f2,t3_18,2)).
-evidence(gt(b65,f2,t3_0,2)).
-evidence(le(b65,f0,t3_2,2), false).
-evidence(le(b65,f0,t3_5,2), false).
-evidence(gt(b65,f1,t3_7,2), false).
-evidence(gt(b66,f2,t3_0,2)).
-evidence(le(b66,f0,t3_2,2), false).
-evidence(gt(b66,f0,t3_5,2)).
-evidence(le(b66,f3,t3_8,2), false).
-evidence(gt(b67,f2,t3_0,2)).
-evidence(le(b67,f0,t3_2,2), false).
-evidence(gt(b67,f0,t3_5,2)).
-evidence(gt(b67,f3,t3_8,2)).
-evidence(le(b67,f3,t3_10,2), false).
-evidence(le(b67,f2,t3_11,2), false).
-evidence(gt(b68,f2,t3_0,2)).
-evidence(le(b68,f0,t3_2,2), false).
-evidence(gt(b68,f0,t3_5,2)).
-evidence(gt(b68,f3,t3_8,2)).
-evidence(le(b68,f3,t3_10,2), false).
-evidence(gt(b68,f2,t3_11,2)).
-evidence(gt(b69,f2,t3_0,2)).
-evidence(le(b69,f0,t3_2,2), false).
-evidence(gt(b69,f0,t3_5,2)).
-evidence(gt(b69,f3,t3_8,2)).
-evidence(gt(b69,f3,t3_10,2)).
-evidence(gt(b70,f2,t3_0,2)).
-evidence(gt(b70,f0,t3_2,2)).
-evidence(le(b71,f3,t4_0,2), false).
-evidence(gt(b72,f3,t4_0,2)).
-evidence(le(b72,f0,t4_2,2), false).
-evidence(le(b72,f2,t4_3,2), false).
-evidence(le(b72,f0,t4_5,2), false).
-evidence(le(b72,f1,t4_15,2), false).
-evidence(gt(b73,f3,t4_0,2)).
-evidence(le(b73,f0,t4_2,2), false).
-evidence(le(b73,f2,t4_3,2), false).
-evidence(le(b73,f0,t4_5,2), false).
-evidence(gt(b73,f1,t4_15,2)).
-evidence(le(b73,f2,t4_18,2), false).
-evidence(gt(b74,f3,t4_0,2)).
-evidence(le(b74,f0,t4_2,2), false).
-evidence(le(b74,f2,t4_3,2), false).
-evidence(le(b74,f0,t4_5,2), false).
-evidence(gt(b74,f1,t4_15,2)).
-evidence(gt(b74,f2,t4_18,2)).
-evidence(gt(b75,f3,t4_0,2)).
-evidence(le(b75,f0,t4_2,2), false).
-evidence(le(b75,f2,t4_3,2), false).
-evidence(gt(b75,f0,t4_5,2)).
-evidence(gt(b76,f3,t4_0,2)).
-evidence(le(b76,f0,t4_2,2), false).
-evidence(gt(b76,f2,t4_3,2)).
-evidence(le(b76,f2,t4_6,2), false).
-evidence(le(b76,f3,t4_7,2), false).
-evidence(gt(b77,f3,t4_0,2)).
-evidence(le(b77,f0,t4_2,2), false).
-evidence(gt(b77,f2,t4_3,2)).
-evidence(le(b77,f2,t4_6,2), false).
-evidence(gt(b77,f3,t4_7,2)).
-evidence(le(b77,f2,t4_40,2), false).
-evidence(le(b77,f3,t4_41,2), false).
-evidence(gt(b78,f3,t4_0,2)).
-evidence(le(b78,f0,t4_2,2), false).
-evidence(gt(b78,f2,t4_3,2)).
-evidence(le(b78,f2,t4_6,2), false).
-evidence(gt(b78,f3,t4_7,2)).
-evidence(le(b78,f2,t4_40,2), false).
-evidence(gt(b78,f3,t4_41,2)).
-evidence(gt(b79,f3,t4_0,2)).
-evidence(le(b79,f0,t4_2,2), false).
-evidence(gt(b79,f2,t4_3,2)).
-evidence(le(b79,f2,t4_6,2), false).
-evidence(gt(b79,f3,t4_7,2)).
-evidence(gt(b79,f2,t4_40,2)).
-evidence(gt(b80,f3,t4_0,2)).
-evidence(le(b80,f0,t4_2,2), false).
-evidence(gt(b80,f2,t4_3,2)).
-evidence(gt(b80,f2,t4_6,2)).
-evidence(le(b80,f0,t4_8,2), false).
-evidence(le(b80,f0,t4_27,2), false).
-evidence(gt(b81,f3,t4_0,2)).
-evidence(le(b81,f0,t4_2,2), false).
-evidence(gt(b81,f2,t4_3,2)).
-evidence(gt(b81,f2,t4_6,2)).
-evidence(le(b81,f0,t4_8,2), false).
-evidence(gt(b81,f0,t4_27,2)).
-evidence(le(b81,f3,t4_30,2), false).
-evidence(gt(b82,f3,t4_0,2)).
-evidence(le(b82,f0,t4_2,2), false).
-evidence(gt(b82,f2,t4_3,2)).
-evidence(gt(b82,f2,t4_6,2)).
-evidence(le(b82,f0,t4_8,2), false).
-evidence(gt(b82,f0,t4_27,2)).
-evidence(gt(b82,f3,t4_30,2)).
-evidence(gt(b83,f3,t4_0,2)).
-evidence(le(b83,f0,t4_2,2), false).
-evidence(gt(b83,f2,t4_3,2)).
-evidence(gt(b83,f2,t4_6,2)).
-evidence(gt(b83,f0,t4_8,2)).
-evidence(gt(b84,f3,t4_0,2)).
-evidence(gt(b84,f0,t4_2,2)).
-evidence(le(b84,f0,t4_4,2), false).
-evidence(le(b84,f3,t4_9,2), false).
-evidence(le(b84,f2,t4_11,2), false).
-evidence(le(b84,f1,t4_13,2)).
-evidence(le(b84,f2,t4_33,2), false).
-evidence(gt(b85,f3,t4_0,2)).
-evidence(gt(b85,f0,t4_2,2)).
-evidence(le(b85,f0,t4_4,2), false).
-evidence(le(b85,f3,t4_9,2), false).
-evidence(le(b85,f2,t4_11,2), false).
-evidence(le(b85,f1,t4_13,2)).
-evidence(gt(b85,f2,t4_33,2)).
-evidence(le(b85,f2,t4_36,2), false).
-evidence(gt(b86,f3,t4_0,2)).
-evidence(gt(b86,f0,t4_2,2)).
-evidence(le(b86,f0,t4_4,2), false).
-evidence(le(b86,f3,t4_9,2), false).
-evidence(le(b86,f2,t4_11,2), false).
-evidence(le(b86,f1,t4_13,2)).
-evidence(gt(b86,f2,t4_33,2)).
-evidence(gt(b86,f2,t4_36,2)).
-evidence(gt(b87,f3,t4_0,2)).
-evidence(gt(b87,f0,t4_2,2)).
-evidence(le(b87,f0,t4_4,2), false).
-evidence(le(b87,f3,t4_9,2), false).
-evidence(le(b87,f2,t4_11,2), false).
-evidence(gt(b87,f1,t4_13,2), false).
-evidence(gt(b88,f3,t4_0,2)).
-evidence(gt(b88,f0,t4_2,2)).
-evidence(le(b88,f0,t4_4,2), false).
-evidence(le(b88,f3,t4_9,2), false).
-evidence(gt(b88,f2,t4_11,2)).
-evidence(gt(b89,f3,t4_0,2)).
-evidence(gt(b89,f0,t4_2,2)).
-evidence(le(b89,f0,t4_4,2), false).
-evidence(gt(b89,f3,t4_9,2)).
-evidence(gt(b90,f3,t4_0,2)).
-evidence(gt(b90,f0,t4_2,2)).
-evidence(gt(b90,f0,t4_4,2)).
-evidence(le(b90,f0,t4_10,2), false).
-evidence(le(b90,f1,t4_21,2)).
-evidence(gt(b91,f3,t4_0,2)).
-evidence(gt(b91,f0,t4_2,2)).
-evidence(gt(b91,f0,t4_4,2)).
-evidence(le(b91,f0,t4_10,2), false).
-evidence(gt(b91,f1,t4_21,2), false).
-evidence(le(b91,f1,t4_24,2)).
-evidence(gt(b92,f3,t4_0,2)).
-evidence(gt(b92,f0,t4_2,2)).
-evidence(gt(b92,f0,t4_4,2)).
-evidence(le(b92,f0,t4_10,2), false).
-evidence(gt(b92,f1,t4_21,2), false).
-evidence(gt(b92,f1,t4_24,2), false).
-evidence(gt(b93,f3,t4_0,2)).
-evidence(gt(b93,f0,t4_2,2)).
-evidence(gt(b93,f0,t4_4,2)).
-evidence(gt(b93,f0,t4_10,2)).
-evidence(le(b94,f3,t5_0,2), false).
-evidence(le(b94,f3,t5_1,2), false).
-evidence(le(b95,f3,t5_0,2), false).
-evidence(gt(b95,f3,t5_1,2)).
-evidence(gt(b96,f3,t5_0,2)).
-evidence(le(b96,f2,t5_2,2), false).
-evidence(le(b96,f3,t5_5,2)).
-evidence(le(b96,f2,t5_7,2), false).
-evidence(le(b96,f3,t5_9,2), false).
-evidence(gt(b97,f3,t5_0,2)).
-evidence(le(b97,f2,t5_2,2), false).
-evidence(le(b97,f3,t5_5,2)).
-evidence(le(b97,f2,t5_7,2), false).
-evidence(gt(b97,f3,t5_9,2)).
-evidence(le(b97,f2,t5_14,2), false).
-evidence(gt(b98,f3,t5_0,2)).
-evidence(le(b98,f2,t5_2,2), false).
-evidence(le(b98,f3,t5_5,2)).
-evidence(le(b98,f2,t5_7,2), false).
-evidence(gt(b98,f3,t5_9,2)).
-evidence(gt(b98,f2,t5_14,2)).
-evidence(gt(b99,f3,t5_0,2)).
-evidence(le(b99,f2,t5_2,2), false).
-evidence(le(b99,f3,t5_5,2)).
-evidence(gt(b99,f2,t5_7,2)).
-evidence(le(b99,f3,t5_10,2), false).
-evidence(le(b99,f1,t5_11,2), false).
-evidence(le(b99,f1,t5_17,2), false).
-evidence(gt(b100,f3,t5_0,2)).
-evidence(le(b100,f2,t5_2,2), false).
-evidence(le(b100,f3,t5_5,2)).
-evidence(gt(b100,f2,t5_7,2)).
-evidence(le(b100,f3,t5_10,2), false).
-evidence(le(b100,f1,t5_11,2), false).
-evidence(gt(b100,f1,t5_17,2)).
-evidence(gt(b101,f3,t5_0,2)).
-evidence(le(b101,f2,t5_2,2), false).
-evidence(le(b101,f3,t5_5,2)).
-evidence(gt(b101,f2,t5_7,2)).
-evidence(le(b101,f3,t5_10,2), false).
-evidence(gt(b101,f1,t5_11,2)).
-evidence(gt(b102,f3,t5_0,2)).
-evidence(le(b102,f2,t5_2,2), false).
-evidence(le(b102,f3,t5_5,2)).
-evidence(gt(b102,f2,t5_7,2)).
-evidence(gt(b102,f3,t5_10,2)).
-evidence(gt(b103,f3,t5_0,2)).
-evidence(le(b103,f2,t5_2,2), false).
-evidence(gt(b103,f3,t5_5,2), false).
-evidence(gt(b104,f3,t5_0,2)).
-evidence(gt(b104,f2,t5_2,2)).
-evidence(le(b105,f2,t6_0,2), false).
-evidence(le(b105,f2,t6_1,2), false).
-evidence(le(b105,f2,t6_3,2), false).
-evidence(le(b106,f2,t6_0,2), false).
-evidence(le(b106,f2,t6_1,2), false).
-evidence(gt(b106,f2,t6_3,2)).
-evidence(le(b107,f2,t6_0,2), false).
-evidence(gt(b107,f2,t6_1,2)).
-evidence(le(b107,f2,t6_4,2), false).
-evidence(le(b107,f3,t6_7,2), false).
-evidence(le(b108,f2,t6_0,2), false).
-evidence(gt(b108,f2,t6_1,2)).
-evidence(le(b108,f2,t6_4,2), false).
-evidence(gt(b108,f3,t6_7,2)).
-evidence(le(b108,f0,t6_16,2), false).
-evidence(le(b109,f2,t6_0,2), false).
-evidence(gt(b109,f2,t6_1,2)).
-evidence(le(b109,f2,t6_4,2), false).
-evidence(gt(b109,f3,t6_7,2)).
-evidence(gt(b109,f0,t6_16,2)).
-evidence(le(b110,f2,t6_0,2), false).
-evidence(gt(b110,f2,t6_1,2)).
-evidence(gt(b110,f2,t6_4,2)).
-evidence(le(b110,f3,t6_8,2), false).
-evidence(le(b110,f2,t6_9,2), false).
-evidence(le(b111,f2,t6_0,2), false).
-evidence(gt(b111,f2,t6_1,2)).
-evidence(gt(b111,f2,t6_4,2)).
-evidence(le(b111,f3,t6_8,2), false).
-evidence(gt(b111,f2,t6_9,2)).
-evidence(le(b112,f2,t6_0,2), false).
-evidence(gt(b112,f2,t6_1,2)).
-evidence(gt(b112,f2,t6_4,2)).
-evidence(gt(b112,f3,t6_8,2)).
-evidence(le(b112,f3,t6_10,2), false).
-evidence(le(b113,f2,t6_0,2), false).
-evidence(gt(b113,f2,t6_1,2)).
-evidence(gt(b113,f2,t6_4,2)).
-evidence(gt(b113,f3,t6_8,2)).
-evidence(gt(b113,f3,t6_10,2)).
-evidence(gt(b114,f2,t6_0,2)).
-evidence(le(b115,f3,t7_0,2), false).
-evidence(le(b115,f3,t7_1,2), false).
-evidence(le(b116,f3,t7_0,2), false).
-evidence(gt(b116,f3,t7_1,2)).
-evidence(gt(b117,f3,t7_0,2)).
-evidence(le(b117,f2,t7_2,2), false).
-evidence(le(b117,f3,t7_3,2), false).
-evidence(gt(b118,f3,t7_0,2)).
-evidence(le(b118,f2,t7_2,2), false).
-evidence(gt(b118,f3,t7_3,2)).
-evidence(le(b118,f0,t7_22,2), false).
-evidence(gt(b119,f3,t7_0,2)).
-evidence(le(b119,f2,t7_2,2), false).
-evidence(gt(b119,f3,t7_3,2)).
-evidence(gt(b119,f0,t7_22,2)).
-evidence(gt(b120,f3,t7_0,2)).
-evidence(gt(b120,f2,t7_2,2)).
-evidence(le(b120,f2,t7_4,2), false).
-evidence(gt(b121,f3,t7_0,2)).
-evidence(gt(b121,f2,t7_2,2)).
-evidence(gt(b121,f2,t7_4,2)).
-evidence(le(b121,f3,t7_8,2)).
-evidence(le(b121,f1,t7_9,2), false).
-evidence(gt(b122,f3,t7_0,2)).
-evidence(gt(b122,f2,t7_2,2)).
-evidence(gt(b122,f2,t7_4,2)).
-evidence(le(b122,f3,t7_8,2)).
-evidence(gt(b122,f1,t7_9,2)).
-evidence(le(b122,f0,t7_12,2), false).
-evidence(le(b122,f3,t7_13,2), false).
-evidence(gt(b123,f3,t7_0,2)).
-evidence(gt(b123,f2,t7_2,2)).
-evidence(gt(b123,f2,t7_4,2)).
-evidence(le(b123,f3,t7_8,2)).
-evidence(gt(b123,f1,t7_9,2)).
-evidence(le(b123,f0,t7_12,2), false).
-evidence(gt(b123,f3,t7_13,2)).
-evidence(gt(b124,f3,t7_0,2)).
-evidence(gt(b124,f2,t7_2,2)).
-evidence(gt(b124,f2,t7_4,2)).
-evidence(le(b124,f3,t7_8,2)).
-evidence(gt(b124,f1,t7_9,2)).
-evidence(gt(b124,f0,t7_12,2)).
-evidence(le(b124,f1,t7_14,2), false).
-evidence(gt(b125,f3,t7_0,2)).
-evidence(gt(b125,f2,t7_2,2)).
-evidence(gt(b125,f2,t7_4,2)).
-evidence(le(b125,f3,t7_8,2)).
-evidence(gt(b125,f1,t7_9,2)).
-evidence(gt(b125,f0,t7_12,2)).
-evidence(gt(b125,f1,t7_14,2)).
-evidence(le(b125,f3,t7_18,2), false).
-evidence(gt(b126,f3,t7_0,2)).
-evidence(gt(b126,f2,t7_2,2)).
-evidence(gt(b126,f2,t7_4,2)).
-evidence(le(b126,f3,t7_8,2)).
-evidence(gt(b126,f1,t7_9,2)).
-evidence(gt(b126,f0,t7_12,2)).
-evidence(gt(b126,f1,t7_14,2)).
-evidence(gt(b126,f3,t7_18,2)).
-evidence(gt(b127,f3,t7_0,2)).
-evidence(gt(b127,f2,t7_2,2)).
-evidence(gt(b127,f2,t7_4,2)).
-evidence(gt(b127,f3,t7_8,2), false).
+evidence(gt(b34,f0,t2_1,2)).
+evidence(le(b34,f1,t2_6,2)).
+evidence(gt(b34,f3,t2_7,2)).
+evidence(gt(b34,f2,t2_10,2)).
+evidence(gt(b34,f2,t2_14,2)).
+evidence(gt(b34,f1,t2_16,2)).
+evidence(gt(b34,f3,t2_18,2)).
+evidence(gt(b35,f0,t2_0,2)).
+evidence(gt(b36,f0,t2_0,2)).
+evidence(gt(b36,f3,t2_2,2)).
+evidence(gt(b37,f0,t2_0,2)).
+evidence(gt(b37,f3,t2_2,2)).
+evidence(gt(b37,f2,t2_4,2)).
+evidence(gt(b38,f0,t2_0,2)).
+evidence(gt(b38,f3,t2_2,2)).
+evidence(gt(b38,f2,t2_4,2)).
+evidence(le(b38,f3,t2_12,2), false).
+evidence(gt(b39,f0,t2_0,2)).
+evidence(gt(b39,f3,t2_2,2)).
+evidence(gt(b39,f2,t2_4,2)).
+evidence(le(b39,f3,t2_12,2), false).
+evidence(le(b39,f3,t2_31,2), false).
+evidence(gt(b40,f0,t2_0,2)).
+evidence(gt(b40,f3,t2_2,2)).
+evidence(gt(b40,f2,t2_4,2)).
+evidence(le(b40,f3,t2_12,2), false).
+evidence(le(b40,f3,t2_31,2), false).
+evidence(gt(b40,f1,t2_33,2), false).
+evidence(le(b41,f2,t3_0,2), false).
+evidence(le(b42,f2,t3_0,2), false).
+evidence(gt(b42,f3,t3_1,2)).
+evidence(le(b42,f1,t3_4,2), false).
+evidence(le(b43,f2,t3_0,2), false).
+evidence(gt(b43,f3,t3_1,2)).
+evidence(gt(b43,f1,t3_4,2)).
+evidence(le(b44,f2,t3_0,2), false).
+evidence(gt(b44,f3,t3_1,2)).
+evidence(gt(b44,f1,t3_4,2)).
+evidence(le(b44,f0,t3_26,2), false).
+evidence(gt(b45,f2,t3_0,2)).
+evidence(gt(b46,f2,t3_0,2)).
+evidence(le(b46,f0,t3_2,2), false).
+evidence(le(b46,f0,t3_5,2), false).
+evidence(gt(b47,f2,t3_0,2)).
+evidence(le(b47,f0,t3_2,2), false).
+evidence(le(b47,f0,t3_5,2), false).
+evidence(le(b47,f1,t3_7,2)).
+evidence(gt(b48,f2,t3_0,2)).
+evidence(le(b48,f0,t3_2,2), false).
+evidence(le(b48,f0,t3_5,2), false).
+evidence(le(b48,f1,t3_7,2)).
+evidence(gt(b48,f1,t3_15,2)).
+evidence(gt(b49,f2,t3_0,2)).
+evidence(le(b49,f0,t3_2,2), false).
+evidence(le(b49,f0,t3_5,2), false).
+evidence(le(b49,f1,t3_7,2)).
+evidence(gt(b49,f1,t3_15,2)).
+evidence(le(b49,f2,t3_18,2), false).
+evidence(gt(b50,f2,t3_0,2)).
+evidence(le(b50,f0,t3_2,2), false).
+evidence(le(b50,f0,t3_5,2), false).
+evidence(le(b50,f1,t3_7,2)).
+evidence(gt(b50,f1,t3_15,2)).
+evidence(le(b50,f2,t3_18,2), false).
+evidence(gt(b50,f2,t3_19,2)).
+evidence(gt(b51,f2,t3_0,2)).
+evidence(le(b51,f0,t3_2,2), false).
+evidence(gt(b51,f0,t3_5,2)).
+evidence(gt(b52,f2,t3_0,2)).
+evidence(le(b52,f0,t3_2,2), false).
+evidence(gt(b52,f0,t3_5,2)).
+evidence(gt(b52,f3,t3_8,2)).
+evidence(gt(b53,f2,t3_0,2)).
+evidence(le(b53,f0,t3_2,2), false).
+evidence(gt(b53,f0,t3_5,2)).
+evidence(gt(b53,f3,t3_8,2)).
+evidence(le(b53,f3,t3_10,2), false).
+evidence(gt(b55,f3,t4_0,2)).
+evidence(le(b55,f0,t4_2,2), false).
+evidence(le(b55,f2,t4_3,2), false).
+evidence(gt(b56,f3,t4_0,2)).
+evidence(le(b56,f0,t4_2,2), false).
+evidence(le(b56,f2,t4_3,2), false).
+evidence(le(b56,f0,t4_5,2), false).
+evidence(gt(b57,f3,t4_0,2)).
+evidence(le(b57,f0,t4_2,2), false).
+evidence(le(b57,f2,t4_3,2), false).
+evidence(le(b57,f0,t4_5,2), false).
+evidence(gt(b57,f1,t4_15,2)).
+evidence(gt(b58,f3,t4_0,2)).
+evidence(le(b58,f0,t4_2,2), false).
+evidence(gt(b58,f2,t4_3,2)).
+evidence(le(b58,f2,t4_6,2), false).
+evidence(gt(b59,f3,t4_0,2)).
+evidence(le(b59,f0,t4_2,2), false).
+evidence(gt(b59,f2,t4_3,2)).
+evidence(le(b59,f2,t4_6,2), false).
+evidence(gt(b59,f3,t4_7,2)).
+evidence(gt(b60,f3,t4_0,2)).
+evidence(le(b60,f0,t4_2,2), false).
+evidence(gt(b60,f2,t4_3,2)).
+evidence(le(b60,f2,t4_6,2), false).
+evidence(gt(b60,f3,t4_7,2)).
+evidence(le(b60,f2,t4_40,2), false).
+evidence(gt(b61,f3,t4_0,2)).
+evidence(le(b61,f0,t4_2,2), false).
+evidence(gt(b61,f2,t4_3,2)).
+evidence(gt(b61,f2,t4_6,2)).
+evidence(gt(b62,f3,t4_0,2)).
+evidence(le(b62,f0,t4_2,2), false).
+evidence(gt(b62,f2,t4_3,2)).
+evidence(gt(b62,f2,t4_6,2)).
+evidence(le(b62,f0,t4_8,2), false).
+evidence(gt(b63,f3,t4_0,2)).
+evidence(le(b63,f0,t4_2,2), false).
+evidence(gt(b63,f2,t4_3,2)).
+evidence(gt(b63,f2,t4_6,2)).
+evidence(le(b63,f0,t4_8,2), false).
+evidence(gt(b63,f0,t4_27,2)).
+evidence(gt(b64,f3,t4_0,2)).
+evidence(gt(b64,f0,t4_2,2)).
+evidence(le(b64,f0,t4_4,2), false).
+evidence(gt(b65,f3,t4_0,2)).
+evidence(gt(b65,f0,t4_2,2)).
+evidence(le(b65,f0,t4_4,2), false).
+evidence(le(b65,f3,t4_9,2), false).
+evidence(gt(b66,f3,t4_0,2)).
+evidence(gt(b66,f0,t4_2,2)).
+evidence(le(b66,f0,t4_4,2), false).
+evidence(le(b66,f3,t4_9,2), false).
+evidence(le(b66,f2,t4_11,2), false).
+evidence(gt(b67,f3,t4_0,2)).
+evidence(gt(b67,f0,t4_2,2)).
+evidence(le(b67,f0,t4_4,2), false).
+evidence(le(b67,f3,t4_9,2), false).
+evidence(le(b67,f2,t4_11,2), false).
+evidence(le(b67,f1,t4_13,2)).
+evidence(gt(b68,f3,t4_0,2)).
+evidence(gt(b68,f0,t4_2,2)).
+evidence(le(b68,f0,t4_4,2), false).
+evidence(le(b68,f3,t4_9,2), false).
+evidence(le(b68,f2,t4_11,2), false).
+evidence(le(b68,f1,t4_13,2)).
+evidence(gt(b68,f2,t4_33,2)).
+evidence(gt(b69,f3,t4_0,2)).
+evidence(gt(b69,f0,t4_2,2)).
+evidence(gt(b69,f0,t4_4,2)).
+evidence(gt(b70,f3,t4_0,2)).
+evidence(gt(b70,f0,t4_2,2)).
+evidence(gt(b70,f0,t4_4,2)).
+evidence(le(b70,f0,t4_10,2), false).
+evidence(gt(b71,f3,t4_0,2)).
+evidence(gt(b71,f0,t4_2,2)).
+evidence(gt(b71,f0,t4_4,2)).
+evidence(le(b71,f0,t4_10,2), false).
+evidence(gt(b71,f1,t4_21,2), false).
+evidence(le(b72,f3,t5_0,2), false).
+evidence(gt(b73,f3,t5_0,2)).
+evidence(gt(b74,f3,t5_0,2)).
+evidence(le(b74,f2,t5_2,2), false).
+evidence(gt(b75,f3,t5_0,2)).
+evidence(le(b75,f2,t5_2,2), false).
+evidence(le(b75,f3,t5_5,2)).
+evidence(le(b75,f2,t5_7,2), false).
+evidence(gt(b76,f3,t5_0,2)).
+evidence(le(b76,f2,t5_2,2), false).
+evidence(le(b76,f3,t5_5,2)).
+evidence(le(b76,f2,t5_7,2), false).
+evidence(gt(b76,f3,t5_9,2)).
+evidence(gt(b77,f3,t5_0,2)).
+evidence(le(b77,f2,t5_2,2), false).
+evidence(le(b77,f3,t5_5,2)).
+evidence(gt(b77,f2,t5_7,2)).
+evidence(gt(b78,f3,t5_0,2)).
+evidence(le(b78,f2,t5_2,2), false).
+evidence(le(b78,f3,t5_5,2)).
+evidence(gt(b78,f2,t5_7,2)).
+evidence(le(b78,f3,t5_10,2), false).
+evidence(gt(b79,f3,t5_0,2)).
+evidence(le(b79,f2,t5_2,2), false).
+evidence(le(b79,f3,t5_5,2)).
+evidence(gt(b79,f2,t5_7,2)).
+evidence(le(b79,f3,t5_10,2), false).
+evidence(le(b79,f1,t5_11,2), false).
+evidence(le(b81,f2,t6_0,2), false).
+evidence(le(b81,f2,t6_1,2), false).
+evidence(le(b82,f2,t6_0,2), false).
+evidence(gt(b82,f2,t6_1,2)).
+evidence(le(b82,f2,t6_4,2), false).
+evidence(le(b83,f2,t6_0,2), false).
+evidence(gt(b83,f2,t6_1,2)).
+evidence(le(b83,f2,t6_4,2), false).
+evidence(gt(b83,f3,t6_7,2)).
+evidence(le(b84,f2,t6_0,2), false).
+evidence(gt(b84,f2,t6_1,2)).
+evidence(gt(b84,f2,t6_4,2)).
+evidence(le(b84,f3,t6_8,2), false).
+evidence(le(b85,f2,t6_0,2), false).
+evidence(gt(b85,f2,t6_1,2)).
+evidence(gt(b85,f2,t6_4,2)).
+evidence(gt(b85,f3,t6_8,2)).
+evidence(le(b86,f3,t7_0,2), false).
+evidence(gt(b87,f3,t7_0,2)).
+evidence(le(b87,f2,t7_2,2), false).
+evidence(gt(b88,f3,t7_0,2)).
+evidence(le(b88,f2,t7_2,2), false).
+evidence(gt(b88,f3,t7_3,2)).
+evidence(gt(b89,f3,t7_0,2)).
+evidence(gt(b89,f2,t7_2,2)).
+evidence(gt(b90,f3,t7_0,2)).
+evidence(gt(b90,f2,t7_2,2)).
+evidence(gt(b90,f2,t7_4,2)).
+evidence(gt(b91,f3,t7_0,2)).
+evidence(gt(b91,f2,t7_2,2)).
+evidence(gt(b91,f2,t7_4,2)).
+evidence(le(b91,f3,t7_8,2)).
+evidence(gt(b92,f3,t7_0,2)).
+evidence(gt(b92,f2,t7_2,2)).
+evidence(gt(b92,f2,t7_4,2)).
+evidence(le(b92,f3,t7_8,2)).
+evidence(gt(b92,f1,t7_9,2)).
+evidence(le(b92,f0,t7_12,2), false).
+evidence(gt(b93,f3,t7_0,2)).
+evidence(gt(b93,f2,t7_2,2)).
+evidence(gt(b93,f2,t7_4,2)).
+evidence(le(b93,f3,t7_8,2)).
+evidence(gt(b93,f1,t7_9,2)).
+evidence(gt(b93,f0,t7_12,2)).
+evidence(gt(b94,f3,t7_0,2)).
+evidence(gt(b94,f2,t7_2,2)).
+evidence(gt(b94,f2,t7_4,2)).
+evidence(le(b94,f3,t7_8,2)).
+evidence(gt(b94,f1,t7_9,2)).
+evidence(gt(b94,f0,t7_12,2)).
+evidence(gt(b94,f1,t7_14,2)).
 evidence(le(b0,f0,t0_0,3), false).
-evidence(le(b0,f3,t0_1,3), false).
 evidence(le(b1,f0,t0_0,3), false).
 evidence(gt(b1,f3,t0_1,3)).
-evidence(le(b1,f2,t0_4,3), false).
 evidence(le(b2,f0,t0_0,3), false).
 evidence(gt(b2,f3,t0_1,3)).
 evidence(gt(b2,f2,t0_4,3)).
-evidence(le(b2,f0,t0_22,3), false).
-evidence(le(b3,f0,t0_0,3), false).
-evidence(gt(b3,f3,t0_1,3)).
-evidence(gt(b3,f2,t0_4,3)).
-evidence(gt(b3,f0,t0_22,3)).
+evidence(gt(b3,f0,t0_0,3)).
 evidence(gt(b4,f0,t0_0,3)).
 evidence(le(b4,f0,t0_2,3)).
 evidence(le(b4,f2,t0_5,3), false).
-evidence(le(b4,f3,t0_7,3), false).
 evidence(gt(b5,f0,t0_0,3)).
 evidence(le(b5,f0,t0_2,3)).
-evidence(le(b5,f2,t0_5,3), false).
-evidence(gt(b5,f3,t0_7,3)).
+evidence(gt(b5,f2,t0_5,3)).
 evidence(gt(b6,f0,t0_0,3)).
 evidence(le(b6,f0,t0_2,3)).
 evidence(gt(b6,f2,t0_5,3)).
-evidence(le(b6,f2,t0_8,3), false).
+evidence(gt(b6,f2,t0_8,3)).
 evidence(gt(b7,f0,t0_0,3)).
 evidence(le(b7,f0,t0_2,3)).
 evidence(gt(b7,f2,t0_5,3)).
 evidence(gt(b7,f2,t0_8,3)).
 evidence(le(b7,f2,t0_10,3)).
-evidence(le(b7,f3,t0_11,3)).
-evidence(le(b7,f1,t0_15,3)).
-evidence(le(b7,f0,t0_17,3), false).
-evidence(le(b7,f3,t0_25,3)).
-evidence(le(b7,f2,t0_29,3)).
 evidence(gt(b8,f0,t0_0,3)).
 evidence(le(b8,f0,t0_2,3)).
 evidence(gt(b8,f2,t0_5,3)).
@@ -4495,9 +3025,6 @@ evidence(le(b8,f2,t0_10,3)).
 evidence(le(b8,f3,t0_11,3)).
 evidence(le(b8,f1,t0_15,3)).
 evidence(le(b8,f0,t0_17,3), false).
-evidence(le(b8,f3,t0_25,3)).
-evidence(gt(b8,f2,t0_29,3), false).
-evidence(le(b8,f3,t0_32,3), false).
 evidence(gt(b9,f0,t0_0,3)).
 evidence(le(b9,f0,t0_2,3)).
 evidence(gt(b9,f2,t0_5,3)).
@@ -4507,8 +3034,6 @@ evidence(le(b9,f3,t0_11,3)).
 evidence(le(b9,f1,t0_15,3)).
 evidence(le(b9,f0,t0_17,3), false).
 evidence(le(b9,f3,t0_25,3)).
-evidence(gt(b9,f2,t0_29,3), false).
-evidence(gt(b9,f3,t0_32,3)).
 evidence(gt(b10,f0,t0_0,3)).
 evidence(le(b10,f0,t0_2,3)).
 evidence(gt(b10,f2,t0_5,3)).
@@ -4517,7 +3042,8 @@ evidence(le(b10,f2,t0_10,3)).
 evidence(le(b10,f3,t0_11,3)).
 evidence(le(b10,f1,t0_15,3)).
 evidence(le(b10,f0,t0_17,3), false).
-evidence(gt(b10,f3,t0_25,3), false).
+evidence(le(b10,f3,t0_25,3)).
+evidence(gt(b10,f2,t0_29,3), false).
 evidence(gt(b11,f0,t0_0,3)).
 evidence(le(b11,f0,t0_2,3)).
 evidence(gt(b11,f2,t0_5,3)).
@@ -4526,653 +3052,360 @@ evidence(le(b11,f2,t0_10,3)).
 evidence(le(b11,f3,t0_11,3)).
 evidence(le(b11,f1,t0_15,3)).
 evidence(gt(b11,f0,t0_17,3)).
-evidence(le(b11,f3,t0_26,3)).
 evidence(gt(b12,f0,t0_0,3)).
 evidence(le(b12,f0,t0_2,3)).
 evidence(gt(b12,f2,t0_5,3)).
 evidence(gt(b12,f2,t0_8,3)).
 evidence(le(b12,f2,t0_10,3)).
 evidence(le(b12,f3,t0_11,3)).
-evidence(le(b12,f1,t0_15,3)).
-evidence(gt(b12,f0,t0_17,3)).
-evidence(gt(b12,f3,t0_26,3), false).
-evidence(gt(b13,f0,t0_0,3)).
-evidence(le(b13,f0,t0_2,3)).
-evidence(gt(b13,f2,t0_5,3)).
-evidence(gt(b13,f2,t0_8,3)).
-evidence(le(b13,f2,t0_10,3)).
-evidence(le(b13,f3,t0_11,3)).
-evidence(gt(b13,f1,t0_15,3), false).
-evidence(le(b13,f2,t0_18,3)).
-evidence(gt(b14,f0,t0_0,3)).
-evidence(le(b14,f0,t0_2,3)).
-evidence(gt(b14,f2,t0_5,3)).
-evidence(gt(b14,f2,t0_8,3)).
-evidence(le(b14,f2,t0_10,3)).
-evidence(le(b14,f3,t0_11,3)).
-evidence(gt(b14,f1,t0_15,3), false).
-evidence(gt(b14,f2,t0_18,3), false).
-evidence(gt(b15,f0,t0_0,3)).
-evidence(le(b15,f0,t0_2,3)).
-evidence(gt(b15,f2,t0_5,3)).
-evidence(gt(b15,f2,t0_8,3)).
-evidence(le(b15,f2,t0_10,3)).
-evidence(gt(b15,f3,t0_11,3), false).
-evidence(gt(b16,f0,t0_0,3)).
-evidence(le(b16,f0,t0_2,3)).
-evidence(gt(b16,f2,t0_5,3)).
-evidence(gt(b16,f2,t0_8,3)).
-evidence(gt(b16,f2,t0_10,3), false).
-evidence(gt(b17,f0,t0_0,3)).
-evidence(gt(b17,f0,t0_2,3), false).
+evidence(gt(b12,f1,t0_15,3), false).
+evidence(le(b14,f3,t1_0,3)).
+evidence(le(b14,f0,t1_1,3), false).
+evidence(le(b14,f3,t1_3,3), false).
+evidence(le(b15,f3,t1_0,3)).
+evidence(le(b15,f0,t1_1,3), false).
+evidence(le(b15,f3,t1_3,3), false).
+evidence(le(b15,f1,t1_5,3)).
+evidence(le(b16,f3,t1_0,3)).
+evidence(le(b16,f0,t1_1,3), false).
+evidence(le(b16,f3,t1_3,3), false).
+evidence(le(b16,f1,t1_5,3)).
+evidence(le(b16,f2,t1_7,3), false).
+evidence(le(b17,f3,t1_0,3)).
+evidence(le(b17,f0,t1_1,3), false).
+evidence(le(b17,f3,t1_3,3), false).
+evidence(le(b17,f1,t1_5,3)).
+evidence(le(b17,f2,t1_7,3), false).
+evidence(gt(b17,f0,t1_9,3)).
 evidence(le(b18,f3,t1_0,3)).
 evidence(le(b18,f0,t1_1,3), false).
-evidence(le(b18,f3,t1_3,3), false).
-evidence(le(b18,f1,t1_5,3)).
-evidence(le(b18,f2,t1_7,3), false).
-evidence(le(b18,f0,t1_9,3), false).
+evidence(gt(b18,f3,t1_3,3)).
+evidence(le(b18,f2,t1_6,3)).
 evidence(le(b19,f3,t1_0,3)).
 evidence(le(b19,f0,t1_1,3), false).
-evidence(le(b19,f3,t1_3,3), false).
-evidence(le(b19,f1,t1_5,3)).
-evidence(le(b19,f2,t1_7,3), false).
-evidence(gt(b19,f0,t1_9,3)).
-evidence(le(b19,f3,t1_12,3), false).
+evidence(gt(b19,f3,t1_3,3)).
+evidence(le(b19,f2,t1_6,3)).
+evidence(le(b19,f1,t1_21,3)).
 evidence(le(b20,f3,t1_0,3)).
 evidence(le(b20,f0,t1_1,3), false).
-evidence(le(b20,f3,t1_3,3), false).
-evidence(le(b20,f1,t1_5,3)).
-evidence(le(b20,f2,t1_7,3), false).
-evidence(gt(b20,f0,t1_9,3)).
-evidence(gt(b20,f3,t1_12,3)).
+evidence(gt(b20,f3,t1_3,3)).
+evidence(le(b20,f2,t1_6,3)).
+evidence(le(b20,f1,t1_21,3)).
+evidence(gt(b20,f2,t1_25,3)).
 evidence(le(b21,f3,t1_0,3)).
 evidence(le(b21,f0,t1_1,3), false).
-evidence(le(b21,f3,t1_3,3), false).
-evidence(le(b21,f1,t1_5,3)).
-evidence(gt(b21,f2,t1_7,3)).
+evidence(gt(b21,f3,t1_3,3)).
+evidence(gt(b21,f2,t1_6,3), false).
 evidence(le(b22,f3,t1_0,3)).
-evidence(le(b22,f0,t1_1,3), false).
-evidence(le(b22,f3,t1_3,3), false).
-evidence(gt(b22,f1,t1_5,3), false).
+evidence(gt(b22,f0,t1_1,3)).
 evidence(le(b23,f3,t1_0,3)).
-evidence(le(b23,f0,t1_1,3), false).
-evidence(gt(b23,f3,t1_3,3)).
-evidence(le(b23,f2,t1_6,3)).
-evidence(le(b23,f1,t1_21,3)).
-evidence(le(b23,f2,t1_25,3), false).
+evidence(gt(b23,f0,t1_1,3)).
+evidence(le(b23,f0,t1_4,3)).
 evidence(le(b24,f3,t1_0,3)).
-evidence(le(b24,f0,t1_1,3), false).
-evidence(gt(b24,f3,t1_3,3)).
-evidence(le(b24,f2,t1_6,3)).
-evidence(le(b24,f1,t1_21,3)).
-evidence(gt(b24,f2,t1_25,3)).
-evidence(le(b24,f3,t1_28,3), false).
-evidence(le(b25,f3,t1_0,3)).
-evidence(le(b25,f0,t1_1,3), false).
-evidence(gt(b25,f3,t1_3,3)).
-evidence(le(b25,f2,t1_6,3)).
-evidence(le(b25,f1,t1_21,3)).
-evidence(gt(b25,f2,t1_25,3)).
-evidence(gt(b25,f3,t1_28,3)).
-evidence(le(b26,f3,t1_0,3)).
-evidence(le(b26,f0,t1_1,3), false).
-evidence(gt(b26,f3,t1_3,3)).
-evidence(le(b26,f2,t1_6,3)).
-evidence(gt(b26,f1,t1_21,3), false).
-evidence(le(b27,f3,t1_0,3)).
-evidence(le(b27,f0,t1_1,3), false).
-evidence(gt(b27,f3,t1_3,3)).
-evidence(gt(b27,f2,t1_6,3), false).
-evidence(le(b27,f0,t1_22,3), false).
-evidence(le(b28,f3,t1_0,3)).
-evidence(le(b28,f0,t1_1,3), false).
-evidence(gt(b28,f3,t1_3,3)).
-evidence(gt(b28,f2,t1_6,3), false).
-evidence(gt(b28,f0,t1_22,3)).
-evidence(le(b29,f3,t1_0,3)).
-evidence(gt(b29,f0,t1_1,3)).
-evidence(le(b29,f0,t1_4,3)).
-evidence(le(b29,f2,t1_15,3), false).
-evidence(le(b30,f3,t1_0,3)).
-evidence(gt(b30,f0,t1_1,3)).
-evidence(le(b30,f0,t1_4,3)).
-evidence(gt(b30,f2,t1_15,3)).
-evidence(le(b30,f3,t1_18,3), false).
-evidence(le(b31,f3,t1_0,3)).
-evidence(gt(b31,f0,t1_1,3)).
-evidence(le(b31,f0,t1_4,3)).
-evidence(gt(b31,f2,t1_15,3)).
-evidence(gt(b31,f3,t1_18,3)).
-evidence(le(b32,f3,t1_0,3)).
-evidence(gt(b32,f0,t1_1,3)).
-evidence(gt(b32,f0,t1_4,3), false).
-evidence(gt(b33,f3,t1_0,3), false).
+evidence(gt(b24,f0,t1_1,3)).
+evidence(le(b24,f0,t1_4,3)).
+evidence(gt(b24,f2,t1_15,3)).
+evidence(le(b25,f0,t2_0,3), false).
+evidence(le(b26,f0,t2_0,3), false).
+evidence(gt(b26,f0,t2_1,3)).
+evidence(le(b27,f0,t2_0,3), false).
+evidence(gt(b27,f0,t2_1,3)).
+evidence(le(b27,f1,t2_6,3)).
+evidence(le(b28,f0,t2_0,3), false).
+evidence(gt(b28,f0,t2_1,3)).
+evidence(le(b28,f1,t2_6,3)).
+evidence(gt(b28,f3,t2_7,3)).
+evidence(le(b28,f2,t2_10,3), false).
+evidence(le(b29,f0,t2_0,3), false).
+evidence(gt(b29,f0,t2_1,3)).
+evidence(le(b29,f1,t2_6,3)).
+evidence(gt(b29,f3,t2_7,3)).
+evidence(le(b29,f2,t2_10,3), false).
+evidence(le(b29,f3,t2_13,3), false).
+evidence(le(b30,f0,t2_0,3), false).
+evidence(gt(b30,f0,t2_1,3)).
+evidence(le(b30,f1,t2_6,3)).
+evidence(gt(b30,f3,t2_7,3)).
+evidence(gt(b30,f2,t2_10,3)).
+evidence(le(b30,f2,t2_14,3), false).
+evidence(le(b31,f0,t2_0,3), false).
+evidence(gt(b31,f0,t2_1,3)).
+evidence(le(b31,f1,t2_6,3)).
+evidence(gt(b31,f3,t2_7,3)).
+evidence(gt(b31,f2,t2_10,3)).
+evidence(le(b31,f2,t2_14,3), false).
+evidence(le(b31,f0,t2_15,3), false).
+evidence(le(b32,f0,t2_0,3), false).
+evidence(gt(b32,f0,t2_1,3)).
+evidence(le(b32,f1,t2_6,3)).
+evidence(gt(b32,f3,t2_7,3)).
+evidence(gt(b32,f2,t2_10,3)).
+evidence(gt(b32,f2,t2_14,3)).
+evidence(le(b33,f0,t2_0,3), false).
+evidence(gt(b33,f0,t2_1,3)).
+evidence(le(b33,f1,t2_6,3)).
+evidence(gt(b33,f3,t2_7,3)).
+evidence(gt(b33,f2,t2_10,3)).
+evidence(gt(b33,f2,t2_14,3)).
+evidence(gt(b33,f1,t2_16,3)).
 evidence(le(b34,f0,t2_0,3), false).
-evidence(le(b34,f0,t2_1,3), false).
-evidence(le(b35,f0,t2_0,3), false).
-evidence(gt(b35,f0,t2_1,3)).
-evidence(le(b35,f1,t2_6,3)).
-evidence(le(b35,f3,t2_7,3), false).
-evidence(le(b36,f0,t2_0,3), false).
-evidence(gt(b36,f0,t2_1,3)).
-evidence(le(b36,f1,t2_6,3)).
-evidence(gt(b36,f3,t2_7,3)).
-evidence(le(b36,f2,t2_10,3), false).
-evidence(le(b36,f3,t2_13,3), false).
-evidence(le(b36,f2,t2_23,3), false).
-evidence(le(b37,f0,t2_0,3), false).
-evidence(gt(b37,f0,t2_1,3)).
-evidence(le(b37,f1,t2_6,3)).
-evidence(gt(b37,f3,t2_7,3)).
-evidence(le(b37,f2,t2_10,3), false).
-evidence(le(b37,f3,t2_13,3), false).
-evidence(gt(b37,f2,t2_23,3)).
-evidence(le(b38,f0,t2_0,3), false).
-evidence(gt(b38,f0,t2_1,3)).
-evidence(le(b38,f1,t2_6,3)).
-evidence(gt(b38,f3,t2_7,3)).
-evidence(le(b38,f2,t2_10,3), false).
-evidence(gt(b38,f3,t2_13,3)).
-evidence(le(b39,f0,t2_0,3), false).
-evidence(gt(b39,f0,t2_1,3)).
-evidence(le(b39,f1,t2_6,3)).
-evidence(gt(b39,f3,t2_7,3)).
-evidence(gt(b39,f2,t2_10,3)).
-evidence(le(b39,f2,t2_14,3), false).
-evidence(le(b39,f0,t2_15,3), false).
-evidence(le(b39,f3,t2_27,3), false).
-evidence(le(b40,f0,t2_0,3), false).
-evidence(gt(b40,f0,t2_1,3)).
-evidence(le(b40,f1,t2_6,3)).
-evidence(gt(b40,f3,t2_7,3)).
-evidence(gt(b40,f2,t2_10,3)).
-evidence(le(b40,f2,t2_14,3), false).
-evidence(le(b40,f0,t2_15,3), false).
-evidence(gt(b40,f3,t2_27,3)).
-evidence(le(b41,f0,t2_0,3), false).
-evidence(gt(b41,f0,t2_1,3)).
-evidence(le(b41,f1,t2_6,3)).
-evidence(gt(b41,f3,t2_7,3)).
-evidence(gt(b41,f2,t2_10,3)).
-evidence(le(b41,f2,t2_14,3), false).
-evidence(gt(b41,f0,t2_15,3)).
-evidence(le(b42,f0,t2_0,3), false).
-evidence(gt(b42,f0,t2_1,3)).
-evidence(le(b42,f1,t2_6,3)).
-evidence(gt(b42,f3,t2_7,3)).
-evidence(gt(b42,f2,t2_10,3)).
-evidence(gt(b42,f2,t2_14,3)).
-evidence(le(b42,f1,t2_16,3), false).
-evidence(le(b43,f0,t2_0,3), false).
-evidence(gt(b43,f0,t2_1,3)).
-evidence(le(b43,f1,t2_6,3)).
-evidence(gt(b43,f3,t2_7,3)).
-evidence(gt(b43,f2,t2_10,3)).
-evidence(gt(b43,f2,t2_14,3)).
-evidence(gt(b43,f1,t2_16,3)).
-evidence(le(b43,f3,t2_18,3), false).
-evidence(le(b44,f0,t2_0,3), false).
-evidence(gt(b44,f0,t2_1,3)).
-evidence(le(b44,f1,t2_6,3)).
-evidence(gt(b44,f3,t2_7,3)).
-evidence(gt(b44,f2,t2_10,3)).
-evidence(gt(b44,f2,t2_14,3)).
-evidence(gt(b44,f1,t2_16,3)).
-evidence(gt(b44,f3,t2_18,3)).
-evidence(le(b44,f0,t2_20,3), false).
-evidence(le(b45,f0,t2_0,3), false).
-evidence(gt(b45,f0,t2_1,3)).
-evidence(le(b45,f1,t2_6,3)).
-evidence(gt(b45,f3,t2_7,3)).
-evidence(gt(b45,f2,t2_10,3)).
-evidence(gt(b45,f2,t2_14,3)).
-evidence(gt(b45,f1,t2_16,3)).
-evidence(gt(b45,f3,t2_18,3)).
-evidence(gt(b45,f0,t2_20,3)).
-evidence(le(b46,f0,t2_0,3), false).
-evidence(gt(b46,f0,t2_1,3)).
-evidence(gt(b46,f1,t2_6,3), false).
-evidence(gt(b47,f0,t2_0,3)).
-evidence(le(b47,f3,t2_2,3), false).
-evidence(gt(b48,f0,t2_0,3)).
-evidence(gt(b48,f3,t2_2,3)).
-evidence(le(b48,f2,t2_4,3), false).
-evidence(gt(b49,f0,t2_0,3)).
-evidence(gt(b49,f3,t2_2,3)).
-evidence(gt(b49,f2,t2_4,3)).
-evidence(le(b49,f3,t2_12,3)).
-evidence(le(b49,f3,t2_31,3)).
-evidence(le(b49,f1,t2_33,3)).
-evidence(gt(b50,f0,t2_0,3)).
-evidence(gt(b50,f3,t2_2,3)).
-evidence(gt(b50,f2,t2_4,3)).
-evidence(le(b50,f3,t2_12,3)).
-evidence(le(b50,f3,t2_31,3)).
-evidence(gt(b50,f1,t2_33,3), false).
-evidence(le(b50,f3,t2_36,3), false).
-evidence(gt(b51,f0,t2_0,3)).
-evidence(gt(b51,f3,t2_2,3)).
-evidence(gt(b51,f2,t2_4,3)).
-evidence(le(b51,f3,t2_12,3)).
-evidence(le(b51,f3,t2_31,3)).
-evidence(gt(b51,f1,t2_33,3), false).
-evidence(gt(b51,f3,t2_36,3)).
-evidence(gt(b52,f0,t2_0,3)).
-evidence(gt(b52,f3,t2_2,3)).
-evidence(gt(b52,f2,t2_4,3)).
-evidence(le(b52,f3,t2_12,3)).
-evidence(gt(b52,f3,t2_31,3), false).
-evidence(gt(b53,f0,t2_0,3)).
-evidence(gt(b53,f3,t2_2,3)).
-evidence(gt(b53,f2,t2_4,3)).
-evidence(gt(b53,f3,t2_12,3), false).
-evidence(le(b54,f2,t3_0,3), false).
-evidence(le(b54,f3,t3_1,3), false).
-evidence(le(b55,f2,t3_0,3), false).
-evidence(gt(b55,f3,t3_1,3)).
-evidence(le(b55,f1,t3_4,3), false).
-evidence(le(b55,f3,t3_25,3), false).
-evidence(le(b56,f2,t3_0,3), false).
-evidence(gt(b56,f3,t3_1,3)).
-evidence(le(b56,f1,t3_4,3), false).
-evidence(gt(b56,f3,t3_25,3)).
-evidence(le(b57,f2,t3_0,3), false).
-evidence(gt(b57,f3,t3_1,3)).
-evidence(gt(b57,f1,t3_4,3)).
-evidence(le(b57,f0,t3_26,3), false).
-evidence(le(b57,f2,t3_29,3), false).
-evidence(le(b58,f2,t3_0,3), false).
-evidence(gt(b58,f3,t3_1,3)).
-evidence(gt(b58,f1,t3_4,3)).
-evidence(le(b58,f0,t3_26,3), false).
-evidence(gt(b58,f2,t3_29,3)).
-evidence(le(b59,f2,t3_0,3), false).
-evidence(gt(b59,f3,t3_1,3)).
-evidence(gt(b59,f1,t3_4,3)).
-evidence(gt(b59,f0,t3_26,3)).
-evidence(gt(b60,f2,t3_0,3)).
-evidence(le(b60,f0,t3_2,3)).
-evidence(le(b60,f0,t3_5,3)).
-evidence(le(b60,f1,t3_7,3)).
-evidence(le(b60,f1,t3_15,3), false).
-evidence(gt(b61,f2,t3_0,3)).
-evidence(le(b61,f0,t3_2,3)).
-evidence(le(b61,f0,t3_5,3)).
-evidence(le(b61,f1,t3_7,3)).
-evidence(gt(b61,f1,t3_15,3)).
-evidence(le(b61,f2,t3_18,3)).
-evidence(le(b61,f2,t3_19,3)).
-evidence(gt(b62,f2,t3_0,3)).
-evidence(le(b62,f0,t3_2,3)).
-evidence(le(b62,f0,t3_5,3)).
-evidence(le(b62,f1,t3_7,3)).
-evidence(gt(b62,f1,t3_15,3)).
-evidence(le(b62,f2,t3_18,3)).
-evidence(gt(b62,f2,t3_19,3), false).
-evidence(le(b62,f0,t3_22,3), false).
-evidence(gt(b63,f2,t3_0,3)).
-evidence(le(b63,f0,t3_2,3)).
-evidence(le(b63,f0,t3_5,3)).
-evidence(le(b63,f1,t3_7,3)).
-evidence(gt(b63,f1,t3_15,3)).
-evidence(le(b63,f2,t3_18,3)).
-evidence(gt(b63,f2,t3_19,3), false).
-evidence(gt(b63,f0,t3_22,3)).
-evidence(gt(b64,f2,t3_0,3)).
-evidence(le(b64,f0,t3_2,3)).
-evidence(le(b64,f0,t3_5,3)).
-evidence(le(b64,f1,t3_7,3)).
-evidence(gt(b64,f1,t3_15,3)).
-evidence(gt(b64,f2,t3_18,3), false).
-evidence(gt(b65,f2,t3_0,3)).
-evidence(le(b65,f0,t3_2,3)).
-evidence(le(b65,f0,t3_5,3)).
-evidence(gt(b65,f1,t3_7,3), false).
-evidence(gt(b66,f2,t3_0,3)).
-evidence(le(b66,f0,t3_2,3)).
-evidence(gt(b66,f0,t3_5,3), false).
-evidence(le(b66,f3,t3_8,3), false).
-evidence(gt(b67,f2,t3_0,3)).
-evidence(le(b67,f0,t3_2,3)).
-evidence(gt(b67,f0,t3_5,3), false).
-evidence(gt(b67,f3,t3_8,3)).
-evidence(le(b67,f3,t3_10,3)).
-evidence(le(b67,f2,t3_11,3)).
-evidence(gt(b68,f2,t3_0,3)).
-evidence(le(b68,f0,t3_2,3)).
-evidence(gt(b68,f0,t3_5,3), false).
-evidence(gt(b68,f3,t3_8,3)).
-evidence(le(b68,f3,t3_10,3)).
-evidence(gt(b68,f2,t3_11,3), false).
-evidence(gt(b69,f2,t3_0,3)).
-evidence(le(b69,f0,t3_2,3)).
-evidence(gt(b69,f0,t3_5,3), false).
-evidence(gt(b69,f3,t3_8,3)).
-evidence(gt(b69,f3,t3_10,3), false).
-evidence(gt(b70,f2,t3_0,3)).
-evidence(gt(b70,f0,t3_2,3), false).
-evidence(le(b71,f3,t4_0,3), false).
-evidence(gt(b72,f3,t4_0,3)).
-evidence(le(b72,f0,t4_2,3)).
-evidence(le(b72,f2,t4_3,3), false).
-evidence(le(b72,f0,t4_5,3), false).
-evidence(le(b72,f1,t4_15,3), false).
-evidence(gt(b73,f3,t4_0,3)).
-evidence(le(b73,f0,t4_2,3)).
-evidence(le(b73,f2,t4_3,3), false).
-evidence(le(b73,f0,t4_5,3), false).
-evidence(gt(b73,f1,t4_15,3)).
-evidence(le(b73,f2,t4_18,3), false).
-evidence(gt(b74,f3,t4_0,3)).
-evidence(le(b74,f0,t4_2,3)).
-evidence(le(b74,f2,t4_3,3), false).
-evidence(le(b74,f0,t4_5,3), false).
-evidence(gt(b74,f1,t4_15,3)).
-evidence(gt(b74,f2,t4_18,3)).
-evidence(gt(b75,f3,t4_0,3)).
-evidence(le(b75,f0,t4_2,3)).
-evidence(le(b75,f2,t4_3,3), false).
-evidence(gt(b75,f0,t4_5,3)).
-evidence(gt(b76,f3,t4_0,3)).
-evidence(le(b76,f0,t4_2,3)).
-evidence(gt(b76,f2,t4_3,3)).
-evidence(le(b76,f2,t4_6,3)).
-evidence(le(b76,f3,t4_7,3), false).
-evidence(gt(b77,f3,t4_0,3)).
-evidence(le(b77,f0,t4_2,3)).
-evidence(gt(b77,f2,t4_3,3)).
-evidence(le(b77,f2,t4_6,3)).
-evidence(gt(b77,f3,t4_7,3)).
-evidence(le(b77,f2,t4_40,3), false).
-evidence(le(b77,f3,t4_41,3), false).
-evidence(gt(b78,f3,t4_0,3)).
-evidence(le(b78,f0,t4_2,3)).
-evidence(gt(b78,f2,t4_3,3)).
-evidence(le(b78,f2,t4_6,3)).
-evidence(gt(b78,f3,t4_7,3)).
-evidence(le(b78,f2,t4_40,3), false).
-evidence(gt(b78,f3,t4_41,3)).
-evidence(gt(b79,f3,t4_0,3)).
-evidence(le(b79,f0,t4_2,3)).
-evidence(gt(b79,f2,t4_3,3)).
-evidence(le(b79,f2,t4_6,3)).
-evidence(gt(b79,f3,t4_7,3)).
-evidence(gt(b79,f2,t4_40,3)).
-evidence(gt(b80,f3,t4_0,3)).
-evidence(le(b80,f0,t4_2,3)).
-evidence(gt(b80,f2,t4_3,3)).
-evidence(gt(b80,f2,t4_6,3), false).
-evidence(le(b80,f0,t4_8,3), false).
-evidence(le(b80,f0,t4_27,3), false).
-evidence(gt(b81,f3,t4_0,3)).
-evidence(le(b81,f0,t4_2,3)).
-evidence(gt(b81,f2,t4_3,3)).
-evidence(gt(b81,f2,t4_6,3), false).
-evidence(le(b81,f0,t4_8,3), false).
-evidence(gt(b81,f0,t4_27,3)).
-evidence(le(b81,f3,t4_30,3), false).
-evidence(gt(b82,f3,t4_0,3)).
-evidence(le(b82,f0,t4_2,3)).
-evidence(gt(b82,f2,t4_3,3)).
-evidence(gt(b82,f2,t4_6,3), false).
-evidence(le(b82,f0,t4_8,3), false).
-evidence(gt(b82,f0,t4_27,3)).
-evidence(gt(b82,f3,t4_30,3)).
-evidence(gt(b83,f3,t4_0,3)).
-evidence(le(b83,f0,t4_2,3)).
-evidence(gt(b83,f2,t4_3,3)).
-evidence(gt(b83,f2,t4_6,3), false).
-evidence(gt(b83,f0,t4_8,3)).
-evidence(gt(b84,f3,t4_0,3)).
-evidence(gt(b84,f0,t4_2,3), false).
-evidence(le(b84,f0,t4_4,3)).
-evidence(le(b84,f3,t4_9,3)).
-evidence(le(b84,f2,t4_11,3)).
-evidence(le(b84,f1,t4_13,3)).
-evidence(le(b84,f2,t4_33,3), false).
-evidence(gt(b85,f3,t4_0,3)).
-evidence(gt(b85,f0,t4_2,3), false).
-evidence(le(b85,f0,t4_4,3)).
-evidence(le(b85,f3,t4_9,3)).
-evidence(le(b85,f2,t4_11,3)).
-evidence(le(b85,f1,t4_13,3)).
-evidence(gt(b85,f2,t4_33,3)).
-evidence(le(b85,f2,t4_36,3)).
-evidence(gt(b86,f3,t4_0,3)).
-evidence(gt(b86,f0,t4_2,3), false).
-evidence(le(b86,f0,t4_4,3)).
-evidence(le(b86,f3,t4_9,3)).
-evidence(le(b86,f2,t4_11,3)).
-evidence(le(b86,f1,t4_13,3)).
-evidence(gt(b86,f2,t4_33,3)).
-evidence(gt(b86,f2,t4_36,3), false).
-evidence(gt(b87,f3,t4_0,3)).
-evidence(gt(b87,f0,t4_2,3), false).
-evidence(le(b87,f0,t4_4,3)).
-evidence(le(b87,f3,t4_9,3)).
-evidence(le(b87,f2,t4_11,3)).
-evidence(gt(b87,f1,t4_13,3), false).
-evidence(gt(b88,f3,t4_0,3)).
-evidence(gt(b88,f0,t4_2,3), false).
-evidence(le(b88,f0,t4_4,3)).
-evidence(le(b88,f3,t4_9,3)).
-evidence(gt(b88,f2,t4_11,3), false).
-evidence(gt(b89,f3,t4_0,3)).
-evidence(gt(b89,f0,t4_2,3), false).
-evidence(le(b89,f0,t4_4,3)).
-evidence(gt(b89,f3,t4_9,3), false).
-evidence(gt(b90,f3,t4_0,3)).
-evidence(gt(b90,f0,t4_2,3), false).
-evidence(gt(b90,f0,t4_4,3), false).
-evidence(le(b90,f0,t4_10,3)).
-evidence(le(b90,f1,t4_21,3)).
-evidence(gt(b91,f3,t4_0,3)).
-evidence(gt(b91,f0,t4_2,3), false).
-evidence(gt(b91,f0,t4_4,3), false).
-evidence(le(b91,f0,t4_10,3)).
-evidence(gt(b91,f1,t4_21,3), false).
-evidence(le(b91,f1,t4_24,3)).
-evidence(gt(b92,f3,t4_0,3)).
-evidence(gt(b92,f0,t4_2,3), false).
-evidence(gt(b92,f0,t4_4,3), false).
-evidence(le(b92,f0,t4_10,3)).
-evidence(gt(b92,f1,t4_21,3), false).
-evidence(gt(b92,f1,t4_24,3), false).
-evidence(gt(b93,f3,t4_0,3)).
-evidence(gt(b93,f0,t4_2,3), false).
-evidence(gt(b93,f0,t4_4,3), false).
-evidence(gt(b93,f0,t4_10,3), false).
-evidence(le(b94,f3,t5_0,3), false).
-evidence(le(b94,f3,t5_1,3), false).
-evidence(le(b95,f3,t5_0,3), false).
-evidence(gt(b95,f3,t5_1,3)).
-evidence(gt(b96,f3,t5_0,3)).
-evidence(le(b96,f2,t5_2,3)).
-evidence(le(b96,f3,t5_5,3)).
-evidence(le(b96,f2,t5_7,3), false).
-evidence(le(b96,f3,t5_9,3), false).
-evidence(gt(b97,f3,t5_0,3)).
-evidence(le(b97,f2,t5_2,3)).
-evidence(le(b97,f3,t5_5,3)).
-evidence(le(b97,f2,t5_7,3), false).
-evidence(gt(b97,f3,t5_9,3)).
-evidence(le(b97,f2,t5_14,3), false).
-evidence(gt(b98,f3,t5_0,3)).
-evidence(le(b98,f2,t5_2,3)).
-evidence(le(b98,f3,t5_5,3)).
-evidence(le(b98,f2,t5_7,3), false).
-evidence(gt(b98,f3,t5_9,3)).
-evidence(gt(b98,f2,t5_14,3)).
-evidence(gt(b99,f3,t5_0,3)).
-evidence(le(b99,f2,t5_2,3)).
-evidence(le(b99,f3,t5_5,3)).
-evidence(gt(b99,f2,t5_7,3)).
-evidence(le(b99,f3,t5_10,3), false).
-evidence(le(b99,f1,t5_11,3), false).
-evidence(le(b99,f1,t5_17,3), false).
-evidence(gt(b100,f3,t5_0,3)).
-evidence(le(b100,f2,t5_2,3)).
-evidence(le(b100,f3,t5_5,3)).
-evidence(gt(b100,f2,t5_7,3)).
-evidence(le(b100,f3,t5_10,3), false).
-evidence(le(b100,f1,t5_11,3), false).
-evidence(gt(b100,f1,t5_17,3)).
-evidence(gt(b101,f3,t5_0,3)).
-evidence(le(b101,f2,t5_2,3)).
-evidence(le(b101,f3,t5_5,3)).
-evidence(gt(b101,f2,t5_7,3)).
-evidence(le(b101,f3,t5_10,3), false).
-evidence(gt(b101,f1,t5_11,3)).
-evidence(gt(b102,f3,t5_0,3)).
-evidence(le(b102,f2,t5_2,3)).
-evidence(le(b102,f3,t5_5,3)).
-evidence(gt(b102,f2,t5_7,3)).
-evidence(gt(b102,f3,t5_10,3)).
-evidence(gt(b103,f3,t5_0,3)).
-evidence(le(b103,f2,t5_2,3)).
-evidence(gt(b103,f3,t5_5,3), false).
-evidence(gt(b104,f3,t5_0,3)).
-evidence(gt(b104,f2,t5_2,3), false).
-evidence(le(b105,f2,t6_0,3)).
-evidence(le(b105,f2,t6_1,3), false).
-evidence(le(b105,f2,t6_3,3), false).
-evidence(le(b106,f2,t6_0,3)).
-evidence(le(b106,f2,t6_1,3), false).
-evidence(gt(b106,f2,t6_3,3)).
-evidence(le(b107,f2,t6_0,3)).
-evidence(gt(b107,f2,t6_1,3)).
-evidence(le(b107,f2,t6_4,3)).
-evidence(le(b107,f3,t6_7,3), false).
-evidence(le(b108,f2,t6_0,3)).
-evidence(gt(b108,f2,t6_1,3)).
-evidence(le(b108,f2,t6_4,3)).
-evidence(gt(b108,f3,t6_7,3)).
-evidence(le(b108,f0,t6_16,3), false).
-evidence(le(b109,f2,t6_0,3)).
-evidence(gt(b109,f2,t6_1,3)).
-evidence(le(b109,f2,t6_4,3)).
-evidence(gt(b109,f3,t6_7,3)).
-evidence(gt(b109,f0,t6_16,3)).
-evidence(le(b110,f2,t6_0,3)).
-evidence(gt(b110,f2,t6_1,3)).
-evidence(gt(b110,f2,t6_4,3), false).
-evidence(le(b110,f3,t6_8,3), false).
-evidence(le(b110,f2,t6_9,3)).
-evidence(le(b111,f2,t6_0,3)).
-evidence(gt(b111,f2,t6_1,3)).
-evidence(gt(b111,f2,t6_4,3), false).
-evidence(le(b111,f3,t6_8,3), false).
-evidence(gt(b111,f2,t6_9,3), false).
-evidence(le(b112,f2,t6_0,3)).
-evidence(gt(b112,f2,t6_1,3)).
-evidence(gt(b112,f2,t6_4,3), false).
-evidence(gt(b112,f3,t6_8,3)).
-evidence(le(b112,f3,t6_10,3)).
-evidence(le(b113,f2,t6_0,3)).
-evidence(gt(b113,f2,t6_1,3)).
-evidence(gt(b113,f2,t6_4,3), false).
-evidence(gt(b113,f3,t6_8,3)).
-evidence(gt(b113,f3,t6_10,3), false).
-evidence(gt(b114,f2,t6_0,3), false).
-evidence(le(b115,f3,t7_0,3), false).
-evidence(le(b115,f3,t7_1,3), false).
-evidence(le(b116,f3,t7_0,3), false).
-evidence(gt(b116,f3,t7_1,3)).
-evidence(gt(b117,f3,t7_0,3)).
-evidence(le(b117,f2,t7_2,3), false).
-evidence(le(b117,f3,t7_3,3), false).
-evidence(gt(b118,f3,t7_0,3)).
-evidence(le(b118,f2,t7_2,3), false).
-evidence(gt(b118,f3,t7_3,3)).
-evidence(le(b118,f0,t7_22,3), false).
-evidence(gt(b119,f3,t7_0,3)).
-evidence(le(b119,f2,t7_2,3), false).
-evidence(gt(b119,f3,t7_3,3)).
-evidence(gt(b119,f0,t7_22,3)).
-evidence(gt(b120,f3,t7_0,3)).
-evidence(gt(b120,f2,t7_2,3)).
-evidence(le(b120,f2,t7_4,3)).
-evidence(gt(b121,f3,t7_0,3)).
-evidence(gt(b121,f2,t7_2,3)).
-evidence(gt(b121,f2,t7_4,3), false).
-evidence(le(b121,f3,t7_8,3)).
-evidence(le(b121,f1,t7_9,3), false).
-evidence(gt(b122,f3,t7_0,3)).
-evidence(gt(b122,f2,t7_2,3)).
-evidence(gt(b122,f2,t7_4,3), false).
-evidence(le(b122,f3,t7_8,3)).
-evidence(gt(b122,f1,t7_9,3)).
-evidence(le(b122,f0,t7_12,3), false).
-evidence(le(b122,f3,t7_13,3), false).
-evidence(gt(b123,f3,t7_0,3)).
-evidence(gt(b123,f2,t7_2,3)).
-evidence(gt(b123,f2,t7_4,3), false).
-evidence(le(b123,f3,t7_8,3)).
-evidence(gt(b123,f1,t7_9,3)).
-evidence(le(b123,f0,t7_12,3), false).
-evidence(gt(b123,f3,t7_13,3)).
-evidence(gt(b124,f3,t7_0,3)).
-evidence(gt(b124,f2,t7_2,3)).
-evidence(gt(b124,f2,t7_4,3), false).
-evidence(le(b124,f3,t7_8,3)).
-evidence(gt(b124,f1,t7_9,3)).
-evidence(gt(b124,f0,t7_12,3)).
-evidence(le(b124,f1,t7_14,3), false).
-evidence(gt(b125,f3,t7_0,3)).
-evidence(gt(b125,f2,t7_2,3)).
-evidence(gt(b125,f2,t7_4,3), false).
-evidence(le(b125,f3,t7_8,3)).
-evidence(gt(b125,f1,t7_9,3)).
-evidence(gt(b125,f0,t7_12,3)).
-evidence(gt(b125,f1,t7_14,3)).
-evidence(le(b125,f3,t7_18,3), false).
-evidence(gt(b126,f3,t7_0,3)).
-evidence(gt(b126,f2,t7_2,3)).
-evidence(gt(b126,f2,t7_4,3), false).
-evidence(le(b126,f3,t7_8,3)).
-evidence(gt(b126,f1,t7_9,3)).
-evidence(gt(b126,f0,t7_12,3)).
-evidence(gt(b126,f1,t7_14,3)).
-evidence(gt(b126,f3,t7_18,3)).
-evidence(gt(b127,f3,t7_0,3)).
-evidence(gt(b127,f2,t7_2,3)).
-evidence(gt(b127,f2,t7_4,3), false).
-evidence(gt(b127,f3,t7_8,3), false).
+evidence(gt(b34,f0,t2_1,3)).
+evidence(le(b34,f1,t2_6,3)).
+evidence(gt(b34,f3,t2_7,3)).
+evidence(gt(b34,f2,t2_10,3)).
+evidence(gt(b34,f2,t2_14,3)).
+evidence(gt(b34,f1,t2_16,3)).
+evidence(gt(b34,f3,t2_18,3)).
+evidence(gt(b35,f0,t2_0,3)).
+evidence(gt(b36,f0,t2_0,3)).
+evidence(gt(b36,f3,t2_2,3)).
+evidence(gt(b37,f0,t2_0,3)).
+evidence(gt(b37,f3,t2_2,3)).
+evidence(gt(b37,f2,t2_4,3)).
+evidence(gt(b38,f0,t2_0,3)).
+evidence(gt(b38,f3,t2_2,3)).
+evidence(gt(b38,f2,t2_4,3)).
+evidence(le(b38,f3,t2_12,3)).
+evidence(gt(b39,f0,t2_0,3)).
+evidence(gt(b39,f3,t2_2,3)).
+evidence(gt(b39,f2,t2_4,3)).
+evidence(le(b39,f3,t2_12,3)).
+evidence(le(b39,f3,t2_31,3)).
+evidence(gt(b40,f0,t2_0,3)).
+evidence(gt(b40,f3,t2_2,3)).
+evidence(gt(b40,f2,t2_4,3)).
+evidence(le(b40,f3,t2_12,3)).
+evidence(le(b40,f3,t2_31,3)).
+evidence(gt(b40,f1,t2_33,3), false).
+evidence(le(b41,f2,t3_0,3), false).
+evidence(le(b42,f2,t3_0,3), false).
+evidence(gt(b42,f3,t3_1,3)).
+evidence(le(b42,f1,t3_4,3), false).
+evidence(le(b43,f2,t3_0,3), false).
+evidence(gt(b43,f3,t3_1,3)).
+evidence(gt(b43,f1,t3_4,3)).
+evidence(le(b44,f2,t3_0,3), false).
+evidence(gt(b44,f3,t3_1,3)).
+evidence(gt(b44,f1,t3_4,3)).
+evidence(le(b44,f0,t3_26,3), false).
+evidence(gt(b45,f2,t3_0,3)).
+evidence(gt(b46,f2,t3_0,3)).
+evidence(le(b46,f0,t3_2,3)).
+evidence(le(b46,f0,t3_5,3)).
+evidence(gt(b47,f2,t3_0,3)).
+evidence(le(b47,f0,t3_2,3)).
+evidence(le(b47,f0,t3_5,3)).
+evidence(le(b47,f1,t3_7,3)).
+evidence(gt(b48,f2,t3_0,3)).
+evidence(le(b48,f0,t3_2,3)).
+evidence(le(b48,f0,t3_5,3)).
+evidence(le(b48,f1,t3_7,3)).
+evidence(gt(b48,f1,t3_15,3)).
+evidence(gt(b49,f2,t3_0,3)).
+evidence(le(b49,f0,t3_2,3)).
+evidence(le(b49,f0,t3_5,3)).
+evidence(le(b49,f1,t3_7,3)).
+evidence(gt(b49,f1,t3_15,3)).
+evidence(le(b49,f2,t3_18,3)).
+evidence(gt(b50,f2,t3_0,3)).
+evidence(le(b50,f0,t3_2,3)).
+evidence(le(b50,f0,t3_5,3)).
+evidence(le(b50,f1,t3_7,3)).
+evidence(gt(b50,f1,t3_15,3)).
+evidence(le(b50,f2,t3_18,3)).
+evidence(gt(b50,f2,t3_19,3), false).
+evidence(gt(b51,f2,t3_0,3)).
+evidence(le(b51,f0,t3_2,3)).
+evidence(gt(b51,f0,t3_5,3), false).
+evidence(gt(b52,f2,t3_0,3)).
+evidence(le(b52,f0,t3_2,3)).
+evidence(gt(b52,f0,t3_5,3), false).
+evidence(gt(b52,f3,t3_8,3)).
+evidence(gt(b53,f2,t3_0,3)).
+evidence(le(b53,f0,t3_2,3)).
+evidence(gt(b53,f0,t3_5,3), false).
+evidence(gt(b53,f3,t3_8,3)).
+evidence(le(b53,f3,t3_10,3)).
+evidence(gt(b55,f3,t4_0,3)).
+evidence(le(b55,f0,t4_2,3)).
+evidence(le(b55,f2,t4_3,3), false).
+evidence(gt(b56,f3,t4_0,3)).
+evidence(le(b56,f0,t4_2,3)).
+evidence(le(b56,f2,t4_3,3), false).
+evidence(le(b56,f0,t4_5,3), false).
+evidence(gt(b57,f3,t4_0,3)).
+evidence(le(b57,f0,t4_2,3)).
+evidence(le(b57,f2,t4_3,3), false).
+evidence(le(b57,f0,t4_5,3), false).
+evidence(gt(b57,f1,t4_15,3)).
+evidence(gt(b58,f3,t4_0,3)).
+evidence(le(b58,f0,t4_2,3)).
+evidence(gt(b58,f2,t4_3,3)).
+evidence(le(b58,f2,t4_6,3)).
+evidence(gt(b59,f3,t4_0,3)).
+evidence(le(b59,f0,t4_2,3)).
+evidence(gt(b59,f2,t4_3,3)).
+evidence(le(b59,f2,t4_6,3)).
+evidence(gt(b59,f3,t4_7,3)).
+evidence(gt(b60,f3,t4_0,3)).
+evidence(le(b60,f0,t4_2,3)).
+evidence(gt(b60,f2,t4_3,3)).
+evidence(le(b60,f2,t4_6,3)).
+evidence(gt(b60,f3,t4_7,3)).
+evidence(le(b60,f2,t4_40,3), false).
+evidence(gt(b61,f3,t4_0,3)).
+evidence(le(b61,f0,t4_2,3)).
+evidence(gt(b61,f2,t4_3,3)).
+evidence(gt(b61,f2,t4_6,3), false).
+evidence(gt(b62,f3,t4_0,3)).
+evidence(le(b62,f0,t4_2,3)).
+evidence(gt(b62,f2,t4_3,3)).
+evidence(gt(b62,f2,t4_6,3), false).
+evidence(le(b62,f0,t4_8,3), false).
+evidence(gt(b63,f3,t4_0,3)).
+evidence(le(b63,f0,t4_2,3)).
+evidence(gt(b63,f2,t4_3,3)).
+evidence(gt(b63,f2,t4_6,3), false).
+evidence(le(b63,f0,t4_8,3), false).
+evidence(gt(b63,f0,t4_27,3)).
+evidence(gt(b64,f3,t4_0,3)).
+evidence(gt(b64,f0,t4_2,3), false).
+evidence(le(b64,f0,t4_4,3)).
+evidence(gt(b65,f3,t4_0,3)).
+evidence(gt(b65,f0,t4_2,3), false).
+evidence(le(b65,f0,t4_4,3)).
+evidence(le(b65,f3,t4_9,3)).
+evidence(gt(b66,f3,t4_0,3)).
+evidence(gt(b66,f0,t4_2,3), false).
+evidence(le(b66,f0,t4_4,3)).
+evidence(le(b66,f3,t4_9,3)).
+evidence(le(b66,f2,t4_11,3)).
+evidence(gt(b67,f3,t4_0,3)).
+evidence(gt(b67,f0,t4_2,3), false).
+evidence(le(b67,f0,t4_4,3)).
+evidence(le(b67,f3,t4_9,3)).
+evidence(le(b67,f2,t4_11,3)).
+evidence(le(b67,f1,t4_13,3)).
+evidence(gt(b68,f3,t4_0,3)).
+evidence(gt(b68,f0,t4_2,3), false).
+evidence(le(b68,f0,t4_4,3)).
+evidence(le(b68,f3,t4_9,3)).
+evidence(le(b68,f2,t4_11,3)).
+evidence(le(b68,f1,t4_13,3)).
+evidence(gt(b68,f2,t4_33,3)).
+evidence(gt(b69,f3,t4_0,3)).
+evidence(gt(b69,f0,t4_2,3), false).
+evidence(gt(b69,f0,t4_4,3), false).
+evidence(gt(b70,f3,t4_0,3)).
+evidence(gt(b70,f0,t4_2,3), false).
+evidence(gt(b70,f0,t4_4,3), false).
+evidence(le(b70,f0,t4_10,3)).
+evidence(gt(b71,f3,t4_0,3)).
+evidence(gt(b71,f0,t4_2,3), false).
+evidence(gt(b71,f0,t4_4,3), false).
+evidence(le(b71,f0,t4_10,3)).
+evidence(gt(b71,f1,t4_21,3), false).
+evidence(le(b72,f3,t5_0,3), false).
+evidence(gt(b73,f3,t5_0,3)).
+evidence(gt(b74,f3,t5_0,3)).
+evidence(le(b74,f2,t5_2,3)).
+evidence(gt(b75,f3,t5_0,3)).
+evidence(le(b75,f2,t5_2,3)).
+evidence(le(b75,f3,t5_5,3)).
+evidence(le(b75,f2,t5_7,3), false).
+evidence(gt(b76,f3,t5_0,3)).
+evidence(le(b76,f2,t5_2,3)).
+evidence(le(b76,f3,t5_5,3)).
+evidence(le(b76,f2,t5_7,3), false).
+evidence(gt(b76,f3,t5_9,3)).
+evidence(gt(b77,f3,t5_0,3)).
+evidence(le(b77,f2,t5_2,3)).
+evidence(le(b77,f3,t5_5,3)).
+evidence(gt(b77,f2,t5_7,3)).
+evidence(gt(b78,f3,t5_0,3)).
+evidence(le(b78,f2,t5_2,3)).
+evidence(le(b78,f3,t5_5,3)).
+evidence(gt(b78,f2,t5_7,3)).
+evidence(le(b78,f3,t5_10,3), false).
+evidence(gt(b79,f3,t5_0,3)).
+evidence(le(b79,f2,t5_2,3)).
+evidence(le(b79,f3,t5_5,3)).
+evidence(gt(b79,f2,t5_7,3)).
+evidence(le(b79,f3,t5_10,3), false).
+evidence(le(b79,f1,t5_11,3), false).
+evidence(le(b81,f2,t6_0,3)).
+evidence(le(b81,f2,t6_1,3), false).
+evidence(le(b82,f2,t6_0,3)).
+evidence(gt(b82,f2,t6_1,3)).
+evidence(le(b82,f2,t6_4,3)).
+evidence(le(b83,f2,t6_0,3)).
+evidence(gt(b83,f2,t6_1,3)).
+evidence(le(b83,f2,t6_4,3)).
+evidence(gt(b83,f3,t6_7,3)).
+evidence(le(b84,f2,t6_0,3)).
+evidence(gt(b84,f2,t6_1,3)).
+evidence(gt(b84,f2,t6_4,3), false).
+evidence(le(b84,f3,t6_8,3), false).
+evidence(le(b85,f2,t6_0,3)).
+evidence(gt(b85,f2,t6_1,3)).
+evidence(gt(b85,f2,t6_4,3), false).
+evidence(gt(b85,f3,t6_8,3)).
+evidence(le(b86,f3,t7_0,3), false).
+evidence(gt(b87,f3,t7_0,3)).
+evidence(le(b87,f2,t7_2,3), false).
+evidence(gt(b88,f3,t7_0,3)).
+evidence(le(b88,f2,t7_2,3), false).
+evidence(gt(b88,f3,t7_3,3)).
+evidence(gt(b89,f3,t7_0,3)).
+evidence(gt(b89,f2,t7_2,3)).
+evidence(gt(b90,f3,t7_0,3)).
+evidence(gt(b90,f2,t7_2,3)).
+evidence(gt(b90,f2,t7_4,3), false).
+evidence(gt(b91,f3,t7_0,3)).
+evidence(gt(b91,f2,t7_2,3)).
+evidence(gt(b91,f2,t7_4,3), false).
+evidence(le(b91,f3,t7_8,3)).
+evidence(gt(b92,f3,t7_0,3)).
+evidence(gt(b92,f2,t7_2,3)).
+evidence(gt(b92,f2,t7_4,3), false).
+evidence(le(b92,f3,t7_8,3)).
+evidence(gt(b92,f1,t7_9,3)).
+evidence(le(b92,f0,t7_12,3), false).
+evidence(gt(b93,f3,t7_0,3)).
+evidence(gt(b93,f2,t7_2,3)).
+evidence(gt(b93,f2,t7_4,3), false).
+evidence(le(b93,f3,t7_8,3)).
+evidence(gt(b93,f1,t7_9,3)).
+evidence(gt(b93,f0,t7_12,3)).
+evidence(gt(b94,f3,t7_0,3)).
+evidence(gt(b94,f2,t7_2,3)).
+evidence(gt(b94,f2,t7_4,3), false).
+evidence(le(b94,f3,t7_8,3)).
+evidence(gt(b94,f1,t7_9,3)).
+evidence(gt(b94,f0,t7_12,3)).
+evidence(gt(b94,f1,t7_14,3)).
 evidence(le(b0,f0,t0_0,4), false).
-evidence(le(b0,f3,t0_1,4), false).
 evidence(le(b1,f0,t0_0,4), false).
 evidence(gt(b1,f3,t0_1,4)).
-evidence(le(b1,f2,t0_4,4), false).
 evidence(le(b2,f0,t0_0,4), false).
 evidence(gt(b2,f3,t0_1,4)).
 evidence(gt(b2,f2,t0_4,4)).
-evidence(le(b2,f0,t0_22,4), false).
-evidence(le(b3,f0,t0_0,4), false).
-evidence(gt(b3,f3,t0_1,4)).
-evidence(gt(b3,f2,t0_4,4)).
-evidence(gt(b3,f0,t0_22,4)).
+evidence(gt(b3,f0,t0_0,4)).
 evidence(gt(b4,f0,t0_0,4)).
 evidence(le(b4,f0,t0_2,4)).
 evidence(le(b4,f2,t0_5,4), false).
-evidence(le(b4,f3,t0_7,4), false).
 evidence(gt(b5,f0,t0_0,4)).
 evidence(le(b5,f0,t0_2,4)).
-evidence(le(b5,f2,t0_5,4), false).
-evidence(gt(b5,f3,t0_7,4)).
+evidence(gt(b5,f2,t0_5,4)).
 evidence(gt(b6,f0,t0_0,4)).
 evidence(le(b6,f0,t0_2,4)).
 evidence(gt(b6,f2,t0_5,4)).
-evidence(le(b6,f2,t0_8,4), false).
+evidence(gt(b6,f2,t0_8,4)).
 evidence(gt(b7,f0,t0_0,4)).
 evidence(le(b7,f0,t0_2,4)).
 evidence(gt(b7,f2,t0_5,4)).
 evidence(gt(b7,f2,t0_8,4)).
 evidence(le(b7,f2,t0_10,4), false).
-evidence(le(b7,f3,t0_11,4)).
-evidence(le(b7,f1,t0_15,4), false).
-evidence(le(b7,f0,t0_17,4), false).
-evidence(le(b7,f3,t0_25,4), false).
-evidence(le(b7,f2,t0_29,4), false).
 evidence(gt(b8,f0,t0_0,4)).
 evidence(le(b8,f0,t0_2,4)).
 evidence(gt(b8,f2,t0_5,4)).
@@ -5181,9 +3414,6 @@ evidence(le(b8,f2,t0_10,4), false).
 evidence(le(b8,f3,t0_11,4)).
 evidence(le(b8,f1,t0_15,4), false).
 evidence(le(b8,f0,t0_17,4), false).
-evidence(le(b8,f3,t0_25,4), false).
-evidence(gt(b8,f2,t0_29,4)).
-evidence(le(b8,f3,t0_32,4), false).
 evidence(gt(b9,f0,t0_0,4)).
 evidence(le(b9,f0,t0_2,4)).
 evidence(gt(b9,f2,t0_5,4)).
@@ -5193,8 +3423,6 @@ evidence(le(b9,f3,t0_11,4)).
 evidence(le(b9,f1,t0_15,4), false).
 evidence(le(b9,f0,t0_17,4), false).
 evidence(le(b9,f3,t0_25,4), false).
-evidence(gt(b9,f2,t0_29,4)).
-evidence(gt(b9,f3,t0_32,4)).
 evidence(gt(b10,f0,t0_0,4)).
 evidence(le(b10,f0,t0_2,4)).
 evidence(gt(b10,f2,t0_5,4)).
@@ -5203,7 +3431,8 @@ evidence(le(b10,f2,t0_10,4), false).
 evidence(le(b10,f3,t0_11,4)).
 evidence(le(b10,f1,t0_15,4), false).
 evidence(le(b10,f0,t0_17,4), false).
-evidence(gt(b10,f3,t0_25,4)).
+evidence(le(b10,f3,t0_25,4), false).
+evidence(gt(b10,f2,t0_29,4)).
 evidence(gt(b11,f0,t0_0,4)).
 evidence(le(b11,f0,t0_2,4)).
 evidence(gt(b11,f2,t0_5,4)).
@@ -5212,615 +3441,335 @@ evidence(le(b11,f2,t0_10,4), false).
 evidence(le(b11,f3,t0_11,4)).
 evidence(le(b11,f1,t0_15,4), false).
 evidence(gt(b11,f0,t0_17,4)).
-evidence(le(b11,f3,t0_26,4), false).
 evidence(gt(b12,f0,t0_0,4)).
 evidence(le(b12,f0,t0_2,4)).
 evidence(gt(b12,f2,t0_5,4)).
 evidence(gt(b12,f2,t0_8,4)).
 evidence(le(b12,f2,t0_10,4), false).
 evidence(le(b12,f3,t0_11,4)).
-evidence(le(b12,f1,t0_15,4), false).
-evidence(gt(b12,f0,t0_17,4)).
-evidence(gt(b12,f3,t0_26,4)).
-evidence(gt(b13,f0,t0_0,4)).
-evidence(le(b13,f0,t0_2,4)).
-evidence(gt(b13,f2,t0_5,4)).
-evidence(gt(b13,f2,t0_8,4)).
-evidence(le(b13,f2,t0_10,4), false).
-evidence(le(b13,f3,t0_11,4)).
-evidence(gt(b13,f1,t0_15,4)).
-evidence(le(b13,f2,t0_18,4), false).
-evidence(gt(b14,f0,t0_0,4)).
-evidence(le(b14,f0,t0_2,4)).
-evidence(gt(b14,f2,t0_5,4)).
-evidence(gt(b14,f2,t0_8,4)).
-evidence(le(b14,f2,t0_10,4), false).
-evidence(le(b14,f3,t0_11,4)).
-evidence(gt(b14,f1,t0_15,4)).
-evidence(gt(b14,f2,t0_18,4)).
-evidence(gt(b15,f0,t0_0,4)).
-evidence(le(b15,f0,t0_2,4)).
-evidence(gt(b15,f2,t0_5,4)).
-evidence(gt(b15,f2,t0_8,4)).
-evidence(le(b15,f2,t0_10,4), false).
-evidence(gt(b15,f3,t0_11,4), false).
-evidence(gt(b16,f0,t0_0,4)).
-evidence(le(b16,f0,t0_2,4)).
-evidence(gt(b16,f2,t0_5,4)).
-evidence(gt(b16,f2,t0_8,4)).
-evidence(gt(b16,f2,t0_10,4)).
-evidence(gt(b17,f0,t0_0,4)).
-evidence(gt(b17,f0,t0_2,4), false).
+evidence(gt(b12,f1,t0_15,4)).
+evidence(le(b14,f3,t1_0,4), false).
+evidence(le(b14,f0,t1_1,4), false).
+evidence(le(b14,f3,t1_3,4), false).
+evidence(le(b15,f3,t1_0,4), false).
+evidence(le(b15,f0,t1_1,4), false).
+evidence(le(b15,f3,t1_3,4), false).
+evidence(le(b15,f1,t1_5,4), false).
+evidence(le(b16,f3,t1_0,4), false).
+evidence(le(b16,f0,t1_1,4), false).
+evidence(le(b16,f3,t1_3,4), false).
+evidence(le(b16,f1,t1_5,4), false).
+evidence(le(b16,f2,t1_7,4), false).
+evidence(le(b17,f3,t1_0,4), false).
+evidence(le(b17,f0,t1_1,4), false).
+evidence(le(b17,f3,t1_3,4), false).
+evidence(le(b17,f1,t1_5,4), false).
+evidence(le(b17,f2,t1_7,4), false).
+evidence(gt(b17,f0,t1_9,4)).
 evidence(le(b18,f3,t1_0,4), false).
 evidence(le(b18,f0,t1_1,4), false).
-evidence(le(b18,f3,t1_3,4), false).
-evidence(le(b18,f1,t1_5,4), false).
-evidence(le(b18,f2,t1_7,4), false).
-evidence(le(b18,f0,t1_9,4), false).
+evidence(gt(b18,f3,t1_3,4)).
+evidence(le(b18,f2,t1_6,4), false).
 evidence(le(b19,f3,t1_0,4), false).
 evidence(le(b19,f0,t1_1,4), false).
-evidence(le(b19,f3,t1_3,4), false).
-evidence(le(b19,f1,t1_5,4), false).
-evidence(le(b19,f2,t1_7,4), false).
-evidence(gt(b19,f0,t1_9,4)).
-evidence(le(b19,f3,t1_12,4), false).
+evidence(gt(b19,f3,t1_3,4)).
+evidence(le(b19,f2,t1_6,4), false).
+evidence(le(b19,f1,t1_21,4), false).
 evidence(le(b20,f3,t1_0,4), false).
 evidence(le(b20,f0,t1_1,4), false).
-evidence(le(b20,f3,t1_3,4), false).
-evidence(le(b20,f1,t1_5,4), false).
-evidence(le(b20,f2,t1_7,4), false).
-evidence(gt(b20,f0,t1_9,4)).
-evidence(gt(b20,f3,t1_12,4)).
+evidence(gt(b20,f3,t1_3,4)).
+evidence(le(b20,f2,t1_6,4), false).
+evidence(le(b20,f1,t1_21,4), false).
+evidence(gt(b20,f2,t1_25,4)).
 evidence(le(b21,f3,t1_0,4), false).
 evidence(le(b21,f0,t1_1,4), false).
-evidence(le(b21,f3,t1_3,4), false).
-evidence(le(b21,f1,t1_5,4), false).
-evidence(gt(b21,f2,t1_7,4)).
+evidence(gt(b21,f3,t1_3,4)).
+evidence(gt(b21,f2,t1_6,4)).
 evidence(le(b22,f3,t1_0,4), false).
-evidence(le(b22,f0,t1_1,4), false).
-evidence(le(b22,f3,t1_3,4), false).
-evidence(gt(b22,f1,t1_5,4)).
+evidence(gt(b22,f0,t1_1,4)).
 evidence(le(b23,f3,t1_0,4), false).
-evidence(le(b23,f0,t1_1,4), false).
-evidence(gt(b23,f3,t1_3,4)).
-evidence(le(b23,f2,t1_6,4), false).
-evidence(le(b23,f1,t1_21,4), false).
-evidence(le(b23,f2,t1_25,4), false).
+evidence(gt(b23,f0,t1_1,4)).
+evidence(le(b23,f0,t1_4,4)).
 evidence(le(b24,f3,t1_0,4), false).
-evidence(le(b24,f0,t1_1,4), false).
-evidence(gt(b24,f3,t1_3,4)).
-evidence(le(b24,f2,t1_6,4), false).
-evidence(le(b24,f1,t1_21,4), false).
-evidence(gt(b24,f2,t1_25,4)).
-evidence(le(b24,f3,t1_28,4), false).
-evidence(le(b25,f3,t1_0,4), false).
-evidence(le(b25,f0,t1_1,4), false).
-evidence(gt(b25,f3,t1_3,4)).
-evidence(le(b25,f2,t1_6,4), false).
-evidence(le(b25,f1,t1_21,4), false).
-evidence(gt(b25,f2,t1_25,4)).
-evidence(gt(b25,f3,t1_28,4)).
-evidence(le(b26,f3,t1_0,4), false).
-evidence(le(b26,f0,t1_1,4), false).
-evidence(gt(b26,f3,t1_3,4)).
-evidence(le(b26,f2,t1_6,4), false).
-evidence(gt(b26,f1,t1_21,4)).
-evidence(le(b27,f3,t1_0,4), false).
-evidence(le(b27,f0,t1_1,4), false).
-evidence(gt(b27,f3,t1_3,4)).
-evidence(gt(b27,f2,t1_6,4)).
-evidence(le(b27,f0,t1_22,4), false).
-evidence(le(b28,f3,t1_0,4), false).
-evidence(le(b28,f0,t1_1,4), false).
-evidence(gt(b28,f3,t1_3,4)).
-evidence(gt(b28,f2,t1_6,4)).
-evidence(gt(b28,f0,t1_22,4)).
-evidence(le(b29,f3,t1_0,4), false).
-evidence(gt(b29,f0,t1_1,4)).
-evidence(le(b29,f0,t1_4,4)).
-evidence(le(b29,f2,t1_15,4), false).
-evidence(le(b30,f3,t1_0,4), false).
-evidence(gt(b30,f0,t1_1,4)).
-evidence(le(b30,f0,t1_4,4)).
-evidence(gt(b30,f2,t1_15,4)).
-evidence(le(b30,f3,t1_18,4), false).
-evidence(le(b31,f3,t1_0,4), false).
-evidence(gt(b31,f0,t1_1,4)).
-evidence(le(b31,f0,t1_4,4)).
-evidence(gt(b31,f2,t1_15,4)).
-evidence(gt(b31,f3,t1_18,4)).
-evidence(le(b32,f3,t1_0,4), false).
-evidence(gt(b32,f0,t1_1,4)).
-evidence(gt(b32,f0,t1_4,4), false).
-evidence(gt(b33,f3,t1_0,4)).
+evidence(gt(b24,f0,t1_1,4)).
+evidence(le(b24,f0,t1_4,4)).
+evidence(gt(b24,f2,t1_15,4)).
+evidence(le(b25,f0,t2_0,4), false).
+evidence(le(b26,f0,t2_0,4), false).
+evidence(gt(b26,f0,t2_1,4)).
+evidence(le(b27,f0,t2_0,4), false).
+evidence(gt(b27,f0,t2_1,4)).
+evidence(le(b27,f1,t2_6,4)).
+evidence(le(b28,f0,t2_0,4), false).
+evidence(gt(b28,f0,t2_1,4)).
+evidence(le(b28,f1,t2_6,4)).
+evidence(gt(b28,f3,t2_7,4)).
+evidence(le(b28,f2,t2_10,4), false).
+evidence(le(b29,f0,t2_0,4), false).
+evidence(gt(b29,f0,t2_1,4)).
+evidence(le(b29,f1,t2_6,4)).
+evidence(gt(b29,f3,t2_7,4)).
+evidence(le(b29,f2,t2_10,4), false).
+evidence(le(b29,f3,t2_13,4), false).
+evidence(le(b30,f0,t2_0,4), false).
+evidence(gt(b30,f0,t2_1,4)).
+evidence(le(b30,f1,t2_6,4)).
+evidence(gt(b30,f3,t2_7,4)).
+evidence(gt(b30,f2,t2_10,4)).
+evidence(le(b30,f2,t2_14,4), false).
+evidence(le(b31,f0,t2_0,4), false).
+evidence(gt(b31,f0,t2_1,4)).
+evidence(le(b31,f1,t2_6,4)).
+evidence(gt(b31,f3,t2_7,4)).
+evidence(gt(b31,f2,t2_10,4)).
+evidence(le(b31,f2,t2_14,4), false).
+evidence(le(b31,f0,t2_15,4), false).
+evidence(le(b32,f0,t2_0,4), false).
+evidence(gt(b32,f0,t2_1,4)).
+evidence(le(b32,f1,t2_6,4)).
+evidence(gt(b32,f3,t2_7,4)).
+evidence(gt(b32,f2,t2_10,4)).
+evidence(gt(b32,f2,t2_14,4)).
+evidence(le(b33,f0,t2_0,4), false).
+evidence(gt(b33,f0,t2_1,4)).
+evidence(le(b33,f1,t2_6,4)).
+evidence(gt(b33,f3,t2_7,4)).
+evidence(gt(b33,f2,t2_10,4)).
+evidence(gt(b33,f2,t2_14,4)).
+evidence(gt(b33,f1,t2_16,4)).
 evidence(le(b34,f0,t2_0,4), false).
-evidence(le(b34,f0,t2_1,4), false).
-evidence(le(b35,f0,t2_0,4), false).
-evidence(gt(b35,f0,t2_1,4)).
-evidence(le(b35,f1,t2_6,4)).
-evidence(le(b35,f3,t2_7,4), false).
-evidence(le(b36,f0,t2_0,4), false).
-evidence(gt(b36,f0,t2_1,4)).
-evidence(le(b36,f1,t2_6,4)).
-evidence(gt(b36,f3,t2_7,4)).
-evidence(le(b36,f2,t2_10,4), false).
-evidence(le(b36,f3,t2_13,4), false).
-evidence(le(b36,f2,t2_23,4), false).
-evidence(le(b37,f0,t2_0,4), false).
-evidence(gt(b37,f0,t2_1,4)).
-evidence(le(b37,f1,t2_6,4)).
-evidence(gt(b37,f3,t2_7,4)).
-evidence(le(b37,f2,t2_10,4), false).
-evidence(le(b37,f3,t2_13,4), false).
-evidence(gt(b37,f2,t2_23,4)).
-evidence(le(b38,f0,t2_0,4), false).
-evidence(gt(b38,f0,t2_1,4)).
-evidence(le(b38,f1,t2_6,4)).
-evidence(gt(b38,f3,t2_7,4)).
-evidence(le(b38,f2,t2_10,4), false).
-evidence(gt(b38,f3,t2_13,4)).
-evidence(le(b39,f0,t2_0,4), false).
-evidence(gt(b39,f0,t2_1,4)).
-evidence(le(b39,f1,t2_6,4)).
-evidence(gt(b39,f3,t2_7,4)).
-evidence(gt(b39,f2,t2_10,4)).
-evidence(le(b39,f2,t2_14,4), false).
-evidence(le(b39,f0,t2_15,4), false).
-evidence(le(b39,f3,t2_27,4), false).
-evidence(le(b40,f0,t2_0,4), false).
-evidence(gt(b40,f0,t2_1,4)).
-evidence(le(b40,f1,t2_6,4)).
-evidence(gt(b40,f3,t2_7,4)).
-evidence(gt(b40,f2,t2_10,4)).
-evidence(le(b40,f2,t2_14,4), false).
-evidence(le(b40,f0,t2_15,4), false).
-evidence(gt(b40,f3,t2_27,4)).
-evidence(le(b41,f0,t2_0,4), false).
-evidence(gt(b41,f0,t2_1,4)).
-evidence(le(b41,f1,t2_6,4)).
-evidence(gt(b41,f3,t2_7,4)).
-evidence(gt(b41,f2,t2_10,4)).
-evidence(le(b41,f2,t2_14,4), false).
-evidence(gt(b41,f0,t2_15,4)).
-evidence(le(b42,f0,t2_0,4), false).
-evidence(gt(b42,f0,t2_1,4)).
-evidence(le(b42,f1,t2_6,4)).
-evidence(gt(b42,f3,t2_7,4)).
-evidence(gt(b42,f2,t2_10,4)).
-evidence(gt(b42,f2,t2_14,4)).
-evidence(le(b42,f1,t2_16,4), false).
-evidence(le(b43,f0,t2_0,4), false).
-evidence(gt(b43,f0,t2_1,4)).
-evidence(le(b43,f1,t2_6,4)).
-evidence(gt(b43,f3,t2_7,4)).
-evidence(gt(b43,f2,t2_10,4)).
-evidence(gt(b43,f2,t2_14,4)).
-evidence(gt(b43,f1,t2_16,4)).
-evidence(le(b43,f3,t2_18,4), false).
-evidence(le(b44,f0,t2_0,4), false).
-evidence(gt(b44,f0,t2_1,4)).
-evidence(le(b44,f1,t2_6,4)).
-evidence(gt(b44,f3,t2_7,4)).
-evidence(gt(b44,f2,t2_10,4)).
-evidence(gt(b44,f2,t2_14,4)).
-evidence(gt(b44,f1,t2_16,4)).
-evidence(gt(b44,f3,t2_18,4)).
-evidence(le(b44,f0,t2_20,4), false).
-evidence(le(b45,f0,t2_0,4), false).
-evidence(gt(b45,f0,t2_1,4)).
-evidence(le(b45,f1,t2_6,4)).
-evidence(gt(b45,f3,t2_7,4)).
-evidence(gt(b45,f2,t2_10,4)).
-evidence(gt(b45,f2,t2_14,4)).
-evidence(gt(b45,f1,t2_16,4)).
-evidence(gt(b45,f3,t2_18,4)).
-evidence(gt(b45,f0,t2_20,4)).
-evidence(le(b46,f0,t2_0,4), false).
-evidence(gt(b46,f0,t2_1,4)).
-evidence(gt(b46,f1,t2_6,4), false).
-evidence(gt(b47,f0,t2_0,4)).
-evidence(le(b47,f3,t2_2,4), false).
-evidence(gt(b48,f0,t2_0,4)).
-evidence(gt(b48,f3,t2_2,4)).
-evidence(le(b48,f2,t2_4,4), false).
-evidence(gt(b49,f0,t2_0,4)).
-evidence(gt(b49,f3,t2_2,4)).
-evidence(gt(b49,f2,t2_4,4)).
-evidence(le(b49,f3,t2_12,4), false).
-evidence(le(b49,f3,t2_31,4), false).
-evidence(le(b49,f1,t2_33,4), false).
-evidence(gt(b50,f0,t2_0,4)).
-evidence(gt(b50,f3,t2_2,4)).
-evidence(gt(b50,f2,t2_4,4)).
-evidence(le(b50,f3,t2_12,4), false).
-evidence(le(b50,f3,t2_31,4), false).
-evidence(gt(b50,f1,t2_33,4)).
-evidence(le(b50,f3,t2_36,4), false).
-evidence(gt(b51,f0,t2_0,4)).
-evidence(gt(b51,f3,t2_2,4)).
-evidence(gt(b51,f2,t2_4,4)).
-evidence(le(b51,f3,t2_12,4), false).
-evidence(le(b51,f3,t2_31,4), false).
-evidence(gt(b51,f1,t2_33,4)).
-evidence(gt(b51,f3,t2_36,4)).
-evidence(gt(b52,f0,t2_0,4)).
-evidence(gt(b52,f3,t2_2,4)).
-evidence(gt(b52,f2,t2_4,4)).
-evidence(le(b52,f3,t2_12,4), false).
-evidence(gt(b52,f3,t2_31,4)).
-evidence(gt(b53,f0,t2_0,4)).
-evidence(gt(b53,f3,t2_2,4)).
-evidence(gt(b53,f2,t2_4,4)).
-evidence(gt(b53,f3,t2_12,4)).
-evidence(le(b54,f2,t3_0,4), false).
-evidence(le(b54,f3,t3_1,4), false).
-evidence(le(b55,f2,t3_0,4), false).
-evidence(gt(b55,f3,t3_1,4)).
-evidence(le(b55,f1,t3_4,4), false).
-evidence(le(b55,f3,t3_25,4), false).
-evidence(le(b56,f2,t3_0,4), false).
-evidence(gt(b56,f3,t3_1,4)).
-evidence(le(b56,f1,t3_4,4), false).
-evidence(gt(b56,f3,t3_25,4)).
-evidence(le(b57,f2,t3_0,4), false).
-evidence(gt(b57,f3,t3_1,4)).
-evidence(gt(b57,f1,t3_4,4)).
-evidence(le(b57,f0,t3_26,4), false).
-evidence(le(b57,f2,t3_29,4), false).
-evidence(le(b58,f2,t3_0,4), false).
-evidence(gt(b58,f3,t3_1,4)).
-evidence(gt(b58,f1,t3_4,4)).
-evidence(le(b58,f0,t3_26,4), false).
-evidence(gt(b58,f2,t3_29,4)).
-evidence(le(b59,f2,t3_0,4), false).
-evidence(gt(b59,f3,t3_1,4)).
-evidence(gt(b59,f1,t3_4,4)).
-evidence(gt(b59,f0,t3_26,4)).
-evidence(gt(b60,f2,t3_0,4)).
-evidence(le(b60,f0,t3_2,4)).
-evidence(le(b60,f0,t3_5,4), false).
-evidence(le(b60,f1,t3_7,4), false).
-evidence(le(b60,f1,t3_15,4), false).
-evidence(gt(b61,f2,t3_0,4)).
-evidence(le(b61,f0,t3_2,4)).
-evidence(le(b61,f0,t3_5,4), false).
-evidence(le(b61,f1,t3_7,4), false).
-evidence(gt(b61,f1,t3_15,4)).
-evidence(le(b61,f2,t3_18,4), false).
-evidence(le(b61,f2,t3_19,4), false).
-evidence(gt(b62,f2,t3_0,4)).
-evidence(le(b62,f0,t3_2,4)).
-evidence(le(b62,f0,t3_5,4), false).
-evidence(le(b62,f1,t3_7,4), false).
-evidence(gt(b62,f1,t3_15,4)).
-evidence(le(b62,f2,t3_18,4), false).
-evidence(gt(b62,f2,t3_19,4)).
-evidence(le(b62,f0,t3_22,4), false).
-evidence(gt(b63,f2,t3_0,4)).
-evidence(le(b63,f0,t3_2,4)).
-evidence(le(b63,f0,t3_5,4), false).
-evidence(le(b63,f1,t3_7,4), false).
-evidence(gt(b63,f1,t3_15,4)).
-evidence(le(b63,f2,t3_18,4), false).
-evidence(gt(b63,f2,t3_19,4)).
-evidence(gt(b63,f0,t3_22,4)).
-evidence(gt(b64,f2,t3_0,4)).
-evidence(le(b64,f0,t3_2,4)).
-evidence(le(b64,f0,t3_5,4), false).
-evidence(le(b64,f1,t3_7,4), false).
-evidence(gt(b64,f1,t3_15,4)).
-evidence(gt(b64,f2,t3_18,4)).
-evidence(gt(b65,f2,t3_0,4)).
-evidence(le(b65,f0,t3_2,4)).
-evidence(le(b65,f0,t3_5,4), false).
-evidence(gt(b65,f1,t3_7,4)).
-evidence(gt(b66,f2,t3_0,4)).
-evidence(le(b66,f0,t3_2,4)).
-evidence(gt(b66,f0,t3_5,4)).
-evidence(le(b66,f3,t3_8,4), false).
-evidence(gt(b67,f2,t3_0,4)).
-evidence(le(b67,f0,t3_2,4)).
-evidence(gt(b67,f0,t3_5,4)).
-evidence(gt(b67,f3,t3_8,4)).
-evidence(le(b67,f3,t3_10,4), false).
-evidence(le(b67,f2,t3_11,4), false).
-evidence(gt(b68,f2,t3_0,4)).
-evidence(le(b68,f0,t3_2,4)).
-evidence(gt(b68,f0,t3_5,4)).
-evidence(gt(b68,f3,t3_8,4)).
-evidence(le(b68,f3,t3_10,4), false).
-evidence(gt(b68,f2,t3_11,4)).
-evidence(gt(b69,f2,t3_0,4)).
-evidence(le(b69,f0,t3_2,4)).
-evidence(gt(b69,f0,t3_5,4)).
-evidence(gt(b69,f3,t3_8,4)).
-evidence(gt(b69,f3,t3_10,4)).
-evidence(gt(b70,f2,t3_0,4)).
-evidence(gt(b70,f0,t3_2,4), false).
-evidence(le(b71,f3,t4_0,4), false).
-evidence(gt(b72,f3,t4_0,4)).
-evidence(le(b72,f0,t4_2,4), false).
-evidence(le(b72,f2,t4_3,4), false).
-evidence(le(b72,f0,t4_5,4), false).
-evidence(le(b72,f1,t4_15,4), false).
-evidence(gt(b73,f3,t4_0,4)).
-evidence(le(b73,f0,t4_2,4), false).
-evidence(le(b73,f2,t4_3,4), false).
-evidence(le(b73,f0,t4_5,4), false).
-evidence(gt(b73,f1,t4_15,4)).
-evidence(le(b73,f2,t4_18,4), false).
-evidence(gt(b74,f3,t4_0,4)).
-evidence(le(b74,f0,t4_2,4), false).
-evidence(le(b74,f2,t4_3,4), false).
-evidence(le(b74,f0,t4_5,4), false).
-evidence(gt(b74,f1,t4_15,4)).
-evidence(gt(b74,f2,t4_18,4)).
-evidence(gt(b75,f3,t4_0,4)).
-evidence(le(b75,f0,t4_2,4), false).
-evidence(le(b75,f2,t4_3,4), false).
-evidence(gt(b75,f0,t4_5,4)).
-evidence(gt(b76,f3,t4_0,4)).
-evidence(le(b76,f0,t4_2,4), false).
-evidence(gt(b76,f2,t4_3,4)).
-evidence(le(b76,f2,t4_6,4), false).
-evidence(le(b76,f3,t4_7,4), false).
-evidence(gt(b77,f3,t4_0,4)).
-evidence(le(b77,f0,t4_2,4), false).
-evidence(gt(b77,f2,t4_3,4)).
-evidence(le(b77,f2,t4_6,4), false).
-evidence(gt(b77,f3,t4_7,4)).
-evidence(le(b77,f2,t4_40,4), false).
-evidence(le(b77,f3,t4_41,4), false).
-evidence(gt(b78,f3,t4_0,4)).
-evidence(le(b78,f0,t4_2,4), false).
-evidence(gt(b78,f2,t4_3,4)).
-evidence(le(b78,f2,t4_6,4), false).
-evidence(gt(b78,f3,t4_7,4)).
-evidence(le(b78,f2,t4_40,4), false).
-evidence(gt(b78,f3,t4_41,4)).
-evidence(gt(b79,f3,t4_0,4)).
-evidence(le(b79,f0,t4_2,4), false).
-evidence(gt(b79,f2,t4_3,4)).
-evidence(le(b79,f2,t4_6,4), false).
-evidence(gt(b79,f3,t4_7,4)).
-evidence(gt(b79,f2,t4_40,4)).
-evidence(gt(b80,f3,t4_0,4)).
-evidence(le(b80,f0,t4_2,4), false).
-evidence(gt(b80,f2,t4_3,4)).
-evidence(gt(b80,f2,t4_6,4)).
-evidence(le(b80,f0,t4_8,4), false).
-evidence(le(b80,f0,t4_27,4), false).
-evidence(gt(b81,f3,t4_0,4)).
-evidence(le(b81,f0,t4_2,4), false).
-evidence(gt(b81,f2,t4_3,4)).
-evidence(gt(b81,f2,t4_6,4)).
-evidence(le(b81,f0,t4_8,4), false).
-evidence(gt(b81,f0,t4_27,4)).
-evidence(le(b81,f3,t4_30,4), false).
-evidence(gt(b82,f3,t4_0,4)).
-evidence(le(b82,f0,t4_2,4), false).
-evidence(gt(b82,f2,t4_3,4)).
-evidence(gt(b82,f2,t4_6,4)).
-evidence(le(b82,f0,t4_8,4), false).
-evidence(gt(b82,f0,t4_27,4)).
-evidence(gt(b82,f3,t4_30,4)).
-evidence(gt(b83,f3,t4_0,4)).
-evidence(le(b83,f0,t4_2,4), false).
-evidence(gt(b83,f2,t4_3,4)).
-evidence(gt(b83,f2,t4_6,4)).
-evidence(gt(b83,f0,t4_8,4)).
-evidence(gt(b84,f3,t4_0,4)).
-evidence(gt(b84,f0,t4_2,4)).
-evidence(le(b84,f0,t4_4,4)).
-evidence(le(b84,f3,t4_9,4), false).
-evidence(le(b84,f2,t4_11,4)).
-evidence(le(b84,f1,t4_13,4), false).
-evidence(le(b84,f2,t4_33,4), false).
-evidence(gt(b85,f3,t4_0,4)).
-evidence(gt(b85,f0,t4_2,4)).
-evidence(le(b85,f0,t4_4,4)).
-evidence(le(b85,f3,t4_9,4), false).
-evidence(le(b85,f2,t4_11,4)).
-evidence(le(b85,f1,t4_13,4), false).
-evidence(gt(b85,f2,t4_33,4)).
-evidence(le(b85,f2,t4_36,4), false).
-evidence(gt(b86,f3,t4_0,4)).
-evidence(gt(b86,f0,t4_2,4)).
-evidence(le(b86,f0,t4_4,4)).
-evidence(le(b86,f3,t4_9,4), false).
-evidence(le(b86,f2,t4_11,4)).
-evidence(le(b86,f1,t4_13,4), false).
-evidence(gt(b86,f2,t4_33,4)).
-evidence(gt(b86,f2,t4_36,4)).
-evidence(gt(b87,f3,t4_0,4)).
-evidence(gt(b87,f0,t4_2,4)).
-evidence(le(b87,f0,t4_4,4)).
-evidence(le(b87,f3,t4_9,4), false).
-evidence(le(b87,f2,t4_11,4)).
-evidence(gt(b87,f1,t4_13,4)).
-evidence(gt(b88,f3,t4_0,4)).
-evidence(gt(b88,f0,t4_2,4)).
-evidence(le(b88,f0,t4_4,4)).
-evidence(le(b88,f3,t4_9,4), false).
-evidence(gt(b88,f2,t4_11,4), false).
-evidence(gt(b89,f3,t4_0,4)).
-evidence(gt(b89,f0,t4_2,4)).
-evidence(le(b89,f0,t4_4,4)).
-evidence(gt(b89,f3,t4_9,4)).
-evidence(gt(b90,f3,t4_0,4)).
-evidence(gt(b90,f0,t4_2,4)).
-evidence(gt(b90,f0,t4_4,4), false).
-evidence(le(b90,f0,t4_10,4)).
-evidence(le(b90,f1,t4_21,4), false).
-evidence(gt(b91,f3,t4_0,4)).
-evidence(gt(b91,f0,t4_2,4)).
-evidence(gt(b91,f0,t4_4,4), false).
-evidence(le(b91,f0,t4_10,4)).
-evidence(gt(b91,f1,t4_21,4)).
-evidence(le(b91,f1,t4_24,4)).
-evidence(gt(b92,f3,t4_0,4)).
-evidence(gt(b92,f0,t4_2,4)).
-evidence(gt(b92,f0,t4_4,4), false).
-evidence(le(b92,f0,t4_10,4)).
-evidence(gt(b92,f1,t4_21,4)).
-evidence(gt(b92,f1,t4_24,4), false).
-evidence(gt(b93,f3,t4_0,4)).
-evidence(gt(b93,f0,t4_2,4)).
-evidence(gt(b93,f0,t4_4,4), false).
-evidence(gt(b93,f0,t4_10,4), false).
-evidence(le(b94,f3,t5_0,4), false).
-evidence(le(b94,f3,t5_1,4), false).
-evidence(le(b95,f3,t5_0,4), false).
-evidence(gt(b95,f3,t5_1,4)).
-evidence(gt(b96,f3,t5_0,4)).
-evidence(le(b96,f2,t5_2,4)).
-evidence(le(b96,f3,t5_5,4)).
-evidence(le(b96,f2,t5_7,4), false).
-evidence(le(b96,f3,t5_9,4), false).
-evidence(gt(b97,f3,t5_0,4)).
-evidence(le(b97,f2,t5_2,4)).
-evidence(le(b97,f3,t5_5,4)).
-evidence(le(b97,f2,t5_7,4), false).
-evidence(gt(b97,f3,t5_9,4)).
-evidence(le(b97,f2,t5_14,4), false).
-evidence(gt(b98,f3,t5_0,4)).
-evidence(le(b98,f2,t5_2,4)).
-evidence(le(b98,f3,t5_5,4)).
-evidence(le(b98,f2,t5_7,4), false).
-evidence(gt(b98,f3,t5_9,4)).
-evidence(gt(b98,f2,t5_14,4)).
-evidence(gt(b99,f3,t5_0,4)).
-evidence(le(b99,f2,t5_2,4)).
-evidence(le(b99,f3,t5_5,4)).
-evidence(gt(b99,f2,t5_7,4)).
-evidence(le(b99,f3,t5_10,4), false).
-evidence(le(b99,f1,t5_11,4), false).
-evidence(le(b99,f1,t5_17,4), false).
-evidence(gt(b100,f3,t5_0,4)).
-evidence(le(b100,f2,t5_2,4)).
-evidence(le(b100,f3,t5_5,4)).
-evidence(gt(b100,f2,t5_7,4)).
-evidence(le(b100,f3,t5_10,4), false).
-evidence(le(b100,f1,t5_11,4), false).
-evidence(gt(b100,f1,t5_17,4)).
-evidence(gt(b101,f3,t5_0,4)).
-evidence(le(b101,f2,t5_2,4)).
-evidence(le(b101,f3,t5_5,4)).
-evidence(gt(b101,f2,t5_7,4)).
-evidence(le(b101,f3,t5_10,4), false).
-evidence(gt(b101,f1,t5_11,4)).
-evidence(gt(b102,f3,t5_0,4)).
-evidence(le(b102,f2,t5_2,4)).
-evidence(le(b102,f3,t5_5,4)).
-evidence(gt(b102,f2,t5_7,4)).
-evidence(gt(b102,f3,t5_10,4)).
-evidence(gt(b103,f3,t5_0,4)).
-evidence(le(b103,f2,t5_2,4)).
-evidence(gt(b103,f3,t5_5,4), false).
-evidence(gt(b104,f3,t5_0,4)).
-evidence(gt(b104,f2,t5_2,4), false).
-evidence(le(b105,f2,t6_0,4), false).
-evidence(le(b105,f2,t6_1,4), false).
-evidence(le(b105,f2,t6_3,4), false).
-evidence(le(b106,f2,t6_0,4), false).
-evidence(le(b106,f2,t6_1,4), false).
-evidence(gt(b106,f2,t6_3,4)).
-evidence(le(b107,f2,t6_0,4), false).
-evidence(gt(b107,f2,t6_1,4)).
-evidence(le(b107,f2,t6_4,4), false).
-evidence(le(b107,f3,t6_7,4), false).
-evidence(le(b108,f2,t6_0,4), false).
-evidence(gt(b108,f2,t6_1,4)).
-evidence(le(b108,f2,t6_4,4), false).
-evidence(gt(b108,f3,t6_7,4)).
-evidence(le(b108,f0,t6_16,4), false).
-evidence(le(b109,f2,t6_0,4), false).
-evidence(gt(b109,f2,t6_1,4)).
-evidence(le(b109,f2,t6_4,4), false).
-evidence(gt(b109,f3,t6_7,4)).
-evidence(gt(b109,f0,t6_16,4)).
-evidence(le(b110,f2,t6_0,4), false).
-evidence(gt(b110,f2,t6_1,4)).
-evidence(gt(b110,f2,t6_4,4)).
-evidence(le(b110,f3,t6_8,4), false).
-evidence(le(b110,f2,t6_9,4), false).
-evidence(le(b111,f2,t6_0,4), false).
-evidence(gt(b111,f2,t6_1,4)).
-evidence(gt(b111,f2,t6_4,4)).
-evidence(le(b111,f3,t6_8,4), false).
-evidence(gt(b111,f2,t6_9,4)).
-evidence(le(b112,f2,t6_0,4), false).
-evidence(gt(b112,f2,t6_1,4)).
-evidence(gt(b112,f2,t6_4,4)).
-evidence(gt(b112,f3,t6_8,4)).
-evidence(le(b112,f3,t6_10,4), false).
-evidence(le(b113,f2,t6_0,4), false).
-evidence(gt(b113,f2,t6_1,4)).
-evidence(gt(b113,f2,t6_4,4)).
-evidence(gt(b113,f3,t6_8,4)).
-evidence(gt(b113,f3,t6_10,4)).
-evidence(gt(b114,f2,t6_0,4)).
-evidence(le(b115,f3,t7_0,4), false).
-evidence(le(b115,f3,t7_1,4), false).
-evidence(le(b116,f3,t7_0,4), false).
-evidence(gt(b116,f3,t7_1,4)).
-evidence(gt(b117,f3,t7_0,4)).
-evidence(le(b117,f2,t7_2,4), false).
-evidence(le(b117,f3,t7_3,4), false).
-evidence(gt(b118,f3,t7_0,4)).
-evidence(le(b118,f2,t7_2,4), false).
-evidence(gt(b118,f3,t7_3,4)).
-evidence(le(b118,f0,t7_22,4), false).
-evidence(gt(b119,f3,t7_0,4)).
-evidence(le(b119,f2,t7_2,4), false).
-evidence(gt(b119,f3,t7_3,4)).
-evidence(gt(b119,f0,t7_22,4)).
-evidence(gt(b120,f3,t7_0,4)).
-evidence(gt(b120,f2,t7_2,4)).
-evidence(le(b120,f2,t7_4,4), false).
-evidence(gt(b121,f3,t7_0,4)).
-evidence(gt(b121,f2,t7_2,4)).
-evidence(gt(b121,f2,t7_4,4)).
-evidence(le(b121,f3,t7_8,4)).
-evidence(le(b121,f1,t7_9,4), false).
-evidence(gt(b122,f3,t7_0,4)).
-evidence(gt(b122,f2,t7_2,4)).
-evidence(gt(b122,f2,t7_4,4)).
-evidence(le(b122,f3,t7_8,4)).
-evidence(gt(b122,f1,t7_9,4)).
-evidence(le(b122,f0,t7_12,4), false).
-evidence(le(b122,f3,t7_13,4), false).
-evidence(gt(b123,f3,t7_0,4)).
-evidence(gt(b123,f2,t7_2,4)).
-evidence(gt(b123,f2,t7_4,4)).
-evidence(le(b123,f3,t7_8,4)).
-evidence(gt(b123,f1,t7_9,4)).
-evidence(le(b123,f0,t7_12,4), false).
-evidence(gt(b123,f3,t7_13,4)).
-evidence(gt(b124,f3,t7_0,4)).
-evidence(gt(b124,f2,t7_2,4)).
-evidence(gt(b124,f2,t7_4,4)).
-evidence(le(b124,f3,t7_8,4)).
-evidence(gt(b124,f1,t7_9,4)).
-evidence(gt(b124,f0,t7_12,4)).
-evidence(le(b124,f1,t7_14,4), false).
-evidence(gt(b125,f3,t7_0,4)).
-evidence(gt(b125,f2,t7_2,4)).
-evidence(gt(b125,f2,t7_4,4)).
-evidence(le(b125,f3,t7_8,4)).
-evidence(gt(b125,f1,t7_9,4)).
-evidence(gt(b125,f0,t7_12,4)).
-evidence(gt(b125,f1,t7_14,4)).
-evidence(le(b125,f3,t7_18,4), false).
-evidence(gt(b126,f3,t7_0,4)).
-evidence(gt(b126,f2,t7_2,4)).
-evidence(gt(b126,f2,t7_4,4)).
-evidence(le(b126,f3,t7_8,4)).
-evidence(gt(b126,f1,t7_9,4)).
-evidence(gt(b126,f0,t7_12,4)).
-evidence(gt(b126,f1,t7_14,4)).
-evidence(gt(b126,f3,t7_18,4)).
-evidence(gt(b127,f3,t7_0,4)).
-evidence(gt(b127,f2,t7_2,4)).
-evidence(gt(b127,f2,t7_4,4)).
-evidence(gt(b127,f3,t7_8,4), false).
+evidence(gt(b34,f0,t2_1,4)).
+evidence(le(b34,f1,t2_6,4)).
+evidence(gt(b34,f3,t2_7,4)).
+evidence(gt(b34,f2,t2_10,4)).
+evidence(gt(b34,f2,t2_14,4)).
+evidence(gt(b34,f1,t2_16,4)).
+evidence(gt(b34,f3,t2_18,4)).
+evidence(gt(b35,f0,t2_0,4)).
+evidence(gt(b36,f0,t2_0,4)).
+evidence(gt(b36,f3,t2_2,4)).
+evidence(gt(b37,f0,t2_0,4)).
+evidence(gt(b37,f3,t2_2,4)).
+evidence(gt(b37,f2,t2_4,4)).
+evidence(gt(b38,f0,t2_0,4)).
+evidence(gt(b38,f3,t2_2,4)).
+evidence(gt(b38,f2,t2_4,4)).
+evidence(le(b38,f3,t2_12,4), false).
+evidence(gt(b39,f0,t2_0,4)).
+evidence(gt(b39,f3,t2_2,4)).
+evidence(gt(b39,f2,t2_4,4)).
+evidence(le(b39,f3,t2_12,4), false).
+evidence(le(b39,f3,t2_31,4), false).
+evidence(gt(b40,f0,t2_0,4)).
+evidence(gt(b40,f3,t2_2,4)).
+evidence(gt(b40,f2,t2_4,4)).
+evidence(le(b40,f3,t2_12,4), false).
+evidence(le(b40,f3,t2_31,4), false).
+evidence(gt(b40,f1,t2_33,4)).
+evidence(le(b41,f2,t3_0,4), false).
+evidence(le(b42,f2,t3_0,4), false).
+evidence(gt(b42,f3,t3_1,4)).
+evidence(le(b42,f1,t3_4,4), false).
+evidence(le(b43,f2,t3_0,4), false).
+evidence(gt(b43,f3,t3_1,4)).
+evidence(gt(b43,f1,t3_4,4)).
+evidence(le(b44,f2,t3_0,4), false).
+evidence(gt(b44,f3,t3_1,4)).
+evidence(gt(b44,f1,t3_4,4)).
+evidence(le(b44,f0,t3_26,4), false).
+evidence(gt(b45,f2,t3_0,4)).
+evidence(gt(b46,f2,t3_0,4)).
+evidence(le(b46,f0,t3_2,4)).
+evidence(le(b46,f0,t3_5,4), false).
+evidence(gt(b47,f2,t3_0,4)).
+evidence(le(b47,f0,t3_2,4)).
+evidence(le(b47,f0,t3_5,4), false).
+evidence(le(b47,f1,t3_7,4), false).
+evidence(gt(b48,f2,t3_0,4)).
+evidence(le(b48,f0,t3_2,4)).
+evidence(le(b48,f0,t3_5,4), false).
+evidence(le(b48,f1,t3_7,4), false).
+evidence(gt(b48,f1,t3_15,4)).
+evidence(gt(b49,f2,t3_0,4)).
+evidence(le(b49,f0,t3_2,4)).
+evidence(le(b49,f0,t3_5,4), false).
+evidence(le(b49,f1,t3_7,4), false).
+evidence(gt(b49,f1,t3_15,4)).
+evidence(le(b49,f2,t3_18,4), false).
+evidence(gt(b50,f2,t3_0,4)).
+evidence(le(b50,f0,t3_2,4)).
+evidence(le(b50,f0,t3_5,4), false).
+evidence(le(b50,f1,t3_7,4), false).
+evidence(gt(b50,f1,t3_15,4)).
+evidence(le(b50,f2,t3_18,4), false).
+evidence(gt(b50,f2,t3_19,4)).
+evidence(gt(b51,f2,t3_0,4)).
+evidence(le(b51,f0,t3_2,4)).
+evidence(gt(b51,f0,t3_5,4)).
+evidence(gt(b52,f2,t3_0,4)).
+evidence(le(b52,f0,t3_2,4)).
+evidence(gt(b52,f0,t3_5,4)).
+evidence(gt(b52,f3,t3_8,4)).
+evidence(gt(b53,f2,t3_0,4)).
+evidence(le(b53,f0,t3_2,4)).
+evidence(gt(b53,f0,t3_5,4)).
+evidence(gt(b53,f3,t3_8,4)).
+evidence(le(b53,f3,t3_10,4), false).
+evidence(gt(b55,f3,t4_0,4)).
+evidence(le(b55,f0,t4_2,4), false).
+evidence(le(b55,f2,t4_3,4), false).
+evidence(gt(b56,f3,t4_0,4)).
+evidence(le(b56,f0,t4_2,4), false).
+evidence(le(b56,f2,t4_3,4), false).
+evidence(le(b56,f0,t4_5,4), false).
+evidence(gt(b57,f3,t4_0,4)).
+evidence(le(b57,f0,t4_2,4), false).
+evidence(le(b57,f2,t4_3,4), false).
+evidence(le(b57,f0,t4_5,4), false).
+evidence(gt(b57,f1,t4_15,4)).
+evidence(gt(b58,f3,t4_0,4)).
+evidence(le(b58,f0,t4_2,4), false).
+evidence(gt(b58,f2,t4_3,4)).
+evidence(le(b58,f2,t4_6,4), false).
+evidence(gt(b59,f3,t4_0,4)).
+evidence(le(b59,f0,t4_2,4), false).
+evidence(gt(b59,f2,t4_3,4)).
+evidence(le(b59,f2,t4_6,4), false).
+evidence(gt(b59,f3,t4_7,4)).
+evidence(gt(b60,f3,t4_0,4)).
+evidence(le(b60,f0,t4_2,4), false).
+evidence(gt(b60,f2,t4_3,4)).
+evidence(le(b60,f2,t4_6,4), false).
+evidence(gt(b60,f3,t4_7,4)).
+evidence(le(b60,f2,t4_40,4), false).
+evidence(gt(b61,f3,t4_0,4)).
+evidence(le(b61,f0,t4_2,4), false).
+evidence(gt(b61,f2,t4_3,4)).
+evidence(gt(b61,f2,t4_6,4)).
+evidence(gt(b62,f3,t4_0,4)).
+evidence(le(b62,f0,t4_2,4), false).
+evidence(gt(b62,f2,t4_3,4)).
+evidence(gt(b62,f2,t4_6,4)).
+evidence(le(b62,f0,t4_8,4), false).
+evidence(gt(b63,f3,t4_0,4)).
+evidence(le(b63,f0,t4_2,4), false).
+evidence(gt(b63,f2,t4_3,4)).
+evidence(gt(b63,f2,t4_6,4)).
+evidence(le(b63,f0,t4_8,4), false).
+evidence(gt(b63,f0,t4_27,4)).
+evidence(gt(b64,f3,t4_0,4)).
+evidence(gt(b64,f0,t4_2,4)).
+evidence(le(b64,f0,t4_4,4)).
+evidence(gt(b65,f3,t4_0,4)).
+evidence(gt(b65,f0,t4_2,4)).
+evidence(le(b65,f0,t4_4,4)).
+evidence(le(b65,f3,t4_9,4), false).
+evidence(gt(b66,f3,t4_0,4)).
+evidence(gt(b66,f0,t4_2,4)).
+evidence(le(b66,f0,t4_4,4)).
+evidence(le(b66,f3,t4_9,4), false).
+evidence(le(b66,f2,t4_11,4)).
+evidence(gt(b67,f3,t4_0,4)).
+evidence(gt(b67,f0,t4_2,4)).
+evidence(le(b67,f0,t4_4,4)).
+evidence(le(b67,f3,t4_9,4), false).
+evidence(le(b67,f2,t4_11,4)).
+evidence(le(b67,f1,t4_13,4), false).
+evidence(gt(b68,f3,t4_0,4)).
+evidence(gt(b68,f0,t4_2,4)).
+evidence(le(b68,f0,t4_4,4)).
+evidence(le(b68,f3,t4_9,4), false).
+evidence(le(b68,f2,t4_11,4)).
+evidence(le(b68,f1,t4_13,4), false).
+evidence(gt(b68,f2,t4_33,4)).
+evidence(gt(b69,f3,t4_0,4)).
+evidence(gt(b69,f0,t4_2,4)).
+evidence(gt(b69,f0,t4_4,4), false).
+evidence(gt(b70,f3,t4_0,4)).
+evidence(gt(b70,f0,t4_2,4)).
+evidence(gt(b70,f0,t4_4,4), false).
+evidence(le(b70,f0,t4_10,4)).
+evidence(gt(b71,f3,t4_0,4)).
+evidence(gt(b71,f0,t4_2,4)).
+evidence(gt(b71,f0,t4_4,4), false).
+evidence(le(b71,f0,t4_10,4)).
+evidence(gt(b71,f1,t4_21,4)).
+evidence(le(b72,f3,t5_0,4), false).
+evidence(gt(b73,f3,t5_0,4)).
+evidence(gt(b74,f3,t5_0,4)).
+evidence(le(b74,f2,t5_2,4)).
+evidence(gt(b75,f3,t5_0,4)).
+evidence(le(b75,f2,t5_2,4)).
+evidence(le(b75,f3,t5_5,4)).
+evidence(le(b75,f2,t5_7,4), false).
+evidence(gt(b76,f3,t5_0,4)).
+evidence(le(b76,f2,t5_2,4)).
+evidence(le(b76,f3,t5_5,4)).
+evidence(le(b76,f2,t5_7,4), false).
+evidence(gt(b76,f3,t5_9,4)).
+evidence(gt(b77,f3,t5_0,4)).
+evidence(le(b77,f2,t5_2,4)).
+evidence(le(b77,f3,t5_5,4)).
+evidence(gt(b77,f2,t5_7,4)).
+evidence(gt(b78,f3,t5_0,4)).
+evidence(le(b78,f2,t5_2,4)).
+evidence(le(b78,f3,t5_5,4)).
+evidence(gt(b78,f2,t5_7,4)).
+evidence(le(b78,f3,t5_10,4), false).
+evidence(gt(b79,f3,t5_0,4)).
+evidence(le(b79,f2,t5_2,4)).
+evidence(le(b79,f3,t5_5,4)).
+evidence(gt(b79,f2,t5_7,4)).
+evidence(le(b79,f3,t5_10,4), false).
+evidence(le(b79,f1,t5_11,4), false).
+evidence(le(b81,f2,t6_0,4), false).
+evidence(le(b81,f2,t6_1,4), false).
+evidence(le(b82,f2,t6_0,4), false).
+evidence(gt(b82,f2,t6_1,4)).
+evidence(le(b82,f2,t6_4,4), false).
+evidence(le(b83,f2,t6_0,4), false).
+evidence(gt(b83,f2,t6_1,4)).
+evidence(le(b83,f2,t6_4,4), false).
+evidence(gt(b83,f3,t6_7,4)).
+evidence(le(b84,f2,t6_0,4), false).
+evidence(gt(b84,f2,t6_1,4)).
+evidence(gt(b84,f2,t6_4,4)).
+evidence(le(b84,f3,t6_8,4), false).
+evidence(le(b85,f2,t6_0,4), false).
+evidence(gt(b85,f2,t6_1,4)).
+evidence(gt(b85,f2,t6_4,4)).
+evidence(gt(b85,f3,t6_8,4)).
+evidence(le(b86,f3,t7_0,4), false).
+evidence(gt(b87,f3,t7_0,4)).
+evidence(le(b87,f2,t7_2,4), false).
+evidence(gt(b88,f3,t7_0,4)).
+evidence(le(b88,f2,t7_2,4), false).
+evidence(gt(b88,f3,t7_3,4)).
+evidence(gt(b89,f3,t7_0,4)).
+evidence(gt(b89,f2,t7_2,4)).
+evidence(gt(b90,f3,t7_0,4)).
+evidence(gt(b90,f2,t7_2,4)).
+evidence(gt(b90,f2,t7_4,4)).
+evidence(gt(b91,f3,t7_0,4)).
+evidence(gt(b91,f2,t7_2,4)).
+evidence(gt(b91,f2,t7_4,4)).
+evidence(le(b91,f3,t7_8,4)).
+evidence(gt(b92,f3,t7_0,4)).
+evidence(gt(b92,f2,t7_2,4)).
+evidence(gt(b92,f2,t7_4,4)).
+evidence(le(b92,f3,t7_8,4)).
+evidence(gt(b92,f1,t7_9,4)).
+evidence(le(b92,f0,t7_12,4), false).
+evidence(gt(b93,f3,t7_0,4)).
+evidence(gt(b93,f2,t7_2,4)).
+evidence(gt(b93,f2,t7_4,4)).
+evidence(le(b93,f3,t7_8,4)).
+evidence(gt(b93,f1,t7_9,4)).
+evidence(gt(b93,f0,t7_12,4)).
+evidence(gt(b94,f3,t7_0,4)).
+evidence(gt(b94,f2,t7_2,4)).
+evidence(gt(b94,f2,t7_4,4)).
+evidence(le(b94,f3,t7_8,4)).
+evidence(gt(b94,f1,t7_9,4)).
+evidence(gt(b94,f0,t7_12,4)).
+evidence(gt(b94,f1,t7_14,4)).

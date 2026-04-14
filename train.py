@@ -115,6 +115,7 @@ class Trainer:
                     self.branch_probs_data,
                     observed_data=x_train,
                     output_path=latent_path,
+                    include_class_queries=True,
                 )
         else:
             self.model.fit(x_train, y_train)

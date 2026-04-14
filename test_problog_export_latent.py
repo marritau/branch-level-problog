@@ -34,6 +34,7 @@ def test_problog_export_latent_content():
             branch_probs,
             observed_data=observed_data,
             output_path=output_path,
+            include_class_queries=True,
         )
 
         text = Path(path).read_text(encoding='utf-8')
@@ -52,6 +53,14 @@ def test_problog_export_latent_content():
 
         assert '0.95000000::gt(b0,f1,t0_12,X) :- z(b0,X).' in text
         assert '0.05000000::gt(b0,f1,t0_12,X) :- not_z(b0,X).' in text
+        assert '0.20000000::supports(b0,c0,X) :- z(b0,X).' in text
+        assert '0.80000000::supports(b0,c1,X) :- z(b0,X).' in text
+        assert 'class(X,c0) :- supports(B,c0,X).' in text
+        assert 'class(X,c1) :- supports(B,c1,X).' in text
+        assert 'query(class(0,c0)).' in text
+        assert 'query(class(0,c1)).' in text
+        assert 'query(class(1,c0)).' in text
+        assert 'query(class(1,c1)).' in text
         assert 'evidence(le(b0,f0,t0_10,0)).' in text
         assert 'evidence(gt(b0,f1,t0_12,0)).' in text
         assert 'evidence(le(b0,f0,t0_10,1), false).' in text

@@ -87,6 +87,51 @@ def observed_condition_evidence(
     return lines
 
 
+def class_support_rules(branches: List[Branch], class_prefix: str = 'c') -> List[str]:
+    """Generate branch-to-class support rules from BranchNet class proportions."""
+    lines = []
+    for branch in branches:
+        if branch.class_proportions is None:
+            continue
+        for class_idx, theta in enumerate(branch.class_proportions):
+            theta = float(theta)
+            if theta < 0.0 or theta > 1.0:
+                raise ValueError(
+                    f"class_proportions values must be probabilities in [0, 1], got {theta}"
+                )
+            lines.append(
+                f"{theta:.8f}::supports({branch.branch_id},{class_prefix}{class_idx},X) "
+                f":- z({branch.branch_id},X)."
+            )
+    return lines
+
+
+def _num_classes_from_branches(branches: List[Branch]) -> int:
+    return max(
+        (len(branch.class_proportions) for branch in branches if branch.class_proportions is not None),
+        default=0,
+    )
+
+
+def class_rules(branches: List[Branch], class_prefix: str = 'c') -> List[str]:
+    """Generate class predicates that aggregate branch-specific support."""
+    num_classes = _num_classes_from_branches(branches)
+    return [
+        f"class(X,{class_prefix}{class_idx}) :- supports(B,{class_prefix}{class_idx},X)."
+        for class_idx in range(num_classes)
+    ]
+
+
+def class_query_lines(x_ids, branches: List[Branch], class_prefix: str = 'c') -> List[str]:
+    """Generate class queries for each exported object and class."""
+    num_classes = _num_classes_from_branches(branches)
+    return [
+        f"query(class({x_id},{class_prefix}{class_idx}))."
+        for x_id in x_ids
+        for class_idx in range(num_classes)
+    ]
+
+
 def export_branches_to_problog(branches: List[Branch], output_path: str = 'knowledge_base.pl') -> str:
     path = Path(output_path)
     lines = ['% Auto-generated ProbLog rules from BranchNet branches', '']
@@ -112,6 +157,7 @@ def export_branches_to_problog_latent(
     output_path: str = 'knowledge_base_latent.pl',
     p_high: float = 0.95,
     p_low: float = 0.05,
+    include_class_queries: bool = False,
 ) -> str:
     """Export ProbLog knowledge base with latent branch activations and manifestations.
 
@@ -122,6 +168,9 @@ def export_branches_to_problog_latent(
         Used to emit evidence(...) for observed branch conditions.
     p_high: probability of condition being true if z=1
     p_low: probability of condition being true if z=0
+    include_class_queries: when true, emit query(class(...)) lines for
+        every exported object and class. Disabled by default so branch-level
+        inference tests do not evaluate class queries unless requested.
     """
     path = Path(output_path)
     lines = ['% Auto-generated ProbLog rules from BranchNet latent branches', '']
@@ -152,6 +201,18 @@ def export_branches_to_problog_latent(
                 lines.append(f"{p_high:.8f}::{atom} :- z({branch.branch_id},X).")
                 lines.append(f"{p_low:.8f}::{atom} :- not_z({branch.branch_id},X).")
 
+        support_lines = class_support_rules(branches)
+        if support_lines:
+            lines.append('')
+            lines.append('% Branch-to-class support rules initialized from BranchNet class proportions')
+            lines.extend(support_lines)
+
+            class_rule_lines = class_rules(branches)
+            if class_rule_lines:
+                lines.append('')
+                lines.append('% Class predicates aggregate support from all active branches')
+                lines.extend(class_rule_lines)
+
     if observed_data is not None:
         x_ids = sorted(branch_probs.keys()) if branch_probs else None
         evidence_lines = observed_condition_evidence(branches, observed_data, x_ids=x_ids)
@@ -159,6 +220,13 @@ def export_branches_to_problog_latent(
             lines.append('')
             lines.append('% Observed evidence for branch conditions')
             lines.extend(evidence_lines)
+
+    if branch_probs and include_class_queries:
+        query_lines = class_query_lines(sorted(branch_probs.keys()), branches)
+        if query_lines:
+            lines.append('')
+            lines.append('% Class queries for exported objects')
+            lines.extend(query_lines)
 
     path.write_text('\n'.join(lines), encoding='utf-8')
     return str(path)
