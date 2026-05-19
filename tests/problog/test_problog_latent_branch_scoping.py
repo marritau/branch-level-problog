@@ -1,8 +1,14 @@
 import os
+import sys
 from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parents[2]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
 
 from branch_schema import Branch, Condition
 from problog_export import export_branches_to_problog_latent
+from project_paths import PROBLOG_OUTPUT_DIR
 
 
 def test_problog_latent_branch_scoping_for_shared_prefix():
@@ -31,7 +37,7 @@ def test_problog_latent_branch_scoping_for_shared_prefix():
         0: [0.75, 0.40],
     }
 
-    output_path = 'test_kb_latent_scoped.pl'
+    output_path = PROBLOG_OUTPUT_DIR / 'test_kb_latent_scoped.pl'
     try:
         path = export_branches_to_problog_latent(branches, branch_probs, output_path=output_path)
         text = Path(path).read_text(encoding='utf-8')

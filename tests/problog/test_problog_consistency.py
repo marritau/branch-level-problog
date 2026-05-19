@@ -1,9 +1,16 @@
+import sys
 import numpy as np
 from sklearn.datasets import load_iris
 from sklearn.ensemble import ExtraTreesClassifier
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parents[2]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 from BranchNetFramwork import BranchNetModel
 from problog_export import export_branches_to_problog, export_branches_to_problog_latent
-from pathlib import Path
+from project_paths import PROBLOG_OUTPUT_DIR
 
 
 def test_problog_export_and_model_consistency():
@@ -26,8 +33,8 @@ def test_problog_export_and_model_consistency():
     y_pred_before = np.asarray(y_pred_before)
 
     # Обычный экспорт ProbLog структуры
-    pl_path = 'tmp_problog.pl'
-    latent_path = 'tmp_problog_latent.pl'
+    pl_path = PROBLOG_OUTPUT_DIR / 'tmp_problog.pl'
+    latent_path = PROBLOG_OUTPUT_DIR / 'tmp_problog_latent.pl'
     export_branches_to_problog(model.branches, pl_path)
 
     # latent export с P(z(b,X))

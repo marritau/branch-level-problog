@@ -1,11 +1,17 @@
 import os
+import sys
 from pathlib import Path
 
 from problog import get_evaluatable
 from problog.program import PrologString
 
+ROOT_DIR = Path(__file__).resolve().parents[2]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 from branch_schema import Branch, Condition
 from problog_export import export_branches_to_problog_latent
+from project_paths import PROBLOG_OUTPUT_DIR
 
 
 def test_problog_evidence_changes_latent_posterior():
@@ -30,7 +36,7 @@ def test_problog_evidence_changes_latent_posterior():
         [2.0, 0.1],
     ]
 
-    output_path = 'test_kb_latent_inference.pl'
+    output_path = PROBLOG_OUTPUT_DIR / 'test_kb_latent_inference.pl'
     try:
         path = export_branches_to_problog_latent(
             branches,

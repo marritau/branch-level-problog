@@ -1,0 +1,60 @@
+# Benchmark start: datasets=['iris', 'breast_cancer'], folds=5, models_per_fold=4, total_tasks=40
+=== Dataset: iris ===
+-- Fold 1 --
+ExtraTrees: accuracy=1.000000, weighted_f1=1.000000, mcc=1.000000, log_loss=0.046780
+BranchNet-Neural (frozen W2): accuracy=0.966667, weighted_f1=0.966583, mcc=0.951587, log_loss=0.243906
+Rita-e2e-NoisyOr-BCE: accuracy=0.700000, weighted_f1=0.694871, mcc=0.618798, log_loss=0.928282
+Rita-e2e-NoisyOr-NLL: accuracy=0.733333, weighted_f1=0.734827, mcc=0.655956, log_loss=0.922319
+-- Fold 2 --
+ExtraTrees: accuracy=0.966667, weighted_f1=0.966583, mcc=0.951587, log_loss=0.078114
+BranchNet-Neural (frozen W2): accuracy=0.966667, weighted_f1=0.966583, mcc=0.951587, log_loss=0.224030
+Rita-e2e-NoisyOr-BCE: accuracy=0.466667, weighted_f1=0.375661, mcc=0.339683, log_loss=0.999758
+Rita-e2e-NoisyOr-NLL: accuracy=0.500000, weighted_f1=0.441558, mcc=0.381246, log_loss=0.993599
+-- Fold 3 --
+ExtraTrees: accuracy=0.900000, weighted_f1=0.897698, mcc=0.863044, log_loss=0.762021
+BranchNet-Neural (frozen W2): accuracy=0.866667, weighted_f1=0.868170, mcc=0.801337, log_loss=0.364171
+Rita-e2e-NoisyOr-BCE: accuracy=0.766667, weighted_f1=0.765432, mcc=0.696873, log_loss=0.974265
+Rita-e2e-NoisyOr-NLL: accuracy=0.800000, weighted_f1=0.794422, mcc=0.739235, log_loss=0.970568
+-- Fold 4 --
+ExtraTrees: accuracy=1.000000, weighted_f1=1.000000, mcc=1.000000, log_loss=0.039342
+BranchNet-Neural (frozen W2): accuracy=0.933333, weighted_f1=0.933333, mcc=0.900000, log_loss=0.322800
+Rita-e2e-NoisyOr-BCE: accuracy=0.366667, weighted_f1=0.231546, mcc=0.160817, log_loss=1.030672
+Rita-e2e-NoisyOr-NLL: accuracy=0.433333, weighted_f1=0.334026, mcc=0.288675, log_loss=1.020743
+-- Fold 5 --
+ExtraTrees: accuracy=0.900000, weighted_f1=0.899749, mcc=0.851420, log_loss=0.753222
+BranchNet-Neural (frozen W2): accuracy=0.900000, weighted_f1=0.899749, mcc=0.851420, log_loss=0.280066
+Rita-e2e-NoisyOr-BCE: accuracy=0.633333, weighted_f1=0.627752, mcc=0.539138, log_loss=0.996859
+Rita-e2e-NoisyOr-NLL: accuracy=0.733333, weighted_f1=0.724868, mcc=0.659912, log_loss=0.987316
+
+=== Dataset: breast_cancer ===
+-- Fold 1 --
+ExtraTrees: accuracy=0.991228, weighted_f1=0.991247, mcc=0.981585, log_loss=0.079929
+BranchNet-Neural (frozen W2): accuracy=0.982456, weighted_f1=0.982456, mcc=0.962660, log_loss=0.155330
+Rita-e2e-NoisyOr-BCE: accuracy=0.815789, weighted_f1=0.797899, mcc=0.628366, log_loss=0.680278
+Rita-e2e-NoisyOr-NLL: accuracy=0.815789, weighted_f1=0.797899, mcc=0.628366, log_loss=0.679382
+-- Fold 2 --
+ExtraTrees: accuracy=0.947368, weighted_f1=0.946806, mcc=0.888461, log_loss=0.271843
+BranchNet-Neural (frozen W2): accuracy=0.921053, weighted_f1=0.918792, mcc=0.837702, log_loss=0.202716
+Rita-e2e-NoisyOr-BCE: accuracy=0.736842, weighted_f1=0.689303, mcc=0.461005, log_loss=0.675150
+Rita-e2e-NoisyOr-NLL: accuracy=0.754386, weighted_f1=0.715327, mcc=0.500176, log_loss=0.674501
+-- Fold 3 --
+ExtraTrees: accuracy=0.947368, weighted_f1=0.947087, mcc=0.886414, log_loss=0.282046
+BranchNet-Neural (frozen W2): accuracy=0.947368, weighted_f1=0.946397, mcc=0.889499, log_loss=0.214414
+Rita-e2e-NoisyOr-BCE: accuracy=0.719298, weighted_f1=0.658447, mcc=0.405999, log_loss=0.670779
+Rita-e2e-NoisyOr-NLL: accuracy=0.736842, weighted_f1=0.686429, mcc=0.449089, log_loss=0.667995
+-- Fold 4 --
+ExtraTrees: accuracy=0.921053, weighted_f1=0.922241, mcc=0.848875, log_loss=0.131627
+BranchNet-Neural (frozen W2): accuracy=0.982456, weighted_f1=0.982537, mcc=0.963343, log_loss=0.161691
+Rita-e2e-NoisyOr-BCE: accuracy=0.877193, weighted_f1=0.870353, mcc=0.747087, log_loss=0.654902
+Rita-e2e-NoisyOr-NLL: accuracy=0.877193, weighted_f1=0.870353, mcc=0.747087, log_loss=0.654161
+-- Fold 5 --
+ExtraTrees: accuracy=0.973451, weighted_f1=0.973234, mcc=0.943889, log_loss=0.234062
+BranchNet-Neural (frozen W2): accuracy=0.964602, weighted_f1=0.964202, mcc=0.925477, log_loss=0.141472
+Rita-e2e-NoisyOr-BCE: accuracy=0.867257, weighted_f1=0.859169, mcc=0.728513, log_loss=0.664977
+Rita-e2e-NoisyOr-NLL: accuracy=0.867257, weighted_f1=0.859169, mcc=0.728513, log_loss=0.663758
+
+=== Main Summary ===
+BranchNet-Neural (frozen W2): accuracy=0.943127, weighted_f1=0.942880, mcc=0.903461, log_loss=0.231060
+ExtraTrees: accuracy=0.954714, weighted_f1=0.954465, mcc=0.921528, log_loss=0.267899
+Rita-e2e-NoisyOr-BCE: accuracy=0.694971, weighted_f1=0.657043, mcc=0.532628, log_loss=0.827592
+Rita-e2e-NoisyOr-NLL: accuracy=0.725147, weighted_f1=0.695888, mcc=0.577826, log_loss=0.823434

@@ -1,4 +1,5 @@
 import math
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -7,8 +8,13 @@ from problog.program import PrologString
 from sklearn.datasets import load_iris
 from sklearn.ensemble import ExtraTreesClassifier
 
+ROOT_DIR = Path(__file__).resolve().parents[2]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 from BranchNetFramwork import BranchNetModel
 from problog_export import export_branches_to_problog_latent
+from project_paths import PROBLOG_OUTPUT_DIR
 
 
 P_HIGH = 0.95
@@ -63,7 +69,7 @@ def test_problog_end_to_end_consistency():
     priors = model.predict_branch_proba(observed).numpy()
     branch_probs = {i: priors[i] for i in range(priors.shape[0])}
 
-    latent_path = 'tmp_problog_latent.pl'
+    latent_path = PROBLOG_OUTPUT_DIR / 'tmp_problog_latent.pl'
     export_branches_to_problog_latent(
         model.branches,
         branch_probs,

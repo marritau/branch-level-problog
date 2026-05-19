@@ -1,0 +1,13 @@
+# Benchmark start: datasets=['iris'], folds=1, models_per_fold=4, total_tasks=4
+=== Dataset: iris ===
+-- Fold 1 --
+ExtraTrees: accuracy=0.920000, weighted_f1=0.920000, mcc=0.880000, log_loss=0.138137
+BranchNet-Neural (frozen W2): accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.235210
+Rita-e2e-NoisyOr-BCE: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.113177
+Rita-e2e-NoisyOr-NLL: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.111409
+
+=== Main Summary ===
+BranchNet-Neural (frozen W2): accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.235210
+ExtraTrees: accuracy=0.920000, weighted_f1=0.920000, mcc=0.880000, log_loss=0.138137
+Rita-e2e-NoisyOr-BCE: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.113177
+Rita-e2e-NoisyOr-NLL: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.111409

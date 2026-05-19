@@ -1,3 +1,4 @@
+import sys
 from pathlib import Path
 import json
 
@@ -6,12 +7,17 @@ from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.tree import export_text
 
+ROOT_DIR = Path(__file__).resolve().parents[2]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 from BranchNetFramwork import BranchNetModel
 from problog_export import export_branches_to_json, export_branches_to_problog
+from project_paths import DEBUG_EXPORT_DIR
 
 
 SEED = 0
-OUT_DIR = Path("debug_export")
+OUT_DIR = DEBUG_EXPORT_DIR
 OUT_DIR.mkdir(exist_ok=True)
 
 

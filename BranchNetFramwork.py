@@ -2,12 +2,15 @@ import torch
 import torch.nn as nn
 import numpy as np
 import pandas as pd
+import matplotlib
 from typing import Any, Optional, Union
 from tqdm import tqdm
 from BranchNet import BranchNet
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt 
 from torch.utils.data import Dataset,DataLoader
 from torch.optim.lr_scheduler import CosineAnnealingWarmRestarts
+from project_paths import TEMPORAL_CHECKPOINT_PATH
 
 def convert_to_tensor(data: Union[pd.DataFrame, np.ndarray, torch.Tensor]) -> torch.Tensor:
     """Convert various data types to PyTorch tensor.
@@ -153,7 +156,7 @@ class BranchNetModel(BranchNet):
             scheduler.step(val_loss)
             if val_loss<min_val_loss:
                 min_val_loss = val_loss
-                torch.save(self.state_dict(), "temporal.pt")
+                torch.save(self.state_dict(), TEMPORAL_CHECKPOINT_PATH)
                 patience = 0
             else:
                 patience+=1
@@ -164,7 +167,7 @@ class BranchNetModel(BranchNet):
         _ = plt.figure(figsize=(12, 8))
         plt.plot(loss_history[5:], label="train")
         if i<epochs-1:
-            self.load_state_dict(torch.load("temporal.pt",weights_only=True))
+            self.load_state_dict(torch.load(TEMPORAL_CHECKPOINT_PATH,weights_only=True))
         plt.plot(val_loss_history[5:], label="val")
         plt.legend()
         if loss_file is not None:
@@ -205,6 +208,29 @@ class BranchNetModel(BranchNet):
                 res1 = self.branch_probs(x.to(self.device))
                 res.append(res1.to('cpu'))
             res = torch.vstack(res)
+        if was_training:
+            self.train()
+        return res
+
+    def predict_branch_proba_torch(
+        self, x_test: Union[pd.DataFrame, np.ndarray, torch.Tensor]
+    ) -> torch.Tensor:
+        """Differentiable mirror of predict_branch_proba.
+
+        Returns branch-level probabilities as a torch.Tensor without
+        torch.no_grad(), detach(), numpy conversion, or CPU transfer so the
+        computation graph remains available for end-to-end optimization.
+        """
+        was_training = self.training
+        self.eval()
+        x_test_copy = convert_to_tensor(x_test).float().to(self.device)
+        dataset = TabularDataset(x_test_copy)
+        dataloader = DataLoader(dataset, batch_size=min(200, dataset.__len__()), shuffle=False)
+        res = []
+        for x in dataloader:
+            res1 = self.branch_probs(x.to(self.device))
+            res.append(res1)
+        res = torch.vstack(res)
         if was_training:
             self.train()
         return res

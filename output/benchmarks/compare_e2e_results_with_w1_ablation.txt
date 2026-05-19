@@ -1,0 +1,158 @@
+# Benchmark start: datasets=['iris', 'wine', 'breast_cancer', 'digits'], folds=5, models_per_fold=6, total_tasks=120
+=== Dataset: iris ===
+-- Fold 1 --
+ExtraTrees: accuracy=1.000000, weighted_f1=1.000000, mcc=1.000000, log_loss=0.046780
+BranchNet-Neural (frozen W2): accuracy=1.000000, weighted_f1=1.000000, mcc=1.000000, log_loss=0.776128
+Rita-e2e-NoisyOr-BCE: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.110944
+Rita-e2e-NoisyOr-NLL: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.108449
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.105078
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.102642
+-- Fold 2 --
+ExtraTrees: accuracy=0.966667, weighted_f1=0.966583, mcc=0.951587, log_loss=0.078114
+BranchNet-Neural (frozen W2): accuracy=0.666667, weighted_f1=0.555556, mcc=0.612372, log_loss=0.794408
+Rita-e2e-NoisyOr-BCE: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.202192
+Rita-e2e-NoisyOr-NLL: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.182515
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.198409
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.182337
+-- Fold 3 --
+ExtraTrees: accuracy=0.900000, weighted_f1=0.897698, mcc=0.863044, log_loss=0.762021
+BranchNet-Neural (frozen W2): accuracy=0.866667, weighted_f1=0.865320, mcc=0.805387, log_loss=0.755298
+Rita-e2e-NoisyOr-BCE: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.087427
+Rita-e2e-NoisyOr-NLL: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.085690
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.081943
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.366667, weighted_f1=0.231546, mcc=0.160817, log_loss=1.079233
+-- Fold 4 --
+ExtraTrees: accuracy=1.000000, weighted_f1=1.000000, mcc=1.000000, log_loss=0.039342
+BranchNet-Neural (frozen W2): accuracy=0.666667, weighted_f1=0.555556, mcc=0.612372, log_loss=0.781417
+Rita-e2e-NoisyOr-BCE: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.136416
+Rita-e2e-NoisyOr-NLL: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.124058
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.130934
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.123766
+-- Fold 5 --
+ExtraTrees: accuracy=0.900000, weighted_f1=0.899749, mcc=0.851420, log_loss=0.753222
+BranchNet-Neural (frozen W2): accuracy=0.866667, weighted_f1=0.866667, mcc=0.800000, log_loss=0.763195
+Rita-e2e-NoisyOr-BCE: accuracy=0.333333, weighted_f1=0.202020, mcc=0.000000, log_loss=1.117732
+Rita-e2e-NoisyOr-NLL: accuracy=0.333333, weighted_f1=0.208333, mcc=0.000000, log_loss=1.116950
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.366667, weighted_f1=0.241236, mcc=0.068252, log_loss=1.113642
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.366667, weighted_f1=0.237745, mcc=0.072169, log_loss=1.110821
+
+=== Dataset: wine ===
+-- Fold 1 --
+ExtraTrees: accuracy=0.916667, weighted_f1=0.915785, mcc=0.875442, log_loss=0.225697
+BranchNet-Neural (frozen W2): accuracy=0.972222, weighted_f1=0.972263, mcc=0.959161, log_loss=0.780150
+Rita-e2e-NoisyOr-BCE: accuracy=0.583333, weighted_f1=0.481988, mcc=0.474961, log_loss=1.074192
+Rita-e2e-NoisyOr-NLL: accuracy=0.583333, weighted_f1=0.481988, mcc=0.474961, log_loss=1.074203
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.583333, weighted_f1=0.481988, mcc=0.474961, log_loss=1.072870
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.583333, weighted_f1=0.481988, mcc=0.474961, log_loss=1.071952
+-- Fold 2 --
+ExtraTrees: accuracy=1.000000, weighted_f1=1.000000, mcc=1.000000, log_loss=0.181564
+BranchNet-Neural (frozen W2): accuracy=0.500000, weighted_f1=0.440071, mcc=0.344383, log_loss=0.875086
+Rita-e2e-NoisyOr-BCE: accuracy=0.638889, weighted_f1=0.544949, mcc=0.515608, log_loss=1.074047
+Rita-e2e-NoisyOr-NLL: accuracy=0.555556, weighted_f1=0.469697, mcc=0.410721, log_loss=1.073906
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.638889, weighted_f1=0.544949, mcc=0.515608, log_loss=1.072216
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.611111, weighted_f1=0.525926, mcc=0.490905, log_loss=1.071991
+-- Fold 3 --
+ExtraTrees: accuracy=0.972222, weighted_f1=0.972097, mcc=0.958974, log_loss=0.184614
+BranchNet-Neural (frozen W2): accuracy=0.888889, weighted_f1=0.885795, mcc=0.836882, log_loss=0.828351
+Rita-e2e-NoisyOr-BCE: accuracy=0.833333, weighted_f1=0.821157, mcc=0.762191, log_loss=1.072609
+Rita-e2e-NoisyOr-NLL: accuracy=0.861111, weighted_f1=0.848485, mcc=0.810126, log_loss=1.072506
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.833333, weighted_f1=0.821157, mcc=0.762191, log_loss=1.070858
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.861111, weighted_f1=0.848485, mcc=0.810126, log_loss=1.070315
+-- Fold 4 --
+ExtraTrees: accuracy=0.914286, weighted_f1=0.913450, mcc=0.871298, log_loss=0.256247
+BranchNet-Neural (frozen W2): accuracy=0.714286, weighted_f1=0.654603, mcc=0.598066, log_loss=0.874755
+Rita-e2e-NoisyOr-BCE: accuracy=0.628571, weighted_f1=0.547456, mcc=0.502252, log_loss=1.061807
+Rita-e2e-NoisyOr-NLL: accuracy=0.571429, weighted_f1=0.489037, mcc=0.419696, log_loss=1.061606
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.628571, weighted_f1=0.547456, mcc=0.502252, log_loss=1.059638
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.600000, weighted_f1=0.519298, mcc=0.461348, log_loss=1.058423
+-- Fold 5 --
+ExtraTrees: accuracy=0.971429, weighted_f1=0.971557, mcc=0.957560, log_loss=0.104272
+BranchNet-Neural (frozen W2): accuracy=0.885714, weighted_f1=0.885714, mcc=0.844612, log_loss=0.706545
+Rita-e2e-NoisyOr-BCE: accuracy=0.742857, weighted_f1=0.725082, mcc=0.690477, log_loss=1.076653
+Rita-e2e-NoisyOr-NLL: accuracy=0.828571, weighted_f1=0.825510, mcc=0.778717, log_loss=1.076191
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.800000, weighted_f1=0.793703, mcc=0.748021, log_loss=1.075402
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.800000, weighted_f1=0.793703, mcc=0.748021, log_loss=1.074240
+
+=== Dataset: breast_cancer ===
+-- Fold 1 --
+ExtraTrees: accuracy=0.991228, weighted_f1=0.991247, mcc=0.981585, log_loss=0.079929
+BranchNet-Neural (frozen W2): accuracy=0.631579, weighted_f1=0.497790, mcc=0.120880, log_loss=0.585318
+Rita-e2e-NoisyOr-BCE: accuracy=0.622807, weighted_f1=0.478046, mcc=0.000000, log_loss=0.683657
+Rita-e2e-NoisyOr-NLL: accuracy=0.622807, weighted_f1=0.478046, mcc=0.000000, log_loss=0.683718
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.622807, weighted_f1=0.478046, mcc=0.000000, log_loss=0.683915
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.622807, weighted_f1=0.478046, mcc=0.000000, log_loss=0.681982
+-- Fold 2 --
+ExtraTrees: accuracy=0.947368, weighted_f1=0.946806, mcc=0.888461, log_loss=0.271843
+BranchNet-Neural (frozen W2): accuracy=0.622807, weighted_f1=0.478046, mcc=0.000000, log_loss=0.593810
+Rita-e2e-NoisyOr-BCE: accuracy=0.622807, weighted_f1=0.478046, mcc=0.000000, log_loss=0.675231
+Rita-e2e-NoisyOr-NLL: accuracy=0.622807, weighted_f1=0.478046, mcc=0.000000, log_loss=0.675526
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.622807, weighted_f1=0.478046, mcc=0.000000, log_loss=0.676640
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.622807, weighted_f1=0.478046, mcc=0.000000, log_loss=0.672054
+-- Fold 3 --
+ExtraTrees: accuracy=0.947368, weighted_f1=0.947087, mcc=0.886414, log_loss=0.282046
+BranchNet-Neural (frozen W2): accuracy=0.631579, weighted_f1=0.488964, mcc=0.000000, log_loss=0.633517
+Rita-e2e-NoisyOr-BCE: accuracy=0.631579, weighted_f1=0.488964, mcc=0.000000, log_loss=0.676008
+Rita-e2e-NoisyOr-NLL: accuracy=0.631579, weighted_f1=0.488964, mcc=0.000000, log_loss=0.675847
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.631579, weighted_f1=0.488964, mcc=0.000000, log_loss=0.677704
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.631579, weighted_f1=0.488964, mcc=0.000000, log_loss=0.671116
+-- Fold 4 --
+ExtraTrees: accuracy=0.921053, weighted_f1=0.922241, mcc=0.848875, log_loss=0.131627
+BranchNet-Neural (frozen W2): accuracy=0.631579, weighted_f1=0.488964, mcc=0.000000, log_loss=0.593245
+Rita-e2e-NoisyOr-BCE: accuracy=0.631579, weighted_f1=0.488964, mcc=0.000000, log_loss=0.668424
+Rita-e2e-NoisyOr-NLL: accuracy=0.631579, weighted_f1=0.488964, mcc=0.000000, log_loss=0.667846
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.631579, weighted_f1=0.488964, mcc=0.000000, log_loss=0.669158
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.631579, weighted_f1=0.488964, mcc=0.000000, log_loss=0.666348
+-- Fold 5 --
+ExtraTrees: accuracy=0.973451, weighted_f1=0.973234, mcc=0.943889, log_loss=0.234062
+BranchNet-Neural (frozen W2): accuracy=0.849558, weighted_f1=0.838514, mcc=0.693000, log_loss=0.506131
+Rita-e2e-NoisyOr-BCE: accuracy=0.628319, weighted_f1=0.484898, mcc=0.000000, log_loss=0.681649
+Rita-e2e-NoisyOr-NLL: accuracy=0.628319, weighted_f1=0.484898, mcc=0.000000, log_loss=0.681395
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.654867, weighted_f1=0.542493, mcc=0.214718, log_loss=0.682083
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.628319, weighted_f1=0.484898, mcc=0.000000, log_loss=0.679794
+
+=== Dataset: digits ===
+-- Fold 1 --
+ExtraTrees: accuracy=0.966667, weighted_f1=0.966589, mcc=0.963120, log_loss=0.312689
+BranchNet-Neural (frozen W2): accuracy=0.930556, weighted_f1=0.930486, mcc=0.922987, log_loss=1.388711
+Rita-e2e-NoisyOr-BCE: accuracy=0.883333, weighted_f1=0.884756, mcc=0.871772, log_loss=2.046169
+Rita-e2e-NoisyOr-NLL: accuracy=0.891667, weighted_f1=0.893007, mcc=0.880702, log_loss=2.047488
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.872222, weighted_f1=0.873937, mcc=0.859613, log_loss=2.047118
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.866667, weighted_f1=0.867964, mcc=0.853897, log_loss=2.044739
+-- Fold 2 --
+ExtraTrees: accuracy=0.972222, weighted_f1=0.972163, mcc=0.969243, log_loss=0.293750
+BranchNet-Neural (frozen W2): accuracy=0.919444, weighted_f1=0.918811, mcc=0.910849, log_loss=1.324971
+Rita-e2e-NoisyOr-BCE: accuracy=0.891667, weighted_f1=0.891616, mcc=0.881126, log_loss=2.054453
+Rita-e2e-NoisyOr-NLL: accuracy=0.897222, weighted_f1=0.897431, mcc=0.887072, log_loss=2.055622
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.888889, weighted_f1=0.888673, mcc=0.878186, log_loss=2.054178
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.875000, weighted_f1=0.874920, mcc=0.863190, log_loss=2.050915
+-- Fold 3 --
+ExtraTrees: accuracy=0.958217, weighted_f1=0.958203, mcc=0.953709, log_loss=0.321806
+BranchNet-Neural (frozen W2): accuracy=0.919220, weighted_f1=0.919100, mcc=0.910370, log_loss=1.382972
+Rita-e2e-NoisyOr-BCE: accuracy=0.894150, weighted_f1=0.894540, mcc=0.883339, log_loss=2.038446
+Rita-e2e-NoisyOr-NLL: accuracy=0.899721, weighted_f1=0.900566, mcc=0.889363, log_loss=2.040278
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.888579, weighted_f1=0.888492, mcc=0.877086, log_loss=2.040459
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.894150, weighted_f1=0.894356, mcc=0.883157, log_loss=2.035392
+-- Fold 4 --
+ExtraTrees: accuracy=0.969359, weighted_f1=0.969164, mcc=0.966084, log_loss=0.308533
+BranchNet-Neural (frozen W2): accuracy=0.924791, weighted_f1=0.922714, mcc=0.916808, log_loss=1.375330
+Rita-e2e-NoisyOr-BCE: accuracy=0.869081, weighted_f1=0.869377, mcc=0.856463, log_loss=2.053341
+Rita-e2e-NoisyOr-NLL: accuracy=0.866295, weighted_f1=0.866760, mcc=0.853522, log_loss=2.054187
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.855153, weighted_f1=0.854563, mcc=0.841451, log_loss=2.054702
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.855153, weighted_f1=0.853947, mcc=0.841290, log_loss=2.049627
+-- Fold 5 --
+ExtraTrees: accuracy=0.966574, weighted_f1=0.966516, mcc=0.962975, log_loss=0.365595
+BranchNet-Neural (frozen W2): accuracy=0.922006, weighted_f1=0.922388, mcc=0.913565, log_loss=1.361941
+Rita-e2e-NoisyOr-BCE: accuracy=0.880223, weighted_f1=0.880457, mcc=0.868214, log_loss=2.051692
+Rita-e2e-NoisyOr-NLL: accuracy=0.885794, weighted_f1=0.886332, mcc=0.874212, log_loss=2.052598
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.863510, weighted_f1=0.864182, mcc=0.850106, log_loss=2.051007
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.869081, weighted_f1=0.868737, mcc=0.856057, log_loss=2.049286
+
+=== Main Summary ===
+BranchNet-Neural (frozen W2): accuracy=0.800545, weighted_f1=0.754366, mcc=0.640085, log_loss=0.884064
+ExtraTrees: accuracy=0.957739, weighted_f1=0.957509, mcc=0.934684, log_loss=0.261688
+Rita-e2e-NoisyOr-BCE: accuracy=0.632460, weighted_f1=0.541449, mcc=0.365320, log_loss=1.232154
+Rita-e2e-NoisyOr-NLL: accuracy=0.632223, weighted_f1=0.542637, mcc=0.363955, log_loss=1.230529
+
+=== Ablation Summary ===
+Rita-e2e-NoisyOr-BCE (train_w1=True): accuracy=0.635806, weighted_f1=0.547176, mcc=0.379622, log_loss=1.230898
+Rita-e2e-NoisyOr-NLL (train_w1=True): accuracy=0.634302, weighted_f1=0.545877, mcc=0.375797, log_loss=1.227349
