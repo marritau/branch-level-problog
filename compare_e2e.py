@@ -151,6 +151,21 @@ def evaluate_rita_e2e(
     e2e_lr: float,
     loss_mode: str,
     train_w1: bool,
+    use_posterior: bool = False,
+    train_reliability: bool = True,
+    p_high: float = 0.95,
+    p_low: float = 0.05,
+    branch_truth_loss_weight: float = 0.0,
+    use_class_leak: bool = False,
+    init_class_leak: float = 0.0,
+    train_class_leak: bool = True,
+    use_output_calibration: bool = False,
+    init_calibration_temperature: float = 1.0,
+    train_calibration: bool = True,
+    theta_prune_threshold: float = 0.0,
+    theta_l1_weight: float = 0.0,
+    class_leak_l1_weight: float = 0.0,
+    calibration_l2_weight: float = 0.0,
     device: str = "cpu",
 ) -> np.ndarray:
     model = build_branchnet_model(
@@ -171,6 +186,21 @@ def evaluate_rita_e2e(
         y_val,
         loss_mode=loss_mode,
         train_w1=train_w1,
+        use_posterior=use_posterior,
+        train_reliability=train_reliability,
+        p_high=p_high,
+        p_low=p_low,
+        branch_truth_loss_weight=branch_truth_loss_weight,
+        use_class_leak=use_class_leak,
+        init_class_leak=init_class_leak,
+        train_class_leak=train_class_leak,
+        use_output_calibration=use_output_calibration,
+        init_calibration_temperature=init_calibration_temperature,
+        train_calibration=train_calibration,
+        theta_prune_threshold=theta_prune_threshold,
+        theta_l1_weight=theta_l1_weight,
+        class_leak_l1_weight=class_leak_l1_weight,
+        calibration_l2_weight=calibration_l2_weight,
         learning_rate=e2e_lr,
         epochs=e2e_epochs,
         patience=min(50, e2e_epochs),
@@ -180,6 +210,7 @@ def evaluate_rita_e2e(
         result.model,
         result.head,
         X_test,
+        posterior_layer=result.posterior_layer,
         normalize_for_nll=(loss_mode == "nll"),
     ).detach().cpu().numpy()
     if loss_mode == "bce":
@@ -224,6 +255,21 @@ def compare_e2e_benchmark(
     folds: int = 5,
     seed: int = 42,
     include_w1_ablation: bool = True,
+    include_posterior: bool = False,
+    train_reliability: bool = True,
+    p_high: float = 0.95,
+    p_low: float = 0.05,
+    branch_truth_loss_weight: float = 0.0,
+    use_class_leak: bool = False,
+    init_class_leak: float = 0.0,
+    train_class_leak: bool = True,
+    use_output_calibration: bool = False,
+    init_calibration_temperature: float = 1.0,
+    train_calibration: bool = True,
+    theta_prune_threshold: float = 0.0,
+    theta_l1_weight: float = 0.0,
+    class_leak_l1_weight: float = 0.0,
+    calibration_l2_weight: float = 0.0,
     branchnet_epochs: int = 20,
     branchnet_lr: float = 1e-2,
     e2e_epochs: int = 20,
@@ -243,7 +289,13 @@ def compare_e2e_benchmark(
     lines: list[str] = []
     datasets = list(datasets)
     folds_to_run = min(folds, max_folds) if max_folds is not None else folds
-    models_per_fold = 4 + (2 if include_w1_ablation else 0)
+    models_per_fold = 4
+    if include_posterior:
+        models_per_fold += 2
+    if include_w1_ablation:
+        models_per_fold += 2
+        if include_posterior:
+            models_per_fold += 2
     total_tasks = len(datasets) * folds_to_run * models_per_fold
     completed_tasks = 0
     task_durations: list[float] = []
@@ -286,6 +338,18 @@ def compare_e2e_benchmark(
             )
 
             fold_seed = seed + fold_idx
+            head_kwargs = {
+                "use_class_leak": use_class_leak,
+                "init_class_leak": init_class_leak,
+                "train_class_leak": train_class_leak,
+                "use_output_calibration": use_output_calibration,
+                "init_calibration_temperature": init_calibration_temperature,
+                "train_calibration": train_calibration,
+                "theta_prune_threshold": theta_prune_threshold,
+                "theta_l1_weight": theta_l1_weight,
+                "class_leak_l1_weight": class_leak_l1_weight,
+                "calibration_l2_weight": calibration_l2_weight,
+            }
             fold_models = [
                 ("main", "ExtraTrees", lambda: evaluate_extratrees(X_train, y_train, X_test, seed=fold_seed)),
                 (
@@ -311,6 +375,8 @@ def compare_e2e_benchmark(
                         e2e_lr=e2e_lr,
                         loss_mode="bce",
                         train_w1=False,
+                        branch_truth_loss_weight=branch_truth_loss_weight,
+                        **head_kwargs,
                         device=device,
                     ),
                 ),
@@ -326,17 +392,19 @@ def compare_e2e_benchmark(
                         e2e_lr=e2e_lr,
                         loss_mode="nll",
                         train_w1=False,
+                        branch_truth_loss_weight=branch_truth_loss_weight,
+                        **head_kwargs,
                         device=device,
                     ),
                 ),
             ]
 
-            if include_w1_ablation:
+            if include_posterior:
                 fold_models.extend(
                     [
                         (
-                            "ablation",
-                            "Rita-e2e-NoisyOr-BCE (train_w1=True)",
+                            "main",
+                            "Rita-e2e-Posterior-NoisyOr-BCE",
                             lambda: evaluate_rita_e2e(
                                 X_train, y_train, X_val, y_val, X_test,
                                 seed=fold_seed,
@@ -345,13 +413,19 @@ def compare_e2e_benchmark(
                                 e2e_epochs=e2e_epochs,
                                 e2e_lr=e2e_lr,
                                 loss_mode="bce",
-                                train_w1=True,
+                                train_w1=False,
+                                use_posterior=True,
+                                train_reliability=train_reliability,
+                                p_high=p_high,
+                                p_low=p_low,
+                                branch_truth_loss_weight=branch_truth_loss_weight,
+                                **head_kwargs,
                                 device=device,
                             ),
                         ),
                         (
-                            "ablation",
-                            "Rita-e2e-NoisyOr-NLL (train_w1=True)",
+                            "main",
+                            "Rita-e2e-Posterior-NoisyOr-NLL",
                             lambda: evaluate_rita_e2e(
                                 X_train, y_train, X_val, y_val, X_test,
                                 seed=fold_seed,
@@ -360,12 +434,104 @@ def compare_e2e_benchmark(
                                 e2e_epochs=e2e_epochs,
                                 e2e_lr=e2e_lr,
                                 loss_mode="nll",
-                                train_w1=True,
+                                train_w1=False,
+                                use_posterior=True,
+                                train_reliability=train_reliability,
+                                p_high=p_high,
+                                p_low=p_low,
+                                branch_truth_loss_weight=branch_truth_loss_weight,
+                                **head_kwargs,
                                 device=device,
                             ),
                         ),
                     ]
                 )
+
+            if include_w1_ablation:
+                ablation_models = [
+                    (
+                        "ablation",
+                        "Rita-e2e-NoisyOr-BCE (train_w1=True)",
+                        lambda: evaluate_rita_e2e(
+                            X_train, y_train, X_val, y_val, X_test,
+                            seed=fold_seed,
+                            branchnet_epochs=branchnet_epochs,
+                            branchnet_lr=branchnet_lr,
+                            e2e_epochs=e2e_epochs,
+                            e2e_lr=e2e_lr,
+                            loss_mode="bce",
+                            train_w1=True,
+                            branch_truth_loss_weight=branch_truth_loss_weight,
+                            **head_kwargs,
+                            device=device,
+                        ),
+                    ),
+                    (
+                        "ablation",
+                        "Rita-e2e-NoisyOr-NLL (train_w1=True)",
+                        lambda: evaluate_rita_e2e(
+                            X_train, y_train, X_val, y_val, X_test,
+                            seed=fold_seed,
+                            branchnet_epochs=branchnet_epochs,
+                            branchnet_lr=branchnet_lr,
+                            e2e_epochs=e2e_epochs,
+                            e2e_lr=e2e_lr,
+                            loss_mode="nll",
+                            train_w1=True,
+                            branch_truth_loss_weight=branch_truth_loss_weight,
+                            **head_kwargs,
+                            device=device,
+                        ),
+                    ),
+                ]
+                if include_posterior:
+                    ablation_models.extend(
+                        [
+                            (
+                                "ablation",
+                                "Rita-e2e-Posterior-NoisyOr-BCE (train_w1=True)",
+                                lambda: evaluate_rita_e2e(
+                                    X_train, y_train, X_val, y_val, X_test,
+                                    seed=fold_seed,
+                                    branchnet_epochs=branchnet_epochs,
+                                    branchnet_lr=branchnet_lr,
+                                    e2e_epochs=e2e_epochs,
+                                    e2e_lr=e2e_lr,
+                                    loss_mode="bce",
+                                    train_w1=True,
+                                    use_posterior=True,
+                                    train_reliability=train_reliability,
+                                    p_high=p_high,
+                                    p_low=p_low,
+                                    branch_truth_loss_weight=branch_truth_loss_weight,
+                                    **head_kwargs,
+                                    device=device,
+                                ),
+                            ),
+                            (
+                                "ablation",
+                                "Rita-e2e-Posterior-NoisyOr-NLL (train_w1=True)",
+                                lambda: evaluate_rita_e2e(
+                                    X_train, y_train, X_val, y_val, X_test,
+                                    seed=fold_seed,
+                                    branchnet_epochs=branchnet_epochs,
+                                    branchnet_lr=branchnet_lr,
+                                    e2e_epochs=e2e_epochs,
+                                    e2e_lr=e2e_lr,
+                                    loss_mode="nll",
+                                    train_w1=True,
+                                    use_posterior=True,
+                                    train_reliability=train_reliability,
+                                    p_high=p_high,
+                                    p_low=p_low,
+                                    branch_truth_loss_weight=branch_truth_loss_weight,
+                                    **head_kwargs,
+                                    device=device,
+                                ),
+                            ),
+                        ]
+                    )
+                fold_models.extend(ablation_models)
 
             lines.append(f"-- Fold {fold_idx} --")
             print(
@@ -450,6 +616,21 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--device", type=str, default="cpu")
     parser.add_argument("--include-w1-ablation", action="store_true")
+    parser.add_argument("--include-posterior", action="store_true")
+    parser.add_argument("--freeze-reliability", action="store_true")
+    parser.add_argument("--p-high", type=float, default=0.95)
+    parser.add_argument("--p-low", type=float, default=0.05)
+    parser.add_argument("--branch-truth-loss-weight", type=float, default=0.0)
+    parser.add_argument("--use-class-leak", action="store_true")
+    parser.add_argument("--init-class-leak", type=float, default=0.0)
+    parser.add_argument("--freeze-class-leak", action="store_true")
+    parser.add_argument("--use-output-calibration", action="store_true")
+    parser.add_argument("--init-calibration-temperature", type=float, default=1.0)
+    parser.add_argument("--freeze-calibration", action="store_true")
+    parser.add_argument("--theta-prune-threshold", type=float, default=0.0)
+    parser.add_argument("--theta-l1-weight", type=float, default=0.0)
+    parser.add_argument("--class-leak-l1-weight", type=float, default=0.0)
+    parser.add_argument("--calibration-l2-weight", type=float, default=0.0)
     parser.add_argument("--branchnet-epochs", type=int, default=20)
     parser.add_argument("--branchnet-lr", type=float, default=1e-2)
     parser.add_argument("--e2e-epochs", type=int, default=20)
@@ -466,6 +647,21 @@ def main() -> None:
         folds=args.folds,
         seed=args.seed,
         include_w1_ablation=args.include_w1_ablation,
+        include_posterior=args.include_posterior,
+        train_reliability=not args.freeze_reliability,
+        p_high=args.p_high,
+        p_low=args.p_low,
+        branch_truth_loss_weight=args.branch_truth_loss_weight,
+        use_class_leak=args.use_class_leak,
+        init_class_leak=args.init_class_leak,
+        train_class_leak=not args.freeze_class_leak,
+        use_output_calibration=args.use_output_calibration,
+        init_calibration_temperature=args.init_calibration_temperature,
+        train_calibration=not args.freeze_calibration,
+        theta_prune_threshold=args.theta_prune_threshold,
+        theta_l1_weight=args.theta_l1_weight,
+        class_leak_l1_weight=args.class_leak_l1_weight,
+        calibration_l2_weight=args.calibration_l2_weight,
         branchnet_epochs=args.branchnet_epochs,
         branchnet_lr=args.branchnet_lr,
         e2e_epochs=args.e2e_epochs,

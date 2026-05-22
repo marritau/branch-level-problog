@@ -10,17 +10,23 @@ from torch.utils.data import DataLoader, TensorDataset
 
 from BranchNetFramwork import BranchNetModel, convert_to_tensor
 from branch_schema import Branch
-from differentiable_problog import DifferentiableClassHead
+from differentiable_problog import DifferentiableClassHead, DifferentiablePosteriorLayer
 
 
 @dataclass
 class E2ETrainingResult:
     model: BranchNetModel
     head: DifferentiableClassHead
+    posterior_layer: Optional[DifferentiablePosteriorLayer]
     theta: torch.Tensor
     history: dict
     loss_mode: str
     train_w1: bool
+    use_posterior: bool
+    branch_truth_loss_weight: float
+    theta_l1_weight: float
+    class_leak_l1_weight: float
+    calibration_l2_weight: float
 
 
 def assign_theta_to_branches(
@@ -88,15 +94,24 @@ def predict_e2e_class_probs(
     model: BranchNetModel,
     head: DifferentiableClassHead,
     x,
+    posterior_layer: Optional[DifferentiablePosteriorLayer] = None,
     normalize_for_nll: bool = False,
     eps: float = 1e-8,
 ) -> torch.Tensor:
     head_was_training = head.training
     model_was_training = model.training
+    posterior_was_training = posterior_layer.training if posterior_layer is not None else None
     head.eval()
     model.eval()
+    if posterior_layer is not None:
+        posterior_layer.eval()
     with torch.no_grad():
-        z = model.predict_branch_proba_torch(x)
+        h = model.predict_branch_proba_torch(x)
+        if posterior_layer is not None:
+            x_tensor = _to_feature_tensor(x).to(model.device)
+            z = posterior_layer(h, x_tensor)
+        else:
+            z = h
         class_probs = head(z)
         if normalize_for_nll:
             class_probs = normalize_class_probs_for_nll(class_probs, eps=eps)
@@ -104,6 +119,8 @@ def predict_e2e_class_probs(
         head.train()
     if model_was_training:
         model.train()
+    if posterior_layer is not None and posterior_was_training:
+        posterior_layer.train()
     return class_probs
 
 
@@ -111,6 +128,7 @@ def predict_e2e(
     model: BranchNetModel,
     head: DifferentiableClassHead,
     x,
+    posterior_layer: Optional[DifferentiablePosteriorLayer] = None,
     loss_mode: str = "bce",
     eps: float = 1e-8,
 ) -> torch.Tensor:
@@ -118,6 +136,7 @@ def predict_e2e(
         model,
         head,
         x,
+        posterior_layer=posterior_layer,
         normalize_for_nll=(loss_mode == "nll"),
         eps=eps,
     )
@@ -137,16 +156,47 @@ def _epoch_pass(
     head: DifferentiableClassHead,
     dataloader: DataLoader,
     loss_mode: str,
+    posterior_layer: Optional[DifferentiablePosteriorLayer] = None,
+    branch_truth_layer: Optional[DifferentiablePosteriorLayer] = None,
+    branch_truth_loss_weight: float = 0.0,
+    theta_l1_weight: float = 0.0,
+    class_leak_l1_weight: float = 0.0,
+    calibration_l2_weight: float = 0.0,
     optimizer: Optional[Adam] = None,
     eps: float = 1e-8,
 ) -> float:
+    branch_truth_loss_weight = float(branch_truth_loss_weight)
+    theta_l1_weight = float(theta_l1_weight)
+    class_leak_l1_weight = float(class_leak_l1_weight)
+    calibration_l2_weight = float(calibration_l2_weight)
+    if branch_truth_loss_weight < 0.0:
+        raise ValueError(
+            f"branch_truth_loss_weight must be non-negative, got {branch_truth_loss_weight}"
+        )
+    if theta_l1_weight < 0.0:
+        raise ValueError(f"theta_l1_weight must be non-negative, got {theta_l1_weight}")
+    if class_leak_l1_weight < 0.0:
+        raise ValueError(
+            f"class_leak_l1_weight must be non-negative, got {class_leak_l1_weight}"
+        )
+    if calibration_l2_weight < 0.0:
+        raise ValueError(
+            f"calibration_l2_weight must be non-negative, got {calibration_l2_weight}"
+        )
+    if branch_truth_loss_weight > 0.0 and branch_truth_layer is None:
+        raise ValueError("branch_truth_layer is required when branch_truth_loss_weight > 0")
+
     is_train = optimizer is not None
     if is_train:
         model.train()
         head.train()
+        if posterior_layer is not None:
+            posterior_layer.train()
     else:
         model.eval()
         head.eval()
+        if posterior_layer is not None:
+            posterior_layer.eval()
 
     total_loss = 0.0
     total_examples = 0
@@ -160,9 +210,25 @@ def _epoch_pass(
         with torch.set_grad_enabled(is_train):
             # Use the raw differentiable BranchNet branch head here so we preserve
             # train/eval mode semantics of BatchNorm and masked W1 behavior.
-            z = model.branch_probs(x_batch)
+            h = model.branch_probs(x_batch)
+            z = posterior_layer(h, x_batch) if posterior_layer is not None else h
             class_probs = head(z)
             loss = compute_e2e_loss(class_probs, y_batch, loss_mode=loss_mode, eps=eps)
+            if branch_truth_loss_weight > 0.0:
+                branch_targets = branch_truth_layer.branch_truth(x_batch, dtype=h.dtype)
+                branch_probs = h.clamp(min=eps, max=1.0 - eps)
+                branch_loss = F.binary_cross_entropy(branch_probs, branch_targets)
+                loss = loss + branch_truth_loss_weight * branch_loss
+            if is_train and (
+                theta_l1_weight > 0.0
+                or class_leak_l1_weight > 0.0
+                or calibration_l2_weight > 0.0
+            ):
+                loss = loss + head.regularization_loss(
+                    theta_l1_weight=theta_l1_weight,
+                    class_leak_l1_weight=class_leak_l1_weight,
+                    calibration_l2_weight=calibration_l2_weight,
+                )
             if is_train:
                 loss.backward()
                 optimizer.step()
@@ -183,6 +249,21 @@ def train_e2e(
     n_classes: Optional[int] = None,
     loss_mode: str = "bce",
     train_w1: bool = False,
+    use_posterior: bool = False,
+    train_reliability: bool = True,
+    p_high: float = 0.95,
+    p_low: float = 0.05,
+    branch_truth_loss_weight: float = 0.0,
+    use_class_leak: bool = False,
+    init_class_leak: float = 0.0,
+    train_class_leak: bool = True,
+    use_output_calibration: bool = False,
+    init_calibration_temperature: float = 1.0,
+    train_calibration: bool = True,
+    theta_prune_threshold: float = 0.0,
+    theta_l1_weight: float = 0.0,
+    class_leak_l1_weight: float = 0.0,
+    calibration_l2_weight: float = 0.0,
     learning_rate: float = 1e-3,
     epochs: int = 200,
     patience: int = 50,
@@ -191,6 +272,24 @@ def train_e2e(
 ) -> E2ETrainingResult:
     if not model.branches:
         raise ValueError("BranchNetModel must already be built from an ensemble before e2e training")
+    branch_truth_loss_weight = float(branch_truth_loss_weight)
+    theta_l1_weight = float(theta_l1_weight)
+    class_leak_l1_weight = float(class_leak_l1_weight)
+    calibration_l2_weight = float(calibration_l2_weight)
+    if branch_truth_loss_weight < 0.0:
+        raise ValueError(
+            f"branch_truth_loss_weight must be non-negative, got {branch_truth_loss_weight}"
+        )
+    if theta_l1_weight < 0.0:
+        raise ValueError(f"theta_l1_weight must be non-negative, got {theta_l1_weight}")
+    if class_leak_l1_weight < 0.0:
+        raise ValueError(
+            f"class_leak_l1_weight must be non-negative, got {class_leak_l1_weight}"
+        )
+    if calibration_l2_weight < 0.0:
+        raise ValueError(
+            f"calibration_l2_weight must be non-negative, got {calibration_l2_weight}"
+        )
 
     x_train_t = _to_feature_tensor(x_train)
     y_train_t = _to_label_tensor(y_train)
@@ -215,7 +314,36 @@ def train_e2e(
         n_classes=n_classes,
         dtype=model.dtype,
         device=model.device,
+        use_class_leak=use_class_leak,
+        init_class_leak=init_class_leak,
+        train_class_leak=train_class_leak,
+        use_output_calibration=use_output_calibration,
+        init_calibration_temperature=init_calibration_temperature,
+        train_calibration=train_calibration,
+        theta_prune_threshold=theta_prune_threshold,
     )
+    posterior_layer = (
+        DifferentiablePosteriorLayer(
+            model.branches,
+            p_high=p_high,
+            p_low=p_low,
+            train_reliability=train_reliability,
+            dtype=model.dtype,
+            device=model.device,
+        )
+        if use_posterior
+        else None
+    )
+    branch_truth_layer = posterior_layer
+    if branch_truth_loss_weight > 0.0 and branch_truth_layer is None:
+        branch_truth_layer = DifferentiablePosteriorLayer(
+            model.branches,
+            p_high=p_high,
+            p_low=p_low,
+            train_reliability=False,
+            dtype=model.dtype,
+            device=model.device,
+        )
 
     train_dataset = TensorDataset(x_train_t, y_train_t)
     val_dataset = TensorDataset(x_val_t, y_val_t)
@@ -233,6 +361,8 @@ def train_e2e(
     )
 
     params = list(head.parameters())
+    if posterior_layer is not None:
+        params.extend(posterior_layer.parameters())
     if train_w1:
         params.append(model.w1)
     optimizer = Adam(params, lr=learning_rate)
@@ -240,6 +370,11 @@ def train_e2e(
     best_val_loss = float("inf")
     best_model_state = copy.deepcopy(model.state_dict())
     best_head_state = copy.deepcopy(head.state_dict())
+    best_posterior_state = (
+        copy.deepcopy(posterior_layer.state_dict())
+        if posterior_layer is not None
+        else None
+    )
     patience_counter = 0
     history = {"train_loss": [], "val_loss": []}
 
@@ -249,6 +384,12 @@ def train_e2e(
             head,
             train_loader,
             loss_mode=loss_mode,
+            posterior_layer=posterior_layer,
+            branch_truth_layer=branch_truth_layer,
+            branch_truth_loss_weight=branch_truth_loss_weight,
+            theta_l1_weight=theta_l1_weight,
+            class_leak_l1_weight=class_leak_l1_weight,
+            calibration_l2_weight=calibration_l2_weight,
             optimizer=optimizer,
             eps=eps,
         )
@@ -257,6 +398,12 @@ def train_e2e(
             head,
             val_loader,
             loss_mode=loss_mode,
+            posterior_layer=posterior_layer,
+            branch_truth_layer=branch_truth_layer,
+            branch_truth_loss_weight=branch_truth_loss_weight,
+            theta_l1_weight=theta_l1_weight,
+            class_leak_l1_weight=class_leak_l1_weight,
+            calibration_l2_weight=calibration_l2_weight,
             optimizer=None,
             eps=eps,
         )
@@ -268,6 +415,8 @@ def train_e2e(
             best_val_loss = val_loss
             best_model_state = copy.deepcopy(model.state_dict())
             best_head_state = copy.deepcopy(head.state_dict())
+            if posterior_layer is not None:
+                best_posterior_state = copy.deepcopy(posterior_layer.state_dict())
             patience_counter = 0
         else:
             patience_counter += 1
@@ -276,12 +425,20 @@ def train_e2e(
 
     model.load_state_dict(best_model_state)
     head.load_state_dict(best_head_state)
+    if posterior_layer is not None and best_posterior_state is not None:
+        posterior_layer.load_state_dict(best_posterior_state)
 
     return E2ETrainingResult(
         model=model,
         head=head,
+        posterior_layer=posterior_layer,
         theta=head.theta_probabilities(),
         history=history,
         loss_mode=loss_mode,
         train_w1=train_w1,
+        use_posterior=use_posterior,
+        branch_truth_loss_weight=branch_truth_loss_weight,
+        theta_l1_weight=theta_l1_weight,
+        class_leak_l1_weight=class_leak_l1_weight,
+        calibration_l2_weight=calibration_l2_weight,
     )

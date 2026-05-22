@@ -59,6 +59,12 @@ def test_train_e2e_smoke_for_bce_and_nll():
             X_val[:4],
             normalize_for_nll=(loss_mode == "nll"),
         )
+        with torch.no_grad():
+            raw_branch_probs = result.model.predict_branch_proba_torch(X_val[:4])
+            expected_class_probs = result.head(raw_branch_probs)
+            if loss_mode == "nll":
+                expected_class_probs = normalize_class_probs_for_nll(expected_class_probs)
+        assert torch.allclose(class_probs, expected_class_probs, atol=1e-6, rtol=1e-6)
         assert class_probs.shape == (4, result.theta.shape[1])
         assert torch.all(class_probs >= 0.0)
         assert torch.all(class_probs <= 1.0)
@@ -72,6 +78,183 @@ def test_train_e2e_smoke_for_bce_and_nll():
             )
 
     print('test_train_e2e_smoke_for_bce_and_nll OK')
+
+
+def test_train_e2e_smoke_with_posterior_layer():
+    data = load_iris()
+    X = data.data.astype("float32")
+    y = data.target.astype("int64")
+
+    rng = np.random.default_rng(1)
+    perm = rng.permutation(len(X))
+    X = X[perm]
+    y = y[perm]
+
+    X_train, y_train = X[:96], y[:96]
+    X_val, y_val = X[96:120], y[96:120]
+
+    model = BranchNetModel(device='cpu')
+    forest = ExtraTreesClassifier(n_estimators=3, max_leaf_nodes=8, random_state=1)
+    forest.fit(X_train, y_train)
+    model.build_model_from_ensemble(forest)
+
+    result = train_e2e(
+        model,
+        X_train,
+        y_train,
+        X_val,
+        y_val,
+        loss_mode="bce",
+        train_w1=False,
+        use_posterior=True,
+        train_reliability=True,
+        learning_rate=1e-2,
+        epochs=3,
+        patience=3,
+        batch_size=32,
+    )
+
+    assert result.use_posterior
+    assert result.posterior_layer is not None
+    assert result.posterior_layer.p_low_logits.grad is not None
+    assert result.posterior_layer.p_high_gap_logits.grad is not None
+    assert torch.isfinite(result.posterior_layer.p_low_logits).all()
+    assert torch.isfinite(result.posterior_layer.p_high_gap_logits).all()
+
+    p_high, p_low = result.posterior_layer.reliability_probabilities()
+    assert 0.0 < float(p_low) < 1.0
+    assert 0.0 < float(p_high) < 1.0
+    assert float(p_high) > float(p_low)
+
+    class_probs = predict_e2e_class_probs(
+        result.model,
+        result.head,
+        X_val[:4],
+        posterior_layer=result.posterior_layer,
+        normalize_for_nll=False,
+    )
+    assert class_probs.shape == (4, result.theta.shape[1])
+    assert torch.all(class_probs >= 0.0)
+    assert torch.all(class_probs <= 1.0)
+
+    print('test_train_e2e_smoke_with_posterior_layer OK')
+
+
+def test_train_e2e_smoke_with_branch_truth_aux_loss():
+    data = load_iris()
+    X = data.data.astype("float32")
+    y = data.target.astype("int64")
+
+    rng = np.random.default_rng(2)
+    perm = rng.permutation(len(X))
+    X = X[perm]
+    y = y[perm]
+
+    X_train, y_train = X[:96], y[:96]
+    X_val, y_val = X[96:120], y[96:120]
+
+    model = BranchNetModel(device='cpu')
+    forest = ExtraTreesClassifier(n_estimators=3, max_leaf_nodes=8, random_state=2)
+    forest.fit(X_train, y_train)
+    model.build_model_from_ensemble(forest)
+
+    result = train_e2e(
+        model,
+        X_train,
+        y_train,
+        X_val,
+        y_val,
+        loss_mode="bce",
+        train_w1=True,
+        use_posterior=False,
+        branch_truth_loss_weight=0.25,
+        learning_rate=1e-2,
+        epochs=2,
+        patience=2,
+        batch_size=32,
+    )
+
+    assert not result.use_posterior
+    assert result.posterior_layer is None
+    assert result.branch_truth_loss_weight == 0.25
+    assert len(result.history["train_loss"]) >= 1
+    assert len(result.history["val_loss"]) >= 1
+    assert torch.isfinite(result.theta).all()
+
+    class_probs = predict_e2e_class_probs(
+        result.model,
+        result.head,
+        X_val[:4],
+        normalize_for_nll=False,
+    )
+    assert class_probs.shape == (4, result.theta.shape[1])
+    assert torch.all(class_probs >= 0.0)
+    assert torch.all(class_probs <= 1.0)
+
+    print('test_train_e2e_smoke_with_branch_truth_aux_loss OK')
+
+
+def test_train_e2e_smoke_with_enhanced_noisy_or_head():
+    data = load_iris()
+    X = data.data.astype("float32")
+    y = data.target.astype("int64")
+
+    rng = np.random.default_rng(3)
+    perm = rng.permutation(len(X))
+    X = X[perm]
+    y = y[perm]
+
+    X_train, y_train = X[:96], y[:96]
+    X_val, y_val = X[96:120], y[96:120]
+
+    model = BranchNetModel(device='cpu')
+    forest = ExtraTreesClassifier(n_estimators=3, max_leaf_nodes=8, random_state=3)
+    forest.fit(X_train, y_train)
+    model.build_model_from_ensemble(forest)
+
+    result = train_e2e(
+        model,
+        X_train,
+        y_train,
+        X_val,
+        y_val,
+        loss_mode="bce",
+        train_w1=False,
+        use_posterior=True,
+        use_class_leak=True,
+        init_class_leak=0.05,
+        use_output_calibration=True,
+        init_calibration_temperature=1.2,
+        theta_prune_threshold=0.01,
+        theta_l1_weight=1e-4,
+        class_leak_l1_weight=1e-4,
+        calibration_l2_weight=1e-4,
+        learning_rate=1e-2,
+        epochs=2,
+        patience=2,
+        batch_size=32,
+    )
+
+    assert result.posterior_layer is not None
+    assert result.head.class_leak_logits.grad is not None
+    assert result.head.calibration_log_temperature.grad is not None
+    assert result.head.calibration_bias.grad is not None
+    assert result.theta_l1_weight == 1e-4
+    assert result.class_leak_l1_weight == 1e-4
+    assert result.calibration_l2_weight == 1e-4
+
+    class_probs = predict_e2e_class_probs(
+        result.model,
+        result.head,
+        X_val[:4],
+        posterior_layer=result.posterior_layer,
+        normalize_for_nll=False,
+    )
+    assert class_probs.shape == (4, result.theta.shape[1])
+    assert torch.all(class_probs >= 0.0)
+    assert torch.all(class_probs <= 1.0)
+
+    print('test_train_e2e_smoke_with_enhanced_noisy_or_head OK')
 
 
 def test_normalize_class_probs_for_nll():
@@ -92,4 +275,7 @@ def test_normalize_class_probs_for_nll():
 
 if __name__ == '__main__':
     test_train_e2e_smoke_for_bce_and_nll()
+    test_train_e2e_smoke_with_posterior_layer()
+    test_train_e2e_smoke_with_branch_truth_aux_loss()
+    test_train_e2e_smoke_with_enhanced_noisy_or_head()
     test_normalize_class_probs_for_nll()
