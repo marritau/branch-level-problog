@@ -1,0 +1,17 @@
+# Benchmark start: datasets=['iris'], folds=1, models_per_fold=6, total_tasks=6
+=== Dataset: iris ===
+-- Fold 1 --
+ExtraTrees: accuracy=0.920000, weighted_f1=0.920000, mcc=0.880000, log_loss=0.138137
+BranchNet-Neural (frozen W2): accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.256102
+Rita-e2e-NoisyOr-BCE: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.110300
+Rita-e2e-NoisyOr-NLL: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.110245
+Rita-e2e-Posterior-NoisyOr-BCE: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.048588
+Rita-e2e-Posterior-NoisyOr-NLL: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.048584
+
+=== Main Summary ===
+BranchNet-Neural (frozen W2): accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.256102
+ExtraTrees: accuracy=0.920000, weighted_f1=0.920000, mcc=0.880000, log_loss=0.138137
+Rita-e2e-NoisyOr-BCE: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.110300
+Rita-e2e-NoisyOr-NLL: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.110245
+Rita-e2e-Posterior-NoisyOr-BCE: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.048588
+Rita-e2e-Posterior-NoisyOr-NLL: accuracy=0.333333, weighted_f1=0.166667, mcc=0.000000, log_loss=1.048584
