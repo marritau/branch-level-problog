@@ -1,5 +1,6 @@
 import argparse
 from pathlib import Path
+import re
 import time
 from typing import Callable, Iterable, Optional
 
@@ -11,7 +12,12 @@ from sklearn.metrics import accuracy_score, f1_score, log_loss, matthews_corrcoe
 from sklearn.model_selection import StratifiedKFold, train_test_split
 
 from BranchNetFramwork import BranchNetModel
-from project_paths import BENCHMARKS_DIR
+from calibration_metrics import (
+    expected_calibration_error,
+    multiclass_brier_score,
+    save_top_label_reliability_diagram,
+)
+from project_paths import BENCHMARKS_DIR, RELIABILITY_DIR
 from train_e2e import predict_e2e_class_probs, train_e2e
 
 
@@ -60,7 +66,11 @@ def normalize_probs_numpy(probs: np.ndarray, eps: float = 1e-8) -> np.ndarray:
     return probs / probs_sum
 
 
-def compute_metrics(y_true: np.ndarray, probs: np.ndarray) -> dict:
+def make_safe_filename(label: str) -> str:
+    return re.sub(r"[^A-Za-z0-9._-]+", "_", label).strip("_")
+
+
+def compute_metrics(y_true: np.ndarray, probs: np.ndarray, calibration_bins: int = 10) -> dict:
     y_true = np.asarray(y_true, dtype=np.int64)
     probs = normalize_probs_numpy(np.asarray(probs, dtype=np.float64))
     preds = np.argmax(probs, axis=1)
@@ -70,6 +80,8 @@ def compute_metrics(y_true: np.ndarray, probs: np.ndarray) -> dict:
         "weighted_f1": float(f1_score(y_true, preds, average="weighted")),
         "mcc": float(matthews_corrcoef(y_true, preds)),
         "log_loss": float(log_loss(y_true, probs, labels=labels)),
+        "brier_score": float(multiclass_brier_score(y_true, probs)),
+        "ece": float(expected_calibration_error(y_true, probs, n_bins=calibration_bins)),
     }
 
 
@@ -151,6 +163,9 @@ def evaluate_rita_e2e(
     e2e_lr: float,
     loss_mode: str,
     train_w1: bool,
+    head_type: str = "noisy_or",
+    theta_init_mode: str = "weighted",
+    learnable_competition: bool = False,
     use_posterior: bool = False,
     train_reliability: bool = True,
     p_high: float = 0.95,
@@ -184,6 +199,9 @@ def evaluate_rita_e2e(
         y_train,
         X_val,
         y_val,
+        head_type=head_type,
+        theta_init_mode=theta_init_mode,
+        learnable_competition=learnable_competition,
         loss_mode=loss_mode,
         train_w1=train_w1,
         use_posterior=use_posterior,
@@ -223,13 +241,15 @@ def format_metrics(metrics: dict) -> str:
         f"accuracy={metrics['accuracy']:.6f}, "
         f"weighted_f1={metrics['weighted_f1']:.6f}, "
         f"mcc={metrics['mcc']:.6f}, "
-        f"log_loss={metrics['log_loss']:.6f}"
+        f"log_loss={metrics['log_loss']:.6f}, "
+        f"brier_score={metrics['brier_score']:.6f}, "
+        f"ece={metrics['ece']:.6f}"
     )
 
 
 def summarize_records(records: list[dict]) -> list[dict]:
     summary = []
-    keys = ("accuracy", "weighted_f1", "mcc", "log_loss")
+    keys = ("accuracy", "weighted_f1", "mcc", "log_loss", "brier_score", "ece")
     grouped: dict[tuple[str, str], list[dict]] = {}
     for row in records:
         grouped.setdefault((row["section"], row["model"]), []).append(row)
@@ -270,6 +290,12 @@ def compare_e2e_benchmark(
     theta_l1_weight: float = 0.0,
     class_leak_l1_weight: float = 0.0,
     calibration_l2_weight: float = 0.0,
+    head_type: str = "noisy_or",
+    theta_init_mode: str = "weighted",
+    learnable_competition: bool = False,
+    reliability_bins: int = 10,
+    save_reliability_diagrams: bool = False,
+    reliability_dir: Optional[str | Path] = None,
     branchnet_epochs: int = 20,
     branchnet_lr: float = 1e-2,
     e2e_epochs: int = 20,
@@ -283,10 +309,33 @@ def compare_e2e_benchmark(
 
     output_file = Path(output_path) if output_path is not None else BENCHMARKS_DIR / "compare_e2e_results.txt"
     output_file.parent.mkdir(parents=True, exist_ok=True)
+    reliability_output_dir = None
+    if save_reliability_diagrams:
+        reliability_output_dir = (
+            Path(reliability_dir)
+            if reliability_dir is not None
+            else RELIABILITY_DIR / output_file.stem
+        )
+        reliability_output_dir.mkdir(parents=True, exist_ok=True)
+    if head_type == "noisy_or":
+        head_label = "NoisyOr"
+    elif head_type == "softmax_competition":
+        head_label = "SoftmaxCompetition"
+    else:
+        raise ValueError(
+            f"Unsupported head_type: {head_type}. Expected 'noisy_or' or 'softmax_competition'."
+        )
+    if theta_init_mode not in {"weighted", "normalized"}:
+        raise ValueError(
+            f"Unsupported theta_init_mode: {theta_init_mode}. "
+            "Expected 'weighted' or 'normalized'."
+        )
+    theta_label = "" if theta_init_mode == "weighted" else "-NormTheta"
 
     records: list[dict] = []
     ablations: list[dict] = []
     lines: list[str] = []
+    reliability_payloads: dict[tuple[str, str, str], dict[str, list[np.ndarray]]] = {}
     datasets = list(datasets)
     folds_to_run = min(folds, max_folds) if max_folds is not None else folds
     models_per_fold = 4
@@ -365,7 +414,7 @@ def compare_e2e_benchmark(
                 ),
                 (
                     "main",
-                    "Rita-e2e-NoisyOr-BCE",
+                    f"Rita-e2e-{head_label}{theta_label}-BCE",
                     lambda: evaluate_rita_e2e(
                         X_train, y_train, X_val, y_val, X_test,
                         seed=fold_seed,
@@ -373,6 +422,9 @@ def compare_e2e_benchmark(
                         branchnet_lr=branchnet_lr,
                         e2e_epochs=e2e_epochs,
                         e2e_lr=e2e_lr,
+                        head_type=head_type,
+                        theta_init_mode=theta_init_mode,
+                        learnable_competition=learnable_competition,
                         loss_mode="bce",
                         train_w1=False,
                         branch_truth_loss_weight=branch_truth_loss_weight,
@@ -382,7 +434,7 @@ def compare_e2e_benchmark(
                 ),
                 (
                     "main",
-                    "Rita-e2e-NoisyOr-NLL",
+                    f"Rita-e2e-{head_label}{theta_label}-NLL",
                     lambda: evaluate_rita_e2e(
                         X_train, y_train, X_val, y_val, X_test,
                         seed=fold_seed,
@@ -390,6 +442,9 @@ def compare_e2e_benchmark(
                         branchnet_lr=branchnet_lr,
                         e2e_epochs=e2e_epochs,
                         e2e_lr=e2e_lr,
+                        head_type=head_type,
+                        theta_init_mode=theta_init_mode,
+                        learnable_competition=learnable_competition,
                         loss_mode="nll",
                         train_w1=False,
                         branch_truth_loss_weight=branch_truth_loss_weight,
@@ -404,7 +459,7 @@ def compare_e2e_benchmark(
                     [
                         (
                             "main",
-                            "Rita-e2e-Posterior-NoisyOr-BCE",
+                            f"Rita-e2e-Posterior-{head_label}{theta_label}-BCE",
                             lambda: evaluate_rita_e2e(
                                 X_train, y_train, X_val, y_val, X_test,
                                 seed=fold_seed,
@@ -412,6 +467,9 @@ def compare_e2e_benchmark(
                                 branchnet_lr=branchnet_lr,
                                 e2e_epochs=e2e_epochs,
                                 e2e_lr=e2e_lr,
+                                head_type=head_type,
+                                theta_init_mode=theta_init_mode,
+                                learnable_competition=learnable_competition,
                                 loss_mode="bce",
                                 train_w1=False,
                                 use_posterior=True,
@@ -425,7 +483,7 @@ def compare_e2e_benchmark(
                         ),
                         (
                             "main",
-                            "Rita-e2e-Posterior-NoisyOr-NLL",
+                            f"Rita-e2e-Posterior-{head_label}{theta_label}-NLL",
                             lambda: evaluate_rita_e2e(
                                 X_train, y_train, X_val, y_val, X_test,
                                 seed=fold_seed,
@@ -433,6 +491,9 @@ def compare_e2e_benchmark(
                                 branchnet_lr=branchnet_lr,
                                 e2e_epochs=e2e_epochs,
                                 e2e_lr=e2e_lr,
+                                head_type=head_type,
+                                theta_init_mode=theta_init_mode,
+                                learnable_competition=learnable_competition,
                                 loss_mode="nll",
                                 train_w1=False,
                                 use_posterior=True,
@@ -451,7 +512,7 @@ def compare_e2e_benchmark(
                 ablation_models = [
                     (
                         "ablation",
-                        "Rita-e2e-NoisyOr-BCE (train_w1=True)",
+                        f"Rita-e2e-{head_label}{theta_label}-BCE (train_w1=True)",
                         lambda: evaluate_rita_e2e(
                             X_train, y_train, X_val, y_val, X_test,
                             seed=fold_seed,
@@ -459,6 +520,9 @@ def compare_e2e_benchmark(
                             branchnet_lr=branchnet_lr,
                             e2e_epochs=e2e_epochs,
                             e2e_lr=e2e_lr,
+                            head_type=head_type,
+                            theta_init_mode=theta_init_mode,
+                            learnable_competition=learnable_competition,
                             loss_mode="bce",
                             train_w1=True,
                             branch_truth_loss_weight=branch_truth_loss_weight,
@@ -468,7 +532,7 @@ def compare_e2e_benchmark(
                     ),
                     (
                         "ablation",
-                        "Rita-e2e-NoisyOr-NLL (train_w1=True)",
+                        f"Rita-e2e-{head_label}{theta_label}-NLL (train_w1=True)",
                         lambda: evaluate_rita_e2e(
                             X_train, y_train, X_val, y_val, X_test,
                             seed=fold_seed,
@@ -476,6 +540,9 @@ def compare_e2e_benchmark(
                             branchnet_lr=branchnet_lr,
                             e2e_epochs=e2e_epochs,
                             e2e_lr=e2e_lr,
+                            head_type=head_type,
+                            theta_init_mode=theta_init_mode,
+                            learnable_competition=learnable_competition,
                             loss_mode="nll",
                             train_w1=True,
                             branch_truth_loss_weight=branch_truth_loss_weight,
@@ -489,7 +556,7 @@ def compare_e2e_benchmark(
                         [
                             (
                                 "ablation",
-                                "Rita-e2e-Posterior-NoisyOr-BCE (train_w1=True)",
+                                f"Rita-e2e-Posterior-{head_label}{theta_label}-BCE (train_w1=True)",
                                 lambda: evaluate_rita_e2e(
                                     X_train, y_train, X_val, y_val, X_test,
                                     seed=fold_seed,
@@ -497,6 +564,9 @@ def compare_e2e_benchmark(
                                     branchnet_lr=branchnet_lr,
                                     e2e_epochs=e2e_epochs,
                                     e2e_lr=e2e_lr,
+                                    head_type=head_type,
+                                    theta_init_mode=theta_init_mode,
+                                    learnable_competition=learnable_competition,
                                     loss_mode="bce",
                                     train_w1=True,
                                     use_posterior=True,
@@ -510,7 +580,7 @@ def compare_e2e_benchmark(
                             ),
                             (
                                 "ablation",
-                                "Rita-e2e-Posterior-NoisyOr-NLL (train_w1=True)",
+                                f"Rita-e2e-Posterior-{head_label}{theta_label}-NLL (train_w1=True)",
                                 lambda: evaluate_rita_e2e(
                                     X_train, y_train, X_val, y_val, X_test,
                                     seed=fold_seed,
@@ -518,6 +588,9 @@ def compare_e2e_benchmark(
                                     branchnet_lr=branchnet_lr,
                                     e2e_epochs=e2e_epochs,
                                     e2e_lr=e2e_lr,
+                                    head_type=head_type,
+                                    theta_init_mode=theta_init_mode,
+                                    learnable_competition=learnable_competition,
                                     loss_mode="nll",
                                     train_w1=True,
                                     use_posterior=True,
@@ -556,10 +629,11 @@ def compare_e2e_benchmark(
                 )
                 task_start = time.perf_counter()
                 probs = runner()
+                normalized_probs = normalize_probs_numpy(probs)
                 task_duration = time.perf_counter() - task_start
                 task_durations.append(task_duration)
                 completed_tasks += 1
-                metrics = compute_metrics(y_test, probs)
+                metrics = compute_metrics(y_test, normalized_probs, calibration_bins=reliability_bins)
                 record = {
                     "dataset": dataset_name,
                     "fold": fold_idx,
@@ -571,6 +645,13 @@ def compare_e2e_benchmark(
                     records.append(record)
                 else:
                     ablations.append(record)
+                if save_reliability_diagrams:
+                    payload = reliability_payloads.setdefault(
+                        (dataset_name, section, model_name),
+                        {"y_true": [], "probs": []},
+                    )
+                    payload["y_true"].append(np.asarray(y_test, dtype=np.int64).copy())
+                    payload["probs"].append(np.asarray(normalized_probs, dtype=np.float64).copy())
                 lines.append(f"{model_name}: {format_metrics(metrics)}")
                 flush_output()
                 elapsed_after = time.perf_counter() - benchmark_start
@@ -599,6 +680,29 @@ def compare_e2e_benchmark(
         lines.append("=== Ablation Summary ===")
         for row in ablation_summary:
             lines.append(f"{row['model']}: {format_metrics(row)}")
+
+    if save_reliability_diagrams and reliability_output_dir is not None:
+        lines.append("")
+        lines.append("=== Reliability Diagrams ===")
+        for (dataset_name, section, model_name), payload in sorted(reliability_payloads.items()):
+            y_true = np.concatenate(payload["y_true"], axis=0)
+            probs = np.concatenate(payload["probs"], axis=0)
+            diagram_name = (
+                f"{make_safe_filename(dataset_name)}__"
+                f"{make_safe_filename(section)}__"
+                f"{make_safe_filename(model_name)}.png"
+            )
+            diagram_path = reliability_output_dir / diagram_name
+            save_top_label_reliability_diagram(
+                y_true,
+                probs,
+                diagram_path,
+                title=f"{dataset_name} | {model_name}",
+                n_bins=reliability_bins,
+            )
+            lines.append(
+                f"{dataset_name} | {section} | {model_name}: {diagram_path}"
+            )
 
     flush_output()
     total_elapsed = time.perf_counter() - benchmark_start
@@ -631,6 +735,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--theta-l1-weight", type=float, default=0.0)
     parser.add_argument("--class-leak-l1-weight", type=float, default=0.0)
     parser.add_argument("--calibration-l2-weight", type=float, default=0.0)
+    parser.add_argument("--head-type", type=str, default="noisy_or")
+    parser.add_argument("--theta-init-mode", type=str, default="weighted")
+    parser.add_argument("--learnable-competition", action="store_true")
+    parser.add_argument("--reliability-bins", type=int, default=10)
+    parser.add_argument("--save-reliability-diagrams", action="store_true")
+    parser.add_argument("--reliability-dir", type=str, default=None)
     parser.add_argument("--branchnet-epochs", type=int, default=20)
     parser.add_argument("--branchnet-lr", type=float, default=1e-2)
     parser.add_argument("--e2e-epochs", type=int, default=20)
@@ -662,6 +772,12 @@ def main() -> None:
         theta_l1_weight=args.theta_l1_weight,
         class_leak_l1_weight=args.class_leak_l1_weight,
         calibration_l2_weight=args.calibration_l2_weight,
+        head_type=args.head_type,
+        theta_init_mode=args.theta_init_mode,
+        learnable_competition=args.learnable_competition,
+        reliability_bins=args.reliability_bins,
+        save_reliability_diagrams=args.save_reliability_diagrams,
+        reliability_dir=args.reliability_dir,
         branchnet_epochs=args.branchnet_epochs,
         branchnet_lr=args.branchnet_lr,
         e2e_epochs=args.e2e_epochs,

@@ -3,6 +3,7 @@ import torch.nn as nn
 import numpy as np
 import pandas as pd
 import matplotlib
+import tempfile
 from typing import Any, Optional, Union
 from tqdm import tqdm
 from BranchNet import BranchNet
@@ -147,6 +148,15 @@ class BranchNetModel(BranchNet):
         val_loss_history = []
         optimizer = torch.optim.Adam(self.parameters(), lr=learning_rate)
         scheduler = CosineAnnealingWarmRestarts(optimizer,T_0=180)
+        checkpoint_dir = TEMPORAL_CHECKPOINT_PATH.parent
+        checkpoint_dir.mkdir(parents=True, exist_ok=True)
+        with tempfile.NamedTemporaryFile(
+            dir=checkpoint_dir,
+            prefix="branchnet_fit_",
+            suffix=".pt",
+            delete=False,
+        ) as checkpoint_file:
+            checkpoint_path = checkpoint_file.name
         for i,_ in enumerate(progress_bar):
             loss = self.train_step(x_train, y_train, criterion, optimizer)
             progress_bar.set_description(f"Loss: {loss:.6f}")
@@ -156,7 +166,7 @@ class BranchNetModel(BranchNet):
             scheduler.step(val_loss)
             if val_loss<min_val_loss:
                 min_val_loss = val_loss
-                torch.save(self.state_dict(), TEMPORAL_CHECKPOINT_PATH)
+                torch.save(self.state_dict(), checkpoint_path)
                 patience = 0
             else:
                 patience+=1
@@ -167,12 +177,17 @@ class BranchNetModel(BranchNet):
         _ = plt.figure(figsize=(12, 8))
         plt.plot(loss_history[5:], label="train")
         if i<epochs-1:
-            self.load_state_dict(torch.load(TEMPORAL_CHECKPOINT_PATH,weights_only=True))
+            self.load_state_dict(torch.load(checkpoint_path,weights_only=True))
         plt.plot(val_loss_history[5:], label="val")
         plt.legend()
         if loss_file is not None:
             plt.savefig(loss_file)
         plt.close()
+        try:
+            import os
+            os.remove(checkpoint_path)
+        except OSError:
+            pass
 
         return self
 

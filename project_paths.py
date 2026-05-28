@@ -10,6 +10,7 @@ CHECKPOINTS_DIR = OUTPUT_DIR / "checkpoints"
 PROBLOG_OUTPUT_DIR = OUTPUT_DIR / "problog"
 DEBUG_EXPORT_DIR = OUTPUT_DIR / "debug_export"
 BENCHMARKS_DIR = OUTPUT_DIR / "benchmarks"
+RELIABILITY_DIR = BENCHMARKS_DIR / "reliability"
 
 TEMPORAL_CHECKPOINT_PATH = CHECKPOINTS_DIR / "temporal.pt"
 
@@ -24,6 +25,7 @@ def ensure_repo_layout() -> None:
         PROBLOG_OUTPUT_DIR,
         DEBUG_EXPORT_DIR,
         BENCHMARKS_DIR,
+        RELIABILITY_DIR,
     ):
         directory.mkdir(parents=True, exist_ok=True)
 

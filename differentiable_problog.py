@@ -8,16 +8,79 @@ from branch_schema import Branch
 
 def _num_classes_from_branches(branches: Iterable[Branch]) -> int:
     return max(
-        (len(branch.class_proportions) for branch in branches if branch.class_proportions is not None),
+        (
+            len(branch.class_proportions)
+            for branch in branches
+            if branch.class_proportions is not None
+        ),
         default=0,
     )
 
 
+def _num_classes_from_branch_distribution(branches: Iterable[Branch]) -> int:
+    return max(
+        (
+            len(branch.class_distribution)
+            for branch in branches
+            if branch.class_distribution is not None
+        ),
+        default=0,
+    )
+
+
+def _normalized_branch_distribution(branch: Branch, n_classes: int) -> list[float]:
+    probs = branch.class_distribution
+    if probs is None:
+        probs = branch.class_proportions
+    if probs is None:
+        raise ValueError(
+            f"Branch {branch.branch_id} has neither class_distribution nor class_proportions; "
+            "cannot initialize normalized theta"
+        )
+    if len(probs) != n_classes:
+        raise ValueError(
+            f"Branch {branch.branch_id} has {len(probs)} class probabilities, "
+            f"expected {n_classes}"
+        )
+    prob_tensor = torch.tensor(probs, dtype=torch.float64)
+    total = float(prob_tensor.sum())
+    if total <= 0.0:
+        raise ValueError(
+            f"Branch {branch.branch_id} has non-positive total class mass {total}; "
+            "cannot initialize normalized theta"
+        )
+    return (prob_tensor / total).tolist()
+
+
+def _theta_init_values(branch: Branch, n_classes: int, theta_init_mode: str) -> list[float]:
+    if theta_init_mode == "weighted":
+        probs = branch.class_proportions
+        if probs is None:
+            raise ValueError(
+                f"Branch {branch.branch_id} has no class_proportions; cannot initialize weighted theta"
+            )
+        if len(probs) != n_classes:
+            raise ValueError(
+                f"Branch {branch.branch_id} has {len(probs)} class probabilities, "
+                f"expected {n_classes}"
+            )
+        return [float(x) for x in probs]
+    if theta_init_mode == "normalized":
+        return _normalized_branch_distribution(branch, n_classes)
+    raise ValueError(
+        f"Unsupported theta_init_mode: {theta_init_mode}. "
+        "Expected 'weighted' or 'normalized'."
+    )
+
+
 class DifferentiableClassHead(nn.Module):
+    outputs_sum_to_one = False
+
     def __init__(
         self,
         branches: list[Branch],
         n_classes: Optional[int] = None,
+        theta_init_mode: str = "weighted",
         eps: float = 1e-6,
         dtype: torch.dtype = torch.float32,
         device: Optional[torch.device | str] = None,
@@ -33,12 +96,26 @@ class DifferentiableClassHead(nn.Module):
         if not branches:
             raise ValueError("DifferentiableClassHead requires at least one branch")
 
-        inferred_n_classes = _num_classes_from_branches(branches)
+        if theta_init_mode == "weighted":
+            inferred_n_classes = _num_classes_from_branches(branches)
+        elif theta_init_mode == "normalized":
+            inferred_n_classes = max(
+                _num_classes_from_branches(branches),
+                _num_classes_from_branch_distribution(branches),
+            )
+        else:
+            raise ValueError(
+                f"Unsupported theta_init_mode: {theta_init_mode}. "
+                "Expected 'weighted' or 'normalized'."
+            )
         if inferred_n_classes == 0:
-            raise ValueError("Branches must carry class_proportions to initialize theta")
+            raise ValueError(
+                "Branches must carry class_proportions or class_distribution to initialize theta"
+            )
 
         self.n_branches = len(branches)
         self.n_classes = inferred_n_classes if n_classes is None else int(n_classes)
+        self.theta_init_mode = str(theta_init_mode)
         self.eps = float(eps)
         self.use_class_leak = bool(use_class_leak)
         self.use_output_calibration = bool(use_output_calibration)
@@ -53,16 +130,7 @@ class DifferentiableClassHead(nn.Module):
 
         init_theta = torch.zeros(self.n_branches, self.n_classes, dtype=dtype)
         for branch_idx, branch in enumerate(branches):
-            probs = branch.class_proportions
-            if probs is None:
-                raise ValueError(
-                    f"Branch {branch.branch_id} has no class_proportions; cannot initialize theta"
-                )
-            if len(probs) != self.n_classes:
-                raise ValueError(
-                    f"Branch {branch.branch_id} has {len(probs)} class probabilities, "
-                    f"expected {self.n_classes}"
-                )
+            probs = _theta_init_values(branch, self.n_classes, theta_init_mode=self.theta_init_mode)
             init_theta[branch_idx] = torch.tensor(probs, dtype=dtype)
 
         if device is not None:
@@ -143,13 +211,19 @@ class DifferentiableClassHead(nn.Module):
         if not self.use_output_calibration:
             return class_probs
 
+        squeeze_output = class_probs.ndim == 1
+        if squeeze_output:
+            class_probs = class_probs.unsqueeze(0)
         probs = class_probs.clamp(self.eps, 1.0 - self.eps)
         logits = torch.logit(probs)
         temperature = self.calibration_temperature.to(device=probs.device, dtype=probs.dtype)
         bias = self.calibration_bias.to(device=probs.device, dtype=probs.dtype)
-        return torch.sigmoid(logits / temperature.unsqueeze(0) + bias.unsqueeze(0))
+        calibrated = torch.sigmoid(logits / temperature.unsqueeze(0) + bias.unsqueeze(0))
+        if squeeze_output:
+            return calibrated.squeeze(0)
+        return calibrated
 
-    def forward(self, z: torch.Tensor) -> torch.Tensor:
+    def _prepare_branch_priors(self, z: torch.Tensor) -> tuple[torch.Tensor, bool]:
         if not isinstance(z, torch.Tensor):
             raise TypeError(f"z must be a torch.Tensor, got {type(z)}")
 
@@ -167,6 +241,11 @@ class DifferentiableClassHead(nn.Module):
 
         theta = self.effective_theta.to(device=z.device, dtype=z.dtype)
         z = z.to(dtype=theta.dtype)
+        return z, squeeze_output
+
+    def support_logits(self, z: torch.Tensor) -> torch.Tensor:
+        z, squeeze_output = self._prepare_branch_priors(z)
+        theta = self.effective_theta.to(device=z.device, dtype=z.dtype)
 
         support = z.unsqueeze(-1) * theta.unsqueeze(0)
         support = support.clamp(min=0.0, max=1.0 - self.eps)
@@ -174,11 +253,17 @@ class DifferentiableClassHead(nn.Module):
         if self.use_class_leak:
             class_leak = self.class_leak.to(device=z.device, dtype=z.dtype)
             log_prob_neg = log_prob_neg + torch.log1p(-class_leak).unsqueeze(0)
-        class_probs = 1.0 - torch.exp(log_prob_neg)
-        class_probs = self._apply_output_calibration(class_probs)
+        support_logits = -log_prob_neg
 
         if squeeze_output:
-            return class_probs.squeeze(0)
+            return support_logits.squeeze(0)
+        return support_logits
+
+    def forward(self, z: torch.Tensor) -> torch.Tensor:
+        support_logits = self.support_logits(z)
+        class_probs = 1.0 - torch.exp(-support_logits)
+        class_probs = self._apply_output_calibration(class_probs)
+
         return class_probs
 
     def theta_probabilities(self) -> torch.Tensor:
@@ -200,6 +285,117 @@ class DifferentiableClassHead(nn.Module):
                 self.calibration_log_temperature.pow(2).mean()
                 + self.calibration_bias.pow(2).mean()
             )
+        return loss
+
+
+class DifferentiableSoftmaxCompetitionHead(DifferentiableClassHead):
+    """Multiclass-aware head built on top of branch-to-class support features.
+
+    The branch-level ProbLog semantics remain visible through the intermediate
+    support logits:
+
+        s_c(x) = - sum_b log(1 - theta_bc * z_b)
+
+    A multiclass competition layer then converts these features into a proper
+    class distribution with softmax. By default this is just softmax(s); when
+    ``learnable_competition=True`` a trainable linear competition module is
+    inserted before the final softmax.
+    """
+
+    outputs_sum_to_one = True
+
+    def __init__(
+        self,
+        branches: list[Branch],
+        n_classes: Optional[int] = None,
+        theta_init_mode: str = "weighted",
+        eps: float = 1e-6,
+        dtype: torch.dtype = torch.float32,
+        device: Optional[torch.device | str] = None,
+        use_class_leak: bool = False,
+        init_class_leak: float = 0.0,
+        train_class_leak: bool = True,
+        use_output_calibration: bool = False,
+        init_calibration_temperature: float = 1.0,
+        train_calibration: bool = True,
+        theta_prune_threshold: float = 0.0,
+        learnable_competition: bool = False,
+        use_competition_bias: bool = True,
+    ):
+        super().__init__(
+            branches=branches,
+            n_classes=n_classes,
+            theta_init_mode=theta_init_mode,
+            eps=eps,
+            dtype=dtype,
+            device=device,
+            use_class_leak=use_class_leak,
+            init_class_leak=init_class_leak,
+            train_class_leak=train_class_leak,
+            use_output_calibration=use_output_calibration,
+            init_calibration_temperature=init_calibration_temperature,
+            train_calibration=train_calibration,
+            theta_prune_threshold=theta_prune_threshold,
+        )
+        self.learnable_competition = bool(learnable_competition)
+
+        if self.learnable_competition:
+            competition_weight = torch.eye(self.n_classes, dtype=dtype, device=device)
+            competition_bias = torch.zeros(self.n_classes, dtype=dtype, device=device)
+            self.competition_weight = nn.Parameter(competition_weight)
+            if use_competition_bias:
+                self.competition_bias = nn.Parameter(competition_bias)
+            else:
+                self.register_buffer("competition_bias", competition_bias)
+        else:
+            self.competition_weight = None
+            self.competition_bias = None
+
+    def competition_logits(self, z: torch.Tensor) -> torch.Tensor:
+        support_logits = self.support_logits(z)
+        squeeze_output = support_logits.ndim == 1
+        if squeeze_output:
+            support_logits = support_logits.unsqueeze(0)
+
+        logits = support_logits
+        if self.competition_weight is not None:
+            weight = self.competition_weight.to(device=logits.device, dtype=logits.dtype)
+            logits = logits @ weight.T
+            if self.competition_bias is not None:
+                bias = self.competition_bias.to(device=logits.device, dtype=logits.dtype)
+                logits = logits + bias.unsqueeze(0)
+
+        if self.use_output_calibration:
+            temperature = self.calibration_temperature.to(device=logits.device, dtype=logits.dtype)
+            bias = self.calibration_bias.to(device=logits.device, dtype=logits.dtype)
+            logits = logits / temperature.unsqueeze(0) + bias.unsqueeze(0)
+
+        if squeeze_output:
+            return logits.squeeze(0)
+        return logits
+
+    def forward(self, z: torch.Tensor) -> torch.Tensor:
+        logits = self.competition_logits(z)
+        if logits.ndim == 1:
+            return torch.softmax(logits, dim=0)
+        return torch.softmax(logits, dim=1)
+
+    def regularization_loss(
+        self,
+        theta_l1_weight: float = 0.0,
+        class_leak_l1_weight: float = 0.0,
+        calibration_l2_weight: float = 0.0,
+        competition_l2_weight: float = 0.0,
+    ) -> torch.Tensor:
+        loss = super().regularization_loss(
+            theta_l1_weight=theta_l1_weight,
+            class_leak_l1_weight=class_leak_l1_weight,
+            calibration_l2_weight=calibration_l2_weight,
+        )
+        if competition_l2_weight and self.competition_weight is not None:
+            loss = loss + float(competition_l2_weight) * self.competition_weight.pow(2).mean()
+            if self.competition_bias is not None:
+                loss = loss + float(competition_l2_weight) * self.competition_bias.pow(2).mean()
         return loss
 
 

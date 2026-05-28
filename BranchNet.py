@@ -126,7 +126,13 @@ class BranchNet(nn.Module):
                     n_samples_total = tree.n_node_samples[0]
                     node_samples = tree.n_node_samples[index]
                     factor = node_samples / n_samples_total
-                    dist = factor * tree.value[index][0]  # parent distribution
+                    raw_distribution = np.asarray(tree.value[index][0], dtype=np.float64)
+                    dist = factor * raw_distribution  # weighted parent distribution
+                    raw_sum = float(raw_distribution.sum())
+                    if raw_sum > 0.0:
+                        class_distribution = (raw_distribution / raw_sum).tolist()
+                    else:
+                        class_distribution = None
 
                     branch_id = f"b{self.hidden_neurons + len(branches_in_tree)}"
                     branch = Branch(
@@ -135,6 +141,8 @@ class BranchNet(nn.Module):
                         parent_node_id=int(index),
                         conditions=list(path_conditions),
                         class_proportions=dist.tolist(),
+                        branch_mass=float(factor),
+                        class_distribution=class_distribution,
                         split_feature_idx=(
                             split_feature if split_feature >= 0 else None
                         ),

@@ -25,6 +25,8 @@ class Branch:
     parent_node_id: int
     conditions: List[Condition] = field(default_factory=list)
     class_proportions: Optional[List[float]] = None
+    branch_mass: Optional[float] = None
+    class_distribution: Optional[List[float]] = None
 
     # split metadata для совместимости с оригинальным W1
     split_feature_idx: Optional[int] = None
@@ -46,6 +48,12 @@ class Branch:
             "class_proportions": None
             if self.class_proportions is None
             else [float(x) for x in self.class_proportions],
+            "branch_mass": None
+            if self.branch_mass is None
+            else float(self.branch_mass),
+            "class_distribution": None
+            if self.class_distribution is None
+            else [float(x) for x in self.class_distribution],
             "split_feature_idx": None
             if self.split_feature_idx is None
             else int(self.split_feature_idx),

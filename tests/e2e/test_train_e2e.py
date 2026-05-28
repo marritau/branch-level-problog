@@ -11,6 +11,7 @@ if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
 from BranchNetFramwork import BranchNetModel
+from differentiable_problog import DifferentiableClassHead
 from train_e2e import normalize_class_probs_for_nll, train_e2e, predict_e2e_class_probs
 
 
@@ -78,6 +79,130 @@ def test_train_e2e_smoke_for_bce_and_nll():
             )
 
     print('test_train_e2e_smoke_for_bce_and_nll OK')
+
+
+def test_train_e2e_smoke_with_softmax_competition_head():
+    data = load_iris()
+    X = data.data.astype("float32")
+    y = data.target.astype("int64")
+
+    rng = np.random.default_rng(4)
+    perm = rng.permutation(len(X))
+    X = X[perm]
+    y = y[perm]
+
+    X_train, y_train = X[:120], y[:120]
+    X_val, y_val = X[120:144], y[120:144]
+
+    model = BranchNetModel(device='cpu')
+    forest = ExtraTreesClassifier(n_estimators=8, max_leaf_nodes=32, random_state=4)
+    forest.fit(X_train, y_train)
+    model.build_model_from_ensemble(forest)
+
+    result = train_e2e(
+        model,
+        X_train,
+        y_train,
+        X_val,
+        y_val,
+        head_type="softmax_competition",
+        learnable_competition=True,
+        loss_mode="nll",
+        train_w1=False,
+        learning_rate=1e-2,
+        epochs=3,
+        patience=3,
+        batch_size=32,
+    )
+
+    assert result.head_type == "softmax_competition"
+    assert result.head.outputs_sum_to_one
+    assert hasattr(result.head, "competition_weight")
+    assert result.head.competition_weight is not None
+
+    class_probs = predict_e2e_class_probs(
+        result.model,
+        result.head,
+        X_val[:4],
+        normalize_for_nll=True,
+    )
+    with torch.no_grad():
+        raw_branch_probs = result.model.predict_branch_proba_torch(X_val[:4])
+        expected_class_probs = result.head(raw_branch_probs)
+
+    assert class_probs.shape == (4, result.theta.shape[1])
+    assert torch.all(class_probs >= 0.0)
+    assert torch.all(class_probs <= 1.0)
+    assert torch.allclose(class_probs, expected_class_probs, atol=1e-6, rtol=1e-6)
+    assert torch.allclose(
+        class_probs.sum(dim=1),
+        torch.ones(class_probs.shape[0], dtype=class_probs.dtype),
+        atol=1e-6,
+        rtol=1e-6,
+    )
+
+    print('test_train_e2e_smoke_with_softmax_competition_head OK')
+
+
+def test_train_e2e_smoke_with_normalized_theta_init():
+    data = load_iris()
+    X = data.data.astype("float32")
+    y = data.target.astype("int64")
+
+    rng = np.random.default_rng(5)
+    perm = rng.permutation(len(X))
+    X = X[perm]
+    y = y[perm]
+
+    X_train, y_train = X[:120], y[:120]
+    X_val, y_val = X[120:144], y[120:144]
+
+    model = BranchNetModel(device='cpu')
+    forest = ExtraTreesClassifier(n_estimators=8, max_leaf_nodes=32, random_state=5)
+    forest.fit(X_train, y_train)
+    model.build_model_from_ensemble(forest)
+    normalized_head = DifferentiableClassHead(
+        model.branches,
+        theta_init_mode="normalized",
+        dtype=model.dtype,
+        device=model.device,
+    )
+    init_theta_sums = normalized_head.theta_probabilities().sum(dim=1)
+    assert torch.allclose(
+        init_theta_sums,
+        torch.ones_like(init_theta_sums),
+        atol=1e-6,
+        rtol=1e-6,
+    )
+
+    result = train_e2e(
+        model,
+        X_train,
+        y_train,
+        X_val,
+        y_val,
+        theta_init_mode="normalized",
+        loss_mode="bce",
+        train_w1=False,
+        learning_rate=1e-2,
+        epochs=2,
+        patience=2,
+        batch_size=32,
+    )
+
+    assert result.theta_init_mode == "normalized"
+
+    class_probs = predict_e2e_class_probs(
+        result.model,
+        result.head,
+        X_val[:4],
+        normalize_for_nll=False,
+    )
+    assert class_probs.shape == (4, result.theta.shape[1])
+    assert torch.all(class_probs >= 0.0)
+    assert torch.all(class_probs <= 1.0)
+
+    print('test_train_e2e_smoke_with_normalized_theta_init OK')
 
 
 def test_train_e2e_smoke_with_posterior_layer():
@@ -275,6 +400,8 @@ def test_normalize_class_probs_for_nll():
 
 if __name__ == '__main__':
     test_train_e2e_smoke_for_bce_and_nll()
+    test_train_e2e_smoke_with_softmax_competition_head()
+    test_train_e2e_smoke_with_normalized_theta_init()
     test_train_e2e_smoke_with_posterior_layer()
     test_train_e2e_smoke_with_branch_truth_aux_loss()
     test_train_e2e_smoke_with_enhanced_noisy_or_head()

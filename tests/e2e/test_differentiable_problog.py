@@ -8,7 +8,11 @@ if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
 from branch_schema import Branch, Condition
-from differentiable_problog import DifferentiableClassHead, DifferentiablePosteriorLayer
+from differentiable_problog import (
+    DifferentiableClassHead,
+    DifferentiablePosteriorLayer,
+    DifferentiableSoftmaxCompetitionHead,
+)
 
 
 def test_differentiable_class_head_init_and_noisy_or():
@@ -88,6 +92,54 @@ def test_differentiable_class_head_outputs_are_not_softmax_probabilities():
     print('test_differentiable_class_head_outputs_are_not_softmax_probabilities OK')
 
 
+def test_differentiable_class_head_theta_init_modes():
+    branches = [
+        Branch(
+            branch_id='b0',
+            tree_id=0,
+            parent_node_id=1,
+            class_proportions=[0.30, 0.10],
+            branch_mass=0.40,
+            class_distribution=[0.75, 0.25],
+        ),
+        Branch(
+            branch_id='b1',
+            tree_id=0,
+            parent_node_id=2,
+            class_proportions=[0.05, 0.15],
+        ),
+    ]
+
+    weighted_head = DifferentiableClassHead(
+        branches,
+        theta_init_mode="weighted",
+        dtype=torch.float64,
+    )
+    normalized_head = DifferentiableClassHead(
+        branches,
+        theta_init_mode="normalized",
+        dtype=torch.float64,
+    )
+
+    weighted_theta = weighted_head.theta_probabilities()
+    normalized_theta = normalized_head.theta_probabilities()
+
+    assert torch.allclose(
+        weighted_theta,
+        torch.tensor([[0.30, 0.10], [0.05, 0.15]], dtype=torch.float64),
+        atol=1e-8,
+        rtol=1e-8,
+    )
+    assert torch.allclose(
+        normalized_theta,
+        torch.tensor([[0.75, 0.25], [0.25, 0.75]], dtype=torch.float64),
+        atol=1e-8,
+        rtol=1e-8,
+    )
+
+    print('test_differentiable_class_head_theta_init_modes OK')
+
+
 def test_differentiable_class_head_leak_calibration_pruning_and_regularization():
     branches = [
         Branch(branch_id='b0', tree_id=0, parent_node_id=1, class_proportions=[0.2, 0.8]),
@@ -151,6 +203,63 @@ def test_differentiable_class_head_leak_calibration_pruning_and_regularization()
     assert torch.isfinite(trainable_head.calibration_bias.grad).all()
 
     print('test_differentiable_class_head_leak_calibration_pruning_and_regularization OK')
+
+
+def test_differentiable_softmax_competition_head_outputs_distribution():
+    branches = [
+        Branch(branch_id='b0', tree_id=0, parent_node_id=1, class_proportions=[0.2, 0.8]),
+        Branch(branch_id='b1', tree_id=0, parent_node_id=2, class_proportions=[0.6, 0.1]),
+    ]
+
+    head = DifferentiableSoftmaxCompetitionHead(branches, dtype=torch.float64)
+    z = torch.tensor([[0.5, 0.25], [0.9, 0.3]], dtype=torch.float64, requires_grad=True)
+
+    support_logits = head.support_logits(z)
+    class_probs = head(z)
+    expected_support_logits = torch.tensor(
+        [
+            [
+                -torch.log(torch.tensor((1.0 - 0.2 * 0.5) * (1.0 - 0.6 * 0.25), dtype=torch.float64)),
+                -torch.log(torch.tensor((1.0 - 0.8 * 0.5) * (1.0 - 0.1 * 0.25), dtype=torch.float64)),
+            ],
+            [
+                -torch.log(torch.tensor((1.0 - 0.2 * 0.9) * (1.0 - 0.6 * 0.3), dtype=torch.float64)),
+                -torch.log(torch.tensor((1.0 - 0.8 * 0.9) * (1.0 - 0.1 * 0.3), dtype=torch.float64)),
+            ],
+        ],
+        dtype=torch.float64,
+    )
+    expected_probs = torch.softmax(expected_support_logits, dim=1)
+
+    assert head.outputs_sum_to_one
+    assert torch.allclose(support_logits, expected_support_logits, atol=1e-10, rtol=1e-10)
+    assert torch.allclose(class_probs, expected_probs, atol=1e-10, rtol=1e-10)
+    assert torch.allclose(
+        class_probs.sum(dim=1),
+        torch.ones(class_probs.shape[0], dtype=class_probs.dtype),
+        atol=1e-10,
+        rtol=1e-10,
+    )
+
+    loss = class_probs.sum()
+    loss.backward()
+    assert z.grad is not None
+    assert head.theta_logits.grad is not None
+    assert torch.isfinite(z.grad).all()
+    assert torch.isfinite(head.theta_logits.grad).all()
+
+    learnable_head = DifferentiableSoftmaxCompetitionHead(
+        branches,
+        learnable_competition=True,
+        dtype=torch.float64,
+    )
+    learnable_probs = learnable_head(z.detach().clone().requires_grad_(True))
+    learnable_loss = learnable_probs[:, 0].sum()
+    learnable_loss.backward()
+    assert learnable_head.competition_weight.grad is not None
+    assert torch.isfinite(learnable_head.competition_weight.grad).all()
+
+    print('test_differentiable_softmax_competition_head_outputs_distribution OK')
 
 
 def _expected_posterior(prior, branch, row, p_high=0.95, p_low=0.05) -> float:
@@ -357,7 +466,9 @@ def test_differentiable_posterior_reliability_is_trainable():
 if __name__ == '__main__':
     test_differentiable_class_head_init_and_noisy_or()
     test_differentiable_class_head_outputs_are_not_softmax_probabilities()
+    test_differentiable_class_head_theta_init_modes()
     test_differentiable_class_head_leak_calibration_pruning_and_regularization()
+    test_differentiable_softmax_competition_head_outputs_distribution()
     test_differentiable_posterior_matches_bayes_update()
     test_differentiable_posterior_branch_truth()
     test_differentiable_posterior_reliability_is_trainable()

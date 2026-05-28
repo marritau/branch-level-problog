@@ -10,7 +10,11 @@ from torch.utils.data import DataLoader, TensorDataset
 
 from BranchNetFramwork import BranchNetModel, convert_to_tensor
 from branch_schema import Branch
-from differentiable_problog import DifferentiableClassHead, DifferentiablePosteriorLayer
+from differentiable_problog import (
+    DifferentiableClassHead,
+    DifferentiablePosteriorLayer,
+    DifferentiableSoftmaxCompetitionHead,
+)
 
 
 @dataclass
@@ -20,6 +24,8 @@ class E2ETrainingResult:
     posterior_layer: Optional[DifferentiablePosteriorLayer]
     theta: torch.Tensor
     history: dict
+    head_type: str
+    theta_init_mode: str
     loss_mode: str
     train_w1: bool
     use_posterior: bool
@@ -68,6 +74,7 @@ def compute_e2e_loss(
     y_true: torch.Tensor,
     loss_mode: str = "bce",
     eps: float = 1e-8,
+    outputs_sum_to_one: bool = False,
 ) -> torch.Tensor:
     if not isinstance(class_probs, torch.Tensor):
         raise TypeError(f"class_probs must be a torch.Tensor, got {type(class_probs)}")
@@ -83,7 +90,11 @@ def compute_e2e_loss(
         return F.binary_cross_entropy(probs, targets)
 
     if loss_mode == "nll":
-        normalized = normalize_class_probs_for_nll(class_probs, eps=eps)
+        if outputs_sum_to_one:
+            normalized = class_probs.clamp(min=eps, max=1.0)
+            normalized = normalized / normalized.sum(dim=1, keepdim=True)
+        else:
+            normalized = normalize_class_probs_for_nll(class_probs, eps=eps)
         log_probs = normalized.clamp_min(eps).log()
         return F.nll_loss(log_probs, y_true)
 
@@ -113,7 +124,7 @@ def predict_e2e_class_probs(
         else:
             z = h
         class_probs = head(z)
-        if normalize_for_nll:
+        if normalize_for_nll and not getattr(head, "outputs_sum_to_one", False):
             class_probs = normalize_class_probs_for_nll(class_probs, eps=eps)
     if head_was_training:
         head.train()
@@ -213,7 +224,13 @@ def _epoch_pass(
             h = model.branch_probs(x_batch)
             z = posterior_layer(h, x_batch) if posterior_layer is not None else h
             class_probs = head(z)
-            loss = compute_e2e_loss(class_probs, y_batch, loss_mode=loss_mode, eps=eps)
+            loss = compute_e2e_loss(
+                class_probs,
+                y_batch,
+                loss_mode=loss_mode,
+                eps=eps,
+                outputs_sum_to_one=getattr(head, "outputs_sum_to_one", False),
+            )
             if branch_truth_loss_weight > 0.0:
                 branch_targets = branch_truth_layer.branch_truth(x_batch, dtype=h.dtype)
                 branch_probs = h.clamp(min=eps, max=1.0 - eps)
@@ -247,6 +264,9 @@ def train_e2e(
     x_val,
     y_val,
     n_classes: Optional[int] = None,
+    head_type: str = "noisy_or",
+    theta_init_mode: str = "weighted",
+    learnable_competition: bool = False,
     loss_mode: str = "bce",
     train_w1: bool = False,
     use_posterior: bool = False,
@@ -309,9 +329,10 @@ def train_e2e(
             f"{n_classes} classes. Make sure the ensemble and labels use the same class set."
         )
 
-    head = DifferentiableClassHead(
-        model.branches,
+    head_kwargs = dict(
+        branches=model.branches,
         n_classes=n_classes,
+        theta_init_mode=theta_init_mode,
         dtype=model.dtype,
         device=model.device,
         use_class_leak=use_class_leak,
@@ -322,6 +343,18 @@ def train_e2e(
         train_calibration=train_calibration,
         theta_prune_threshold=theta_prune_threshold,
     )
+    if head_type == "noisy_or":
+        head = DifferentiableClassHead(**head_kwargs)
+    elif head_type == "softmax_competition":
+        head = DifferentiableSoftmaxCompetitionHead(
+            **head_kwargs,
+            learnable_competition=learnable_competition,
+        )
+    else:
+        raise ValueError(
+            f"Unsupported head_type: {head_type}. "
+            "Expected 'noisy_or' or 'softmax_competition'."
+        )
     posterior_layer = (
         DifferentiablePosteriorLayer(
             model.branches,
@@ -434,6 +467,8 @@ def train_e2e(
         posterior_layer=posterior_layer,
         theta=head.theta_probabilities(),
         history=history,
+        head_type=head_type,
+        theta_init_mode=theta_init_mode,
         loss_mode=loss_mode,
         train_w1=train_w1,
         use_posterior=use_posterior,

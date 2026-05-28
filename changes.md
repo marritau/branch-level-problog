@@ -222,3 +222,129 @@
 - Added e2e smoke coverage for the enhanced noisy-or head with posterior enabled.
 - Added a direct check that `use_posterior=False` preserves the old inference path:
   - `predict_e2e_class_probs(...)` matches `head(model.predict_branch_proba_torch(x))`.
+
+## Multiclass-Aware Competition Head
+
+- Added an alternative multiclass-aware class head in `differentiable_problog.py`:
+  - `DifferentiableSoftmaxCompetitionHead`.
+- The new head keeps branch-to-class support interpretable through intermediate support logits:
+  - `s_c(x) = - sum_b log(1 - theta_bc * z_b)`.
+- These support logits are then converted into a proper multiclass distribution with softmax, so classes compete directly instead of being treated as independent final noisy-or events.
+- Added an optional learnable competition layer on top of the support logits:
+  - identity-initialized by default when enabled,
+  - useful as a light trainable class-competition module.
+- Updated `train_e2e.py` with:
+  - `head_type='noisy_or' | 'softmax_competition'`,
+  - `learnable_competition=True | False`.
+- Updated `predict_e2e_class_probs(...)` and `compute_e2e_loss(...)` so normalized heads are handled natively under `NLL` without an extra workaround normalization step.
+- Updated `compare_e2e.py` to accept:
+  - `--head-type`,
+  - `--learnable-competition`,
+  and to label benchmark models consistently with the selected head.
+- Added tests that verify:
+  - exact support-logit features for the new head,
+  - softmax outputs sum to `1`,
+  - gradients flow through both `theta` and the optional competition layer,
+  - `train_e2e(...)` runs end-to-end with `head_type='softmax_competition'`.
+
+## Weighted vs Normalized Theta Initialization
+
+- Split the branch-level class information into two concepts:
+  - `branch_mass`: how frequent / strong the parent-of-leaf branch is in the tree,
+  - `class_distribution`: the normalized class distribution inside that branch.
+- Updated `BranchNet.py` so every extracted branch now stores:
+  - `class_proportions` as the existing weighted parent-node mass,
+  - `branch_mass`,
+  - `class_distribution`.
+- Kept `class_proportions` unchanged for backward compatibility with the current ProbLog export and the historical fixed-head behavior.
+- Added `theta_init_mode='weighted' | 'normalized'` to the differentiable class heads:
+  - `weighted` uses the old `branch.class_proportions`,
+  - `normalized` uses `branch.class_distribution` when available, otherwise normalizes `branch.class_proportions` to sum to `1`.
+- Updated `train_e2e.py` with `theta_init_mode`, so e2e experiments can compare:
+  - weighted branch-to-class support initialization,
+  - normalized `P(class | branch)` initialization.
+- Updated `compare_e2e.py` with:
+  - `--theta-init-mode`,
+  - benchmark labels that include `-NormTheta` when normalized initialization is used.
+- Added tests that verify:
+  - the two theta initialization modes produce different expected initial matrices,
+  - normalized initialization sums to `1` per branch before training,
+  - the new mode runs through the existing e2e smoke path without breaking the old weighted default.
+
+## Calibration Metrics and Reliability Diagnostics
+
+- Added a new helper module `calibration_metrics.py` with multiclass calibration utilities:
+  - `multiclass_brier_score(...)`,
+  - `expected_calibration_error(...)`,
+  - `top_label_reliability_curve(...)`,
+  - `save_top_label_reliability_diagram(...)`.
+- Updated `compare_e2e.py` so benchmark records and summaries now include:
+  - `brier_score`,
+  - `ece`,
+  in addition to `accuracy`, `weighted_f1`, `mcc`, and `log_loss`.
+- Kept calibration comparisons consistent across heads by computing these metrics on normalized class probabilities inside the benchmark driver.
+- Added optional reliability-diagram export to the benchmark:
+  - `--save-reliability-diagrams`,
+  - `--reliability-bins`,
+  - `--reliability-dir`.
+- Reliability diagrams are saved under `output/benchmarks/reliability/` by default and are grouped by dataset / section / model so they remain meaningful even when different datasets have different numbers of classes.
+- Added tests that verify:
+  - perfect multiclass predictions give zero Brier score,
+  - ECE detects overconfident predictions,
+  - the benchmark smoke path writes calibration metrics to the `.txt` report and exports reliability-diagram `.png` files.
+
+## Posterior Reliability Sweep
+
+- Added a dedicated posterior ablation driver in `sweep_posterior_reliability.py`.
+- The sweep explores global `p_high / p_low` settings for the differentiable posterior layer while reusing the existing benchmark pipeline.
+- Each valid `(p_high, p_low)` pair runs the posterior-aware e2e variants and records:
+  - `accuracy`,
+  - `weighted_f1`,
+  - `mcc`,
+  - `log_loss`,
+  - `brier_score`,
+  - `ece`.
+- Sweep results are written to a top-level summary `.txt`, while each grid point also keeps its own benchmark output file in a separate run directory.
+- Added support for ranking the best posterior configurations by any tracked metric:
+  - `accuracy`,
+  - `weighted_f1`,
+  - `mcc`,
+  - `log_loss`,
+  - `brier_score`,
+  - `ece`.
+- This closes the first half of the posterior-reliability task:
+  - global reliability grid search is now implemented,
+  - per-feature or per-branch reliability remains the natural next extension if the global sweep shows value.
+- Added a smoke test that verifies:
+  - multiple `(p_high, p_low)` pairs run end-to-end,
+  - posterior model rows are collected correctly,
+  - per-run benchmark files are created,
+  - the final sweep report includes a best-configuration summary.
+
+## Systematic Ablation Matrix
+
+- Added a dedicated experiment-matrix driver in `ablation_matrix.py`.
+- Introduced an explicit `ExperimentSpec` dataclass so ablation runs no longer depend on manually combining many CLI flags by hand.
+- Added `build_default_ablation_specs(...)` for the main research axes:
+  - `head_type`: `noisy_or` vs `softmax_competition`,
+  - `theta_init_mode`: `weighted` vs `normalized`,
+  - `use_posterior`: `False` vs `True`,
+  - `train_w1`: `False` vs `True`.
+- The default matrix uses the semantically natural loss for each head:
+  - `BCE` for `noisy_or`,
+  - `NLL` for `softmax_competition`.
+- Added `run_ablation_matrix(...)`:
+  - runs the selected experiment specs over datasets / folds,
+  - optionally includes `ExtraTrees` and `BranchNet-Neural` baselines,
+  - writes fold-level results and a combined summary `.txt`,
+  - keeps the new calibration metrics (`brier_score`, `ece`) in the same output path.
+- This gives a clean way to compare:
+  - baseline noisy-or,
+  - normalized-theta noisy-or,
+  - multiclass-aware softmax competition,
+  - posterior / no-posterior,
+  - `train_w1` / frozen `W1`.
+- Added smoke tests that verify:
+  - the default matrix contains the expected combinations,
+  - a custom mini-matrix runs end-to-end,
+  - the output summary includes baselines, experiment names, and calibration metrics.
