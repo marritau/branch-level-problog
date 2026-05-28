@@ -13,7 +13,7 @@ from compare_e2e import (
     compute_metrics,
     evaluate_branchnet_neural,
     evaluate_extratrees,
-    evaluate_rita_e2e,
+    evaluate_branchnet_e2e,
     format_duration,
     format_metrics,
     load_builtin_dataset,
@@ -53,7 +53,7 @@ def _build_experiment_name(
 ) -> str:
     head_label = "NoisyOr" if head_type == "noisy_or" else "SoftmaxCompetition"
     theta_label = "Weighted" if theta_init_mode == "weighted" else "NormTheta"
-    parts = ["Rita", head_label, theta_label, loss_mode.upper()]
+    parts = ["BranchNet-e2e", head_label, theta_label, loss_mode.upper()]
     if learnable_competition:
         parts.append("LearnableCompetition")
     if use_posterior:
@@ -241,7 +241,7 @@ def run_ablation_matrix(
                 fold_models.append(
                     (
                         spec.name,
-                        lambda spec=spec, fold_seed=fold_seed: evaluate_rita_e2e(
+                        lambda spec=spec, fold_seed=fold_seed: evaluate_branchnet_e2e(
                             X_train,
                             y_train,
                             X_val,
@@ -300,7 +300,11 @@ def run_ablation_matrix(
                     {
                         "dataset": dataset_name,
                         "fold": fold_idx,
-                        "section": "baseline" if "Rita" not in model_name else "ablation",
+                        "section": (
+                            "baseline"
+                            if model_name in {"ExtraTrees", "BranchNet-Neural (frozen W2)"}
+                            else "ablation"
+                        ),
                         "model": model_name,
                         **metrics,
                     }

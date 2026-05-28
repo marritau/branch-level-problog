@@ -14,16 +14,16 @@ def test_build_default_ablation_specs_contains_expected_axes():
     specs = build_default_ablation_specs()
     assert len(specs) == 16
     names = {spec.name for spec in specs}
-    assert "Rita-NoisyOr-Weighted-BCE" in names
-    assert "Rita-NoisyOr-NormTheta-BCE-Posterior-trainW1" in names
-    assert "Rita-SoftmaxCompetition-Weighted-NLL" in names
-    assert "Rita-SoftmaxCompetition-NormTheta-NLL-Posterior-trainW1" in names
+    assert "BranchNet-e2e-NoisyOr-Weighted-BCE" in names
+    assert "BranchNet-e2e-NoisyOr-NormTheta-BCE-Posterior-trainW1" in names
+    assert "BranchNet-e2e-SoftmaxCompetition-Weighted-NLL" in names
+    assert "BranchNet-e2e-SoftmaxCompetition-NormTheta-NLL-Posterior-trainW1" in names
 
 
 def test_run_ablation_matrix_smoke():
     specs = [
         ExperimentSpec(
-            name="Rita-NoisyOr-Weighted-BCE",
+            name="BranchNet-e2e-NoisyOr-Weighted-BCE",
             head_type="noisy_or",
             theta_init_mode="weighted",
             loss_mode="bce",
@@ -31,7 +31,7 @@ def test_run_ablation_matrix_smoke():
             train_w1=False,
         ),
         ExperimentSpec(
-            name="Rita-SoftmaxCompetition-NormTheta-NLL-Posterior-trainW1",
+            name="BranchNet-e2e-SoftmaxCompetition-NormTheta-NLL-Posterior-trainW1",
             head_type="softmax_competition",
             theta_init_mode="normalized",
             loss_mode="nll",
@@ -66,8 +66,8 @@ def test_run_ablation_matrix_smoke():
         summary_names = {row["model"] for row in summary}
         assert "ExtraTrees" in summary_names
         assert "BranchNet-Neural (frozen W2)" in summary_names
-        assert "Rita-NoisyOr-Weighted-BCE" in summary_names
-        assert "Rita-SoftmaxCompetition-NormTheta-NLL-Posterior-trainW1" in summary_names
+        assert "BranchNet-e2e-NoisyOr-Weighted-BCE" in summary_names
+        assert "BranchNet-e2e-SoftmaxCompetition-NormTheta-NLL-Posterior-trainW1" in summary_names
 
         text = output_path.read_text(encoding="utf-8")
         assert "=== Experiment Specs ===" in text

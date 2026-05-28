@@ -87,8 +87,8 @@
 - The main benchmark compares:
   - `ExtraTrees`
   - `BranchNet-Neural (frozen W2)`
-  - `Rita-e2e-NoisyOr-BCE`
-  - `Rita-e2e-NoisyOr-NLL`
+  - `BranchNet-e2e-NoisyOr-BCE`
+  - `BranchNet-e2e-NoisyOr-NLL`
 - Added optional `train_w1=True` ablation variants for the e2e models.
 - Metrics include:
   - accuracy
@@ -155,8 +155,8 @@
   - `--p-high`,
   - `--p-low`.
 - With `--include-posterior`, the benchmark adds:
-  - `Rita-e2e-Posterior-NoisyOr-BCE`,
-  - `Rita-e2e-Posterior-NoisyOr-NLL`,
+  - `BranchNet-e2e-Posterior-NoisyOr-BCE`,
+  - `BranchNet-e2e-Posterior-NoisyOr-NLL`,
   - and matching `train_w1=True` ablation variants when `--include-w1-ablation` is also enabled.
 - Added smoke coverage in `tests/e2e/test_train_e2e.py` for training with `use_posterior=True`.
 

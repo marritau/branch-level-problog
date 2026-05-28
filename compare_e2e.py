@@ -150,7 +150,7 @@ def evaluate_branchnet_neural(
     return model.predict_proba(X_test).detach().cpu().numpy()
 
 
-def evaluate_rita_e2e(
+def evaluate_branchnet_e2e(
     X_train: np.ndarray,
     y_train: np.ndarray,
     X_val: np.ndarray,
@@ -414,8 +414,8 @@ def compare_e2e_benchmark(
                 ),
                 (
                     "main",
-                    f"Rita-e2e-{head_label}{theta_label}-BCE",
-                    lambda: evaluate_rita_e2e(
+                    f"BranchNet-e2e-{head_label}{theta_label}-BCE",
+                    lambda: evaluate_branchnet_e2e(
                         X_train, y_train, X_val, y_val, X_test,
                         seed=fold_seed,
                         branchnet_epochs=branchnet_epochs,
@@ -434,8 +434,8 @@ def compare_e2e_benchmark(
                 ),
                 (
                     "main",
-                    f"Rita-e2e-{head_label}{theta_label}-NLL",
-                    lambda: evaluate_rita_e2e(
+                    f"BranchNet-e2e-{head_label}{theta_label}-NLL",
+                    lambda: evaluate_branchnet_e2e(
                         X_train, y_train, X_val, y_val, X_test,
                         seed=fold_seed,
                         branchnet_epochs=branchnet_epochs,
@@ -459,8 +459,8 @@ def compare_e2e_benchmark(
                     [
                         (
                             "main",
-                            f"Rita-e2e-Posterior-{head_label}{theta_label}-BCE",
-                            lambda: evaluate_rita_e2e(
+                            f"BranchNet-e2e-Posterior-{head_label}{theta_label}-BCE",
+                            lambda: evaluate_branchnet_e2e(
                                 X_train, y_train, X_val, y_val, X_test,
                                 seed=fold_seed,
                                 branchnet_epochs=branchnet_epochs,
@@ -483,8 +483,8 @@ def compare_e2e_benchmark(
                         ),
                         (
                             "main",
-                            f"Rita-e2e-Posterior-{head_label}{theta_label}-NLL",
-                            lambda: evaluate_rita_e2e(
+                            f"BranchNet-e2e-Posterior-{head_label}{theta_label}-NLL",
+                            lambda: evaluate_branchnet_e2e(
                                 X_train, y_train, X_val, y_val, X_test,
                                 seed=fold_seed,
                                 branchnet_epochs=branchnet_epochs,
@@ -512,8 +512,8 @@ def compare_e2e_benchmark(
                 ablation_models = [
                     (
                         "ablation",
-                        f"Rita-e2e-{head_label}{theta_label}-BCE (train_w1=True)",
-                        lambda: evaluate_rita_e2e(
+                        f"BranchNet-e2e-{head_label}{theta_label}-BCE (train_w1=True)",
+                        lambda: evaluate_branchnet_e2e(
                             X_train, y_train, X_val, y_val, X_test,
                             seed=fold_seed,
                             branchnet_epochs=branchnet_epochs,
@@ -532,8 +532,8 @@ def compare_e2e_benchmark(
                     ),
                     (
                         "ablation",
-                        f"Rita-e2e-{head_label}{theta_label}-NLL (train_w1=True)",
-                        lambda: evaluate_rita_e2e(
+                        f"BranchNet-e2e-{head_label}{theta_label}-NLL (train_w1=True)",
+                        lambda: evaluate_branchnet_e2e(
                             X_train, y_train, X_val, y_val, X_test,
                             seed=fold_seed,
                             branchnet_epochs=branchnet_epochs,
@@ -556,8 +556,8 @@ def compare_e2e_benchmark(
                         [
                             (
                                 "ablation",
-                                f"Rita-e2e-Posterior-{head_label}{theta_label}-BCE (train_w1=True)",
-                                lambda: evaluate_rita_e2e(
+                                f"BranchNet-e2e-Posterior-{head_label}{theta_label}-BCE (train_w1=True)",
+                                lambda: evaluate_branchnet_e2e(
                                     X_train, y_train, X_val, y_val, X_test,
                                     seed=fold_seed,
                                     branchnet_epochs=branchnet_epochs,
@@ -580,8 +580,8 @@ def compare_e2e_benchmark(
                             ),
                             (
                                 "ablation",
-                                f"Rita-e2e-Posterior-{head_label}{theta_label}-NLL (train_w1=True)",
-                                lambda: evaluate_rita_e2e(
+                                f"BranchNet-e2e-Posterior-{head_label}{theta_label}-NLL (train_w1=True)",
+                                lambda: evaluate_branchnet_e2e(
                                     X_train, y_train, X_val, y_val, X_test,
                                     seed=fold_seed,
                                     branchnet_epochs=branchnet_epochs,

@@ -37,8 +37,8 @@ def test_compare_e2e_smoke():
         assert output_path.exists()
         assert any(row["model"] == "ExtraTrees" for row in summary)
         assert any(row["model"] == "BranchNet-Neural (frozen W2)" for row in summary)
-        assert any(row["model"] == "Rita-e2e-NoisyOr-BCE" for row in summary)
-        assert any(row["model"] == "Rita-e2e-NoisyOr-NLL" for row in summary)
+        assert any(row["model"] == "BranchNet-e2e-NoisyOr-BCE" for row in summary)
+        assert any(row["model"] == "BranchNet-e2e-NoisyOr-NLL" for row in summary)
         assert all("brier_score" in row for row in summary)
         assert all("ece" in row for row in summary)
         assert ablation_summary == []
